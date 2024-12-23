@@ -17,10 +17,10 @@ MonoBehaviour:
     maxValue: 0
     curValue: 0
   - statInfo: 1
-    maxValue: 0
-    curValue: 0
+    maxValue: 1
+    curValue: 1
   - statInfo: 2
-    maxValue: 0
+    maxValue: 1
     curValue: 0
   - statInfo: 3
     maxValue: 5
