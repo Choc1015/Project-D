@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Human : MonoBehaviour
 {
-    [SerializeField] private StatController statController;
+    [SerializeField] protected StatController statController;
+    [SerializeField] protected Movement movement;
 
     public void TakeDamage(float attackDamage)
     {

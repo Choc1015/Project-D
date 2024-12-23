@@ -10,7 +10,7 @@ public class StatController : MonoBehaviour
 
     private StatSO Stats;
     private Dictionary<StatInfo, Stat> stats = new();
-    private void Init()
+    public void Init()
     {
         Stats = statSO.Clone() as StatSO;
         foreach(Stat stat in Stats.Stats)
