@@ -11,6 +11,7 @@ public class PlayerController : Human
     private bool useAttack;
     private bool useSkill;
     private bool isJump;
+    private bool CantAction;
 
     private RaycastHit2D[] hits;
     private int layermask = 0;
@@ -58,8 +59,7 @@ public class PlayerController : Human
     {
         moveDir = playerInput.InputMove();
 
-        if(statController.GetStat(StatInfo.AttackDelay).Value <= 0)
-            useAttack = playerInput.InputAttack();
+        useAttack = playerInput.InputAttack();
 
         useSkill = playerInput.InputSkill();
 
@@ -67,10 +67,14 @@ public class PlayerController : Human
     }
     private void PlayerAction()
     {
+        if (CantAction)
+            return;
+
         #region Defense
         if (Mathf.Abs(moveDir.x) == 1 && moveDir.y == 0 && useAttack)
         {
             Debug.Log("¹æ¾î");
+            return;
         }
         #endregion
 
@@ -83,7 +87,7 @@ public class PlayerController : Human
         #endregion
 
         #region Attack
-        if (useAttack)
+        if (useAttack && statController.GetStat(StatInfo.AttackDelay).Value <= 0)
         {
             if(layermask == 0)
                 layermask = 1 << LayerMask.NameToLayer("Enemy");
@@ -96,8 +100,7 @@ public class PlayerController : Human
             }
 
             statController.GetStat(StatInfo.AttackDelay).Value = statController.GetStat(StatInfo.AttackDelay).GetMaxValue();
-
-            useAttack = false;
+            Debug.Log("Attack");
         }
         statController.GetStat(StatInfo.AttackDelay).Value -= Time.deltaTime;
         #endregion
@@ -110,5 +113,10 @@ public class PlayerController : Human
         else
             movement.StopMove();
         #endregion
+    }
+
+    private void ResetValue()
+    {
+        CantAction = false;
     }
 }
