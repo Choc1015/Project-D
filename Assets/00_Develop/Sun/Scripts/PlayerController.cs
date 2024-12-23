@@ -11,13 +11,16 @@ public class PlayerController : Human
     private bool useAttack;
     private bool useSkill;
     private bool isJump;
+    private bool CantAction;
 
     private RaycastHit2D[] hits;
+    private int layermask = 0;
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
     void Start()
     {
         statController.Init();
+        Utility.playerController = this;
     }
 
     void Update()
@@ -55,47 +58,65 @@ public class PlayerController : Human
     private void InputKey()
     {
         moveDir = playerInput.InputMove();
+
         useAttack = playerInput.InputAttack();
+
         useSkill = playerInput.InputSkill();
+
         isJump = playerInput.InputJump();
     }
     private void PlayerAction()
     {
-        //if(Mathf.Abs(moveDir.x) == 1 && moveDir.y == 0 && useAttack)
-        //{
-        //    Debug.Log("방어");
-        //}
-        //else if(Mathf.Abs(moveDir.x) == 1 && moveDir.y == -1 && isJump)
-        //{
-        //    Debug.Log($"{moveDir.x} 방향 슬라이딩");
+        if (CantAction)
+            return;
 
-        //}
-        //else
-        //{
-        //    if (moveDir.magnitude > 0)
-        //    {
-        //        movement.MoveTo(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
-        //    }
-        //    else
-        //        movement.StopMove();
-        //}
-
-        if (useAttack)
+        #region Defense
+        if (Mathf.Abs(moveDir.x) == 1 && moveDir.y == 0 && useAttack)
         {
-            hits = Physics2D.RaycastAll(transform.position, Vector3.left, 1, 1);
+            Debug.Log("방어");
+            return;
+        }
+        #endregion
+
+        #region Sliding
+        if (Mathf.Abs(moveDir.x) == 1 && moveDir.y == -1 && isJump)
+        {
+            Debug.Log($"{moveDir.x} 방향 슬라이딩");
+
+        }
+        #endregion
+
+        #region Attack
+        if (useAttack && statController.GetStat(StatInfo.AttackDelay).Value <= 0)
+        {
+            if(layermask == 0)
+                layermask = 1 << LayerMask.NameToLayer("Enemy");
+
+            hits = Physics2D.RaycastAll(transform.position, Vector3.right, 1, layermask);
+
             foreach(RaycastHit2D hit in hits)
             {
                 hit.collider.GetComponent<Human>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value);
             }
-            useAttack = false;
-            statController.GetStat(StatInfo.AttackDelay).Value = statController.GetStat(StatInfo.AttackDelay).GetMaxValue();
-        }
 
+            statController.GetStat(StatInfo.AttackDelay).Value = statController.GetStat(StatInfo.AttackDelay).GetMaxValue();
+            Debug.Log("Attack");
+        }
+        statController.GetStat(StatInfo.AttackDelay).Value -= Time.deltaTime;
+        #endregion
+
+        #region Move
         if (moveDir.magnitude > 0)
         {
             movement.MoveTo(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
         }
         else
             movement.StopMove();
+        #endregion
+    }
+
+    private void ResetValue()
+    {
+        CantAction = false;
     }
 }

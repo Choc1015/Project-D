@@ -13,13 +13,12 @@ public class Human : MonoBehaviour
         if (statController != null)
         {
             statController.GetStat(StatInfo.Health).Value -= attackDamage;
-
             if (statController.GetStat(StatInfo.Health).Value <= 0)
                 Die();
         }
     }
     private void Die()
     {
-
+        Destroy(gameObject);
     }
 }
