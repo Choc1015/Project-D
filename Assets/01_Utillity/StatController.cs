@@ -19,8 +19,8 @@ public class StatController : MonoBehaviour
         }
     }
 
-    public float GetValue(StatInfo statInfo)
+    public Stat GetStat(StatInfo statInfo)
     {
-        return stats[statInfo].Value;
+        return stats[statInfo];
     }
 }
