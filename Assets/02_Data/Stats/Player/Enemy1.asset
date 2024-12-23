@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d806bc7b9ce58e64082834abcda60495, type: 3}
-  m_Name: Player
+  m_Name: Enemy1
   m_EditorClassIdentifier: 
   Stats:
   - statInfo: 0
-    maxValue: 0
-    curValue: 0
+    maxValue: 30
+    curValue: 30
   - statInfo: 1
-    maxValue: 0
-    curValue: 0
+    maxValue: 10
+    curValue: 10
   - statInfo: 2
-    maxValue: 0
-    curValue: 0
+    maxValue: 1
+    curValue: 1
   - statInfo: 3
-    maxValue: 5
-    curValue: 5
+    maxValue: 2
+    curValue: 2
