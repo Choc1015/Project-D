@@ -22,5 +22,5 @@ public class Stat
             return curValue; 
         } 
     }
-
+    public float GetMaxValue() => maxValue;
 }
