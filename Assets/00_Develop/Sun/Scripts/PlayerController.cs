@@ -74,6 +74,7 @@ public class PlayerController : Human
         if (Mathf.Abs(moveDir.x) == 1 && moveDir.y == 0 && useAttack)
         {
             Debug.Log("¹æ¾î");
+            movement.StopMove();
             return;
         }
         #endregion
