@@ -6,23 +6,34 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody2D rigid;
 
-    public void MoveTo(Vector3 dir, float moveSpeed)
+    public void MoveToRigid(Vector3 dir, float moveSpeed)
     {
-        if(rigid != null)
+        if (rigid != null)
         {
             rigid.velocity = dir.normalized * moveSpeed;
         }
     }
-    //public void Jump(float jumpPower)
-    //{
-    //    if(rigid != null)
-    //    {
-    //        rigid.AddForce(Vector3.up * jumpPower);
-    //    }
-    //}
+    public void MoveToTrans(Vector3 dir, float moveSpeed)
+    {
+        transform.Translate(dir.normalized * moveSpeed * Time.deltaTime);
+    }
+    public void AddForce(Vector3 dir, float power)
+    {
+        if (rigid != null)
+        {
+            rigid.AddForce(dir.normalized * power);
+        }
+    }
+    public void Jump(float jumpPower)
+    {
+        if (rigid != null)
+        {
+            rigid.AddForce(Vector3.up * jumpPower);
+        }
+    }
     public void StopMove()
     {
-        if(rigid != null && rigid.velocity.magnitude > 0)
+        if (rigid != null && rigid.velocity.magnitude > 0)
         {
             rigid.velocity = Vector3.zero;
         }
