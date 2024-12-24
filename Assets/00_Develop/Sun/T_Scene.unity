@@ -193,6 +193,7 @@ MonoBehaviour:
   skillController: {fileID: 67742503}
   attackPos: {fileID: 1468786230}
   sprite: {fileID: 876125026}
+  spriteAnime: {fileID: 876125027}
   lookDIr_X: {x: 0, y: 0, z: 0}
 --- !u!50 &67742499
 Rigidbody2D:

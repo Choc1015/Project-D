@@ -8,6 +8,7 @@ public class PlayerController : Human
 
     public Transform attackPos;
     public SpriteRenderer sprite;
+    public Animator spriteAnime;
 
     public Vector3 lookDIr_X;
 
@@ -23,6 +24,6 @@ public class PlayerController : Human
     void Update()
     {
         skillController.ControllerAction();
-        
+        sprite.flipX = lookDIr_X.x == -1 ? true : false; 
     }
 }
