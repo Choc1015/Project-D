@@ -8,8 +8,9 @@ public class PlayerController : Human
 
     public Transform attackPos;
     public SpriteRenderer sprite;
-    public Animator spriteAnime;
+    public AnimationTrigger animTrigger;
 
+    public Vector3 moveDir;
     public Vector3 lookDIr_X;
 
     //private bool isJumpInput, isJump;
@@ -25,5 +26,11 @@ public class PlayerController : Human
     {
         skillController.ControllerAction();
         sprite.flipX = lookDIr_X.x == -1 ? true : false; 
+    }
+
+    public void StopMove()
+    {
+        movement.StopMove();
+        animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
     }
 }

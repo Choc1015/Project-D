@@ -61,13 +61,20 @@ public class SkillCommand
             }
         }
     }
+    public void InputCommandKeyUp()
+    {
+        if (!StopCommand())
+        {
+
+        }
+    }
     public void CheckCommand()
     {
         if (trigger)
         {
             action.Invoke();
             controller.UsingCommand(nextAction);
-            StopCommand();
+            trigger = StopCommand();
             return;
         }
 
@@ -86,15 +93,16 @@ public class SkillCommand
             inputList.Clear(); // 성공 시 입력 버퍼 초기화
         }
     }
-    private void StopCommand()
+    private bool StopCommand()
     {
         foreach (KeyCode keyCode in command)
         {
             if (Input.GetKeyUp(keyCode))
             {
-                trigger = false;
+                return false;
             }
         }
+        return true;
     }
     private bool IsCommandMatched(List<KeyCode> command)
     {

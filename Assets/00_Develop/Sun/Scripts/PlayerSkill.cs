@@ -7,19 +7,23 @@ public class PlayerSkill : MonoBehaviour
     public void Move_X(float x)
     {
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        Utility.playerController.lookDIr_X = Vector3.right * x;
-        Utility.playerController.movement.MoveToTrans(Utility.playerController.lookDIr_X, moveSpeed);
+        Utility.playerController.lookDIr_X.x = x;
+        Utility.playerController.moveDir.x = x;
+        Utility.playerController.movement.MoveToRigid(Utility.playerController.moveDir.normalized, moveSpeed);
+        Utility.playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
     }
     public void Move_Y(float y)
     {
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        Utility.playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
+        Utility.playerController.moveDir.y = y;
+        Utility.playerController.movement.MoveToRigid(Utility.playerController.moveDir.normalized, moveSpeed);
+        Utility.playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
     }
     public void Jump(float x)
     {
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         Utility.playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
-        
+        Utility.playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
         Debug.Log($"{x }Jump");
     }
     public void Defense()
@@ -29,6 +33,7 @@ public class PlayerSkill : MonoBehaviour
     public void Sliding(float dirX)
     {
         Utility.playerController.movement.AddForce(Vector3.right * dirX, 1000);
+        Utility.playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
     }
 
     public void Attack()
