@@ -11,7 +11,7 @@ public class SkillCommand
     public string Name;
     public List<KeyCode> command = new();
     private List<KeyCode> inputList = new();
-    public UnityEvent action;
+    public UnityEvent action, exitAction;
 
     public float commandInputTimeLimit = 1.0f; 
     private float timer;
@@ -32,6 +32,7 @@ public class SkillCommand
 
         controller.skillEvents += CheckCommand;
         controller.skillEvents += ClearExpiredInput;
+        controller.skillEvents += InputCommandKeyUp;
     }
     public void InputCommandKey()
     {
@@ -63,9 +64,12 @@ public class SkillCommand
     }
     public void InputCommandKeyUp()
     {
+        if (!controller.CanAction)
+            return;
+
         if (!StopCommand())
         {
-
+            exitAction?.Invoke();
         }
     }
     public void CheckCommand()

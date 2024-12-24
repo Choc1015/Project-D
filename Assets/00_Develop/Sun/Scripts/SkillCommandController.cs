@@ -9,7 +9,7 @@ public class SkillCommandController : MonoBehaviour
 {
     public SkillCommand[] skillCommands;
     public Action skillEvents;
-    public UnityEvent enterEvents;
+    public UnityEvent exitEvents;
 
     private float nextAction;
     public bool CanAction;
@@ -37,7 +37,7 @@ public class SkillCommandController : MonoBehaviour
         this.nextAction = nextAction;
         SetCanAction();
         CancelInvoke();
-        Invoke("EnterAction", nextAction);
+        Invoke("ExitAction", nextAction);
     }
 
     private void SetCanAction()
@@ -45,9 +45,9 @@ public class SkillCommandController : MonoBehaviour
         CanAction = nextAction <= 0 ? true : false;
     }
 
-    public void EnterAction()
+    public void ExitAction()
     {
-        enterEvents?.Invoke();
+        exitEvents?.Invoke();
 
     }
 }
