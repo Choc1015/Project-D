@@ -366,11 +366,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1022758752 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 6285165244062836532, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
-  m_PrefabInstance: {fileID: 9157999215124996086}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1236333139
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,10 +624,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1619102002532853078, guid: c5d66f29ec6bf0943bd4d8eb81c86b4e, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 2214544309904432300, guid: c5d66f29ec6bf0943bd4d8eb81c86b4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.51
@@ -686,17 +677,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4809784642497269012, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
-      propertyPath: rigid
-      value: 
-      objectReference: {fileID: 1022758752}
     - target: {fileID: 5229899763676027819, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.49
+      value: 7.74
       objectReference: {fileID: 0}
     - target: {fileID: 5229899763676027819, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.38
+      value: -3.35
       objectReference: {fileID: 0}
     - target: {fileID: 5229899763676027819, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_LocalPosition.z
@@ -729,6 +716,14 @@ PrefabInstance:
     - target: {fileID: 5229899763676027819, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388053298088501861, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
+      propertyPath: m_Size.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6388053298088501861, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
+      propertyPath: m_Size.y
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 8900353003458857235, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_Name
