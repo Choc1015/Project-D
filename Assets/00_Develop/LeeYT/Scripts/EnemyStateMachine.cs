@@ -109,7 +109,7 @@ public class EnemyStateMachine : Human
             }
             else
             {
-                movement.MoveTo(Vector3.left, statController.GetStat(StatInfo.MoveSpeed).Value);
+                movement.MoveToRigid(Vector3.left, statController.GetStat(StatInfo.MoveSpeed).Value);
             }
 
             yield return null;
@@ -146,7 +146,7 @@ public class EnemyStateMachine : Human
         statController.GetStat(StatInfo.MoveSpeed).Value = statController.GetStat(StatInfo.MoveSpeed).GetMaxValue();
 
         if (moveDir != null)
-            movement.MoveTo(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
+            movement.MoveToRigid(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
     }
 
     private IEnumerator Attack()
