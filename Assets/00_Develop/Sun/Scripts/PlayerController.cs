@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerController : Human
 {
     [SerializeField] private SkillCommandController skillController;
-    private Vector3 lookDIr_X;
 
-    private RaycastHit2D[] hits;
-    private int layermask = 0;
+    public Transform attackPos;
+    public SpriteRenderer sprite;
+    public Animator spriteAnime;
+
+    public Vector3 lookDIr_X;
+
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
 
@@ -21,5 +24,6 @@ public class PlayerController : Human
     void Update()
     {
         skillController.ControllerAction();
+        sprite.flipX = lookDIr_X.x == -1 ? true : false; 
     }
 }
