@@ -19,7 +19,8 @@ public class SkillCommandController : MonoBehaviour
         
     }
 
-    void Update()
+    
+    public void ControllerAction()
     {
         skillEvents?.Invoke();
 
@@ -27,7 +28,6 @@ public class SkillCommandController : MonoBehaviour
         CanAction = nextAction <= 0 ? true : false;
         SetCanAction();
     }
-
     public void UsingCommand(float nextAction)
     {
         this.nextAction = nextAction;
