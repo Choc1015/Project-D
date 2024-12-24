@@ -14,9 +14,11 @@ public class PlayerSkill : MonoBehaviour
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         Utility.playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
     }
-    public void Jump()
+    public void Jump(float x)
     {
-        Debug.Log("Jump!");
+        float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+        Utility.playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+        Debug.Log($"{x }Jump");
     }
     public void Defense()
     {
@@ -24,7 +26,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Sliding(float dirX)
     {
-        Debug.Log($"{dirX}방향 슬라이딩");
+        Utility.playerController.movement.AddForce(Vector3.right * dirX, 1000);
     }
 
     public void Attack()

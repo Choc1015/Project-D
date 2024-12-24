@@ -17,6 +17,13 @@ public class Movement : MonoBehaviour
     {
         transform.Translate(dir.normalized * moveSpeed * Time.deltaTime);
     }
+    public void AddForce(Vector3 dir, float power)
+    {
+        if (rigid != null)
+        {
+            rigid.AddForce(dir.normalized * power);
+        }
+    }
     //public void Jump(float jumpPower)
     //{
     //    if(rigid != null)

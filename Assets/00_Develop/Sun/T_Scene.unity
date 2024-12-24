@@ -189,7 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statController: {fileID: 67742495}
   movement: {fileID: 67742501}
-  playerInput: {fileID: 0}
+  skillController: {fileID: 67742503}
 --- !u!50 &67742499
 Rigidbody2D:
   serializedVersion: 4
@@ -275,7 +275,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
-    nextAction: 1
+    nextAction: 0.2
   - Name: DashAttack_Right
     command: 120100001301000061000000
     action:
@@ -308,7 +308,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
-    nextAction: 1
+    nextAction: 0.2
   - Name: Defense_Left
     command: 1401000061000000
     action:
@@ -371,7 +371,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
-    nextAction: 1
+    nextAction: 0.2
   - Name: Sliding_Right
     command: 120100001301000064000000
     action:
@@ -392,7 +392,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
-    nextAction: 1
+    nextAction: 0.2
   - Name: Attack
     command: 61000000
     action:
@@ -411,6 +411,69 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     commandInputTimeLimit: 1
+    isKeyDown: 1
+    isHold: 0
+    nextAction: 1
+  - Name: Jump_Left
+    command: 1401000064000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 67742504}
+          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    commandInputTimeLimit: 0.05
+    isKeyDown: 0
+    isHold: 0
+    nextAction: 0.5
+  - Name: Jump_Right
+    command: 1301000064000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 67742504}
+          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    commandInputTimeLimit: 0.05
+    isKeyDown: 0
+    isHold: 0
+    nextAction: 0.5
+  - Name: Jump
+    command: 64000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 67742504}
+          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
     nextAction: 1
@@ -498,27 +561,21 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0
-  - Name: Jump
-    command: 64000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 67742504}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Jump
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    commandInputTimeLimit: 0.5
-    isKeyDown: 1
-    isHold: 0
-    nextAction: 1
+  enterEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 67742501}
+        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+        m_MethodName: StopMove
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   CanAction: 0
 --- !u!114 &67742504
 MonoBehaviour:
