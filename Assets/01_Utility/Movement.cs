@@ -6,12 +6,16 @@ public class Movement : MonoBehaviour
 {
     public Rigidbody2D rigid;
 
-    public void MoveTo(Vector3 dir, float moveSpeed)
+    public void MoveToRigid(Vector3 dir, float moveSpeed)
     {
         if(rigid != null)
         {
             rigid.velocity = dir.normalized * moveSpeed;
         }
+    }
+    public void MoveToTrans(Vector3 dir, float moveSpeed)
+    {
+        transform.Translate(dir.normalized * moveSpeed * Time.deltaTime);
     }
     //public void Jump(float jumpPower)
     //{

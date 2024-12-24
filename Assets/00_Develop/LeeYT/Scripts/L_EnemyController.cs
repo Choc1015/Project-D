@@ -37,7 +37,7 @@ public class L_EnemyController : Human
         moveDir = Player.transform.position - transform.position;
 
         if(moveDir != null)
-        movement.MoveTo(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
+        movement.MoveToRigid(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
     }
 
 

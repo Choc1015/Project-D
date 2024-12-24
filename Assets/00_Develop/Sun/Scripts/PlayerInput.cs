@@ -22,6 +22,6 @@ public class PlayerInput : MonoBehaviour
     }
     public bool InputJump() => Input.GetKeyDown(KeyCode.D);
 
-    public bool InputAttack() => Input.GetKey(KeyCode.A);
+    public bool InputAttack() => Input.GetKeyDown(KeyCode.A);
     public bool InputSkill() => Input.GetKeyDown(KeyCode.S);
 }
