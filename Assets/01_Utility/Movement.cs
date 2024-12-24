@@ -24,13 +24,13 @@ public class Movement : MonoBehaviour
             rigid.AddForce(dir.normalized * power);
         }
     }
-    //public void Jump(float jumpPower)
-    //{
-    //    if(rigid != null)
-    //    {
-    //        rigid.AddForce(Vector3.up * jumpPower);
-    //    }
-    //}
+    public void Jump(float jumpPower)
+    {
+        if (rigid != null)
+        {
+            rigid.AddForce(Vector3.up * jumpPower);
+        }
+    }
     public void StopMove()
     {
         if(rigid != null && rigid.velocity.magnitude > 0)

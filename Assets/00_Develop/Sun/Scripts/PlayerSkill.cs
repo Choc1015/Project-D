@@ -7,7 +7,8 @@ public class PlayerSkill : MonoBehaviour
     public void Move_X(float x)
     {
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        Utility.playerController.movement.MoveToTrans(Vector3.right * x, moveSpeed);
+        Utility.playerController.lookDIr_X = Vector3.right * x;
+        Utility.playerController.movement.MoveToTrans(Utility.playerController.lookDIr_X, moveSpeed);
     }
     public void Move_Y(float y)
     {
@@ -18,6 +19,7 @@ public class PlayerSkill : MonoBehaviour
     {
         float moveSpeed = Utility.playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         Utility.playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+        
         Debug.Log($"{x }Jump");
     }
     public void Defense()
@@ -33,7 +35,7 @@ public class PlayerSkill : MonoBehaviour
     {
         int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector3.right, 1, layerMask);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(Utility.playerController.attackPos.position, Vector2.one*1.5f, 0, Utility.playerController.lookDIr_X, 1, layerMask);
 
         foreach (RaycastHit2D hit in hits)
         {
