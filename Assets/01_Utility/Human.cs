@@ -6,7 +6,7 @@ using UnityEngine;
 public class Human : MonoBehaviour
 {
     [SerializeField] protected StatController statController;
-    [SerializeField] protected Movement movement;
+    public Movement movement;
 
     public void TakeDamage(float attackDamage)
     {
@@ -17,6 +17,7 @@ public class Human : MonoBehaviour
                 Die();
         }
     }
+    public StatController GetStatController() => statController;
     private void Die()
     {
         Destroy(gameObject);
