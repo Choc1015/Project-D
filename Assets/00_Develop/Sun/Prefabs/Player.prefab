@@ -215,6 +215,7 @@ MonoBehaviour:
   attackPos: {fileID: 2802133101412206790}
   sprite: {fileID: 1258926530325127277}
   animTrigger: {fileID: 4813723113395707094}
+  moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
 --- !u!114 &219253064508369906
 MonoBehaviour:
@@ -284,6 +285,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
@@ -317,6 +321,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
@@ -338,6 +345,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 1
@@ -359,6 +369,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 1
@@ -380,6 +393,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
@@ -401,6 +417,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
@@ -422,6 +441,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 1
     isKeyDown: 1
     isHold: 0
@@ -443,6 +465,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.05
     isKeyDown: 0
     isHold: 0
@@ -464,6 +489,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.05
     isKeyDown: 0
     isHold: 0
@@ -497,6 +525,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
@@ -515,6 +546,21 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: StopMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -539,6 +585,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: StopMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     commandInputTimeLimit: 1
     isKeyDown: 0
     isHold: 0
@@ -557,6 +618,21 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: -1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: StopMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
@@ -581,11 +657,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: StopMove
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     commandInputTimeLimit: 1
     isKeyDown: 0
     isHold: 0
     nextAction: 0
-  enterEvents:
+  exitEvents:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7642723346707854220}
