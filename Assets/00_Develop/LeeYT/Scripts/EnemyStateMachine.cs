@@ -6,7 +6,7 @@ public class EnemyStateMachine : Human
 
     private Vector3 moveDir;
     // States
-    private enum EnemyState 
+    private enum EnemyState
     {
         Idle, // 기본상태
         Patrol, // 정해진 경로 움직임
@@ -25,7 +25,7 @@ public class EnemyStateMachine : Human
     public float chaseRange = 5f; // 플레이어와 적의 거리
     public float attackRange = 2f; // 공격 범위   
 
-    void Start()    
+    void Start()
     {
         statController.Init();
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
@@ -73,6 +73,20 @@ public class EnemyStateMachine : Human
         }
     }
 
+    private void FlipSprite()
+    {
+        if (Player.transform.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+
+            Debug.Log("왼쪽");
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        
+    }
 
     private void ChangeState(EnemyState newState)
     {
@@ -123,7 +137,7 @@ public class EnemyStateMachine : Human
         {
             // Chase the player
             FollowPlayer();
-
+            FlipSprite();
             // Transition to Attack if within attack range
             if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
             {
@@ -141,6 +155,7 @@ public class EnemyStateMachine : Human
 
     void FollowPlayer()
     {
+
         moveDir = Player.transform.position - transform.position;
 
         statController.GetStat(StatInfo.MoveSpeed).Value = statController.GetStat(StatInfo.MoveSpeed).GetMaxValue();
@@ -180,7 +195,7 @@ public class EnemyStateMachine : Human
         Destroy(gameObject);
     }
 
-    public void TakeDamage(float attackDamage)
+    public new void TakeDamage(float attackDamage)
     {
         base.TakeDamage(attackDamage);
         // Simulate death for the example
