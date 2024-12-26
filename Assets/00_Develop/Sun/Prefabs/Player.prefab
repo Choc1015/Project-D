@@ -1,86 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &413894562700192627
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 635741181585415971}
-  - component: {fileID: 8620836227384495915}
-  m_Layer: 0
-  m_Name: Defense
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &635741181585415971
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413894562700192627}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7668509889031059274}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8620836227384495915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413894562700192627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  command:
-    Name: ReflectionDefense
-    command: 71000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Defense
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ReflectionDefense
-            m_BoolArgument: 0
-          m_CallState: 2
-    exitAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: CancelDefense
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    commandInputTimeLimit: 0.2
-    isKeyDown: 1
-    isHold: 1
-    nextAction: 0.2
 --- !u!1 &1931426702401166601
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,9 +159,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 635741181585415971}
-  - {fileID: 5866900319099539052}
+  m_Children: []
   m_Father: {fileID: 7311607307226342024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7895550839927921383
@@ -258,8 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillFunctions:
-  - {fileID: 8620836227384495915}
-  - {fileID: 621383724989963170}
+  - {fileID: 0}
+  - {fileID: 0}
   commandController: {fileID: 5786086227377823556}
 --- !u!1 &2535870140066485341
 GameObject:
@@ -271,12 +188,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7311607307226342024}
   - component: {fileID: 6248753179474640222}
+  - component: {fileID: 2316009015562246164}
   - component: {fileID: 7642723346707854220}
   - component: {fileID: 219253064508369906}
   - component: {fileID: 5212341399615060278}
   - component: {fileID: 5786086227377823556}
   - component: {fileID: 7581687510746911494}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -328,6 +246,51 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!61 &2316009015562246164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535870140066485341}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2}
+  m_EdgeRadius: 0
 --- !u!114 &7642723346707854220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +374,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 1
     nextAction: 0
+    isDisable: 0
   - Name: ChangeSKill
     command: 09000000
     action:
@@ -435,6 +399,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.5
+    isDisable: 0
   - Name: DashAttack_Left
     command: 120100001401000061000000
     action:
@@ -443,7 +408,7 @@ MonoBehaviour:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
           m_MethodName: Sliding
-          m_Mode: 4
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -471,6 +436,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.3
+    isDisable: 0
   - Name: DashAttack_Right
     command: 120100001301000061000000
     action:
@@ -479,7 +445,7 @@ MonoBehaviour:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
           m_MethodName: Sliding
-          m_Mode: 4
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -507,6 +473,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.3
+    isDisable: 0
   - Name: Defense_Left
     command: 1401000061000000
     action:
@@ -543,6 +510,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2
+    isDisable: 0
   - Name: Defense_Right
     command: 1301000061000000
     action:
@@ -579,6 +547,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2
+    isDisable: 0
   - Name: Sliding_Left
     command: 120100001401000064000000
     action:
@@ -587,7 +556,7 @@ MonoBehaviour:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
           m_MethodName: Sliding
-          m_Mode: 4
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -603,6 +572,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.4
+    isDisable: 0
   - Name: Sliding_Right
     command: 120100001301000064000000
     action:
@@ -611,7 +581,7 @@ MonoBehaviour:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
           m_MethodName: Sliding
-          m_Mode: 4
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -627,6 +597,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.4
+    isDisable: 0
   - Name: Attack
     command: 61000000
     action:
@@ -651,6 +622,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 1
+    isDisable: 0
   - Name: Jump_Left
     command: 1401000064000000
     action:
@@ -675,6 +647,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0.8
+    isDisable: 0
   - Name: Jump_Right
     command: 1301000064000000
     action:
@@ -699,6 +672,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0.8
+    isDisable: 0
   - Name: Jump
     command: 64000000
     action:
@@ -716,18 +690,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Movement, Assembly-CSharp
-          m_MethodName: Jump
-          m_Mode: 4
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 200
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -735,6 +697,7 @@ MonoBehaviour:
     isKeyDown: 1
     isHold: 0
     nextAction: 0.8
+    isDisable: 0
   - Name: Move Up
     command: 11010000
     action:
@@ -771,6 +734,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0
+    isDisable: 0
   - Name: Move Down
     command: 12010000
     action:
@@ -807,6 +771,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0
+    isDisable: 0
   - Name: Move Left
     command: 14010000
     action:
@@ -843,6 +808,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0
+    isDisable: 0
   - Name: Move Right
     command: 13010000
     action:
@@ -879,6 +845,7 @@ MonoBehaviour:
     isKeyDown: 0
     isHold: 0
     nextAction: 0
+    isDisable: 0
   exitEvents:
     m_PersistentCalls:
       m_Calls:
@@ -1074,87 +1041,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!1 &3771228235927686472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5866900319099539052}
-  - component: {fileID: 621383724989963170}
-  m_Layer: 0
-  m_Name: Defense (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5866900319099539052
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3771228235927686472}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7668509889031059274}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &621383724989963170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3771228235927686472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  command:
-    Name: ReflectionDefense
-    command: 71000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Defense
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ReflectionDefense
-            m_BoolArgument: 0
-          m_CallState: 2
-    exitAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: CancelDefense
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    commandInputTimeLimit: 1
-    isKeyDown: 0
-    isHold: 0
-    nextAction: 0
 --- !u!1 &7477583800167598696
 GameObject:
   m_ObjectHideFlags: 0
