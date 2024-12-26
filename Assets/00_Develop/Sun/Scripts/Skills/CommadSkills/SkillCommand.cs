@@ -21,9 +21,12 @@ public class SkillCommand
     public float nextAction;
 
     private SkillCommandController controller;
+
+    public bool isDisable;
     public void Init(SkillCommandController controller)
     {
-        this.controller = controller;
+        if(!this.controller)
+            this.controller = controller;
 
         if (isKeyDown)
             controller.skillEvents += InputCommandKeyDown;
@@ -36,6 +39,9 @@ public class SkillCommand
     }
     public void InputCommandKey()
     {
+        if (isDisable)
+            return;
+
         if (Input.anyKey)
         {
             foreach (KeyCode keyCode in command)
@@ -50,6 +56,10 @@ public class SkillCommand
     }
     public void InputCommandKeyDown()
     {
+        if (isDisable)
+            return;
+
+
         if (Input.anyKeyDown && controller.CanAction)
         {
             foreach (KeyCode keyCode in command)
@@ -64,13 +74,19 @@ public class SkillCommand
     }
     public void InputCommandKeyUp()
     {
-        if (!controller.CanAction)
+        if (isDisable)
             return;
 
-        if (!StopCommand())
+
+        if (controller.CanAction || (isHold && exitAction.GetPersistentEventCount() > 0))
         {
-            exitAction?.Invoke();
+            if (!StopCommand())
+            {
+                exitAction?.Invoke();
+            }
         }
+
+        
     }
     public void CheckCommand()
     {
@@ -123,6 +139,9 @@ public class SkillCommand
     }
     public void ClearExpiredInput()
     {
+        if (isDisable)
+            return;
+
         timer += Time.deltaTime;
         if (timer > commandInputTimeLimit)
         {

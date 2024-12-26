@@ -49,12 +49,12 @@ public class PlayerSkill : MonoBehaviour
     {
         playerController.ChangeDefenseType();
     }
-    public void Sliding(float dirX)
+    public void Sliding()
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
             return;
 
-        playerController.movement.AddForce(Vector3.right * dirX, 1000);
+        playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
     }
 

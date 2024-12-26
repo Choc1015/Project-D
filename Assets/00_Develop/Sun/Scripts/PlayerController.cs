@@ -25,6 +25,7 @@ public class PlayerController : Human
         statController.Init();
         Utility.playerController = this;
         playerState = new();
+        GameManager.Instance.players.Add(this);
     }
 
     void Update()
