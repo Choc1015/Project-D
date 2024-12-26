@@ -133,7 +133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1227469232615572799, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2611131331367090419, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3230831011731832988, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7094768597461470758, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_Name
@@ -189,7 +189,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7094768597461470758, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500858823146571754, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: command.action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Sliding
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500858823146571754, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: command.action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500858823146571754, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: command.exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -388,7 +400,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2252863025936105367, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3335146559809221655, guid: 4de4783f21050d042b86473aea3d9f93, type: 3}
       propertyPath: m_Layer
@@ -556,6 +568,10 @@ PrefabInstance:
     - target: {fileID: 3029322107505812862, guid: 500eab2361f565d4eabc828c76828b41, type: 3}
       propertyPath: m_Name
       value: Player_Priest
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029322107505812862, guid: 500eab2361f565d4eabc828c76828b41, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7801188963771847595, guid: 500eab2361f565d4eabc828c76828b41, type: 3}
       propertyPath: m_LocalPosition.x
