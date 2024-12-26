@@ -76,7 +76,7 @@ public class SkillCommand
     {
         if (trigger)
         {
-            action.Invoke();
+            action?.Invoke();
             controller.UsingCommand(nextAction);
             trigger = StopCommand();
             return;
@@ -89,7 +89,7 @@ public class SkillCommand
         {
             if (isHold)
                 trigger = true;
-            action.Invoke();
+            action?.Invoke();
 
             if (nextAction > 0)
                 controller.UsingCommand(nextAction);

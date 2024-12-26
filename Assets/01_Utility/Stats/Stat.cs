@@ -15,7 +15,7 @@ public class Stat
         { 
             curValue = value;
             if (curValue > maxValue)
-                maxValue = curValue;
+                curValue = maxValue;
         } 
         get 
         { 
@@ -23,4 +23,5 @@ public class Stat
         } 
     }
     public float GetMaxValue() => maxValue;
+    public float SetMaxValue(float newMaxValue) => maxValue = newMaxValue;
 }
