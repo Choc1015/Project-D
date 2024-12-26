@@ -15,7 +15,7 @@ public class PlayerController : Human
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
 
-    private string defenseType;
+    private string defenseType = "";
 
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
@@ -37,19 +37,20 @@ public class PlayerController : Human
 
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
-    public void TakeDamage(float attackDamage, Human attackHuman = null)
+    public void TakeDamage(float attackDamage, Human attackHuman)
     {
+        float damage = attackDamage;
         if (defenseType == "BasicDefense")
-            attackDamage *= 0.5f;
+            damage = attackDamage*0.5f;
         else if (defenseType == "GodDefense")
-            attackDamage *= 0.1f;
+            damage = attackDamage * 0.1f;
         else if (defenseType == "ReflectionDefense")
         {
-            attackDamage *= 0.3f;
-            attackHuman.TakeDamage(attackDamage);
+            damage = attackDamage * 0.3f;
+            attackHuman.TakeDamage(damage);
         }
 
-        TakeDamage(attackDamage);
+        TakeDamage(damage);
     }
     public void StopMove()
     {

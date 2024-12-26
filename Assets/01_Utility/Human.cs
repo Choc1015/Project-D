@@ -27,6 +27,6 @@ public class Human : MonoBehaviour
     public StatController GetStatController() => statController;
     private void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

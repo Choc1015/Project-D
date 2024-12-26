@@ -171,6 +171,8 @@ public class EnemyStateMachine : Human
         {
             // Attack logic
             Debug.Log("Attacking the player!");
+
+            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
 
             // Transition back to Chase if player is out of attack range
