@@ -7,13 +7,20 @@ using UnityEngine.EventSystems;
 
 public class SkillFunction : MonoBehaviour
 {
+    private SkillFunctionController controller;
     public SkillCommand command;
     public GameObject skillObj;
-    public void Init(SkillCommandController controller)
+    public float invokeTimer;
+    public void Init(SkillFunctionController controller)
     {
-        // 상태 변환하는 함수
-        //command.action.AddListener();
-        // 인보크하는 함수
-        command.Init(controller);
+        this.controller = controller;
+        command.action.AddListener(()=> controller.player.playerState.ChangeState(PlayerState.Animation));
+        command.action.AddListener(() => Invoke("InvokeAction", invokeTimer));
+        command.Init(controller.commandController);
+    }
+
+    public void InvokeAction()
+    {
+        controller.player.playerState.ChangeState(PlayerState.Idle);
     }
 }

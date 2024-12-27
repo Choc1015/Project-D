@@ -541,10 +541,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Priest
       objectReference: {fileID: 0}
-    - target: {fileID: 3029322107505812862, guid: 500eab2361f565d4eabc828c76828b41, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7801188963771847595, guid: 500eab2361f565d4eabc828c76828b41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
