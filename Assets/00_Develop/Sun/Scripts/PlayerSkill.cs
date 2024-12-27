@@ -81,12 +81,12 @@ public class PlayerSkill : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
-            GiveDamage(attackDamage, hit.collider.GetComponent<Human>());
+            GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), "KnockBack");
         }
     }
-    public void GiveDamage(float attackDamage, Human enemy)
+    public void GiveDamage(float attackDamage, Human enemy, string setStateName = "")
     {
-        enemy.TakeDamage(attackDamage);
+        enemy.TakeDamage(attackDamage, playerController, setStateName);
     }
     public void Heal(float value)
     {
@@ -97,7 +97,8 @@ public class PlayerSkill : MonoBehaviour
     {
         if(coll.CompareTag("Enemy") && useDashAttack)
         {
-            coll.GetComponent<Human>().TakeDamage(playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value);
+            float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
+            GiveDamage(attackDamage, coll.GetComponent<Human>(), "Stun");
         }
     }
 }
