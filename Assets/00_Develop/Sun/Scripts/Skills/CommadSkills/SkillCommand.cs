@@ -78,22 +78,23 @@ public class SkillCommand
             return;
 
 
-        if (controller.CanAction || (isHold && exitAction.GetPersistentEventCount() > 0))
+        if (nextAction == 0 && controller.CanAction)
         {
             if (!StopCommand())
             {
-                exitAction?.Invoke();
+                controller.UsingCommand(nextAction, this);
+                Debug.Log(Name);
             }
         }
 
-        
+
     }
     public void CheckCommand()
     {
         if (trigger)
         {
             action?.Invoke();
-            controller.UsingCommand(nextAction);
+            controller.UsingCommand(nextAction, this);
             trigger = StopCommand();
             return;
         }
@@ -108,7 +109,7 @@ public class SkillCommand
             action?.Invoke();
 
             if (nextAction > 0)
-                controller.UsingCommand(nextAction);
+                controller.UsingCommand(nextAction, this);
 
             inputList.Clear(); // 성공 시 입력 버퍼 초기화
         }

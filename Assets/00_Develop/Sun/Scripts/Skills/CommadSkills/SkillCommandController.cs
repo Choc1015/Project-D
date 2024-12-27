@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class SkillCommandController : MonoBehaviour
 {
     public SkillCommand[] skillCommands;
+    private SkillCommand curCommand;
     public Action skillEvents;
     public UnityEvent exitEvents;
 
@@ -28,16 +29,16 @@ public class SkillCommandController : MonoBehaviour
         skillEvents?.Invoke();
 
         nextAction -= Time.deltaTime;
-        CanAction = nextAction <= 0 ? true : false;
         SetCanAction();
 
     }
-    public void UsingCommand(float nextAction)
+    public void UsingCommand(float nextAction, SkillCommand skillCommand)
     {
         this.nextAction = nextAction;
+        curCommand = skillCommand;
         SetCanAction();
         CancelInvoke();
-        Invoke("ExitAction", nextAction);
+        Invoke("ExitAction", nextAction+0.1f);
     }
 
     private void SetCanAction()
@@ -48,6 +49,8 @@ public class SkillCommandController : MonoBehaviour
     public void ExitAction()
     {
         exitEvents?.Invoke();
-
+        curCommand?.exitAction?.Invoke();
+        curCommand = null;
+        Debug.Log("Stop");
     }
 }

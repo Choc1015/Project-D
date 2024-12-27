@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSkill : MonoBehaviour
 {
     private PlayerController playerController;
+    private bool useDashAttack;
     void Start()
     {
         playerController = Utility.playerController;
@@ -18,6 +19,7 @@ public class PlayerSkill : MonoBehaviour
         playerController.lookDIr_X = Vector3.right * x;
         playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
         playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        Debug.Log("X");
     }
     public void Move_Y(float y)
     {
@@ -27,6 +29,7 @@ public class PlayerSkill : MonoBehaviour
         float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
         playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        Debug.Log("Y");
     }
     public void Jump(float x)
     {
@@ -57,7 +60,15 @@ public class PlayerSkill : MonoBehaviour
         playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
     }
-
+    public void DashAttack()
+    {
+        Sliding();
+        useDashAttack = true;
+    }
+    public void StopDashAttack()
+    {
+        useDashAttack = false;
+    }
     public void Attack()
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
@@ -80,5 +91,13 @@ public class PlayerSkill : MonoBehaviour
     public void Heal(float value)
     {
         playerController.HealHealth(value);
+    }
+
+    public void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.CompareTag("Enemy") && useDashAttack)
+        {
+            coll.GetComponent<Human>().TakeDamage(playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value);
+        }
     }
 }
