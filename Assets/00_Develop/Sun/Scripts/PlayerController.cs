@@ -41,7 +41,7 @@ public class PlayerController : Human
 
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
-    public void TakeDamage(float attackDamage, Human attackHuman)
+    public override void TakeDamage(float attackDamage, Human attackHuman)
     {
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
@@ -62,7 +62,16 @@ public class PlayerController : Human
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         //Debug.Log("Stop");
     }
-
+    protected override void KnockBack(Vector3 dir)
+    {
+        playerState.ChangeState(PlayerState.KnockBack);
+        base.KnockBack(dir);
+        Invoke("ResetState", 1);
+    }
+    public void ResetState()
+    {
+        playerState.ChangeState(PlayerState.Idle);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

@@ -119,6 +119,7 @@ MonoBehaviour:
     nextAction: 0.2
     isDisable: 0
   skillObj: {fileID: 0}
+  invokeTimer: 0
 --- !u!1 &8638467368420381139
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +227,7 @@ MonoBehaviour:
     nextAction: 0.4
     isDisable: 0
   skillObj: {fileID: 0}
+  invokeTimer: 0
 --- !u!1001 &4703048871723883131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -237,6 +239,10 @@ PrefabInstance:
     - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Name
       value: Player_Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.size
@@ -646,6 +652,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 3122400146679949815}
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.size
       value: 2

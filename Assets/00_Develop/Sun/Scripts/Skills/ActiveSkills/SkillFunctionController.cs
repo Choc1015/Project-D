@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SkillFunctionController : MonoBehaviour
 {
+    public PlayerController player;
     public SkillFunction[] skillFunctions;
     public SkillCommandController commandController;
     private int currentSkillIndex;
@@ -33,7 +34,7 @@ public class SkillFunctionController : MonoBehaviour
 
         if (!isInit[currentSkillIndex])
         {
-            skillFunctions[currentSkillIndex].Init(commandController);
+            skillFunctions[currentSkillIndex].Init(this);
             isInit[currentSkillIndex] = true;
         }
     }
