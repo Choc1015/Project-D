@@ -183,5 +183,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FollowDistance: 12
-  SmoothSpeed: 1
+  SmoothSpeed: 3
   IsFighting: 0
