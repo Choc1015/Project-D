@@ -20,12 +20,14 @@ public class EnemyStateMachine : Human
     private GameObject Player;
     private bool isAlive = true; // 살아있는 판정은 필요하고 
     private float tempAttackOffsetX;
+    private bool isAttack = false;
 
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
     public float attackRange = 2f; // 공격 범위   
     public Vector3 AttackOffset;
     public float AttackDelay = 1f;
+    
 
     void Start()
     {
@@ -179,6 +181,7 @@ public class EnemyStateMachine : Human
     {
         Debug.Log("Entering Attack State"); 
         // 추가 딜레이 시간 작업
+        
         while (currentState == EnemyState.Attack)
         {
             
@@ -187,7 +190,9 @@ public class EnemyStateMachine : Human
             // Attack Delay
             
             yield return new WaitForSeconds(AttackDelay);
-            AttakToPlayer();
+            isAttack = false;
+            if(!isAttack)
+            AttakToPlayer(ref isAttack);
 
             // Transition back to Chase if player is out of attack range
             if (Vector3.Distance(AttackHitBox(), Player.transform.position) > attackRange)
@@ -197,12 +202,13 @@ public class EnemyStateMachine : Human
         }
     }   
 
-    private void AttakToPlayer()
+    private void AttakToPlayer(ref bool isAttack)
     {
+        isAttack = true;
         Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
         Debug.LogWarning($"Attak to Player");
-    }
+    }   
 
     private IEnumerator Die()
     {
