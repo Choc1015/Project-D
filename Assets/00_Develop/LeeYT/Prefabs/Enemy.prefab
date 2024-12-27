@@ -404,4 +404,5 @@ MonoBehaviour:
   statController: {fileID: 7219698993869104629}
   movement: {fileID: 4809784642497269012}
   chaseRange: 5
-  attackRange: 2
+  attackRange: 0.66
+  AttackOffset: {x: -1.15, y: 0.66, z: 0}

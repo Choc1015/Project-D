@@ -19,11 +19,13 @@ public class EnemyStateMachine : Human
     private EnemyState currentState;
     private GameObject Player;
     private bool isAlive = true; // 살아있는 판정은 필요하고 
-
+    private float tempAttackOffsetX;
 
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
     public float attackRange = 2f; // 공격 범위   
+    public Vector3 AttackOffset;
+    public float AttackDelay = 1f;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class EnemyStateMachine : Human
         FindPlayers();
         // Start the state machine
         ChangeState(EnemyState.Patrol); // 초기 상태
+        tempAttackOffsetX = AttackOffset.x;
     }
 
     private void FindPlayers()
@@ -51,7 +54,7 @@ public class EnemyStateMachine : Human
         Gizmos.DrawWireSphere(transform.position, chaseRange);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
 
         // 플레이어와 적 사이의 연결 선 그리기
         if (Player != null)
@@ -65,12 +68,17 @@ public class EnemyStateMachine : Human
             }
 
             // 플레이어가 공격범위 내에 있을 때 파란색 선
-            if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
+            if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
             {
                 Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(transform.position, attackRange);
+                Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
             }
         }
+    }
+
+    private Vector3 AttackHitBox()
+    {
+        return transform.position + AttackOffset;
     }
 
     private void FlipSprite()
@@ -78,12 +86,14 @@ public class EnemyStateMachine : Human
         if (Player.transform.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            AttackOffset.x = tempAttackOffsetX;
 
             Debug.Log("왼쪽");
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
+            AttackOffset.x = -tempAttackOffsetX;
         }
         
     }
@@ -91,6 +101,7 @@ public class EnemyStateMachine : Human
     private void ChangeState(EnemyState newState)
     {
         currentState = newState;
+        StopAllCoroutines(); // Stop any running state
         StopAllCoroutines(); // Stop any running state
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
     }
@@ -139,7 +150,7 @@ public class EnemyStateMachine : Human
             FollowPlayer();
             FlipSprite();
             // Transition to Attack if within attack range
-            if (Vector3.Distance(transform.position, Player.transform.position) <= attackRange)
+            if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
             {
                 ChangeState(EnemyState.Attack);
             }
@@ -166,23 +177,31 @@ public class EnemyStateMachine : Human
 
     private IEnumerator Attack()
     {
-        Debug.Log("Entering Attack State");
+        Debug.Log("Entering Attack State"); 
+        // 추가 딜레이 시간 작업
         while (currentState == EnemyState.Attack)
         {
+            
             // Attack logic
-            Debug.Log("Attacking the player!");
-
-            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
-            movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
+            Debug.Log($"Attacking the player!");
+            // Attack Delay
+            
+            yield return new WaitForSeconds(AttackDelay);
+            AttakToPlayer();
 
             // Transition back to Chase if player is out of attack range
-            if (Vector3.Distance(transform.position, Player.transform.position) > attackRange)
+            if (Vector3.Distance(AttackHitBox(), Player.transform.position) > attackRange)
             {
                 ChangeState(EnemyState.Chase);
             }
-
-            yield return new WaitForSeconds(1f); // Attack cooldown
         }
+    }   
+
+    private void AttakToPlayer()
+    {
+        Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
+        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
+        Debug.LogWarning($"Attak to Player");
     }
 
     private IEnumerator Die()
