@@ -17,6 +17,12 @@ public class Human : MonoBehaviour
                 Die();
         }
     }
+    public virtual void TakeDamage(float attackDamage, Human attackHuman)
+    {
+        Vector3 dir = (attackHuman.transform.position - transform.position).normalized;
+        KnockBack(dir);
+        TakeDamage(attackDamage);
+    }
     public void HealHealth(float healValue)
     {
         if (statController != null)
@@ -28,5 +34,15 @@ public class Human : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
+    }
+
+    protected virtual void KnockBack(Vector3 dir)
+    {
+        movement.KnockBack(dir, 200);
+
+    }
+    protected virtual void Stun(Vector3 dir)
+    {
+        KnockBack(dir);
     }
 }

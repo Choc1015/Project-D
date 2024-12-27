@@ -21,6 +21,6 @@ public class SkillFunction : MonoBehaviour
 
     public void InvokeAction()
     {
-        controller.player.playerState.ChangeState(PlayerState.Idle);
+        controller.player.ResetState();
     }
 }

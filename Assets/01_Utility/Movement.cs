@@ -38,4 +38,11 @@ public class Movement : MonoBehaviour
             rigid.velocity = Vector3.zero;
         }
     }
+    public void KnockBack(Vector3 dir, float power)
+    {
+        if(rigid != null)
+        {
+            rigid.AddForce(dir * power);
+        }
+    }
 }
