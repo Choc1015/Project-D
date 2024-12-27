@@ -15,7 +15,9 @@ public class PlayerController : Human
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
 
-    private string defenseType = "";
+    [SerializeField] private string defenseType = "";
+
+    
 
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
@@ -27,12 +29,14 @@ public class PlayerController : Human
         playerState = new();
         GameManager.Instance.players.Add(this);
     }
-
     void Update()
     {
+        if(playerState.CurrentState() == PlayerState.Idle)
+        {
+            skillController.ControllerAction();
+            sprite.flipX = lookDIr_X.x == -1 ? true : false;
+        }
         
-        skillController.ControllerAction();
-        sprite.flipX = lookDIr_X.x == -1 ? true : false;
 
 
     }
@@ -56,6 +60,7 @@ public class PlayerController : Human
     {
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
+        //Debug.Log("Stop");
     }
 
     private void OnDrawGizmos()

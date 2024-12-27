@@ -52,7 +52,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2914680637710567805}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: Defense
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -64,8 +64,20 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 7758387556606053222}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+          m_MethodName: SetActive
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3122400146679949815}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: StopMove
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -79,7 +91,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2914680637710567805}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: CancelDefense
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -159,7 +171,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2914680637710567805}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: Sliding
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -171,7 +183,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 2914680637710567805}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: Attack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -198,7 +210,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8638467368420381139}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -296,11 +308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[4].nextAction
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].nextAction
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[6].nextAction

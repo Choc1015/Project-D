@@ -33,7 +33,7 @@ public class SkillFunctionController : MonoBehaviour
 
         if (!isInit[currentSkillIndex])
         {
-            skillFunctions[currentSkillIndex].command.Init(commandController);
+            skillFunctions[currentSkillIndex].Init(commandController);
             isInit[currentSkillIndex] = true;
         }
     }

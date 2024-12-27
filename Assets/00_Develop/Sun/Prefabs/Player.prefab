@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 5212341399615060278}
   - component: {fileID: 5786086227377823556}
   - component: {fileID: 7581687510746911494}
+  - component: {fileID: 5316237887173578074}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -309,6 +310,7 @@ MonoBehaviour:
   attackPos: {fileID: 2802133101412206790}
   sprite: {fileID: 1258926530325127277}
   animTrigger: {fileID: 4813723113395707094}
+  playerState: {fileID: 5316237887173578074}
   moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
 --- !u!114 &219253064508369906
@@ -407,19 +409,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Sliding
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: -1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Attack
+          m_MethodName: DashAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -431,11 +421,23 @@ MonoBehaviour:
           m_CallState: 2
     exitAction:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7581687510746911494}
+          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
+          m_MethodName: StopDashAttack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 0
-    nextAction: 0.3
+    nextAction: 0.2
     isDisable: 0
   - Name: DashAttack_Right
     command: 120100001301000061000000
@@ -444,19 +446,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Sliding
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Attack
+          m_MethodName: DashAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -468,11 +458,23 @@ MonoBehaviour:
           m_CallState: 2
     exitAction:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7581687510746911494}
+          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
+          m_MethodName: StopDashAttack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 0
-    nextAction: 0.3
+    nextAction: 0.2
     isDisable: 0
   - Name: Defense_Left
     command: 1401000061000000
@@ -571,7 +573,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 0
-    nextAction: 0.4
+    nextAction: 0.3
     isDisable: 0
   - Name: Sliding_Right
     command: 120100001301000064000000
@@ -596,7 +598,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 0
-    nextAction: 0.4
+    nextAction: 0.3
     isDisable: 0
   - Name: Attack
     command: 61000000
@@ -874,6 +876,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6885c8a403417bc4fbbee6e4d91d7140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5316237887173578074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535870140066485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4f534dc066fe64d848ffac670d7eac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3358986231070291462
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +917,7 @@ Transform:
   m_GameObject: {fileID: 3358986231070291462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -951,7 +965,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 6e0b8e215c96a574aa5014b2cf59d248, type: 3}
+  m_Sprite: {fileID: 1055531293, guid: 9bccfb76a19873042aabd5464c40be39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1028,11 +1042,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 1.875, y: 3.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1066,7 +1080,7 @@ Transform:
   m_GameObject: {fileID: 7477583800167598696}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
