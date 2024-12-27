@@ -17,10 +17,14 @@ public class Human : MonoBehaviour
                 Die();
         }
     }
-    public virtual void TakeDamage(float attackDamage, Human attackHuman)
+    public virtual void TakeDamage(float attackDamage, Human attackHuman, string setStateName = "")
     {
-        Vector3 dir = (attackHuman.transform.position - transform.position).normalized;
-        KnockBack(dir);
+        Vector3 dir = (transform.position- attackHuman.transform.position).normalized;
+        dir.y = 0;
+        if (setStateName == "KnockBack")
+            KnockBackHuman(dir);
+        else if (setStateName == "Stun")
+            StunHuman(dir);
         TakeDamage(attackDamage);
     }
     public void HealHealth(float healValue)
@@ -36,13 +40,14 @@ public class Human : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    protected virtual void KnockBack(Vector3 dir)
+    protected virtual void KnockBackHuman(Vector3 dir)
     {
         movement.KnockBack(dir, 200);
 
     }
-    protected virtual void Stun(Vector3 dir)
+    protected virtual void StunHuman(Vector3 dir)
     {
-        KnockBack(dir);
+        movement.KnockBack(dir, 500);
+
     }
 }
