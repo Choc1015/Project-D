@@ -40,7 +40,9 @@ public class PlayerController : Human
 
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
-    public override void TakeDamage(float attackDamage, Human attackHuman, string setStateName = "")
+
+    public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
+
     {
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
@@ -50,10 +52,12 @@ public class PlayerController : Human
         else if (defenseType == "ReflectionDefense")
         {
             damage = attackDamage * 0.3f;
-            attackHuman.TakeDamage(damage, this, setStateName);
+
+            attackHuman.TakeDamage(damage, this, info);
         }
 
-        base.TakeDamage(damage, attackHuman, setStateName);
+        base.TakeDamage(damage, attackHuman, info);
+
     }
     public void StopMove()
     {
@@ -61,13 +65,9 @@ public class PlayerController : Human
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         //Debug.Log("Stop");
     }
-    protected override void KnockBackHuman(Vector3 dir)
-    {
-        playerState.ChangeState(PlayerState.KnockBack);
-        base.KnockBackHuman(dir);
-        Invoke("ResetState", 0.3f);
-    }
-    protected override void StunHuman(Vector3 dir)
+
+    public void ResetState()
+
     {
         base.StunHuman(dir);
         StartCoroutine(ResetState(0.5f, 1.5f));

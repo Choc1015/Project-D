@@ -83,7 +83,6 @@ public class SkillCommand
             if (!StopCommand())
             {
                 controller.UsingCommand(nextAction, this);
-                Debug.Log(Name);
             }
         }
 

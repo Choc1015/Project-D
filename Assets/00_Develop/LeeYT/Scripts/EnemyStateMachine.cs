@@ -9,23 +9,23 @@ public class EnemyStateMachine : Human
     // States
     private enum EnemyState
     {
-        Idle, // ±âº»»óÅÂ
-        Patrol, // Á¤ÇØÁø °æ·Î ¿òÁ÷ÀÓ
-        Chase, // ÇÃ·¹ÀÌ¾î µû¶ó°¡±â
-        Attack,// °ø°İ
-        Stun, // ½ºÅÏ
-        KnockBack, // ³Ñ¾îÁü
-        Die // Á×À½
+        Idle, // ê¸°ë³¸ìƒíƒœ
+        Patrol, // ì •í•´ì§„ ê²½ë¡œ ì›€ì§ì„
+        Chase, // í”Œë ˆì´ì–´ ë”°ë¼ê°€ê¸°
+        Attack,// ê³µê²©
+        Stun, // ìŠ¤í„´
+        KnockBack, // ë„˜ì–´ì§
+        Die // ì£½ìŒ
     }
     private EnemyState currentState;
     private GameObject Player;
-    private bool isAlive = true; // »ì¾ÆÀÖ´Â ÆÇÁ¤Àº ÇÊ¿äÇÏ°í 
+    private bool isAlive = true; // ì‚´ì•„ìˆëŠ” íŒì •ì€ í•„ìš”í•˜ê³  
     private float tempAttackOffsetX;
     private bool isAttack = false;
 
     // References
-    public float chaseRange = 5f; // ÇÃ·¹ÀÌ¾î¿Í ÀûÀÇ °Å¸®
-    public float attackRange = 2f; // °ø°İ ¹üÀ§   
+    public float chaseRange = 5f; // í”Œë ˆì´ì–´ì™€ ì ì˜ ê±°ë¦¬
+    public float attackRange = 2f; // ê³µê²© ë²”ìœ„   
     public Vector3 AttackOffset;
     public float AttackDelay = 1f;
     
@@ -36,7 +36,7 @@ public class EnemyStateMachine : Human
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
         FindPlayers();
         // Start the state machine
-        ChangeState(EnemyState.Patrol); // ÃÊ±â »óÅÂ
+        ChangeState(EnemyState.Patrol); // ì´ˆê¸° ìƒíƒœ
         tempAttackOffsetX = AttackOffset.x;
     }
 
@@ -52,25 +52,25 @@ public class EnemyStateMachine : Human
 
     private void OnDrawGizmos()
     {
-        // °ø°İ ¹üÀ§ ½Ã°¢È­
+        // ê³µê²© ë²”ìœ„ ì‹œê°í™”
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, chaseRange);
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
 
-        // ÇÃ·¹ÀÌ¾î¿Í Àû »çÀÌÀÇ ¿¬°á ¼± ±×¸®±â
+        // í”Œë ˆì´ì–´ì™€ ì  ì‚¬ì´ì˜ ì—°ê²° ì„  ê·¸ë¦¬ê¸°
         if (Player != null)
         {
 
-            // ÇÃ·¹ÀÌ¾î°¡ ¹üÀ§ ³»¿¡ ÀÖÀ» ¶§ ÃÊ·Ï»ö ¼±
+            // í”Œë ˆì´ì–´ê°€ ë²”ìœ„ ë‚´ì— ìˆì„ ë•Œ ì´ˆë¡ìƒ‰ ì„ 
             if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(transform.position, chaseRange);
             }
 
-            // ÇÃ·¹ÀÌ¾î°¡ °ø°İ¹üÀ§ ³»¿¡ ÀÖÀ» ¶§ ÆÄ¶õ»ö ¼±
+            // í”Œë ˆì´ì–´ê°€ ê³µê²©ë²”ìœ„ ë‚´ì— ìˆì„ ë•Œ íŒŒë€ìƒ‰ ì„ 
             if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
             {
                 Gizmos.color = Color.blue;
@@ -91,7 +91,7 @@ public class EnemyStateMachine : Human
             transform.localScale = new Vector3(-1, 1, 1);
             AttackOffset.x = tempAttackOffsetX;
 
-            Debug.Log("¿ŞÂÊ");
+            Debug.Log("ì™¼ìª½");
         }
         else
         {
@@ -106,7 +106,7 @@ public class EnemyStateMachine : Human
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
         StopAllCoroutines(); // Stop any running state
-        StartCoroutine(newState.ToString()); // ½ºÅ×ÀÌÆ® ÀÌ³ÑÀÌ¸§°ú ÇÔ¼öÀÌ¸§ µ¿ÀÏÇÏ°Ô
+        StartCoroutine(newState.ToString()); // ìŠ¤í…Œì´íŠ¸ ì´ë„˜ì´ë¦„ê³¼ í•¨ìˆ˜ì´ë¦„ ë™ì¼í•˜ê²Œ
     }
 
     private IEnumerator Idle()
@@ -115,7 +115,7 @@ public class EnemyStateMachine : Human
         while (currentState == EnemyState.Idle)
         {
             // Check if the player is in range
-            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange) // ÀÏÁ¤ ¹üÀ§ ÀÌÇÏ¸é ¦i¾Æ°¡°Ô 
+            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange) // ì¼ì • ë²”ìœ„ ì´í•˜ë©´ iì•„ê°€ê²Œ 
             {
                 ChangeState(EnemyState.Chase);
             }
@@ -206,7 +206,7 @@ public class EnemyStateMachine : Human
     private IEnumerator Attack()
     {
         Debug.Log("Entering Attack State"); 
-        // Ãß°¡ µô·¹ÀÌ ½Ã°£ ÀÛ¾÷
+        // ì¶”ê°€ ë”œë ˆì´ ì‹œê°„ ì‘ì—…
         
         while (currentState == EnemyState.Attack)
         {
@@ -227,7 +227,22 @@ public class EnemyStateMachine : Human
             }
         }
     }   
-
+    private IEnumerator KnockBack()
+    {
+        
+        yield return new WaitForSeconds(info.knockBackTime);
+        ChangeState(EnemyState.Stun);
+        movement.StopMove();
+    }
+    private IEnumerator Stun()
+    {
+        
+        yield return new WaitForSeconds(info.stunTime);
+        ChangeState(EnemyState.Idle);
+        movement.StopMove();
+        if (this.info.isStun)
+            this.info.isStun = false;
+    }
     private void AttakToPlayer(ref bool isAttack)
     {
         isAttack = true;
@@ -248,13 +263,21 @@ public class EnemyStateMachine : Human
         Destroy(gameObject);
     }
 
-    public override void TakeDamage(float attackDamage, Human human, string setStateName = "")
+
+    public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        base.TakeDamage(attackDamage, human, setStateName);
+        if (this.info !=null&& this.info.isStun)
+            return;
+        base.TakeDamage(attackDamage, attackHuman, info);
         // Simulate death for the example
         if (isAlive)
         {
+            ChangeState(EnemyState.KnockBack);
             //ChangeState(EnemyState.Die);
         }
+    }
+    protected override void DieHuman()
+    {
+        ChangeState(EnemyState.Die);
     }
 }
