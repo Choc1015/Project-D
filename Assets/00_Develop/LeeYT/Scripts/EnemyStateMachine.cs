@@ -23,14 +23,9 @@ public class EnemyStateMachine : Human
     private float tempAttackOffsetX;
     private bool isAttack = false;
 
-<<<<<<< Updated upstream
-    // References
     public float chaseRange = 5f; // ÇÃ·¹ÀÌ¾î¿Í ÀûÀÇ °Å¸®
     public float attackRange = 2f; // °ø°İ ¹üÀ§   
-=======
-    public float chaseRange = 5f; // í”Œë ˆì´ì–´ì™€ ì ì˜ ê±°ë¦¬
-    public float attackRange = 2f; // ê³µê²© ë²”ìœ„   
->>>>>>> Stashed changes
+
     public Vector3 AttackOffset;
     public float AttackDelay = 1f;
     public Animator animator;
@@ -50,7 +45,7 @@ public class EnemyStateMachine : Human
         ChangeState(EnemyState.Patrol); // ÃÊ±â »óÅÂ
         tempAttackOffsetX = AttackOffset.x;
         if (animator == null)
-            Debug.LogError("ì¸ìŠ¤í™í„°ì°½ì— ì• ë‹ˆë©”ì´í„° ì•ˆ ë„£ìœ¼ì‹¬");
+            Debug.LogError("ÀÎ½ºÆåÅÍÃ¢¿¡¼­ ¾Ö´Ï¸ŞÀÌÅÍ Ãß°¡Á»");
     }   
 
     private void FindPlayers()
@@ -236,7 +231,7 @@ public class EnemyStateMachine : Human
             {
                 ChangeState(EnemyState.Chase);
                 isAttack = false;
-                break; // ì½”ë£¨í‹´ ì¢…ë£Œ
+                break; // ì½”ë£¨??ì¢…ë£Œ
             }
             else
             {
@@ -251,10 +246,7 @@ public class EnemyStateMachine : Human
            
         }
     }   
-<<<<<<< Updated upstream
 
-    private void AttakToPlayer(ref bool isAttack)
-=======
     private IEnumerator KnockBack()
     {
         animator.SetTrigger("Kncokback");
@@ -272,7 +264,6 @@ public class EnemyStateMachine : Human
             this.info.isStun = false;
     }
     private void AttakToPlayer()
->>>>>>> Stashed changes
     {
         if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
         {
@@ -300,10 +291,8 @@ public class EnemyStateMachine : Human
         // Simulate death for the example
         if (isAlive)
         {
-<<<<<<< Updated upstream
-=======
-            ChangeState(EnemyState.Stun); // ìŠ¤í„´ìœ¼ë¡œ ë°”ê¿ˆ
->>>>>>> Stashed changes
+
+            ChangeState(EnemyState.Stun); //ÀÏ´Ü Ãß°¡
             //ChangeState(EnemyState.Die);
         }
     }
