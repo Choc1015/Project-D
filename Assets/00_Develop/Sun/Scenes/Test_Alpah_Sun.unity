@@ -452,6 +452,10 @@ PrefabInstance:
       propertyPath: l
       value: 
       objectReference: {fileID: 722380264}
+    - target: {fileID: 3122400146679949815, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 834435682}
     - target: {fileID: 7094768597461470758, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_Name
       value: Player_Warrior
@@ -859,7 +863,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.348
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1938,6 +1942,7 @@ GameObject:
   - component: {fileID: 834435679}
   - component: {fileID: 834435681}
   - component: {fileID: 834435680}
+  - component: {fileID: 834435682}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -2006,6 +2011,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834435678}
   m_CullTransparentMesh: 1
+--- !u!114 &834435682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834435678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fae26d0f0dffd84fbedea56fe3c78f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpValue: {fileID: 1755783093}
+  manaValue: {fileID: 390436129}
 --- !u!1 &858159920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4241,7 +4260,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.753
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -4471,6 +4490,10 @@ PrefabInstance:
     - target: {fileID: 2567374400816890139, guid: c701071e215a1c94a8e3d40d57a395ee, type: 3}
       propertyPath: m_Name
       value: Enemy_Slime Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144945244380870559, guid: c701071e215a1c94a8e3d40d57a395ee, type: 3}
+      propertyPath: AttackOffset.x
+      value: -0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

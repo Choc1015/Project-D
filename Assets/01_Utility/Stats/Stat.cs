@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum StatInfo { Health, AttackDamage, AttackDelay, MoveSpeed, AttakRange };
+public enum StatInfo { Health, AttackDamage, AttackDelay, MoveSpeed, AttakRange, Mana };
 [System.Serializable]
 public class Stat 
 {

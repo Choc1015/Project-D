@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerController : Human
 {
     [SerializeField] private SkillCommandController skillController;
+    [SerializeField] private PlayerUI playerUI;
 
     public Transform attackPos;
     public SpriteRenderer sprite;
@@ -66,6 +67,7 @@ public class PlayerController : Human
         {
             StartCoroutine(Stun());
         }
+        playerUI.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
     private IEnumerator KnockBack()
     {
