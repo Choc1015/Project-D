@@ -7,8 +7,13 @@ public class CloneLight : MonoBehaviour
 {
     [SerializeField] private Light2D spriteLight;
     [SerializeField] private SpriteRenderer sprite;
-    
+    [SerializeField] private bool isUpdate;
 
+    private void Update()
+    {
+        if (isUpdate)
+            ChangeSprite();
+    }
     public void ChangeSprite()
     {
         spriteLight.lightCookieSprite = sprite.sprite;

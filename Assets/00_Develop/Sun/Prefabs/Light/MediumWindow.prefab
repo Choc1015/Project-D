@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1024050703338294783
+--- !u!1 &1239720199006597118
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7930230421619193324}
-  - component: {fileID: 6653895306533754055}
+  - component: {fileID: 6157585253242032057}
+  - component: {fileID: 7952461086336927443}
   m_Layer: 0
-  m_Name: SmallWindow
+  m_Name: MediumWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7930230421619193324
+--- !u!4 &6157585253242032057
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024050703338294783}
+  m_GameObject: {fileID: 1239720199006597118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.546, y: 3.874, z: 0}
+  m_LocalPosition: {x: 8.208, y: 2.564, z: 0}
   m_LocalScale: {x: 1.2, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6653895306533754055
+--- !u!114 &7952461086336927443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024050703338294783}
+  m_GameObject: {fileID: 1239720199006597118}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.01305002, y: 0.15959996, z: 0}
-    m_Extent: {x: 1.69455, y: 1.5407, z: 0}
+    m_Center: {x: -0.012150049, y: 0.03605002, z: 0}
+    m_Extent: {x: 1.68855, y: 1.68385, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 1.2
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5079753, y: -0.17038566, z: 0}
-  - {x: 0.48145148, y: -0.1820038, z: 0}
-  - {x: 0.4746001, y: 0.48925984, z: 0}
+  - {x: -0.4935608, y: -0.44687665, z: 0}
+  - {x: 0.4742438, y: -0.44687665, z: 0}
+  - {x: 0.47746244, y: 0.5193176, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
