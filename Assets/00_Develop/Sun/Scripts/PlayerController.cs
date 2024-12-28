@@ -26,7 +26,6 @@ public class PlayerController : Human
     {
         statController.Init();
         Utility.playerController = this;
-        playerState = new();
         GameManager.Instance.players.Add(this);
     }
     void Update()
@@ -41,20 +40,24 @@ public class PlayerController : Human
 
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
+
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
+
     {
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
-            damage = attackDamage*0.5f;
+            damage = attackDamage * 0.5f;
         else if (defenseType == "GodDefense")
             damage = attackDamage * 0.1f;
         else if (defenseType == "ReflectionDefense")
         {
             damage = attackDamage * 0.3f;
+
             attackHuman.TakeDamage(damage, this, info);
         }
 
         base.TakeDamage(damage, attackHuman, info);
+
     }
     public void StopMove()
     {
@@ -62,8 +65,18 @@ public class PlayerController : Human
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         //Debug.Log("Stop");
     }
+
     public void ResetState()
+
     {
+        base.StunHuman(dir);
+        StartCoroutine(ResetState(0.5f, 1.5f));
+    }
+    IEnumerator ResetState(float t1, float t2)
+    {
+        yield return new WaitForSeconds(t1);
+        StopMove();
+        yield return new WaitForSeconds(t2);
         playerState.ChangeState(PlayerState.Idle);
     }
     private void OnDrawGizmos()

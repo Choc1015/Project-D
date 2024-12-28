@@ -81,12 +81,14 @@ public class PlayerSkill : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
+
             GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.3f,0.5f));
         }
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
         enemy.TakeDamage(attackDamage, playerController , info);
+
     }
     public void Heal(float value)
     {
@@ -98,7 +100,9 @@ public class PlayerSkill : MonoBehaviour
         if(coll.CompareTag("Enemy") && useDashAttack)
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
+
             coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 300, 0.5f,3));
+
         }
     }
 }

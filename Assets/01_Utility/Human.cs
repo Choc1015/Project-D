@@ -17,6 +17,7 @@ public class Human : MonoBehaviour
                 DieHuman();
         }
     }
+
     public virtual void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
         if (info != null)
@@ -31,6 +32,7 @@ public class Human : MonoBehaviour
         //    KnockBack(dir);
         //else if (setStateName == "Stun")
         //    Stun(dir);
+
         TakeDamage(attackDamage);
     }
     public void HealHealth(float healValue)
@@ -45,5 +47,7 @@ public class Human : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
 
 }
