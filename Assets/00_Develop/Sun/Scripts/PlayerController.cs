@@ -67,16 +67,7 @@ public class PlayerController : Human
     }
 
     public void ResetState()
-
     {
-        base.StunHuman(dir);
-        StartCoroutine(ResetState(0.5f, 1.5f));
-    }
-    IEnumerator ResetState(float t1, float t2)
-    {
-        yield return new WaitForSeconds(t1);
-        StopMove();
-        yield return new WaitForSeconds(t2);
         playerState.ChangeState(PlayerState.Idle);
     }
     private void OnDrawGizmos()

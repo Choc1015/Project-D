@@ -166,32 +166,6 @@ public class EnemyStateMachine : Human
             yield return null;
         }
     }
-    private IEnumerator KnockBack()
-    {
-        yield return new WaitForSeconds(0.3f);
-        movement.StopMove();
-        yield return new WaitForSeconds(0.2f);
-        ChangeState(EnemyState.Patrol);
-        
-        
-    }
-    protected override void KnockBackHuman(Vector3 dir)
-    {
-        ChangeState(EnemyState.KnockBack);
-        base.KnockBackHuman(dir);
-    }
-    private IEnumerator Stun()
-    {
-        yield return new WaitForSeconds(0.5f);
-        movement.StopMove();
-        yield return new WaitForSeconds(1.5f);
-        ChangeState(EnemyState.Patrol);
-    }
-    protected override void StunHuman(Vector3 dir)
-    {
-        ChangeState(EnemyState.Stun);
-        base.StunHuman(dir);
-    }
     void FollowPlayer()
     {
 
