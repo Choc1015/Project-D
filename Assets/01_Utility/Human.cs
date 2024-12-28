@@ -7,20 +7,30 @@ public class Human : MonoBehaviour
 {
     [SerializeField] protected StatController statController;
     public Movement movement;
-
+    protected KnockBackInfo info;
     public void TakeDamage(float attackDamage)
     {
         if (statController != null)
         {
             statController.GetStat(StatInfo.Health).Value -= attackDamage;
             if (statController.GetStat(StatInfo.Health).Value <= 0)
-                Die();
+                DieHuman();
         }
     }
-    public virtual void TakeDamage(float attackDamage, Human attackHuman)
+    public virtual void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
-        Vector3 dir = (attackHuman.transform.position - transform.position).normalized;
-        KnockBack(dir);
+        if (info != null)
+        {
+            this.info = info;
+            info.dir = transform.position- attackHuman.transform.position;
+            info.dir.y = 0;
+            Debug.Log(info.dir);
+            movement.KnockBack(info);
+        }
+        //if (setStateName == "KnockBack")
+        //    KnockBack(dir);
+        //else if (setStateName == "Stun")
+        //    Stun(dir);
         TakeDamage(attackDamage);
     }
     public void HealHealth(float healValue)
@@ -31,18 +41,9 @@ public class Human : MonoBehaviour
         }
     }
     public StatController GetStatController() => statController;
-    private void Die()
+    protected virtual void DieHuman()
     {
         gameObject.SetActive(false);
     }
 
-    protected virtual void KnockBack(Vector3 dir)
-    {
-        movement.KnockBack(dir, 200);
-
-    }
-    protected virtual void Stun(Vector3 dir)
-    {
-        KnockBack(dir);
-    }
 }

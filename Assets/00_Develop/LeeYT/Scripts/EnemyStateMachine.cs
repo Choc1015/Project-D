@@ -201,7 +201,22 @@ public class EnemyStateMachine : Human
             }
         }
     }   
-
+    private IEnumerator KnockBack()
+    {
+        
+        yield return new WaitForSeconds(info.knockBackTime);
+        ChangeState(EnemyState.Stun);
+        movement.StopMove();
+    }
+    private IEnumerator Stun()
+    {
+        
+        yield return new WaitForSeconds(info.stunTime);
+        ChangeState(EnemyState.Idle);
+        movement.StopMove();
+        if (this.info.isStun)
+            this.info.isStun = false;
+    }
     private void AttakToPlayer(ref bool isAttack)
     {
         isAttack = true;
@@ -222,13 +237,20 @@ public class EnemyStateMachine : Human
         Destroy(gameObject);
     }
 
-    public new void TakeDamage(float attackDamage)
+    public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        base.TakeDamage(attackDamage);
+        if (this.info !=null&& this.info.isStun)
+            return;
+        base.TakeDamage(attackDamage, attackHuman, info);
         // Simulate death for the example
         if (isAlive)
         {
-            ChangeState(EnemyState.Die);
+            ChangeState(EnemyState.KnockBack);
+            //ChangeState(EnemyState.Die);
         }
+    }
+    protected override void DieHuman()
+    {
+        ChangeState(EnemyState.Die);
     }
 }
