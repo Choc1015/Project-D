@@ -269,7 +269,7 @@ MonoBehaviour:
   playerState: {fileID: 5316237887173578074}
   moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
-  l: {fileID: 0}
+  l: {fileID: 1275776863369477917}
   defenseType: 
 --- !u!114 &219253064508369906
 MonoBehaviour:
