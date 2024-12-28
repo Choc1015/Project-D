@@ -16,7 +16,7 @@ public class PlayerController : Human
 
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
-    public Light2D l;
+    public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
 
     
@@ -32,15 +32,13 @@ public class PlayerController : Human
     }
     void Update()
     {
-        if(playerState.CurrentState() == PlayerState.Idle)
+        spriteLight?.ChangeSprite();
+        if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
             sprite.flipX = lookDIr_X.x == -1 ? true : false;
         }
-        l.lightCookieSprite = sprite.sprite;
-        Vector3 l_Dir = Vector3.one;
-        l_Dir.y = sprite.flipX ? 180 : 0;
-        l.transform.rotation = Quaternion.Euler(l_Dir);
+
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
 
