@@ -23,14 +23,25 @@ public class EnemyStateMachine : Human
     private float tempAttackOffsetX;
     private bool isAttack = false;
 
+<<<<<<< Updated upstream
     // References
     public float chaseRange = 5f; // ÇÃ·¹ÀÌ¾î¿Í ÀûÀÇ °Å¸®
     public float attackRange = 2f; // °ø°Ý ¹üÀ§   
+=======
+    public float chaseRange = 5f; // í”Œë ˆì´ì–´ì™€ ì ì˜ ê±°ë¦¬
+    public float attackRange = 2f; // ê³µê²© ë²”ìœ„   
+>>>>>>> Stashed changes
     public Vector3 AttackOffset;
     public float AttackDelay = 1f;
-    
+    public Animator animator;
+
 
     void Start()
+    {
+        Initialize();
+    }
+
+    private void Initialize()
     {
         statController.Init();
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
@@ -38,7 +49,9 @@ public class EnemyStateMachine : Human
         // Start the state machine
         ChangeState(EnemyState.Patrol); // ÃÊ±â »óÅÂ
         tempAttackOffsetX = AttackOffset.x;
-    }
+        if (animator == null)
+            Debug.LogError("ì¸ìŠ¤íŽ™í„°ì°½ì— ì• ë‹ˆë©”ì´í„° ì•ˆ ë„£ìœ¼ì‹¬");
+    }   
 
     private void FindPlayers()
     {
@@ -149,6 +162,7 @@ public class EnemyStateMachine : Human
         Debug.Log("Entering Chase State");
         while (currentState == EnemyState.Chase)
         {
+            isAttack = false;
             // Chase the player
             FollowPlayer();
             FlipSprite();
@@ -214,26 +228,58 @@ public class EnemyStateMachine : Human
             // Attack logic
             Debug.Log($"Attacking the player!");
             // Attack Delay
-            
+            animator.SetTrigger("Attack");
+            movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
             yield return new WaitForSeconds(AttackDelay);
-            isAttack = false;
-            if(!isAttack)
-            AttakToPlayer(ref isAttack);
-
             // Transition back to Chase if player is out of attack range
             if (Vector3.Distance(AttackHitBox(), Player.transform.position) > attackRange)
             {
                 ChangeState(EnemyState.Chase);
+                isAttack = false;
+                break; // ì½”ë£¨í‹´ ì¢…ë£Œ
             }
+            else
+            {
+               
+                isAttack = true;
+            }
+
+            if (isAttack)
+            {
+                AttakToPlayer();
+            }
+           
         }
     }   
+<<<<<<< Updated upstream
 
     private void AttakToPlayer(ref bool isAttack)
+=======
+    private IEnumerator KnockBack()
     {
-        isAttack = true;
-        Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
-        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        Debug.LogWarning($"Attak to Player");
+        animator.SetTrigger("Kncokback");
+        yield return new WaitForSeconds(info.knockBackTime);
+        ChangeState(EnemyState.Stun);
+        movement.StopMove();
+    }
+    private IEnumerator Stun()
+    {
+        animator.SetTrigger("Stun");
+        yield return new WaitForSeconds(info.stunTime);
+        ChangeState(EnemyState.Idle);
+        movement.StopMove();
+        if (this.info.isStun)
+            this.info.isStun = false;
+    }
+    private void AttakToPlayer()
+>>>>>>> Stashed changes
+    {
+        if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
+        {
+            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
+            Debug.LogWarning($"Attak to Player");
+        }
+    
     }   
 
     private IEnumerator Die()
@@ -254,6 +300,10 @@ public class EnemyStateMachine : Human
         // Simulate death for the example
         if (isAlive)
         {
+<<<<<<< Updated upstream
+=======
+            ChangeState(EnemyState.Stun); // ìŠ¤í„´ìœ¼ë¡œ ë°”ê¿ˆ
+>>>>>>> Stashed changes
             //ChangeState(EnemyState.Die);
         }
     }
