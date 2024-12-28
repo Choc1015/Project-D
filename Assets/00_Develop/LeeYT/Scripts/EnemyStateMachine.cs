@@ -247,7 +247,7 @@ public class EnemyStateMachine : Human
     {
         if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
         {
-            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this);
+            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 0, 0.5f, 0));
             Debug.LogWarning($"Attak to Player");
         }
     

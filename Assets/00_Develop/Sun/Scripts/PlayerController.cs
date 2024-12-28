@@ -64,24 +64,23 @@ public class PlayerController : Human
 
         if(playerState.CurrentState() != PlayerState.Die)
         {
-            StartCoroutine(KnockBack());
+            StartCoroutine(Stun());
         }
     }
     private IEnumerator KnockBack()
     {
-
-        yield return new WaitForSeconds(info.knockBackTime);
-        playerState.ChangeState(PlayerState.Stun);
-        movement.StopMove();
-    }
-    private IEnumerator Stun()
-    {
-
         yield return new WaitForSeconds(info.stunTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
         if (this.info.isLKnockBack)
             this.info.isLKnockBack = false;
+
+    }
+    private IEnumerator Stun()
+    {
+        yield return new WaitForSeconds(info.knockBackTime);
+        playerState.ChangeState(PlayerState.Stun);
+        movement.StopMove();
     }
     public void StopMove()
     {
