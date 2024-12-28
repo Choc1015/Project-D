@@ -82,7 +82,7 @@ public class PlayerSkill : MonoBehaviour
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
-            GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.3f,0.5f));
+            GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 0, 0.5f,0));
         }
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
@@ -101,7 +101,7 @@ public class PlayerSkill : MonoBehaviour
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
-            coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 300, 0.5f,3));
+            coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 700, 0.2f,3));
 
         }
     }

@@ -8,16 +8,16 @@ public class KnockBackInfo
     public float power;
     public float knockBackTime;
     public float stunTime;
-    public bool isStun;
-    public KnockBackInfo(Vector3 dir, float power, float knockBackTimer, float stunTime)
+    public bool isLKnockBack;
+    public KnockBackInfo(Vector3 dir, float power, float stunTime, float knockBackTimer)
     {
         this.dir = dir;
         this.power = power;
         this.knockBackTime = knockBackTimer;
         this.stunTime = stunTime;
         if (stunTime >= 2)
-            isStun = true;
+            isLKnockBack = true;
         else
-            isStun = false;
+            isLKnockBack = false;
     }
 }

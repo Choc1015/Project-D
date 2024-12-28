@@ -121,6 +121,7 @@ public class EnemyStateMachine : Human
     private IEnumerator Idle()
     {
         Debug.Log("Entering Idle State");
+        animator.SetTrigger("IDLE");
         while (currentState == EnemyState.Idle)
         {
             // Check if the player is in range
@@ -228,17 +229,19 @@ public class EnemyStateMachine : Human
         animator.SetTrigger("Kncokback");
 
         yield return new WaitForSeconds(info.knockBackTime);
-        ChangeState(EnemyState.Stun);
+        
+        ChangeState(EnemyState.Idle);
         movement.StopMove();
+        if (this.info.isLKnockBack)
+            this.info.isLKnockBack = false;
     }
     private IEnumerator Stun()
     {
         animator.SetTrigger("Stun");
         yield return new WaitForSeconds(info.stunTime);
-        ChangeState(EnemyState.Idle);
+        ChangeState(EnemyState.KnockBack);
         movement.StopMove();
-        if (this.info.isStun)
-            this.info.isStun = false;
+        
     }
     private void AttakToPlayer()
     {
@@ -265,7 +268,7 @@ public class EnemyStateMachine : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        if (this.info !=null&& this.info.isStun)
+        if (this.info !=null&& this.info.isLKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
         // Simulate death for the example

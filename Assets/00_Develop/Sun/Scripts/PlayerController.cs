@@ -45,7 +45,7 @@ public class PlayerController : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
-        if (this.info != null && this.info.isStun)
+        if (this.info != null && this.info.isLKnockBack)
             return;
 
         float damage = attackDamage;
@@ -80,8 +80,8 @@ public class PlayerController : Human
         yield return new WaitForSeconds(info.stunTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
-        if (this.info.isStun)
-            this.info.isStun = false;
+        if (this.info.isLKnockBack)
+            this.info.isLKnockBack = false;
     }
     public void StopMove()
     {
