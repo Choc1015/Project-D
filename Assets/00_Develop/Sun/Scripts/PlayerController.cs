@@ -69,7 +69,7 @@ public class PlayerController : Human
     }
     private IEnumerator KnockBack()
     {
-        yield return new WaitForSeconds(info.stunTime);
+        yield return new WaitForSeconds(info.knockBackTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
         if (this.info.isLKnockBack)
@@ -78,8 +78,9 @@ public class PlayerController : Human
     }
     private IEnumerator Stun()
     {
-        yield return new WaitForSeconds(info.knockBackTime);
         playerState.ChangeState(PlayerState.Stun);
+        yield return new WaitForSeconds(info.stunTime);
+        StartCoroutine(KnockBack());
         movement.StopMove();
     }
     public void StopMove()
