@@ -13,6 +13,7 @@ public class HealDrone : InstallationSkill
     public override void UseSkill()
     {
         targetPlayer.HealHealth(value);
+        targetPlayer.UpdatePlayerUI();
         Debug.Log($"{targetPlayer} Heal ! : {value}");
         base.UseSkill();
     }

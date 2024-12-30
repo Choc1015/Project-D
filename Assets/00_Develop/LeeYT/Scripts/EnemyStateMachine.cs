@@ -242,8 +242,8 @@ public class EnemyStateMachine : Human
         
         ChangeState(EnemyState.Idle);
         movement.StopMove();
-        if (this.info.isLKnockBack)
-            this.info.isLKnockBack = false;
+        if (this.info.isKnockBack)
+            this.info.isKnockBack = false;
     }
     private IEnumerator Stun()
     {
@@ -279,7 +279,7 @@ public class EnemyStateMachine : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        if (this.info !=null&& this.info.isLKnockBack)
+        if (this.info !=null&& this.info.isKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
         // Simulate death for the example

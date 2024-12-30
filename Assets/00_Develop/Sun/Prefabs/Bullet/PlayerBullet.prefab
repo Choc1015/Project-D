@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7983812374658507639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828092840630511892, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_Name
+      value: PlayerBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936153776241845884, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936153776241845884, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4828092840630511892, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4359426609343304250}
+  m_SourcePrefab: {fileID: 100100000, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+--- !u!1 &3300267531998071395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4828092840630511892, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+  m_PrefabInstance: {fileID: 7983812374658507639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4359426609343304250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300267531998071395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34c56c1e4a77c2408ef6f13e0f393c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 8054639012732684714}
+--- !u!114 &8054639012732684714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 75400726704827101, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+  m_PrefabInstance: {fileID: 7983812374658507639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300267531998071395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9243d889b20ae943b53ffb00be318e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
