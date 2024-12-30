@@ -23,16 +23,14 @@ public class EnemyStateMachine : Human
     private float tempAttackOffsetX;
     private bool isAttack = false;
 
-
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
     public float attackRange = 2f; // 공격 범위   
-    public Vector3 AttackOffset;
+    [SerializeField] Vector3 AttackOffset;
     public float AttackDelay = 1f;
     public Animator animator;
 
-
-    void Start()
+    private void Start()
     {
         Initialize();
     }
@@ -45,6 +43,7 @@ public class EnemyStateMachine : Human
         // Start the state machine
         ChangeState(EnemyState.Patrol); // 초기 상태
         tempAttackOffsetX = AttackOffset.x;
+
         if (animator == null)
             Debug.LogError("�ν�����â���� �ִϸ����� �߰���");
     }   
@@ -268,7 +267,8 @@ public class EnemyStateMachine : Human
     {
         Debug.Log("Entering Die State");
         isAlive = false;
-
+        movement.MoveToRigid(Vector3.zero, 0,isAlive);
+        animator.SetTrigger("Die");
         // Play death animation or effects
         Debug.Log("Enemy Died");
 
@@ -285,11 +285,11 @@ public class EnemyStateMachine : Human
         // Simulate death for the example
         if (isAlive)
         {
-
-
             ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
-
-            //ChangeState(EnemyState.Die);
+        }
+        else
+        {
+            ChangeState(EnemyState.Die);
         }
     }
     protected override void DieHuman()
