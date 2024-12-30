@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class PlayerController : Human
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
 
-    
+
 
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
@@ -29,6 +30,7 @@ public class PlayerController : Human
         statController.Init();
         Utility.playerController = this;
         GameManager.Instance.players.Add(this);
+
     }
     void Update()
     {
@@ -44,7 +46,7 @@ public class PlayerController : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
-        if (this.info != null && this.info.isLKnockBack)
+        if (this.info != null && this.info.isKnockBack)
             return;
 
         float damage = attackDamage;
@@ -58,6 +60,8 @@ public class PlayerController : Human
 
             attackHuman.TakeDamage(damage, this, info);
         }
+        if (damage != attackDamage)
+            info.ResetValue();
 
         base.TakeDamage(damage, attackHuman, info);
 
@@ -65,6 +69,10 @@ public class PlayerController : Human
         {
             StartCoroutine(Stun());
         }
+        UpdatePlayerUI();
+    }
+    public void UpdatePlayerUI()
+    {
         playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
     private IEnumerator KnockBack()
@@ -72,8 +80,8 @@ public class PlayerController : Human
         yield return new WaitForSeconds(info.knockBackTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
-        if (this.info.isLKnockBack)
-            this.info.isLKnockBack = false;
+        if (this.info.isKnockBack)
+            this.info.isKnockBack = false;
 
     }
     private IEnumerator Stun()

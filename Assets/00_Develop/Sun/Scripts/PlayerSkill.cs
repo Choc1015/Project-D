@@ -1,14 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class PlayerSkill : MonoBehaviour
 {
     private PlayerController playerController;
+    private BulletController bulletController;
     private bool useDashAttack;
+
+    public Action attackAE; // Attack Additional Effects
     void Start()
     {
         playerController = Utility.playerController;
+        bulletController = GetComponent<BulletController>();
     }
     public void Move_X(float x)
     {
@@ -19,7 +23,6 @@ public class PlayerSkill : MonoBehaviour
         playerController.lookDIr_X = Vector3.right * x;
         playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
         playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
-        Debug.Log("X");
     }
     public void Move_Y(float y)
     {
@@ -29,7 +32,6 @@ public class PlayerSkill : MonoBehaviour
         float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
         playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
-        Debug.Log("Y");
     }
     public void Jump(float x)
     {
@@ -39,7 +41,6 @@ public class PlayerSkill : MonoBehaviour
         float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
         playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
-        Debug.Log($"{x }Jump");
     }
     public void Defense(string defenseType)
     {
@@ -84,6 +85,7 @@ public class PlayerSkill : MonoBehaviour
 
             GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f,0.2f));
         }
+        attackAE?.Invoke();
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
@@ -93,8 +95,13 @@ public class PlayerSkill : MonoBehaviour
     public void Heal(float value)
     {
         playerController.HealHealth(value);
+        playerController.UpdatePlayerUI();
     }
-
+    public void ShotBullet()
+    {
+        float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value*1.2f;
+        bulletController.Shot(playerController.lookDIr_X, 5,attackDamage);
+    }
     public void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.CompareTag("Enemy") && useDashAttack)
