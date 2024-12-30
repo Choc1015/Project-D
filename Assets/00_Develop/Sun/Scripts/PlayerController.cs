@@ -65,7 +65,7 @@ public class PlayerController : Human
         {
             StartCoroutine(Stun());
         }
-        playerUI.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
+        playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
     private IEnumerator KnockBack()
     {

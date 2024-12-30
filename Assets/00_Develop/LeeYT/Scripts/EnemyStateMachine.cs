@@ -59,6 +59,7 @@ public class EnemyStateMachine : Human
         Player = Players[playerIndex];
     }
 
+   
     private void OnDrawGizmos()
     {
         // 공격 범위 시각화
@@ -122,6 +123,7 @@ public class EnemyStateMachine : Human
     {
         Debug.Log("Entering Idle State");
         animator.SetTrigger("IDLE");
+        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
         while (currentState == EnemyState.Idle)
         {
             // Check if the player is in range
@@ -179,13 +181,22 @@ public class EnemyStateMachine : Human
     }
     void FollowPlayer()
     {
-
         moveDir = Player.transform.position - transform.position;
 
         statController.GetStat(StatInfo.MoveSpeed).Value = statController.GetStat(StatInfo.MoveSpeed).GetMaxValue();
 
         if (moveDir != null)
             movement.MoveToRigid(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
+    }
+
+    bool MaxPosition()
+    {
+        if (transform.position.y > 9 || transform.position.y < -3) 
+        {
+            Debug.LogWarning("WWWW");
+            return true;
+        }
+        return false;
     }
 
     private IEnumerator Attack()
@@ -200,18 +211,18 @@ public class EnemyStateMachine : Human
             Debug.Log($"Attacking the player!");
             // Attack Delay
             animator.SetTrigger("Attack");
+           
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
             yield return new WaitForSeconds(AttackDelay);
             // Transition back to Chase if player is out of attack range
             if (Vector3.Distance(AttackHitBox(), Player.transform.position) > attackRange)
             {
-                ChangeState(EnemyState.Chase);
                 isAttack = false;
-                break; // 코루??종료
+                ChangeState(EnemyState.Chase);
+                break;
             }
             else
             {
-               
                 isAttack = true;
             }
 

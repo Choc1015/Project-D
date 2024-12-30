@@ -13,6 +13,19 @@ public class Movement : MonoBehaviour
             rigid.velocity = dir.normalized * moveSpeed;
         }
     }
+    public void MoveToRigid(Vector3 dir, float moveSpeed, bool isMaxPosion)
+    {
+        if (rigid != null)
+        {
+            rigid.velocity = dir.normalized * moveSpeed;
+            if (isMaxPosion)
+            {
+                Vector3 newVelocity = rigid.velocity; // 현재 속도 가져오기
+                newVelocity.y = -dir.normalized.y;                    // Y축 속도 설정
+                rigid.velocity = newVelocity;         // 수정된 속도 적용
+            }
+        }
+    }
     public void MoveToTrans(Vector3 dir, float moveSpeed)
     {
         transform.Translate(dir.normalized * moveSpeed * Time.deltaTime);
