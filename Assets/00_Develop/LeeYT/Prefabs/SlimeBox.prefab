@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9076803617896792355}
   - component: {fileID: 5052507040829975301}
   - component: {fileID: 2747827834226446885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SlimeBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3236070059838989046}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.8343287, y: -1.7104832, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_ConstrainProportionsScale: 1
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7b9eec6d0c69a409adc6c3a08e6fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 2567374400816890139, guid: c701071e215a1c94a8e3d40d57a395ee, type: 3}
+  Prefab: {fileID: 5900883183592929909, guid: b66236e254420404eaaff1bab1e8194b, type: 3}
+  WaveCount: 1
 --- !u!1 &8985923791598942724
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1089676662591167066}
   - component: {fileID: 7384957517862521133}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CharImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
