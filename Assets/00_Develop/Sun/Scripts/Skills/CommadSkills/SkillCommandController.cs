@@ -20,7 +20,6 @@ public class SkillCommandController : MonoBehaviour
         {
             skillCommand.Init(this);
         }
-        
     }
 
     

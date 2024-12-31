@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerController : Human
 {
     [SerializeField] private SkillCommandController skillController;
+    [SerializeField] private SkillFunctionController skillFunctionsController;
     [SerializeField] private PlayerUI playerUI;
 
     public Transform attackPos;
@@ -32,17 +33,22 @@ public class PlayerController : Human
         Utility.playerController = this;
         GameManager.Instance.players.Add(this);
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UpCanvas").transform);
-
+        skillSwapUI.Init(skillFunctionsController);
     }
-    void Update()
+    private void Update()
     {
         spriteLight?.ChangeSprite();
+        transform.position = GameManager.Instance.clampPos.GetClampPosition(transform);
+    }
+    void LateUpdate()
+    {
+        
         if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
             sprite.flipX = lookDIr_X.x == -1 ? true : false;
         }
-
+        
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
 

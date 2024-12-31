@@ -7,15 +7,28 @@ public class SkillSwap : MonoBehaviour
 {
     [SerializeField] private List<Transform> skillImages= new();
     [SerializeField] private Vector3[] pos;
+    [SerializeField] private SkillFunctionController skill;
     
     private void Update()
     {
         transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q))
+        {
+            skill.SetAllDisable();
+            DisableSkillSwap();
+        }
+    }
+    public void Init(SkillFunctionController skill)
+    {
+        this.skill = skill;
     }
     public void ActiveSkillSwap()
     {
         if (!gameObject.activeInHierarchy)
+        {
             gameObject.SetActive(true);
+            transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
+        }
         else
             Swap();
     }
@@ -32,6 +45,7 @@ public class SkillSwap : MonoBehaviour
             SettingSkillImage(i, skillImages[i + 1]);
         }
         SettingSkillImage(skillImages.Count - 1, temp);
+        skill.ChangeSkill();
     }
     private void SettingSkillImage(int index,Transform t)
     {
