@@ -38,7 +38,8 @@ public class PlayerController : Human
     private void Update()
     {
         spriteLight?.ChangeSprite();
-        transform.position = GameManager.Instance.clampPos.GetClampPosition(transform);
+        
+        transform.position = GameManager.Instance.GetClampPosition(transform);
     }
     void LateUpdate()
     {
