@@ -8,8 +8,8 @@ public class L_CameraController : MonoBehaviour
 
     private void Start()
     {
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //playerTrans = player.transform;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerTrans = player.transform;
     }
 
     void Update()
