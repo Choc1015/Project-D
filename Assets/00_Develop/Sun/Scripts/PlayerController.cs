@@ -42,12 +42,10 @@ public class PlayerController : Human
     }
     private void Update()
     {
-        
-        
         if (!pv.IsMine)
             return;
 
-        pv.RPC("UpdateSprite", RpcTarget.All, lookDIr_X.x == -1 ? true : false);        
+        spriteLight?.ChangeSprite();
         transform.position = GameManager.Instance.clampPos.GetClampPosition(transform);
     }
     void LateUpdate()
@@ -58,7 +56,7 @@ public class PlayerController : Human
         if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
-            
+            sprite.flipX = lookDIr_X.x == -1 ? true : false;
         }
         
     }
@@ -90,12 +88,6 @@ public class PlayerController : Human
             StartCoroutine(Stun());
         }
         UpdatePlayerUI();
-    }
-    [PunRPC]
-    public void UpdateSprite(bool isFlip)
-    {
-        spriteLight?.ChangeSprite();
-        sprite.flipX = isFlip;
     }
     public void UpdatePlayerUI()
     {

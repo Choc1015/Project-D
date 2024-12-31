@@ -186,10 +186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 3085900839097599171, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: ObservedComponents.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
