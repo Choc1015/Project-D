@@ -6,7 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-
     path: Assets/00_Develop/Sun/Scenes/Test_Alpah_Sun.unity
     guid: 71cd2bc69cb86e944920dce62028c0a3
 
