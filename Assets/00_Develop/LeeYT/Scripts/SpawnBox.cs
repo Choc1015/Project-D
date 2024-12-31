@@ -10,26 +10,29 @@ public class SpawnBox : MonoBehaviour
 
     private void OnEnable()
     {
-        WaveManager.OnWaveStart += WaveStart;
+        WaveManager.OnWaveStart += SpawnEnemy;
     }
 
     private void OnDisable()
     {
-        WaveManager.OnWaveStart -= WaveStart;
+        WaveManager.OnWaveStart -= SpawnEnemy;
     }
     private void Start()
     {
 
     }
 
-    private void WaveStart(int wavePoint)
+    private void SpawnEnemy(int wavePoint)
     {
-        if(wavePoint == WavePoint.Instance.waveCount && gameObject.activeSelf)
+
+        if (wavePoint == WaveCount)
         {
-            var enemy = ObjectPoolManager.Instance.SpawnFromPool(Prefab.name, transform.position);
+            GameObject enemy = ObjectPoolManager.Instance.SpawnFromPool(Prefab.name, transform.position);
             gameObject.SetActive(false);
-            Debug.Log("利 积己");
+            Debug.Log($"利 积己 胶迄 锅龋{wavePoint} , 傀捞宏 备开 锅龋");
         }
+
+
         // 利 积己
     }
 }

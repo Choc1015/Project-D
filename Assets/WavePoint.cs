@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WavePoint : Singleton<WavePoint>
+public class WavePoint : MonoBehaviour
 {
     [SerializeField] private Vector3 waveCheck;
     public int waveCount = 1;
@@ -22,13 +22,13 @@ public class WavePoint : Singleton<WavePoint>
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, waveCheck);
 
-     
+
 
         // 플레이어와 적 사이의 연결 선 그리기
         if (Player != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if (Mathf.Abs(Player.transform.position.x - transform.position.x) <= waveCheck.x/2f)
+            if (Mathf.Abs(Player.transform.position.x - transform.position.x) <= waveCheck.x / 2f)
             {
                 Debug.Log("플레이어가 범위 내에 있을 때 초록색 선");
                 Gizmos.color = Color.green;
@@ -36,7 +36,7 @@ public class WavePoint : Singleton<WavePoint>
                 WaveManager.WaveStart(waveCount);
                 isWave = true;
             }
-                      
+
         }
     }
     private void FindPlayers()
