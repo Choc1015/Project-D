@@ -29,6 +29,7 @@ public class SpawnBox : MonoBehaviour
         {
             GameObject enemy = ObjectPoolManager.Instance.SpawnFromPool(Prefab.name, transform.position);
             gameObject.SetActive(false);
+            StageManager.Instance.WaveEnemyCount++;
             Debug.Log($"적 생성 스폰 번호{wavePoint} , 웨이브 구역 번호");
         }
 

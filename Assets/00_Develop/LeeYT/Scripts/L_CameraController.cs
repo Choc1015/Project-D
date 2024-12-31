@@ -5,8 +5,7 @@ public class L_CameraController : MonoBehaviour
     private Transform playerTrans; // 플레이어의 Transform
     public float FollowDistance = 12.5f; // 기준 거리
     public float SmoothSpeed = 5f; // 부드럽게 이동하는 속도
-    public bool IsFighting = false;
-    
+
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -20,9 +19,9 @@ public class L_CameraController : MonoBehaviour
 
     private void FollowCamera()
     {
-        if (playerTrans == null)
+        if (StageManager.Instance.IsStopCamera)
             return;
-        if (IsFighting)
+        if (playerTrans == null)
             return;
 
         // 카메라와 플레이어 사이의 거리 계산

@@ -28,12 +28,13 @@ public class WavePoint : MonoBehaviour
         if (Player != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if (Mathf.Abs(Player.transform.position.x - transform.position.x) <= waveCheck.x / 2f)
+            if ((transform.position.x - Player.transform.position.x) <= (-waveCheck.x / 2f + 2f))
             {
                 Debug.Log("플레이어가 범위 내에 있을 때 초록색 선");
                 Gizmos.color = Color.green;
                 Gizmos.DrawWireCube(transform.position, waveCheck);
                 WaveManager.WaveStart(waveCount);
+                StageManager.Instance.IsStopCamera = true;
                 isWave = true;
             }
 

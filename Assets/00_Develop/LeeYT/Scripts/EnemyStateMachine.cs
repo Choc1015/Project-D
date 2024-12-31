@@ -103,7 +103,7 @@ public class EnemyStateMachine : Human
             Debug.Log("왼쪽");
         }
         else
-        {
+        {   
             transform.localScale = new Vector3(1, 1, 1);
             AttackOffset.x = -tempAttackOffsetX;
         }
@@ -269,6 +269,10 @@ public class EnemyStateMachine : Human
         isAlive = false;
         movement.MoveToRigid(Vector3.zero, 0,isAlive);
         animator.SetTrigger("Die");
+        if(StageManager.Instance.WaveEnemyCount > 0)
+        {
+            StageManager.Instance.WaveEnemyCount--;
+        }
         // Play death animation or effects
         Debug.Log("Enemy Died");
 
