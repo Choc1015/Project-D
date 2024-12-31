@@ -37,7 +37,7 @@ public class PlayerController : Human
         statController.Init();
         Utility.playerController = this;
         GameManager.Instance.players.Add(this);
-        skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UpCanvas").transform);
+        skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);
     }
     private void Update()

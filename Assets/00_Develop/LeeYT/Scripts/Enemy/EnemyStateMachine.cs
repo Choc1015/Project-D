@@ -99,8 +99,6 @@ public class EnemyStateMachine : Human
         {
             transform.localScale = new Vector3(-1, 1, 1);
             AttackOffset.x = tempAttackOffsetX;
-
-            Debug.Log("왼쪽");
         }
         else
         {   

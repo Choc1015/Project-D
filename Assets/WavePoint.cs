@@ -12,7 +12,6 @@ public class WavePoint : MonoBehaviour
 
     private void Start()
     {
-        FindPlayers();
     }
 
 
@@ -22,32 +21,30 @@ public class WavePoint : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, waveCheck);
 
-
-
-        // 플레이어와 적 사이의 연결 선 그리기
-        if (Player != null)
-        {
-            // 플레이어가 범위 내에 있을 때 초록색 선
-            if ((transform.position.x - Player.transform.position.x) <= (-waveCheck.x / 2f + 2f))
-            {
-                Debug.Log("플레이어가 범위 내에 있을 때 초록색 선");
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireCube(transform.position, waveCheck);
-                WaveManager.WaveStart(waveCount);
-                StageManager.Instance.IsStopCamera = true;
-                isWave = true;
-            }
-
-        }
-    }
-    private void FindPlayers()
-    {
-        GameObject[] Players;
-        if ((Players = GameObject.FindGameObjectsWithTag("Player")) == null)
+        if (!StageManager.Instance.IsStart)
             return;
-        Debug.Log("플레이어 있음");
-        int playerIndex = Random.Range(0, Players.Length);
-        Player = Players[playerIndex];
+
+            // 플레이어와 적 사이의 연결 선 그리기
+            if (Player != null)
+            {
+                // 플레이어가 범위 내에 있을 때 초록색 선
+                if ((transform.position.x - Player.transform.position.x) <= (-waveCheck.x / 2f + 2f))
+                {
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawWireCube(transform.position, waveCheck);
+                    WaveManager.WaveStart(waveCount);
+                    if (StageManager.Instance.WaveEnemyCount != 0)
+                        StageManager.Instance.IsStopCamera = true;
+                    isWave = true;
+                }
+
+            }
+            else
+            {
+
+                Utility.FindPlayers(ref Player);
+            }
     }
+
 
 }
