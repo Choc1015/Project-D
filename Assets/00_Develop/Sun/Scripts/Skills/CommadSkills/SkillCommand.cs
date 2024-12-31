@@ -105,12 +105,14 @@ public class SkillCommand
         {
             if (isHold)
                 trigger = true;
-            action?.Invoke();
 
+            action?.Invoke();
+            
             if (nextAction > 0)
                 controller.UsingCommand(nextAction, this);
 
             inputList.Clear(); // 성공 시 입력 버퍼 초기화
+            
         }
     }
     private bool StopCommand()

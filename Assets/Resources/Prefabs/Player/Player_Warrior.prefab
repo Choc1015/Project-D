@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3085900839097599171, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.size
       value: 14
@@ -383,6 +387,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].isHold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillCommands.Array.data[6].isDisable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
@@ -459,7 +467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[0].command.Array.data[0]
-      value: 276
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[4].command.Array.data[0]
@@ -471,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[4].command.Array.data[2]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].command.Array.data[0]
@@ -483,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].command.Array.data[2]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[6].command.Array.data[0]
@@ -499,7 +507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[7].command.Array.data[1]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[7].commandInputTimeLimit
@@ -511,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[8].command.Array.data[1]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[8].commandInputTimeLimit
@@ -519,7 +527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[9].command.Array.data[0]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[9].commandInputTimeLimit
@@ -756,7 +764,7 @@ PrefabInstance:
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[0]
       value: 
-      objectReference: {fileID: 8500858823146571754}
+      objectReference: {fileID: 4291171547576047472}
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[1]
       value: 
@@ -764,7 +772,7 @@ PrefabInstance:
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[2]
       value: 
-      objectReference: {fileID: 4291171547576047472}
+      objectReference: {fileID: 8500858823146571754}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

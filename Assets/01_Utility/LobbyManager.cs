@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    
+    public bool isJoin;
     void Awake()
     {
         Debug.Log(" started");
@@ -21,7 +21,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby!");
-        PhotonNetwork.CreateRoom("TestRoom"); // 号 持失
+        if (isJoin)
+            JoinRoom("TestRoom");
+        else
+            PhotonNetwork.CreateRoom("TestRoom"); // 号 持失
     }
     public void CreateRoom(string roomName)
     {
