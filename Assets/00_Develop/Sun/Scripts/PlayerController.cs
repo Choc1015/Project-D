@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-
+using Photon;
+using Photon.Pun;
 
 public class PlayerController : Human
 {
@@ -26,9 +27,13 @@ public class PlayerController : Human
 
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
+    public PhotonView pv;
 
     void Awake()
     {
+        if (!pv.IsMine)
+            return;
+
         statController.Init();
         Utility.playerController = this;
         GameManager.Instance.players.Add(this);
@@ -37,12 +42,17 @@ public class PlayerController : Human
     }
     private void Update()
     {
+        if (!pv.IsMine)
+            return;
+
         spriteLight?.ChangeSprite();
         transform.position = GameManager.Instance.clampPos.GetClampPosition(transform);
     }
     void LateUpdate()
     {
-        
+        if (!pv.IsMine)
+            return;
+
         if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
