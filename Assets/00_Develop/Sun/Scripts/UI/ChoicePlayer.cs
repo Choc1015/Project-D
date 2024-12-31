@@ -9,6 +9,9 @@ public class ChoicePlayer : MonoBehaviour
     public void OnClick_Choice()
     {
         PhotonNetwork.Instantiate($"Prefabs/Player/{playerName}", Vector3.zero, Quaternion.identity);
+        Utility.SetPlayer(GameObject.FindGameObjectWithTag("Player"));
+        L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
+        StageManager.Instance.IsStart = true;
         transform.parent.gameObject.SetActive(false);
     }
 }

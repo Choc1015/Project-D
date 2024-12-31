@@ -25,7 +25,6 @@ public class Human : MonoBehaviour
             this.info = info;
             info.dir = transform.position- attackHuman.transform.position;
             info.dir.y = 0;
-            Debug.Log(info.dir);
             movement.KnockBack(info);
         }
         //if (setStateName == "KnockBack")

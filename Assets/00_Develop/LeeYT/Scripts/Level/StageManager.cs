@@ -7,6 +7,7 @@ public class StageManager : Singleton<StageManager>
 {
     public int WaveEnemyCount;
     public bool IsStopCamera= false;
+    public bool IsStart = false;
 
     private void Update()
     {
