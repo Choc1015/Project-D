@@ -14,10 +14,10 @@ TagManager:
   - UI
   - OverUI
   - SceneOnly
-  - 
-  - 
-  - 
-  - 
+  - PlayerBox
+  - VerticalWall
+  - HorizontalWall
+  - EnemyBox
   - 
   - 
   - Enemy
