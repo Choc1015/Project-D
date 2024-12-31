@@ -263,6 +263,7 @@ MonoBehaviour:
   statController: {fileID: 219253064508369906}
   movement: {fileID: 5212341399615060278}
   skillController: {fileID: 5786086227377823556}
+  skillFunctionsController: {fileID: 7895550839927921383}
   playerUI: {fileID: 0}
   attackPos: {fileID: 2802133101412206790}
   sprite: {fileID: 1258926530325127277}
@@ -343,18 +344,6 @@ MonoBehaviour:
     action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7895550839927921383}
-          m_TargetAssemblyTypeName: SkillFunctionController, Assembly-CSharp
-          m_MethodName: ChangeSkill
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 7642723346707854220}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: ActiveSkillSwap
@@ -524,7 +513,7 @@ MonoBehaviour:
     nextAction: 0.2
     isDisable: 0
   - Name: Sliding_Left
-    command: 120100001401000064000000
+    command: 120100001401000073000000
     action:
       m_PersistentCalls:
         m_Calls:
@@ -549,7 +538,7 @@ MonoBehaviour:
     nextAction: 0.3
     isDisable: 0
   - Name: Sliding_Right
-    command: 120100001301000064000000
+    command: 120100001301000073000000
     action:
       m_PersistentCalls:
         m_Calls:
@@ -581,18 +570,6 @@ MonoBehaviour:
         - m_Target: {fileID: 7581687510746911494}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
           m_MethodName: Attack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7642723346707854220}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: DisableSkillSwap
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

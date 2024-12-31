@@ -8,6 +8,7 @@ public class PlayerBullet : Bullet
     {
         if (coll.CompareTag("Enemy"))
         {
+            Debug.Log("Hit Enemy");
             coll.GetComponent<Human>().TakeDamage(attackDamage, Utility.playerController, new KnockBackInfo(Vector3.zero, 150, 0.2f, 0.3f));
             CancelInvoke();
             DespawnBullet();

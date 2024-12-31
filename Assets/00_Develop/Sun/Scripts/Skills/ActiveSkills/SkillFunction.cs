@@ -14,7 +14,7 @@ public class SkillFunction : MonoBehaviour
     public void Init(SkillFunctionController controller)
     {
         this.controller = controller;
-        command.action.AddListener(()=> controller.player.playerState.ChangeState(PlayerState.Animation));
+        command.action.AddListener(() => controller.player.playerState.ChangeState(PlayerState.Animation));
         command.action.AddListener(() => Invoke("InvokeAction", invokeTimer));
         command.Init(controller.commandController);
     }

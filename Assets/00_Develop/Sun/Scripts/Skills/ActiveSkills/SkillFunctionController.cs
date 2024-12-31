@@ -10,7 +10,6 @@ public class SkillFunctionController : MonoBehaviour
     public SkillCommandController commandController;
     private int currentSkillIndex;
     private bool[] isInit;
-    
     void Start()
     {
         isInit = new bool[skillFunctions.Length];
@@ -21,6 +20,7 @@ public class SkillFunctionController : MonoBehaviour
 
     public void ChangeSkill()
     {
+        
         if(currentSkillIndex >= 0)
         {
             skillFunctions[currentSkillIndex].command.isDisable = true;
@@ -37,5 +37,17 @@ public class SkillFunctionController : MonoBehaviour
             skillFunctions[currentSkillIndex].Init(this);
             isInit[currentSkillIndex] = true;
         }
+    }
+    public void SetAllDisable()
+    {
+        foreach(SkillFunction skillFunction in skillFunctions)
+        {
+            skillFunction.command.isDisable = true;
+        }
+        Invoke("ResetValue", 0.2f);
+    }
+    public void ResetValue()
+    {
+        skillFunctions[currentSkillIndex].command.isDisable = false;
     }
 }

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   command:
-    Name: PlasmaBolt
+    Name: TimeStop
     command: 71000000
     action:
       m_PersistentCalls:
