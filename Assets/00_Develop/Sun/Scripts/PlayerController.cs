@@ -20,7 +20,8 @@ public class PlayerController : Human
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
 
-
+    [SerializeField] private SkillSwap skillSwapPrefab;
+    public SkillSwap skillSwapUI;
 
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
@@ -30,6 +31,7 @@ public class PlayerController : Human
         statController.Init();
         Utility.playerController = this;
         GameManager.Instance.players.Add(this);
+        skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UpCanvas").transform);
 
     }
     void Update()
@@ -104,6 +106,14 @@ public class PlayerController : Human
     public void ResetState()
     {
         playerState.ChangeState(PlayerState.Idle);
+    }
+    public void ActiveSkillSwap()
+    {
+        skillSwapUI.ActiveSkillSwap();
+    }
+    public void DisableSkillSwap()
+    {
+        skillSwapUI.DisableSkillSwap();
     }
     private void OnDrawGizmos()
     {

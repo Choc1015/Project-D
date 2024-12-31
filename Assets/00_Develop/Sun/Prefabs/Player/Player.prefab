@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7311607307226342024}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.3137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f4a10eff01b274cab9530d36cc6cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 7642723346707854220}
   skillFunctions:
   - {fileID: 0}
   - {fileID: 0}
@@ -272,6 +272,8 @@ MonoBehaviour:
   lookDIr_X: {x: 0, y: 0, z: 0}
   spriteLight: {fileID: 4301083112342461842}
   defenseType: 
+  skillSwapPrefab: {fileID: 0}
+  skillSwapUI: {fileID: 0}
 --- !u!114 &219253064508369906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,13 +339,25 @@ MonoBehaviour:
     nextAction: 0
     isDisable: 0
   - Name: ChangeSKill
-    command: 09000000
+    command: 64000000
     action:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 7895550839927921383}
           m_TargetAssemblyTypeName: SkillFunctionController, Assembly-CSharp
           m_MethodName: ChangeSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: ActiveSkillSwap
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -576,6 +590,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 7642723346707854220}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: DisableSkillSwap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 1
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -585,7 +611,7 @@ MonoBehaviour:
     nextAction: 1
     isDisable: 0
   - Name: Jump_Left
-    command: 1401000064000000
+    command: 1401000073000000
     action:
       m_PersistentCalls:
         m_Calls:
@@ -610,7 +636,7 @@ MonoBehaviour:
     nextAction: 0.8
     isDisable: 0
   - Name: Jump_Right
-    command: 1301000064000000
+    command: 1301000073000000
     action:
       m_PersistentCalls:
         m_Calls:
@@ -635,7 +661,7 @@ MonoBehaviour:
     nextAction: 0.8
     isDisable: 0
   - Name: Jump
-    command: 64000000
+    command: 73000000
     action:
       m_PersistentCalls:
         m_Calls:
