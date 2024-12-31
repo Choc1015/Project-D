@@ -1,0 +1,293 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1220479013550761444
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4570000139008813244}
+  - component: {fileID: 5612129168702437859}
+  - component: {fileID: 1002847780304950838}
+  m_Layer: 0
+  m_Name: PlasmaBolt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4570000139008813244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220479013550761444}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7934943836675884401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5612129168702437859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220479013550761444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command:
+    Name: PlasmaBolt
+    command: 71000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1002847780304950838}
+          m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
+          m_MethodName: UseSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 0
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
+    commandInputTimeLimit: 0.2
+    isKeyDown: 1
+    isHold: 0
+    nextAction: 0.4
+    isDisable: 0
+  skillObj: {fileID: 0}
+  invokeTimer: 0
+--- !u!114 &1002847780304950838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220479013550761444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277e5643899f2e244bff6a299423e06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletController: {fileID: 6703085358552638442}
+  skills: {fileID: 7873700496637960509}
+  timer: 1
+--- !u!1 &4617998776705947867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6527362619603940427}
+  - component: {fileID: 7361624666965416831}
+  - component: {fileID: 8689215378070039980}
+  m_Layer: 0
+  m_Name: TimeStop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6527362619603940427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617998776705947867}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7934943836675884401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7361624666965416831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617998776705947867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command:
+    Name: PlasmaBolt
+    command: 71000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8689215378070039980}
+          m_TargetAssemblyTypeName: TimeStop, Assembly-CSharp
+          m_MethodName: UseSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 0
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
+    commandInputTimeLimit: 0.2
+    isKeyDown: 1
+    isHold: 0
+    nextAction: 0.4
+    isDisable: 0
+  skillObj: {fileID: 0}
+  invokeTimer: 0
+--- !u!114 &8689215378070039980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617998776705947867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea04744a94857914386796de7990f505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSkill: {fileID: 7873700496637960509}
+--- !u!1001 &320477392424006203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Name
+      value: Player_Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillSwapPrefab
+      value: 
+      objectReference: {fileID: 46262557254012205, guid: b7dc695ad87a1544eaa88b6f61c68bab, type: 3}
+    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillFunctions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillFunctions.Array.data[0]
+      value: 
+      objectReference: {fileID: 5612129168702437859}
+    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillFunctions.Array.data[1]
+      value: 
+      objectReference: {fileID: 7361624666965416831}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4570000139008813244}
+    - targetCorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6527362619603940427}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6703085358552638442}
+  m_SourcePrefab: {fileID: 100100000, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+--- !u!1 &2829289749185242726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+  m_PrefabInstance: {fileID: 320477392424006203}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6703085358552638442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829289749185242726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6ec020f32884c45ab9ec35d323587b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 4359426609343304250, guid: 1039c3b3f59b623479dc72ab945ecf3b, type: 3}
+  createCount: 5
+--- !u!114 &7873700496637960509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7581687510746911494, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+  m_PrefabInstance: {fileID: 320477392424006203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829289749185242726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6885c8a403417bc4fbbee6e4d91d7140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &7934943836675884401 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+  m_PrefabInstance: {fileID: 320477392424006203}
+  m_PrefabAsset: {fileID: 0}

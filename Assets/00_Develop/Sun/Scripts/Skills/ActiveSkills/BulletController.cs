@@ -13,6 +13,7 @@ public class BulletController : MonoBehaviour
     {
         Transform spawnManager = GameObject.Find("SpawnManager").transform;
         bulletObjPool = new ObjectPool<Bullet>(bulletPrefab, createCount, spawnManager);
+        Debug.Log("Spawn");
     }
 
     public void Shot(Vector3 dir, float speed, float attackDamage)

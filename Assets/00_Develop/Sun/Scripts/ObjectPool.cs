@@ -18,7 +18,7 @@ public class ObjectPool<T> where T : MonoBehaviour
     {
         for(int i = 0; i < createCount; i++)
         {
-            objTemp = GameObject.Instantiate(prefab);
+            objTemp = GameObject.Instantiate(prefab, parent);
             objTemp.gameObject.SetActive(false);
             objects.Enqueue(objTemp);
         }
