@@ -45,7 +45,7 @@ public class WavePoint : MonoBehaviour
         GameObject[] Players;
         if ((Players = GameObject.FindGameObjectsWithTag("Player")) == null)
             return;
-        Debug.Log("플레이어 있음");
+
         int playerIndex = Random.Range(0, Players.Length);
         Player = Players[playerIndex];
     }
