@@ -267,10 +267,7 @@ public class EnemyStateMachine : Human
         isAlive = false;
         movement.MoveToRigid(Vector3.zero, 0,isAlive);
         animator.SetTrigger("Die");
-        if(StageManager.Instance.WaveEnemyCount > 0)
-        {
-            StageManager.Instance.WaveEnemyCount--;
-        }
+        
         // Play death animation or effects
         Debug.Log("Enemy Died");
 
@@ -292,6 +289,10 @@ public class EnemyStateMachine : Human
         else
         {
             ChangeState(EnemyState.Die);
+            if (StageManager.Instance.WaveEnemyCount > 0)
+            {
+                StageManager.Instance.WaveEnemyCount--;
+            }
         }
     }
     protected override void DieHuman()
