@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 5316237887173578074}
   - component: {fileID: 3085900839097599171}
   - component: {fileID: 5080232474673827220}
+  - component: {fileID: 6796869761895083089}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -277,6 +278,7 @@ MonoBehaviour:
   defenseType: 
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
+  maxCombo: 0
   pv: {fileID: 3085900839097599171}
 --- !u!114 &219253064508369906
 MonoBehaviour:
@@ -873,6 +875,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 5080232474673827220}
+  - {fileID: 6796869761895083089}
   - {fileID: 2374952452711166982}
   sceneViewId: 0
   InstantiationId: 0
@@ -893,6 +896,22 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 0
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &6796869761895083089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535870140066485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 0
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &3358986231070291462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,6 +1058,21 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: isMove
+  - Type: 9
+    SynchronizeType: 2
+    Name: Attack
+  - Type: 3
+    SynchronizeType: 2
+    Name: Combo
+  - Type: 9
+    SynchronizeType: 2
+    Name: Stun
+  - Type: 9
+    SynchronizeType: 2
+    Name: KnockBack
+  - Type: 9
+    SynchronizeType: 2
+    Name: EndKnockBack
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
