@@ -9,6 +9,7 @@ public class PlayerSkill : MonoBehaviour
     private bool useDashAttack;
 
     public Action attackAE; // Attack Additional Effects
+
     void Start()
     {
         playerController = Utility.playerController;
@@ -84,7 +85,9 @@ public class PlayerSkill : MonoBehaviour
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
             GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f,0.2f));
+
         }
+        playerController.Combo();
         attackAE?.Invoke();
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)

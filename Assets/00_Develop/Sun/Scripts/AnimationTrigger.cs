@@ -13,4 +13,8 @@ public class AnimationTrigger : MonoBehaviour
         else
             anim.SetTrigger(triggerName);
     }
+    public void SetIntegerAnim(string triggerName, int num)
+    {
+        anim.SetInteger(triggerName, num);
+    }
 }

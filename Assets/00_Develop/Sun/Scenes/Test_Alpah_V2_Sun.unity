@@ -12291,6 +12291,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraBundle
       objectReference: {fileID: 0}
+    - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
+      propertyPath: orthographic size
+      value: 7.4068537
+      objectReference: {fileID: 0}
     - target: {fileID: 8328019137259904526, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
