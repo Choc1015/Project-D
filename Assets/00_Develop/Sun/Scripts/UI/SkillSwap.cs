@@ -14,7 +14,7 @@ public class SkillSwap : MonoBehaviour
         transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q))
         {
-            skill.SetAllDisable();
+            skill.SetAllDisable(0.2f);
             DisableSkillSwap();
         }
     }

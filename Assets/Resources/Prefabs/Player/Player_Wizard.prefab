@@ -73,6 +73,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 0
 --- !u!114 &1002847780304950838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,6 +162,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 0
 --- !u!114 &8689215378070039980
 MonoBehaviour:
   m_ObjectHideFlags: 0
