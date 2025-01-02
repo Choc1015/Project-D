@@ -63,12 +63,24 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 3457754978416590071}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ElectricityShock
+            m_BoolArgument: 1
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
     commandInputTimeLimit: 0.2
     isKeyDown: 1
-    isHold: 1
+    isHold: 0
     nextAction: 0.2
     isDisable: 0
   skillObj: {fileID: 0}
@@ -101,7 +113,7 @@ GameObject:
   - component: {fileID: 4542467450819561701}
   - component: {fileID: 7522876058856337979}
   m_Layer: 0
-  m_Name: Defense
+  m_Name: ReflectionDefense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,6 +180,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
           m_MethodName: StopMove
           m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3457754978416590071}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -283,6 +307,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 3457754978416590071}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: DashAttack
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
@@ -808,6 +844,22 @@ PrefabInstance:
       propertyPath: skillFunctions.Array.data[2]
       value: 
       objectReference: {fileID: 8500858823146571754}
+    - target: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: soundDatas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: soundDatas.Array.data[0].name
+      value: ElectricityShock
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: soundDatas.Array.data[1].name
+      value: ReflectionDefense
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: soundDatas.Array.data[2].name
+      value: DashAttack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -847,5 +899,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c56922613c49124cab4e4efbec5a0c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3457754978416590071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+  m_PrefabInstance: {fileID: 4703048871723883131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

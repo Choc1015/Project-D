@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 3085900839097599171}
   - component: {fileID: 5080232474673827220}
   - component: {fileID: 6796869761895083089}
+  - component: {fileID: 7978408020662855308}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -279,6 +280,7 @@ MonoBehaviour:
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
   maxCombo: 0
+  soundController: {fileID: 0}
   pv: {fileID: 3085900839097599171}
 --- !u!114 &219253064508369906
 MonoBehaviour:
@@ -912,6 +914,19 @@ MonoBehaviour:
   m_SynchronizeRotation: 0
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &7978408020662855308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535870140066485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas: []
 --- !u!1 &3358986231070291462
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,8 @@ public class PlayerController : Human
     public int maxCombo;
     private int attackCombo;
     private float comboTimer;
+
+    public SoundController soundController;
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
     public PhotonView pv;
