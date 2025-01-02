@@ -36,6 +36,7 @@ public class PlayerController : Human
 
         statController.Init();
         Utility.playerController = this;
+        L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         GameManager.Instance.players.Add(this);
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);

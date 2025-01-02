@@ -25,9 +25,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined Lobby!");
         if (isJoin)
-            CreateRoom(roomName);
+            JoinRoom(roomName);
         else
-            JoinRoom(roomName); // 号 持失
+            CreateRoom(roomName); // 号 持失
     }
     public void CreateRoom(string roomName)
     {

@@ -4115,6 +4115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WaveEnemyCount: 0
   IsStopCamera: 0
+  IsStart: 0
 --- !u!1 &417062589
 GameObject:
   m_ObjectHideFlags: 0
@@ -14557,6 +14558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a2806abb857cb45b81b9653869ab3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isJoin: 0
+  roomName: lll
 --- !u!4 &1367287557
 Transform:
   m_ObjectHideFlags: 0
