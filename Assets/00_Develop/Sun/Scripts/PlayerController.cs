@@ -45,6 +45,7 @@ public class PlayerController : Human
         GameManager.Instance.players.Add(this);
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);
+        playerUI = GameObject.Find("PlayerUI_1").GetComponent<PlayerUI>();
     }
     [PunRPC]
     public void LocalUpdate(bool flipX)
@@ -102,6 +103,8 @@ public class PlayerController : Human
     {
         if (this.info != null && this.info.isKnockBack)
             return;
+
+        soundController.PlayOneShotSound("Hit");
 
         float damage = attackDamage;
         if (defenseType == "BasicDefense")

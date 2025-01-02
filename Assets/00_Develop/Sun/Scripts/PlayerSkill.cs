@@ -38,7 +38,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
             return;
-
+        playerController.soundController.PlayOneShotSound("Jump");
         float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
         playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
@@ -58,7 +58,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
             return;
-
+        playerController.soundController.PlayOneShotSound("Sliding");
         playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
     }
@@ -87,6 +87,7 @@ public class PlayerSkill : MonoBehaviour
             GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f,0.2f));
 
         }
+        playerController.soundController.PlayOneShotSound("Swing");
         playerController.Combo();
         attackAE?.Invoke();
     }
@@ -110,7 +111,7 @@ public class PlayerSkill : MonoBehaviour
         if(coll.CompareTag("Enemy") && useDashAttack)
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
-
+            playerController.soundController.PlayOneShotSound("SlidingHit");
             coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 700, 0.3f,3));
 
         }

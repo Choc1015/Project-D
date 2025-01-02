@@ -29,12 +29,12 @@ public class EnemyStateMachine : Human
     [SerializeField] Vector3 AttackOffset;
     public float AttackDelay = 1f;
     public Animator animator;
-
+    public SoundController soundController;
+    public CloneLight spriteLight;
     private void Start()
     {
         Initialize();
     }
-
     private void Initialize()
     {
         statController.Init();
@@ -278,6 +278,9 @@ public class EnemyStateMachine : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
+        if (!isAlive)
+            return;
+
         if (this.info !=null&& this.info.isKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
@@ -294,6 +297,7 @@ public class EnemyStateMachine : Human
                 StageManager.Instance.WaveEnemyCount--;
             }
         }
+        soundController.PlayOneShotSound("Hit");
     }
     protected override void DieHuman()
     {
