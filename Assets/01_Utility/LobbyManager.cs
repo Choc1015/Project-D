@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.Rendering;
+
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
-    
+    public bool isJoin;
+    public string roomName;
     void Awake()
     {
         Debug.Log(" started");
@@ -21,7 +24,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby!");
-        PhotonNetwork.CreateRoom("TestRoom"); // 号 持失
+        if (isJoin)
+            CreateRoom(roomName);
+        else
+            JoinRoom(roomName); // 号 持失
     }
     public void CreateRoom(string roomName)
     {
