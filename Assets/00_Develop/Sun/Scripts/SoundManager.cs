@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    public AudioSource audioSource;
-
+    public AudioSource bgmSource, effectSource;
+    [SerializeField] private SoundData dataTemp;
+    private float timer;
     public void PlayOneShotSound(SoundData data)
     {
-        audioSource.PlayOneShot(data.clip);
+        if (dataTemp != null && dataTemp.name == data.name)
+            return;
+        effectSource.PlayOneShot(data.clip);
+        timer = 0.05f;
+        dataTemp = data;
+    }
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if (timer < 0)
+            dataTemp = null;
     }
 }
 

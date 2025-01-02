@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3137255}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -457,6 +457,26 @@ PrefabInstance:
     - target: {fileID: 3816355230397994934, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973435075694767271, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
+      propertyPath: m_LightCookieSprite
+      value: 
+      objectReference: {fileID: 499161956, guid: 77872d05f6b71864ebea18ce355f9e6d, type: 3}
+    - target: {fileID: 3973435075694767271, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973435075694767271, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -0.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973435075694767271, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 0.46875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973435075694767271, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 0.34375
       objectReference: {fileID: 0}
     - target: {fileID: 4403631391510380376, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
       propertyPath: sprite
