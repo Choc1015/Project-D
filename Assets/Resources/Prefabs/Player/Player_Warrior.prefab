@@ -331,23 +331,23 @@ PrefabInstance:
       objectReference: {fileID: 330924183, guid: 0753a829528cd9742be00c91b9fb12e8, type: 3}
     - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[3].SynchronizeType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[4].SynchronizeType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[5].SynchronizeType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[6].SynchronizeType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeParameters.Array.data[7].SynchronizeType
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Name
