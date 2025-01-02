@@ -73,6 +73,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 10
 --- !u!114 &7138415348082515700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +210,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 0
 --- !u!1 &8638467368420381139
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +319,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 5
 --- !u!1001 &4703048871723883131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,6 +328,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1258926530325127277, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 330924183, guid: 0753a829528cd9742be00c91b9fb12e8, type: 3}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: ShowParameterInspector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: ShowLayerWeightsInspector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[3].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[4].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[5].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[6].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2374952452711166982, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[7].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Name
       value: Player_Warrior
@@ -332,6 +367,10 @@ PrefabInstance:
     - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5080232474673827220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_SynchronizeAngularVelocity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.size
@@ -411,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[6].nextAction
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[7].nextAction
@@ -459,7 +498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[0].command.Array.data[0]
-      value: 276
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[4].command.Array.data[0]
@@ -471,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[4].command.Array.data[2]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].command.Array.data[0]
@@ -483,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[5].command.Array.data[2]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[6].command.Array.data[0]
@@ -499,7 +538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[7].command.Array.data[1]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[7].commandInputTimeLimit
@@ -511,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[8].command.Array.data[1]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[8].commandInputTimeLimit
@@ -519,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[9].command.Array.data[0]
-      value: 100
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillCommands.Array.data[9].commandInputTimeLimit
@@ -742,6 +781,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: maxCombo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillSwapPrefab
       value: 
       objectReference: {fileID: 7296215703929910790, guid: 746187a2d41eae34aae2f33627e525fb, type: 3}
@@ -756,7 +799,7 @@ PrefabInstance:
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[0]
       value: 
-      objectReference: {fileID: 8500858823146571754}
+      objectReference: {fileID: 4291171547576047472}
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[1]
       value: 
@@ -764,7 +807,7 @@ PrefabInstance:
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[2]
       value: 
-      objectReference: {fileID: 4291171547576047472}
+      objectReference: {fileID: 8500858823146571754}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

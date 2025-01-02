@@ -11,11 +11,14 @@ public class SkillFunction : MonoBehaviour
     public SkillCommand command;
     public GameObject skillObj;
     public float invokeTimer;
+    public float skillCooldown;
     public void Init(SkillFunctionController controller)
     {
         this.controller = controller;
+        
         command.action.AddListener(() => controller.player.playerState.ChangeState(PlayerState.Animation));
         command.action.AddListener(() => Invoke("InvokeAction", invokeTimer));
+        command.action.AddListener(() => controller.SetAllDisable(skillCooldown));
         command.Init(controller.commandController);
     }
 

@@ -25,6 +25,9 @@ public class PlayerController : Human
     [SerializeField] private SkillSwap skillSwapPrefab;
     public SkillSwap skillSwapUI;
 
+    public int maxCombo;
+    private int attackCombo;
+    private float comboTimer;
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
     public PhotonView pv;
@@ -36,16 +39,23 @@ public class PlayerController : Human
 
         statController.Init();
         Utility.playerController = this;
+        L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         GameManager.Instance.players.Add(this);
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);
+    }
+    [PunRPC]
+    public void LocalUpdate(bool flipX)
+    {
+        sprite.flipX = flipX;
+        spriteLight?.ChangeSprite();
     }
     private void Update()
     {
         if (!pv.IsMine)
             return;
 
-        spriteLight?.ChangeSprite();
+        pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
         
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
@@ -57,9 +67,32 @@ public class PlayerController : Human
         if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
-            sprite.flipX = lookDIr_X.x == -1 ? true : false;
+            
         }
         
+        if(attackCombo > 0 && comboTimer > 0)
+        {
+            comboTimer -= Time.deltaTime;
+        }
+        else if(comboTimer <= 0)
+        {
+            ResetCombo();
+        }
+    }
+    public void Combo()
+    {
+        
+        animTrigger.TriggerAnim("Attack", AnimationType.Trigger);
+        animTrigger.SetIntegerAnim("Combo", attackCombo);
+        attackCombo++;
+        comboTimer = 0.6f;
+        if (maxCombo == attackCombo)
+            ResetCombo();
+        
+    }
+    private void ResetCombo()
+    {
+        attackCombo = 0;
     }
     public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
 
@@ -96,16 +129,22 @@ public class PlayerController : Human
     }
     private IEnumerator KnockBack()
     {
+        if(this.info.isKnockBack)
+            animTrigger.TriggerAnim("KnockBack", AnimationType.Trigger);
         yield return new WaitForSeconds(info.knockBackTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
         if (this.info.isKnockBack)
+        {
             this.info.isKnockBack = false;
+            animTrigger.TriggerAnim("EndKnockBack", AnimationType.Trigger);
+        }
 
     }
     private IEnumerator Stun()
     {
         playerState.ChangeState(PlayerState.Stun);
+        animTrigger.TriggerAnim("Stun", AnimationType.Trigger);
         yield return new WaitForSeconds(info.stunTime);
         StartCoroutine(KnockBack());
         movement.StopMove();

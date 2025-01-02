@@ -1,0 +1,2085 @@
+fileFormatVersion: 2
+guid: 0753a829528cd9742be00c91b9fb12e8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 751cf444203142b408ff2f546c8a992e
+      internalID: 330924183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 800
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31448d886337a3649954f751727cd1ce
+      internalID: -1508432285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 800
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730874e7c280bda4bbdfe0be0f41d732
+      internalID: 1382544880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 800
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad570f2bf74c3f44a05bd55edb0bf2b
+      internalID: -791623776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 700
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144a8373322a2f148ad79cc3db3a438d
+      internalID: -1275105509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 700
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90343869fc1f8cf4dabc91ed281396aa
+      internalID: 963543505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 700
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17fd7a61bc74894b8c1a89f315b4cc6
+      internalID: 1504206547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 700
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d636008d58c11694cac56d8aa59e258d
+      internalID: -103895894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 700
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f86eb9722916384e82c5df20f4b83a0
+      internalID: -1513468612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e018bb947a489b4d9bcc6ebcbd3e1b3
+      internalID: -1667995078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cec3c94b61cb33439c9bba2d14e4c11
+      internalID: 2126283159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76892876c56bf14cbe8848dc47acc69
+      internalID: 1196651444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6024797dcfb4442a5232a9fe1aedb2
+      internalID: -486040200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9adb9155c5177eb47b66bc6e963bc36f
+      internalID: 1133479411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 600
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c68689d8fc9b3045b4819b09eb08e09
+      internalID: -706112291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536de062962f96743a5bd628b29fe2ec
+      internalID: 430262196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74a79942839b6f4ba7e90faaf1682da
+      internalID: -204879287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd848bfe77eabe42bcbd889d6397e06
+      internalID: -134977486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1fd4ccaf2b5f2d4f92fdb99344c5cac
+      internalID: 1835345869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b58c0f4a5498fb5459f496018050151d
+      internalID: -175175725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 978acb42a4b1bd74ca012c02db1179a5
+      internalID: -110110466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 500
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfcef5bc485c674d80de25327230ff1
+      internalID: -1455047911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e293d72cca56046a760377c587c128
+      internalID: 1038426622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3338aac250a12ee40bc32a3a95ab1cfe
+      internalID: 1911554251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2279583df35945479c6cb9add60e792
+      internalID: -555233852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a834251add07844b712ef9655ab58f
+      internalID: 1562167783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4531919e65c3c074f9f05b6af7045d41
+      internalID: 1694231566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d73a25103dcad546a3bdc529ff8954a
+      internalID: -199989286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 400
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2811834de014e684f81babc548fd4293
+      internalID: 1875227019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f818b1ea8eb657418267dc1f29e47f9
+      internalID: -782736811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eebf67822dc86f74980e1952136fe28e
+      internalID: 1561827048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff8b6319f7ca64d4daad3ca87ef098aa
+      internalID: -239812326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8a92edec0f92643b67e4053f6b9083
+      internalID: -1861020740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9dfb46296cd9ca459b7801354634161
+      internalID: -1878080127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69d189d95b8f9748b6072dae953c790
+      internalID: -878170783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecdb7758b16cbf44936ad8d68ddd4e6
+      internalID: 859343078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 300
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56634e9178c7e8e40bfd6642aced9c78
+      internalID: 1963672076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b961b7adca052f4ba4a78cea951a0da
+      internalID: 1083395286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b707b25d58076944284375c6630fc2f7
+      internalID: 136572038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89842e174fc6e0d48bd0fcb83f0898ea
+      internalID: 729431271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac97a29bb9227e4f89ce9d8ed58d2e0
+      internalID: 531666766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f600a17ad47d8704eb0e5631843dfc0b
+      internalID: -599302080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6be1dbfc6edce54eb5a14e5419c81c6
+      internalID: 646102097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5137e52c7cc59c9459bf55dad10c0191
+      internalID: 927202770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 200
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58fb39b029eac04a8feebbc5ca02294
+      internalID: -1844745146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78eee685423a4844dacd04cfa2754ac4
+      internalID: 2094756588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90ac879764e7584cbb85fb5710f13f5
+      internalID: -1700870656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf718ea685c50841904298155d8fa0b
+      internalID: -2036056412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69e30b666a3f871418c651a2e55bb342
+      internalID: -1834138533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 559fa1c1273409947afea42486913a95
+      internalID: -1805692536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5383e5ff36b7e2c4580e3beb8ab7ddb4
+      internalID: 1705550027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c1c748dda310440998c87bca6ecf36
+      internalID: -753987795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec861463c1b99d447973aca2ebbba97a
+      internalID: -859353777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8bd19ddf02b0e4dbbd9d6f7572b616
+      internalID: -1157238669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9b3c9d4de990f4f83cbea0bd55870a
+      internalID: -955749583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02f5592542c90347a377c77d21f28d6
+      internalID: 1647755640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821967f9772ce57439173c4acf3bdbbc
+      internalID: -1704075492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2c389fee60a7b449c7a2634865a7b7
+      internalID: 2145674877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46346084b550cf741a76438f0bc7a1cc
+      internalID: 890585610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b0b3492f27b1554f8c22416fe48a192
+      internalID: 1579827974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799cccbd7ad29534b8e738fcbe5a4d9e
+      internalID: -1550924096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ca45cd0007bf143b88ef1c453a35b1
+      internalID: -936719416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a04362ce158e14b826234b05630f2a
+      internalID: -1126313214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 100
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83bfd8fb246d9d4fb96d961e943fe5c
+      internalID: 425479868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74f1edf2e8f41749818db339965fdba
+      internalID: -1147076247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92327f0334edaa24d91c3fe8ad6ec22e
+      internalID: 1916692285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5dcbe68f7d0ee408bd97c4ae95ab00
+      internalID: -176603002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c72c4bec802a7943bba253d006b67f0
+      internalID: 1460732463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebb1a447e46fbc44a5e2444c3721398
+      internalID: -413533718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be36663e20926940815dd61794d174c
+      internalID: 119736596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65bfc468dcfd4449bca0adb1ec25bd2
+      internalID: -1621645131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0540477e8bc688e42986d1457a874db4
+      internalID: 1260771573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5d503820836c845938fe846e1917eb
+      internalID: 664856249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4982c6b127abe41bc0ec9a2426d7d5
+      internalID: 902781492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2b1b06eefe45946b4c659f34ba8581
+      internalID: -1101220016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733b1f641cff3684eb9bc6647a783d2d
+      internalID: -631963605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730f6389813337b4c953c0406e5c7041
+      internalID: 1816204361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31dbc525f927c4e49915a9d203bc3fbb
+      internalID: 1216918701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7be55bda19a984886ae48341758502
+      internalID: 771861155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe36aec86fe2ae46abb389209ae6500
+      internalID: -1148407552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fccae3755767e04db0aeb0d89f73814
+      internalID: 1982256344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054fa0135a72bcd4189e44fa6c4631f6
+      internalID: -93538122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94d277e6a66ead44b02008fe9c24556
+      internalID: 1562366245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 2090
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310c2bea06795fc4eb6d709c85743cf5
+      internalID: 1399419081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37c8d7a7fdf47e4dbc335b6aa750291
+      internalID: 403172101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 2310
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c855c36dcbe398742b14ec3e54ed05e6
+      internalID: -2091866833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5bff51cafa4054685bd77a94cffb0f
+      internalID: -1332689783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42283232232c1c45ad8f56a6e0cc223
+      internalID: -1886036341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Warrior_Sprite-Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 110
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8778dbbc965ab945a210ffd3c8926e2
+      internalID: 200752199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Player_Warrior_Sprite-Sheet_0: 330924183
+      Player_Warrior_Sprite-Sheet_1: -1508432285
+      Player_Warrior_Sprite-Sheet_10: 2126283159
+      Player_Warrior_Sprite-Sheet_11: 1196651444
+      Player_Warrior_Sprite-Sheet_12: -486040200
+      Player_Warrior_Sprite-Sheet_13: 1133479411
+      Player_Warrior_Sprite-Sheet_14: -706112291
+      Player_Warrior_Sprite-Sheet_15: 430262196
+      Player_Warrior_Sprite-Sheet_16: -204879287
+      Player_Warrior_Sprite-Sheet_17: -134977486
+      Player_Warrior_Sprite-Sheet_18: 1835345869
+      Player_Warrior_Sprite-Sheet_19: -175175725
+      Player_Warrior_Sprite-Sheet_2: 1382544880
+      Player_Warrior_Sprite-Sheet_20: -110110466
+      Player_Warrior_Sprite-Sheet_21: -1455047911
+      Player_Warrior_Sprite-Sheet_22: 1038426622
+      Player_Warrior_Sprite-Sheet_23: 1911554251
+      Player_Warrior_Sprite-Sheet_24: -555233852
+      Player_Warrior_Sprite-Sheet_25: 1562167783
+      Player_Warrior_Sprite-Sheet_26: 1694231566
+      Player_Warrior_Sprite-Sheet_27: -199989286
+      Player_Warrior_Sprite-Sheet_28: 1875227019
+      Player_Warrior_Sprite-Sheet_29: -782736811
+      Player_Warrior_Sprite-Sheet_3: -791623776
+      Player_Warrior_Sprite-Sheet_30: 1561827048
+      Player_Warrior_Sprite-Sheet_31: -239812326
+      Player_Warrior_Sprite-Sheet_32: -1861020740
+      Player_Warrior_Sprite-Sheet_33: -1878080127
+      Player_Warrior_Sprite-Sheet_34: -878170783
+      Player_Warrior_Sprite-Sheet_35: 859343078
+      Player_Warrior_Sprite-Sheet_36: 1963672076
+      Player_Warrior_Sprite-Sheet_37: 1083395286
+      Player_Warrior_Sprite-Sheet_38: 136572038
+      Player_Warrior_Sprite-Sheet_39: 729431271
+      Player_Warrior_Sprite-Sheet_4: -1275105509
+      Player_Warrior_Sprite-Sheet_40: 531666766
+      Player_Warrior_Sprite-Sheet_41: -599302080
+      Player_Warrior_Sprite-Sheet_42: 646102097
+      Player_Warrior_Sprite-Sheet_43: 927202770
+      Player_Warrior_Sprite-Sheet_44: -1844745146
+      Player_Warrior_Sprite-Sheet_45: 2094756588
+      Player_Warrior_Sprite-Sheet_46: -1700870656
+      Player_Warrior_Sprite-Sheet_47: -2036056412
+      Player_Warrior_Sprite-Sheet_48: -1834138533
+      Player_Warrior_Sprite-Sheet_49: -1805692536
+      Player_Warrior_Sprite-Sheet_5: 963543505
+      Player_Warrior_Sprite-Sheet_50: 1705550027
+      Player_Warrior_Sprite-Sheet_51: -753987795
+      Player_Warrior_Sprite-Sheet_52: -859353777
+      Player_Warrior_Sprite-Sheet_53: -1157238669
+      Player_Warrior_Sprite-Sheet_54: -955749583
+      Player_Warrior_Sprite-Sheet_55: 1647755640
+      Player_Warrior_Sprite-Sheet_56: -1704075492
+      Player_Warrior_Sprite-Sheet_57: 2145674877
+      Player_Warrior_Sprite-Sheet_58: 890585610
+      Player_Warrior_Sprite-Sheet_59: 1579827974
+      Player_Warrior_Sprite-Sheet_6: 1504206547
+      Player_Warrior_Sprite-Sheet_60: -1550924096
+      Player_Warrior_Sprite-Sheet_61: -936719416
+      Player_Warrior_Sprite-Sheet_62: -1126313214
+      Player_Warrior_Sprite-Sheet_63: 425479868
+      Player_Warrior_Sprite-Sheet_64: -1147076247
+      Player_Warrior_Sprite-Sheet_65: 1916692285
+      Player_Warrior_Sprite-Sheet_66: -176603002
+      Player_Warrior_Sprite-Sheet_67: 1460732463
+      Player_Warrior_Sprite-Sheet_68: -413533718
+      Player_Warrior_Sprite-Sheet_69: 119736596
+      Player_Warrior_Sprite-Sheet_7: -103895894
+      Player_Warrior_Sprite-Sheet_70: -1621645131
+      Player_Warrior_Sprite-Sheet_71: 1260771573
+      Player_Warrior_Sprite-Sheet_72: 664856249
+      Player_Warrior_Sprite-Sheet_73: 902781492
+      Player_Warrior_Sprite-Sheet_74: -1101220016
+      Player_Warrior_Sprite-Sheet_75: -631963605
+      Player_Warrior_Sprite-Sheet_76: 1816204361
+      Player_Warrior_Sprite-Sheet_77: 1216918701
+      Player_Warrior_Sprite-Sheet_78: 771861155
+      Player_Warrior_Sprite-Sheet_79: -1148407552
+      Player_Warrior_Sprite-Sheet_8: -1513468612
+      Player_Warrior_Sprite-Sheet_80: 1982256344
+      Player_Warrior_Sprite-Sheet_81: -93538122
+      Player_Warrior_Sprite-Sheet_82: 1562366245
+      Player_Warrior_Sprite-Sheet_83: 1399419081
+      Player_Warrior_Sprite-Sheet_84: 403172101
+      Player_Warrior_Sprite-Sheet_85: -2091866833
+      Player_Warrior_Sprite-Sheet_86: -1332689783
+      Player_Warrior_Sprite-Sheet_87: -1886036341
+      Player_Warrior_Sprite-Sheet_88: 200752199
+      Player_Warrior_Sprite-Sheet_9: -1667995078
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

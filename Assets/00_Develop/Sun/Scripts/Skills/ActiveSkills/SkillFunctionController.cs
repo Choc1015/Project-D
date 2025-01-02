@@ -10,6 +10,7 @@ public class SkillFunctionController : MonoBehaviour
     public SkillCommandController commandController;
     private int currentSkillIndex;
     private bool[] isInit;
+    private bool isAllDisable;
     void Start()
     {
         isInit = new bool[skillFunctions.Length];
@@ -30,7 +31,9 @@ public class SkillFunctionController : MonoBehaviour
             currentSkillIndex = 0;
 
         commandController.skillCommands[0] = skillFunctions[currentSkillIndex].command;
-        skillFunctions[currentSkillIndex].command.isDisable = false;
+
+        if(!isAllDisable)
+            skillFunctions[currentSkillIndex].command.isDisable = false;
 
         if (!isInit[currentSkillIndex])
         {
@@ -38,16 +41,20 @@ public class SkillFunctionController : MonoBehaviour
             isInit[currentSkillIndex] = true;
         }
     }
-    public void SetAllDisable()
+    public void SetAllDisable(float resetTime = 5)
     {
-        foreach(SkillFunction skillFunction in skillFunctions)
+        if (resetTime == 0)
+            return;
+        isAllDisable = true;
+        foreach (SkillFunction skillFunction in skillFunctions)
         {
             skillFunction.command.isDisable = true;
         }
-        Invoke("ResetValue", 0.2f);
+        Invoke("ResetValue", resetTime);
     }
     public void ResetValue()
     {
+        isAllDisable = false;
         skillFunctions[currentSkillIndex].command.isDisable = false;
     }
 }
