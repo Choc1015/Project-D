@@ -80,7 +80,7 @@ MonoBehaviour:
         m_Calls: []
     commandInputTimeLimit: 0.2
     isKeyDown: 1
-    isHold: 1
+    isHold: 0
     nextAction: 0.2
     isDisable: 0
   skillObj: {fileID: 0}
