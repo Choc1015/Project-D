@@ -42,9 +42,9 @@ public class PlayerController : Human
         skillSwapUI.Init(skillFunctionsController);
     }
     [PunRPC]
-    public void LocalUpdate()
+    public void LocalUpdate(bool flipX)
     {
-        sprite.flipX = lookDIr_X.x == -1 ? true : false;
+        sprite.flipX = flipX;
         spriteLight?.ChangeSprite();
     }
     private void Update()
@@ -52,7 +52,7 @@ public class PlayerController : Human
         if (!pv.IsMine)
             return;
 
-        pv.RPC("LocalUpdate", RpcTarget.All);
+        pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
         
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
