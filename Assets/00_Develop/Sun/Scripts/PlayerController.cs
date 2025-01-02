@@ -41,12 +41,18 @@ public class PlayerController : Human
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);
     }
+    [PunRPC]
+    public void LocalUpdate()
+    {
+        sprite.flipX = lookDIr_X.x == -1 ? true : false;
+        spriteLight?.ChangeSprite();
+    }
     private void Update()
     {
         if (!pv.IsMine)
             return;
 
-        spriteLight?.ChangeSprite();
+        pv.RPC("LocalUpdate", RpcTarget.All);
         
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
@@ -58,7 +64,7 @@ public class PlayerController : Human
         if (playerState.CurrentState() == PlayerState.Idle)
         {
             skillController.ControllerAction();
-            sprite.flipX = lookDIr_X.x == -1 ? true : false;
+            
         }
         
     }
