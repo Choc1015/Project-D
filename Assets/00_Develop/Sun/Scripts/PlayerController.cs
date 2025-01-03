@@ -10,7 +10,7 @@ public class PlayerController : Human
 {
     [SerializeField] private SkillCommandController skillController;
     [SerializeField] private SkillFunctionController skillFunctionsController;
-    public PlayerUI playerUI;
+    [SerializeField] private PlayerUI playerUI;
 
     public Transform attackPos;
     public SpriteRenderer sprite;

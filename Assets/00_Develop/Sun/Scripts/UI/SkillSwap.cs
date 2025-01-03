@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-public class SkillSwap : MonoBehaviour
+public class SkillSwap : UIBase
 {
     [SerializeField] private List<Transform> skillImages= new();
     [SerializeField] private Vector3[] pos;
@@ -27,6 +28,7 @@ public class SkillSwap : MonoBehaviour
         if (!gameObject.activeInHierarchy)
         {
             gameObject.SetActive(true);
+            ActiveAnimation();
             transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
         }
         else
@@ -35,7 +37,10 @@ public class SkillSwap : MonoBehaviour
     public void DisableSkillSwap()
     {
         if(gameObject.activeInHierarchy)
-            gameObject.SetActive(false);
+        {
+            Invoke("DisableGO", 0.05f);
+            DisableAnimation();
+        }
     }
     public void Swap()
     {
@@ -52,5 +57,18 @@ public class SkillSwap : MonoBehaviour
         skillImages[index] = t;      
         skillImages[index].DOLocalMove(pos[index], 0.2f, true);
     }
-
+    private void ActiveAnimation()
+    {
+        for (int i = 0; i < skillImages.Count; i++)
+        {
+            skillImages[i].DOLocalMove(pos[i], 0.05f, true);
+        }
+    }
+    private void DisableAnimation()
+    {
+        for (int i = 0; i < skillImages.Count; i++)
+        {
+            skillImages[i].DOLocalMove(Vector3.zero, 0.05f, true);
+        }
+    }
 }
