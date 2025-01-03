@@ -273,6 +273,7 @@ MonoBehaviour:
   sprite: {fileID: 1258926530325127277}
   animTrigger: {fileID: 4813723113395707094}
   playerState: {fileID: 5316237887173578074}
+  playerSkill: {fileID: 7581687510746911494}
   moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
   spriteLight: {fileID: 4301083112342461842}
@@ -691,7 +692,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7642723346707854220}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: StopMove
+          m_MethodName: StopCommand
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -728,7 +729,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7642723346707854220}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: StopMove
+          m_MethodName: StopCommand
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -765,7 +766,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7642723346707854220}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: StopMove
+          m_MethodName: StopCommand
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -802,7 +803,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7642723346707854220}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: StopMove
+          m_MethodName: StopCommand
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -822,7 +823,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7642723346707854220}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: StopMove
+        m_MethodName: StopCommand
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

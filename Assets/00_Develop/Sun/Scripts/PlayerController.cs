@@ -16,6 +16,7 @@ public class PlayerController : Human
     public SpriteRenderer sprite;
     public AnimationTrigger animTrigger;
     public PlayerStateMachine playerState;
+    public PlayerSkill playerSkill;
 
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
@@ -170,10 +171,11 @@ public class PlayerController : Human
         StartCoroutine(KnockBack());
         movement.StopMove();
     }
-    public void StopMove()
+    public void StopCommand()
     {
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
+        playerSkill.OffDefense();
     }
     protected override void DieHuman()
     {

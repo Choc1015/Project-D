@@ -60,7 +60,6 @@ public class PlayerSkill : MonoBehaviour
     {
         playerController.ChangeDefenseType();
         playerController.animTrigger.TriggerAnim("OnDefense", AnimationType.Bool, false);
-
     }
     public void CancelDefense()
     {
