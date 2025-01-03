@@ -10,8 +10,11 @@ public class PlayerUI : UIBase
 {
     [SerializeField] private Image hpValue;
     [SerializeField] private Image manaValue;
-    public PhotonView pv;  
-    
+    public PhotonView pv;
+    private void Start()
+    {
+        StartPhotonUI();
+    }
     [PunRPC]
     public void SetValue(StatInfo stat, float maxValue, float curValue)
     {

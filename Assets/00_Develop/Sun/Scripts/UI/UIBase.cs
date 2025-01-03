@@ -5,7 +5,7 @@ using UnityEngine;
 public class UIBase : MonoBehaviour
 {
     public string parentName;
-    private void Start()
+    public void StartPhotonUI()
     {
         transform.parent = GameObject.Find(parentName).transform;
         transform.localScale = Vector3.one;

@@ -29,6 +29,7 @@ public class SkillSwap : UIBase
     {
         this.skill = skill;
         gameObject.SetActive(false);
+        StartPhotonUI();
     }
     [PunRPC]
     public void ActiveSkillSwap()
