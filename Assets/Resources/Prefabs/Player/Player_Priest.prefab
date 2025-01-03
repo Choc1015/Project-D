@@ -73,6 +73,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 0
 --- !u!114 &6330133904729311107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +248,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 2
+  skillCooldown: 0
 --- !u!114 &8047843372994136827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +361,7 @@ GameObject:
   - component: {fileID: 8173114852047020745}
   - component: {fileID: 3186804858943893757}
   m_Layer: 0
-  m_Name: Defense
+  m_Name: GodDefense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,52 +424,17 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 7145805752809734831}
-          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: StopMove
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ReflectionDefense
-            m_BoolArgument: 1
-          m_CallState: 2
     exitAction:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6921179972428374565}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: CancelDefense
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 5023809104260325809}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     commandInputTimeLimit: 0.2
     isKeyDown: 1
-    isHold: 1
-    nextAction: 0.2
+    isHold: 0
+    nextAction: 0.5
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
+  skillCooldown: 10
 --- !u!1 &6426472411079300124
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +509,7 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 2
+  skillCooldown: 0
 --- !u!114 &2990571368122953259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,370 +538,6 @@ PrefabInstance:
     - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Name
       value: Player_Priest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].Name
-      value: Sliding_Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].Name
-      value: Sliding_Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].Name
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].Name
-      value: Jump_Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].Name
-      value: Jump_Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].Name
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].Name
-      value: Move Up
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].Name
-      value: Move Down
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[12].Name
-      value: Move Left
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[13].Name
-      value: Move Right
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].isHold
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].isHold
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].isKeyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].isKeyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].isKeyDown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].isKeyDown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].nextAction
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].nextAction
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].nextAction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].nextAction
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].nextAction
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].nextAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].nextAction
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].command.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].command.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].command.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].command.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].command.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].command.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].command.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].command.Array.data[0]
-      value: 274
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].command.Array.data[1]
-      value: 276
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].command.Array.data[2]
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].command.Array.data[0]
-      value: 274
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].command.Array.data[1]
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].command.Array.data[2]
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].command.Array.data[0]
-      value: 97
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].commandInputTimeLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].command.Array.data[0]
-      value: 276
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].command.Array.data[1]
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].commandInputTimeLimit
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].command.Array.data[0]
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].command.Array.data[1]
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].commandInputTimeLimit
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].command.Array.data[0]
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].commandInputTimeLimit
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].command.Array.data[0]
-      value: 273
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].commandInputTimeLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].command.Array.data[0]
-      value: 274
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].commandInputTimeLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[12].command.Array.data[0]
-      value: 276
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[13].command.Array.data[0]
-      value: 275
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].exitAction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].exitAction.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Sliding
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Sliding
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[8].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move_Y
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7145805752809734831}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move_Y
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 7145805752809734831}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[12].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move_X
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[13].action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Move_X
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StopMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[6].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[7].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[9].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[12].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[13].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[4].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[5].action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[10].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 5786086227377823556, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillCommands.Array.data[11].exitAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.x

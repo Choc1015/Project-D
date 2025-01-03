@@ -45,7 +45,10 @@ public class PlayerController : Human
         GameManager.Instance.players.Add(this);
         skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
         skillSwapUI.Init(skillFunctionsController);
-        playerUI = GameObject.Find("PlayerUI_1").GetComponent<PlayerUI>();
+
+        playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
+        playerUI.transform.parent = GameObject.Find("PlayerUI").transform;
+        playerUI.transform.localScale=Vector3.one;
     }
     [PunRPC]
     public void LocalUpdate(bool flipX)
@@ -97,8 +100,11 @@ public class PlayerController : Human
     {
         attackCombo = 0;
     }
-    public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
-
+    public void ChangeDefenseType(string defenseType = "")
+    {
+        this.defenseType = defenseType;
+    }
+    public string GetDefenseType() => defenseType;
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
         if (this.info != null && this.info.isKnockBack)
@@ -108,29 +114,37 @@ public class PlayerController : Human
 
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
-            damage = attackDamage * 0.5f;
+            damage = attackDamage * 0.2f;
         else if (defenseType == "GodDefense")
-            damage = attackDamage * 0.1f;
+            damage = attackDamage * 0f;
         else if (defenseType == "ReflectionDefense")
         {
-            damage = attackDamage * 0.3f;
+            damage = attackDamage * 0.2f;
 
-            attackHuman.TakeDamage(damage, this, info);
+            attackHuman.TakeDamage(attackDamage*0.8f, this, info);
         }
         if (damage != attackDamage)
             info.ResetValue();
-
         base.TakeDamage(damage, attackHuman, info);
-
-        if(playerState.CurrentState() != PlayerState.Die)
+        if (playerState.CurrentState() != PlayerState.Die)
         {
-            StartCoroutine(Stun());
+            if (damage != attackDamage)
+                animTrigger.TriggerAnim("DefenseHit", AnimationType.Trigger);
+            else
+                StartCoroutine(Stun());
         }
-        UpdatePlayerUI();
+
+        ActiveUpdatePlayerUI();
+        //UpdatePlayerUI(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
-    public void UpdatePlayerUI()
+    public void ActiveUpdatePlayerUI()
     {
-        playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
+        pv.RPC("UpdatePlayerUI", RpcTarget.All, StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
+    }
+    [PunRPC]
+    public void UpdatePlayerUI(StatInfo stat, float maxValue, float curValue)
+    {
+        playerUI?.SetValue(stat, maxValue, curValue);
     }
     private IEnumerator KnockBack()
     {

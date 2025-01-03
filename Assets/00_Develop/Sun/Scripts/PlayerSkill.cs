@@ -47,8 +47,20 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
             return;
-
         playerController.ChangeDefenseType(defenseType);
+        Invoke("CancelDefense", 10);
+    }
+    public void OnDefense()
+    {
+        if(playerController.GetDefenseType() == "")
+            playerController.ChangeDefenseType("BasicDefense");
+        playerController.animTrigger.TriggerAnim("OnDefense", AnimationType.Bool, true);
+    }
+    public void OffDefense()
+    {
+        playerController.ChangeDefenseType();
+        playerController.animTrigger.TriggerAnim("OnDefense", AnimationType.Bool, false);
+
     }
     public void CancelDefense()
     {
@@ -99,7 +111,7 @@ public class PlayerSkill : MonoBehaviour
     public void Heal(float value)
     {
         playerController.HealHealth(value);
-        playerController.UpdatePlayerUI();
+        playerController.ActiveUpdatePlayerUI();
     }
     public void ShotBullet()
     {

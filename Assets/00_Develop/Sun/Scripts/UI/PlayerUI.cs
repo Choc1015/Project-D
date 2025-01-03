@@ -14,4 +14,5 @@ public class PlayerUI : UIBase
         else if(stat == StatInfo.Mana)
             manaValue.fillAmount = curValue / maxValue;
     }
+    
 }
