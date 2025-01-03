@@ -11,7 +11,12 @@ public class SkillSwap : UIBase
     [SerializeField] private List<Transform> skillImages= new();
     [SerializeField] private Vector3[] pos;
     [SerializeField] private SkillFunctionController skill;
-    
+
+    private void Start()
+    {
+        if(!pv.IsMine)
+            StartPhotonUI();
+    }
     private void Update()
     {
         if (!pv.IsMine)
