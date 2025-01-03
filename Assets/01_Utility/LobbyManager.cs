@@ -7,10 +7,13 @@ using UnityEngine.Rendering;
 
 public class LobbyManager : MonoBehaviourPunCallbacks // 로비 제작 전에 사용하는 임시 코드
 {
+    
     public bool isJoin;
     public string roomName;
     void Awake()
     {
+        PhotonNetwork.SendRate = 1000;
+        PhotonNetwork.SerializationRate = 1000;
         Debug.Log(" started");
         PhotonNetwork.ConnectUsingSettings();
     }
