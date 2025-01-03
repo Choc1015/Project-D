@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
-
+using Photon;
+using Photon.Pun;
 public class SkillSwap : UIBase
 {
+    public PhotonView pv;
     [SerializeField] private List<Transform> skillImages= new();
     [SerializeField] private Vector3[] pos;
     [SerializeField] private SkillFunctionController skill;
@@ -13,16 +15,19 @@ public class SkillSwap : UIBase
     private void Update()
     {
         transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q))
+        if (gameObject.activeInHierarchy&&(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q)))
         {
             skill.SetAllDisable(0.2f);
             DisableSkillSwap();
+            pv.RPC("DisableSkillSwap", RpcTarget.All);
         }
     }
     public void Init(SkillFunctionController skill)
     {
         this.skill = skill;
+        gameObject.SetActive(false);
     }
+    [PunRPC]
     public void ActiveSkillSwap()
     {
         if (!gameObject.activeInHierarchy)
@@ -34,13 +39,11 @@ public class SkillSwap : UIBase
         else
             Swap();
     }
+    [PunRPC]
     public void DisableSkillSwap()
     {
-        if(gameObject.activeInHierarchy)
-        {
-            Invoke("DisableGO", 0.05f);
-            DisableAnimation();
-        }
+        Invoke("DisableGO", 0.05f);
+        DisableAnimation();
     }
     public void Swap()
     {

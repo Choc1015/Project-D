@@ -580,6 +580,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: playerClass
+      value: Priest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillSwapPrefab
       value: 
       objectReference: {fileID: 9119417040066006961, guid: 524ecc95037f8eb4d9de0dfc514b466f, type: 3}

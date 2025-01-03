@@ -389,6 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087406997535474853}
   - component: {fileID: 9119417040066006961}
+  - component: {fileID: 6908103687755884677}
   m_Layer: 5
   m_Name: SkillUI_Priest
   m_TagString: Untagged
@@ -431,6 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8eb3eb07d481e4c881e109fff826fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: UI
   skillImages:
   - {fileID: 3935602791614081606}
   - {fileID: 7630366573660606483}
@@ -442,6 +444,28 @@ MonoBehaviour:
   - {x: 0, y: -20, z: 0}
   - {x: 35, y: 15, z: 0}
   skill: {fileID: 0}
+--- !u!114 &6908103687755884677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4047631373332612590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5337769973839452785
 GameObject:
   m_ObjectHideFlags: 0

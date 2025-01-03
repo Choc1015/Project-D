@@ -8,6 +8,7 @@ using Photon.Pun;
 
 public class PlayerController : Human
 {
+    public string playerClass;
     [SerializeField] private SkillCommandController skillController;
     [SerializeField] private SkillFunctionController skillFunctionsController;
     [SerializeField] private PlayerUI playerUI;
@@ -44,7 +45,7 @@ public class PlayerController : Human
         Utility.playerController = this;
         L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         GameManager.Instance.players.Add(this);
-        skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
+        skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         skillSwapUI.Init(skillFunctionsController);
 
         playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
@@ -185,7 +186,7 @@ public class PlayerController : Human
     }
     public void ActiveSkillSwap()
     {
-        skillSwapUI.ActiveSkillSwap();
+        skillSwapUI.pv.RPC("ActiveSkillSwap", RpcTarget.All);
     }
     public void DisableSkillSwap()
     {

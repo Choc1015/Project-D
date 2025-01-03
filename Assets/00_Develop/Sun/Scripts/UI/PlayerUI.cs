@@ -10,13 +10,8 @@ public class PlayerUI : UIBase
 {
     [SerializeField] private Image hpValue;
     [SerializeField] private Image manaValue;
-    public PhotonView pv;
-    private void Start()
-    {
-        transform.parent = GameObject.Find("PlayerUI").transform;
-        transform.localScale = Vector3.one;
-        
-    }
+    public PhotonView pv;  
+    
     [PunRPC]
     public void SetValue(StatInfo stat, float maxValue, float curValue)
     {

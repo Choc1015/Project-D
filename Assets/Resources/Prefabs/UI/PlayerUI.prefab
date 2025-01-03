@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fae26d0f0dffd84fbedea56fe3c78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: PlayerUI
   hpValue: {fileID: 6823357588934865779}
   manaValue: {fileID: 3566606733872549809}
   pv: {fileID: -5589638576672159997}
