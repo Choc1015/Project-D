@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using Photon;
 using Photon.Pun;
+using DG.Tweening;
 
-public class PlayerController : Human
+public class PlayerController : Human, IPunObservable
 {
     public string playerClass;
     [SerializeField] private SkillCommandController skillController;
@@ -197,5 +198,16 @@ public class PlayerController : Human
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
     }
-    
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            transform.DOMove((Vector3)stream.ReceiveNext(), 0.2f, true);
+        }
+    }
 }
