@@ -16008,6 +16008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fae26d0f0dffd84fbedea56fe3c78f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentName: 
   hpValue: {fileID: 781504720}
   manaValue: {fileID: 1746391659}
   pv: {fileID: 0}

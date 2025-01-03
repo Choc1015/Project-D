@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentName: UI
+  pv: {fileID: 6908103687755884677}
   skillImages:
   - {fileID: 3935602791614081606}
   - {fileID: 7630366573660606483}
