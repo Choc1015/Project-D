@@ -94,7 +94,7 @@ public class SkillSwap : UIBase, IPunObservable
         }
         else
         {
-            transform.position = (Vector3)stream.ReceiveNext();
+            transform.DOLocalMove((Vector3)stream.ReceiveNext(), 0.1f, true);
         }
     }
 }
