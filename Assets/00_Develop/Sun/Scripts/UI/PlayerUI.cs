@@ -1,3 +1,4 @@
+using Photon.Pun.Demo.PunBasics;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,11 @@ public class PlayerUI : UIBase
 {
     [SerializeField] private Image hpValue;
     [SerializeField] private Image manaValue;
+    private void Start()
+    {
+        transform.parent = GameObject.Find("PlayerUI").transform;
+        transform.localScale = Vector3.one;
+    }
     public void SetValue(StatInfo stat, float maxValue, float curValue)
     {
         if (stat == StatInfo.Health)

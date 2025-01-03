@@ -47,8 +47,7 @@ public class PlayerController : Human
         skillSwapUI.Init(skillFunctionsController);
 
         playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
-        playerUI.transform.parent = GameObject.Find("PlayerUI").transform;
-        playerUI.transform.localScale=Vector3.one;
+        
     }
     [PunRPC]
     public void LocalUpdate(bool flipX)
