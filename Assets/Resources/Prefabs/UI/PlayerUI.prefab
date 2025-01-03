@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpValue: {fileID: 6823357588934865779}
   manaValue: {fileID: 3566606733872549809}
+  pv: {fileID: -5589638576672159997}
 --- !u!114 &-5589638576672159997
 MonoBehaviour:
   m_ObjectHideFlags: 0

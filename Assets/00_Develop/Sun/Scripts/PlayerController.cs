@@ -48,7 +48,6 @@ public class PlayerController : Human
         skillSwapUI.Init(skillFunctionsController);
 
         playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
-        playerUI.owner = pv;
     }
     [PunRPC]
     public void LocalUpdate(bool flipX)
@@ -138,16 +137,14 @@ public class PlayerController : Human
         }
 
         ActiveUpdatePlayerUI();
-        //UpdatePlayerUI(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
     public void ActiveUpdatePlayerUI()
     {
-        pv.RPC("UpdatePlayerUI", RpcTarget.All, StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
+        UpdatePlayerUI(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
-    [PunRPC]
-    public void UpdatePlayerUI(StatInfo stat, float maxValue, float curValue)
+    private void UpdatePlayerUI(StatInfo stat, float maxValue, float curValue)
     {
-        playerUI?.SetValue(stat, maxValue, curValue);
+        playerUI?.pv.RPC("SetValue", RpcTarget.All,stat, maxValue, curValue);
     }
     private IEnumerator KnockBack()
     {

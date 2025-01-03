@@ -16010,6 +16010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpValue: {fileID: 781504720}
   manaValue: {fileID: 1746391659}
+  pv: {fileID: 0}
 --- !u!114 &1933934638
 MonoBehaviour:
   m_ObjectHideFlags: 0
