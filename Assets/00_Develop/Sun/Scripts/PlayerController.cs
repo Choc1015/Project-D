@@ -48,7 +48,7 @@ public class PlayerController : Human
         skillSwapUI.Init(skillFunctionsController);
 
         playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
-        playerUI.owner = this;
+        playerUI.owner = pv;
     }
     [PunRPC]
     public void LocalUpdate(bool flipX)

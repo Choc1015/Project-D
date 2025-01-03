@@ -10,7 +10,7 @@ public class PlayerUI : UIBase, IPunObservable
 {
     [SerializeField] private Image hpValue;
     [SerializeField] private Image manaValue;
-    public PlayerController owner;
+    public PhotonView owner, thisPv;
     private void Start()
     {
         transform.parent = GameObject.Find("PlayerUI").transform;
@@ -33,9 +33,9 @@ public class PlayerUI : UIBase, IPunObservable
         }
         else
         {
-            owner = (PlayerController)stream.ReceiveNext();
-            if (owner.playerUI == null)
-                owner.playerUI = this;
+            owner = (PhotonView)stream.ReceiveNext();
+            if (!thisPv.IsMine && !owner)
+                owner.GetComponent<PlayerController>().playerUI = this;
         }
     }
 }
