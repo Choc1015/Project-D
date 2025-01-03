@@ -10,7 +10,7 @@ public class PlayerUI : UIBase, IPunObservable
 {
     [SerializeField] private Image hpValue;
     [SerializeField] private Image manaValue;
-    private PlayerController owner;
+    public PlayerController owner;
     private void Start()
     {
         transform.parent = GameObject.Find("PlayerUI").transform;
