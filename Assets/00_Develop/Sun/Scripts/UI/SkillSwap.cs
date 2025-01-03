@@ -14,6 +14,9 @@ public class SkillSwap : UIBase
     
     private void Update()
     {
+        if (!pv.IsMine)
+            return;
+
         transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
         if (gameObject.activeInHierarchy&&(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q)))
         {
