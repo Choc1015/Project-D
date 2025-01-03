@@ -11,8 +11,8 @@ public class SoundController : MonoBehaviour
         IEnumerable<SoundData> curDatas = soundDatas.Where(x => x.name == soundName);
         foreach(SoundData curData in curDatas)
         {
-            //SoundManager.Instance.PlayOneShotSound(curData);
-            Debug.Log($"{curData.name} Play !");
+            SoundManager.Instance.PlayOneShotSound(curData);
+            //Debug.Log($"{curData.name} Play !");
         }
     }
 }
