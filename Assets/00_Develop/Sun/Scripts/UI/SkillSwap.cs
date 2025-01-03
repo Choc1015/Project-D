@@ -5,7 +5,7 @@ using DG.Tweening;
 using System;
 using Photon;
 using Photon.Pun;
-public class SkillSwap : UIBase
+public class SkillSwap : UIBase, IPunObservable
 {
     public PhotonView pv;
     [SerializeField] private List<Transform> skillImages= new();
@@ -15,7 +15,10 @@ public class SkillSwap : UIBase
     private void Start()
     {
         if(!pv.IsMine)
+        {
             StartPhotonUI();
+            gameObject.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -62,7 +65,7 @@ public class SkillSwap : UIBase
             SettingSkillImage(i, skillImages[i + 1]);
         }
         SettingSkillImage(skillImages.Count - 1, temp);
-        skill.ChangeSkill();
+        skill?.ChangeSkill();
     }
     private void SettingSkillImage(int index,Transform t)
     {
@@ -81,6 +84,17 @@ public class SkillSwap : UIBase
         for (int i = 0; i < skillImages.Count; i++)
         {
             skillImages[i].DOLocalMove(Vector3.zero, 0.05f, true);
+        }
+    }
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            transform.position = (Vector3)stream.ReceiveNext();
         }
     }
 }
