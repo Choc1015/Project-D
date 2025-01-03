@@ -106,6 +106,9 @@ public class PlayerController : Human
     public string GetDefenseType() => defenseType;
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
+        if (!pv.IsMine)
+            return;
+
         if (this.info != null && this.info.isKnockBack)
             return;
 
