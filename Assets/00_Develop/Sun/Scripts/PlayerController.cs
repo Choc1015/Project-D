@@ -201,13 +201,23 @@ public class PlayerController : Human, IPunObservable
 
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+        Vector3 vec = default;
+        try
+        {
+            vec = (Vector3)stream.ReceiveNext();
+        }
+        catch
+        {
+
+        }
         if (stream.IsWriting)
         {
             stream.SendNext(transform.position);
         }
         else
         {
-            transform.DOMove((Vector3)stream.ReceiveNext(), 0.2f, true);
+            transform.DOMove(vec, 0.2f, true);
         }
+
     }
 }
