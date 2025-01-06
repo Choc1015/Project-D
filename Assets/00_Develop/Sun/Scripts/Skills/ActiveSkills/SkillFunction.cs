@@ -16,7 +16,7 @@ public class SkillFunction : MonoBehaviour
     {
         this.controller = controller;
         
-        command.action.AddListener(() => controller.player.playerState.ChangeState(PlayerState.Animation));
+        command.action.AddListener(() => controller.player.GetPlayerState().ChangeState(PlayerState.Animation));
         command.action.AddListener(() => Invoke("InvokeAction", invokeTimer));
         command.action.AddListener(() => controller.SetAllDisable(skillCooldown));
         command.Init(controller.commandController);
@@ -25,6 +25,6 @@ public class SkillFunction : MonoBehaviour
     public void InvokeAction()
     {
         //controller.player.ResetState();
-        controller.player.playerState.ChangeState(PlayerState.Idle);
+        controller.player.GetPlayerState().ChangeState(PlayerState.Idle);
     }
 }

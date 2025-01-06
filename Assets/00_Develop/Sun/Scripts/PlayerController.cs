@@ -21,8 +21,9 @@ public class PlayerController : Human/*, IPunObservable*/
     public SpriteRenderer sprite;
     public GameObject soul;
     public AnimationTrigger animTrigger;
-    public PlayerStateMachine playerState;
-    public PlayerSkill playerSkill;
+    private PlayerStateMachine playerState;
+    public PlayerStateMachine GetPlayerState() => playerState;
+    private PlayerSkill playerSkill;
 
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
@@ -36,7 +37,7 @@ public class PlayerController : Human/*, IPunObservable*/
     private int attackCombo;
     private float comboTimer;
 
-    public SoundController soundController;
+    private SoundController soundController;
 
     private Color baseColor, dieColor;
     //private bool isJumpInput, isJump;
@@ -56,7 +57,11 @@ public class PlayerController : Human/*, IPunObservable*/
 
         //GameManager.Instance.players.Add(this);
         baseColor = new Color(1, 1, 1, 1f);
-        dieColor = new Color(1, 1, 1, 0f); 
+        dieColor = new Color(1, 1, 1, 0f);
+
+        soundController = GetComponent<SoundController>();
+        playerSkill = GetComponent<PlayerSkill>();
+        playerState = GetComponent<PlayerStateMachine>();
         //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         //skillSwapUI.Init(skillFunctionsController);
 
@@ -254,7 +259,10 @@ public class PlayerController : Human/*, IPunObservable*/
         }
     }
     public bool CanRevive() => reviveInfo.canRevive;
-
+    public void PlayOneShotSound(string soundName)
+    {
+        soundController.PlayOneShotSound(soundName);
+    }
     //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     //{
     //    Vector3 vec = default;
