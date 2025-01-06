@@ -6,7 +6,8 @@ public class PlayerSkill : MonoBehaviour
 {
     private PlayerController playerController;
     private BulletController bulletController;
-    private bool useDashAttack;
+    private EnemyStateMachine hitEnemyTemp;
+    private bool useDashAttack, isCritical;
 
     public Action attackAE; // Attack Additional Effects
 
@@ -103,13 +104,23 @@ public class PlayerSkill : MonoBehaviour
                 int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * 1.5f, 0, playerController.lookDIr_X, 1, layerMask);
-
+                isCritical = GetCritical();
                 foreach (RaycastHit2D hit in hits)
                 {
+                    hitEnemyTemp = hit.collider.GetComponent<EnemyStateMachine>();
+                    //if (hitEnemyTemp.)
+                    //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
-                    GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
-
+                    
+                    CameraShake.cameraShake.ActiveCameraShake(0.01f);
+                    if(isCritical)
+                    {
+                        UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
+                        GiveDamage(attackDamage*2, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 200, 0.3f, 2));
+                    }
+                    else
+                        GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
                 }
                 playerController.soundController.PlayOneShotSound("Swing");
                 playerController.Combo();
@@ -119,6 +130,14 @@ public class PlayerSkill : MonoBehaviour
         }
 
         
+    }
+    private bool GetCritical()
+    {
+        int randInt = UnityEngine.Random.Range(0, 10);
+        if (randInt == 0)
+            return true;
+        else
+            return false;
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
@@ -142,7 +161,7 @@ public class PlayerSkill : MonoBehaviour
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
             playerController.soundController.PlayOneShotSound("SlidingHit");
             coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 700, 0.3f,3));
-
+            CameraShake.cameraShake.ActiveCameraShake(0.2f);
         }
     }
 }
