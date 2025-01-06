@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(StatController), typeof(Movement))]
 public class Human : MonoBehaviour
 {
     [SerializeField] protected StatController statController;

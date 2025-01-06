@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BossBase : MonoBehaviour
+public class BossBase : EnemyStateMachine
 {
-    public enum BossState
+    protected override void Initialize()
     {
-        Pattern1 = 0,
-        Pattern2 = 1,
-        Pattern3 = 2,
-        Pattern4 = 3,
+        base.Initialize();
 
-        Chase = 4,
-        Attack = 5,
+        Debug.Log("Boss");
 
     }
 
 
-   
+
 }
