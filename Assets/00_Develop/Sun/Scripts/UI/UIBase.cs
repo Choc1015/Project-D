@@ -14,4 +14,8 @@ public class UIBase : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void ActiveGO()
+    {
+        gameObject.SetActive(true);
+    }
 }

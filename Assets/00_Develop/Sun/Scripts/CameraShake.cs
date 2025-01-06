@@ -5,21 +5,23 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-    public Cinemachine.CinemachineImpulseSource cinemachine;
+    public static CameraShake cameraShake; 
+    private Cinemachine.CinemachineImpulseSource cinemachine;
     //public AnimationCurve shakeCurve;
     private void Start()
     {
+        cameraShake = this;
         cinemachine = GetComponent<Cinemachine.CinemachineImpulseSource>();
     }
-    public void ActiveCameraShake()
+    public void ActiveCameraShake(float power)
     {
-        cinemachine.m_DefaultVelocity = RandomVec(-0.1f, 0.1f);
+        cinemachine.m_DefaultVelocity = RandomVec(-power, power);
         cinemachine.GenerateImpulse();
     }
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
-            ActiveCameraShake();
+            ActiveCameraShake(0.1f);
     }
 
     private Vector3 RandomVec(float min, float max)
