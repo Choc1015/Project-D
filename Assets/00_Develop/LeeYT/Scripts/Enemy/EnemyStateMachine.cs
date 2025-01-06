@@ -39,7 +39,7 @@ public class EnemyStateMachine : Human
     {
         statController.Init();
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
-        FindPlayers();
+        //FindPlayers();
         // Start the state machine
         ChangeState(EnemyState.Patrol); // 초기 상태
         tempAttackOffsetX = AttackOffset.x;
@@ -48,15 +48,15 @@ public class EnemyStateMachine : Human
             Debug.LogError("�ν�����â���� �ִϸ����� �߰���");
     }   
 
-    private void FindPlayers()
-    {
-        GameObject[] Players;
-        if ((Players = GameObject.FindGameObjectsWithTag("Player")) == null)
-            return;
+    //private void FindPlayers()
+    //{
+    //    GameObject[] Players;
+    //    if ((Players = GameObject.FindGameObjectsWithTag("Player")) == null)
+    //        return;
 
-        int playerIndex = Random.Range(0, Players.Length);
-        Player = Players[playerIndex];
-    }
+    //    int playerIndex = Random.Range(0, Players.Length);
+    //    Player = Players[playerIndex];
+    //}
     
    
     private void OnDrawGizmos()
@@ -69,18 +69,18 @@ public class EnemyStateMachine : Human
         Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
 
         // 플레이어와 적 사이의 연결 선 그리기
-        if (Player != null)
+        if (Utility.GetPlayerGO() != null)
         {
 
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
+            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawWireSphere(transform.position, chaseRange);
             }
 
             // 플레이어가 공격범위 내에 있을 때 파란색 선
-            if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
+            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
                 Gizmos.color = Color.blue;
                 Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
@@ -95,7 +95,7 @@ public class EnemyStateMachine : Human
 
     private void FlipSprite()
     {
-        if (Player.transform.position.x < transform.position.x)
+        if (Utility.GetPlayerTr().position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             AttackOffset.x = tempAttackOffsetX;
@@ -124,7 +124,7 @@ public class EnemyStateMachine : Human
         while (currentState == EnemyState.Idle)
         {
             // Check if the player is in range
-            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange) // 일정 범위 이하면 i아가게 
+            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange) // 일정 범위 이하면 i아가게 
             {
                 ChangeState(EnemyState.Chase);
             }
@@ -140,7 +140,7 @@ public class EnemyStateMachine : Human
 
             // Check if the player is in range
 
-            if (Vector3.Distance(transform.position, Player.transform.position) <= chaseRange)
+            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
             {
                 ChangeState(EnemyState.Chase);
             }
@@ -163,12 +163,12 @@ public class EnemyStateMachine : Human
             FollowPlayer();
             FlipSprite();
             // Transition to Attack if within attack range
-            if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
+            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
                 ChangeState(EnemyState.Attack);
             }
             // Return to Idle if player is out of range
-            else if (Vector3.Distance(transform.position, Player.transform.position) > chaseRange)
+            else if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) > chaseRange)
             {
                 ChangeState(EnemyState.Idle);
             }
@@ -178,7 +178,7 @@ public class EnemyStateMachine : Human
     }
     void FollowPlayer()
     {
-        moveDir = Player.transform.position - transform.position;
+        moveDir = Utility.GetPlayerTr().position - transform.position;
 
         statController.GetStat(StatInfo.MoveSpeed).Value = statController.GetStat(StatInfo.MoveSpeed).GetMaxValue();
 
@@ -212,7 +212,7 @@ public class EnemyStateMachine : Human
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
             yield return new WaitForSeconds(AttackDelay);
             // Transition back to Chase if player is out of attack range
-            if (Vector3.Distance(AttackHitBox(), Player.transform.position) > attackRange)
+            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
             {
                 isAttack = false;
                 ChangeState(EnemyState.Chase);
@@ -253,7 +253,7 @@ public class EnemyStateMachine : Human
     }
     private void AttakToPlayer()
     {
-        if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
+        if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
         {
             Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Debug.LogWarning($"Attak to Player");

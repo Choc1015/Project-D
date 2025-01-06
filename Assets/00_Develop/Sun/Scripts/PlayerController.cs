@@ -6,10 +6,13 @@ using UnityEngine.Rendering.Universal;
 /*using Photon;
 using Photon.Pun;*/
 using DG.Tweening;
+using UnityEditor.U2D.Aseprite;
 
+public enum PlayerType { None, Warrior, Priest, Wizard };
 public class PlayerController : Human/*, IPunObservable*/
 {
-    public string playerClass;
+    //public string playerClass;
+    public PlayerType playerType;
     [SerializeField] private SkillCommandController skillController;
     [SerializeField] private SkillFunctionController skillFunctionsController;
     [SerializeField] private PlayerUI playerUI;
@@ -40,7 +43,8 @@ public class PlayerController : Human/*, IPunObservable*/
     //private float jumpStartPoint;
     // public PhotonView pv;
 
-    
+    private ReviveInfo reviveInfo = new();
+
     void Awake()
     {
         //if (!pv.IsMine)
@@ -49,7 +53,7 @@ public class PlayerController : Human/*, IPunObservable*/
         
         //GameManager.Instance.players.Add(this);
         baseColor = new Color(1, 1, 1, 1f);
-        dieColor = new Color(1, 1, 1, 0.5f); 
+        dieColor = new Color(1, 1, 1, 0f); 
         //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         //skillSwapUI.Init(skillFunctionsController);
 
@@ -57,9 +61,14 @@ public class PlayerController : Human/*, IPunObservable*/
     }
     private void OnEnable()
     {
+        Init();
+    }
+    private void Init()
+    {
         statController.Init();
         Utility.playerController = this;
         L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
+        ActiveUpdatePlayerUI();
     }
     //[PunRPC]
     public void LocalUpdate(bool flipX)
@@ -198,11 +207,13 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         //base.DieHuman();
     }
-    protected override void Revive()
+    public override void Revive()
     {
         playerState.ChangeState(PlayerState.Idle);
         sprite.DOColor(baseColor, 0.5f);
         soul.SetActive(false);
+        GameManager.Instance.RevivePlayer(this, reviveInfo.nextPlayer);
+        
     }
     public void ResetState()
     {
@@ -222,6 +233,20 @@ public class PlayerController : Human/*, IPunObservable*/
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
     }
+
+    public void OnTriggerStatue(bool isOn, PlayerType playerType)
+    {
+        reviveInfo.canRevive = isOn;
+        if (isOn)
+        {
+            reviveInfo.nextPlayer = playerType;
+        }
+        else
+        {
+            reviveInfo.nextPlayer = default;
+        }
+    }
+    public bool CanRevive() => reviveInfo.canRevive;
 
     //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     //{
