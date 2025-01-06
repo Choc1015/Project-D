@@ -3,19 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
-using Photon;
-using Photon.Pun;
+/*using Photon;
+using Photon.Pun;*/
+using DG.Tweening;
 
-public class PlayerController : Human
+public class PlayerController : Human/*, IPunObservable*/
 {
+    public string playerClass;
     [SerializeField] private SkillCommandController skillController;
     [SerializeField] private SkillFunctionController skillFunctionsController;
     [SerializeField] private PlayerUI playerUI;
 
     public Transform attackPos;
     public SpriteRenderer sprite;
+    public GameObject soul;
     public AnimationTrigger animTrigger;
     public PlayerStateMachine playerState;
+    public PlayerSkill playerSkill;
 
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
@@ -30,24 +34,29 @@ public class PlayerController : Human
     private float comboTimer;
 
     public SoundController soundController;
+
+    private Color baseColor, dieColor;
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
-    public PhotonView pv;
+    // public PhotonView pv;
 
     void Awake()
     {
-        if (!pv.IsMine)
-            return;
+        //if (!pv.IsMine)
+        //    return;
 
         statController.Init();
         Utility.playerController = this;
         L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         GameManager.Instance.players.Add(this);
-        skillSwapUI = Instantiate(skillSwapPrefab, GameObject.Find("UI").transform);
-        skillSwapUI.Init(skillFunctionsController);
-        playerUI = GameObject.Find("PlayerUI_1").GetComponent<PlayerUI>();
+        baseColor = new Color(1, 1, 1, 1f);
+        dieColor = new Color(1, 1, 1, 0.5f); 
+        //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
+        //skillSwapUI.Init(skillFunctionsController);
+
+        //playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
     }
-    [PunRPC]
+    //[PunRPC]
     public void LocalUpdate(bool flipX)
     {
         sprite.flipX = flipX;
@@ -55,17 +64,18 @@ public class PlayerController : Human
     }
     private void Update()
     {
-        if (!pv.IsMine)
-            return;
+        //if (!pv.IsMine)
+        //return;
 
-        pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
-        
+        //pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
+        LocalUpdate(lookDIr_X.x == -1 ? true : false);
+
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
     void LateUpdate()
     {
-        if (!pv.IsMine)
-            return;
+        //if (!pv.IsMine)
+        //    return;
 
         if (playerState.CurrentState() == PlayerState.Idle)
         {
@@ -97,10 +107,18 @@ public class PlayerController : Human
     {
         attackCombo = 0;
     }
-    public void ChangeDefenseType(string defenseType = "") => this.defenseType = defenseType;
-
+    public void ChangeDefenseType(string defenseType = "")
+    {
+        this.defenseType = defenseType;
+    }
+    public string GetDefenseType() => defenseType;
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
+        //if (!pv.IsMine)
+        //    return;
+        if (playerState.CurrentState() == PlayerState.Die)
+            return;
+
         if (this.info != null && this.info.isKnockBack)
             return;
 
@@ -108,30 +126,36 @@ public class PlayerController : Human
 
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
-            damage = attackDamage * 0.5f;
+            damage = attackDamage * 0.2f;
         else if (defenseType == "GodDefense")
-            damage = attackDamage * 0.1f;
+            damage = attackDamage * 0f;
         else if (defenseType == "ReflectionDefense")
         {
-            damage = attackDamage * 0.3f;
+            damage = attackDamage * 0.2f;
 
-            attackHuman.TakeDamage(damage, this, info);
+            attackHuman.TakeDamage(attackDamage*0.8f, this, info);
         }
         if (damage != attackDamage)
             info.ResetValue();
-
         base.TakeDamage(damage, attackHuman, info);
-
-        if(playerState.CurrentState() != PlayerState.Die)
+        if (playerState.CurrentState() != PlayerState.Die)
         {
-            StartCoroutine(Stun());
+            if (damage != attackDamage)
+                animTrigger.TriggerAnim("DefenseHit", AnimationType.Trigger);
+            else
+                StartCoroutine(Stun());
         }
-        UpdatePlayerUI();
+
+        ActiveUpdatePlayerUI();
     }
-    public void UpdatePlayerUI()
+    public void ActiveUpdatePlayerUI()
     {
         playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
     }
+    //private void UpdatePlayerUI(StatInfo stat, float maxValue, float curValue)
+    //{
+    //    playerUI?.pv.RPC("SetValue", RpcTarget.All,stat, maxValue, curValue);
+    //}
     private IEnumerator KnockBack()
     {
         if(this.info.isKnockBack)
@@ -154,15 +178,24 @@ public class PlayerController : Human
         StartCoroutine(KnockBack());
         movement.StopMove();
     }
-    public void StopMove()
+    public void StopCommand()
     {
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
+        playerSkill.OffDefense();
     }
     protected override void DieHuman()
     {
         playerState.ChangeState(PlayerState.Die);
-        base.DieHuman();
+        sprite.DOColor(dieColor, 0.5f);
+        soul.SetActive(true);
+        //base.DieHuman();
+    }
+    protected override void Revive()
+    {
+        playerState.ChangeState(PlayerState.Idle);
+        sprite.DOColor(baseColor, 0.5f);
+        soul.SetActive(false);
     }
     public void ResetState()
     {
@@ -170,7 +203,8 @@ public class PlayerController : Human
     }
     public void ActiveSkillSwap()
     {
-        skillSwapUI.ActiveSkillSwap();
+        //skillSwapUI.pv.RPC("ActiveSkillSwap", RpcTarget.All);
+        skillSwapUI?.ActiveSkillSwap();
     }
     public void DisableSkillSwap()
     {
@@ -181,5 +215,26 @@ public class PlayerController : Human
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
     }
-    
+
+    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    Vector3 vec = default;
+    //    try
+    //    {
+    //        vec = (Vector3)stream.ReceiveNext();
+    //    }
+    //    catch
+    //    {
+
+    //    }
+    //    if (stream.IsWriting)
+    //    {
+    //        stream.SendNext(transform.position);
+    //    }
+    //    else
+    //    {
+    //        transform.DOMove(vec, 0.2f, true);
+    //    }
+
+    //}
 }

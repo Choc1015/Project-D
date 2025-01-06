@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class UIBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public string parentName;
+    public void StartPhotonUI()
     {
-        
+        transform.parent = GameObject.Find(parentName).transform;
+        transform.localScale = Vector3.one;
     }
-
-    // Update is called once per frame
-    void Update()
+    public void DisableGO()
     {
-        
+        gameObject.SetActive(false);
     }
 }

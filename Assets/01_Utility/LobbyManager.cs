@@ -5,12 +5,15 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.Rendering;
 
-public class LobbyManager : MonoBehaviourPunCallbacks
+public class LobbyManager : MonoBehaviourPunCallbacks // 로비 제작 전에 사용하는 임시 코드
 {
+    
     public bool isJoin;
     public string roomName;
     void Awake()
     {
+        PhotonNetwork.SendRate = 500;
+        PhotonNetwork.SerializationRate = 500;
         Debug.Log(" started");
         PhotonNetwork.ConnectUsingSettings();
     }

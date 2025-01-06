@@ -229,6 +229,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: playerClass
+      value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillSwapPrefab
       value: 
       objectReference: {fileID: 46262557254012205, guid: b7dc695ad87a1544eaa88b6f61c68bab, type: 3}

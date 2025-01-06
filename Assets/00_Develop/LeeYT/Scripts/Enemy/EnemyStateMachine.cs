@@ -57,7 +57,7 @@ public class EnemyStateMachine : Human
         int playerIndex = Random.Range(0, Players.Length);
         Player = Players[playerIndex];
     }
-
+    
    
     private void OnDrawGizmos()
     {
@@ -255,7 +255,7 @@ public class EnemyStateMachine : Human
     {
         if (Vector3.Distance(AttackHitBox(), Player.transform.position) <= attackRange)
         {
-            Player.GetComponent<PlayerController>().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+            Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Debug.LogWarning($"Attak to Player");
         }
     
