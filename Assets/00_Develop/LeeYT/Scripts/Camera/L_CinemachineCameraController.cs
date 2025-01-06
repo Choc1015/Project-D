@@ -19,7 +19,7 @@ public class L_CinemachineCameraController : MonoBehaviour
             virtualCamera.Follow = null; // 카메라 동작 멈춤
         }
         else if (StageManager.Instance.IsStopCamera == false)
-        {
+            {
             virtualCamera.Follow = playerTrans; // 플레이어를 다시 따라가도록 설정
         }
     }
