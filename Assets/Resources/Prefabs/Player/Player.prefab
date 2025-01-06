@@ -282,6 +282,7 @@ MonoBehaviour:
   skillSwapUI: {fileID: 0}
   maxCombo: 0
   soundController: {fileID: 7978408020662855308}
+  enemyHitPrefab: {fileID: -4271660362663151108, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
 --- !u!114 &219253064508369906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +404,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    commandInputTimeLimit: 0.2
+    commandInputTimeLimit: 0.05
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2
@@ -440,7 +441,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    commandInputTimeLimit: 0.2
+    commandInputTimeLimit: 0.05
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2

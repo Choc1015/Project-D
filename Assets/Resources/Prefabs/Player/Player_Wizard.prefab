@@ -233,6 +233,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: testEffect
+      value: 
+      objectReference: {fileID: 8002634231325885199, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
+    - target: {fileID: 7642723346707854220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: playerClass
       value: Wizard
       objectReference: {fileID: 0}

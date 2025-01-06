@@ -121,6 +121,7 @@ public class PlayerSkill : MonoBehaviour
                     }
                     else
                         GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+                    playerController.SpawnHitEffect(hitEnemyTemp.transform.position);
                 }
                 playerController.soundController.PlayOneShotSound("Swing");
                 playerController.Combo();
