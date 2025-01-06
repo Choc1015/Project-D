@@ -29,6 +29,7 @@ public class EnemyStateMachine : Human
     public Animator animator;
     public SoundController soundController;
     public CloneLight spriteLight;
+       
     private void Start()
     {
         Initialize();
@@ -111,7 +112,6 @@ public class EnemyStateMachine : Human
     {
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
-        StopAllCoroutines(); // Stop any running state
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
     }
 
@@ -125,7 +125,8 @@ public class EnemyStateMachine : Human
             // Chase the player
             FollowPlayer();
             FlipSprite();
-            // Transition to Attack if within attack range
+            // Transition to Attack if within attack range (하이 ㅋ)
+            Debug.Log(Utility.GetPlayerTr().position);
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
                 ChangeState(EnemyState.Attack);
