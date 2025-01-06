@@ -14,7 +14,7 @@ public class Statue : MonoBehaviour
     void Update()
     {
         
-        if (Utility.GetPlayer().playerState.CurrentState() == PlayerState.Die)
+        if (Utility.GetPlayer().GetPlayerState().CurrentState() == PlayerState.Die)
         {
             if (layerMask == default)
                 layerMask = 1 << LayerMask.NameToLayer("Player");

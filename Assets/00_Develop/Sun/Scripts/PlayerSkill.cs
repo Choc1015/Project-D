@@ -43,7 +43,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.CanAction())
         {
-            playerController.soundController.PlayOneShotSound("Jump");
+            playerController.PlayOneShotSound("Jump");
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
             playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
@@ -52,7 +52,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Defense(string defenseType)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
+        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle)
             return;
         playerController.ChangeDefenseType(defenseType);
         Invoke("CancelDefense", 10);
@@ -74,9 +74,9 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Sliding()
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
+        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle)
             return;
-        playerController.soundController.PlayOneShotSound("Sliding");
+        playerController.PlayOneShotSound("Sliding");
         playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
     }
@@ -94,7 +94,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.CanAction())
         {
-            if(playerController.playerState.CurrentState() == PlayerState.Die)
+            if(playerController.GetPlayerState().CurrentState() == PlayerState.Die)
             {
                 if(playerController.CanRevive())
                     playerController.Revive();
@@ -123,7 +123,7 @@ public class PlayerSkill : MonoBehaviour
                         GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
                     playerController.SpawnHitEffect(hitEnemyTemp.transform.position);
                 }
-                playerController.soundController.PlayOneShotSound("Swing");
+                playerController.PlayOneShotSound("Swing");
                 playerController.Combo();
                 attackAE?.Invoke();
 
@@ -160,7 +160,7 @@ public class PlayerSkill : MonoBehaviour
         if(coll.CompareTag("Enemy") && useDashAttack)
         {
             float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
-            playerController.soundController.PlayOneShotSound("SlidingHit");
+            playerController.PlayOneShotSound("SlidingHit");
             coll.GetComponent<Human>().TakeDamage(attackDamage, playerController, new KnockBackInfo(Vector3.zero, 700, 0.3f,3));
             CameraShake.cameraShake.ActiveCameraShake(0.2f);
         }
