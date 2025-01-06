@@ -403,7 +403,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    commandInputTimeLimit: 0.2
+    commandInputTimeLimit: 0.05
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2
@@ -440,7 +440,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    commandInputTimeLimit: 0.2
+    commandInputTimeLimit: 0.05
     isKeyDown: 1
     isHold: 1
     nextAction: 0.2
