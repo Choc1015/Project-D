@@ -2,26 +2,24 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnemyStateMachine : Human
 {
 
     private Vector3 moveDir;
     // States
-    private enum EnemyState
+    public enum EnemyState
     {
-        Idle, // 기본상태
-        Patrol, // 정해진 경로 움직임
         Chase, // 플레이어 따라가기
         Attack,// 공격
         Stun, // 스턴
         KnockBack, // 넘어짐
         Die // 죽음
     }
-    private EnemyState currentState;
-    private GameObject Player;
-    private bool isAlive = true; // 살아있는 판정은 필요하고 
-    private float tempAttackOffsetX;
-    private bool isAttack = false;
+    protected EnemyState currentState;
+    protected bool isAlive = true; // 살아있는 판정은 필요하고 
+    protected float tempAttackOffsetX;
+    protected bool isAttack = false;
 
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
@@ -35,18 +33,18 @@ public class EnemyStateMachine : Human
     {
         Initialize();
     }
-    private void Initialize()
+    protected virtual void Initialize()
     {
         statController.Init();
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
         //FindPlayers();
         // Start the state machine
-        ChangeState(EnemyState.Patrol); // 초기 상태
+        ChangeState(EnemyState.Chase); // 초기 상태
         tempAttackOffsetX = AttackOffset.x;
 
         if (animator == null)
             Debug.LogError("�ν�����â���� �ִϸ����� �߰���");
-    }   
+    }
 
     //private void FindPlayers()
     //{
@@ -57,9 +55,9 @@ public class EnemyStateMachine : Human
     //    int playerIndex = Random.Range(0, Players.Length);
     //    Player = Players[playerIndex];
     //}
-    
-   
-    private void OnDrawGizmos()
+
+
+    protected void OnDrawGizmos()
     {
         // 공격 범위 시각화
         Gizmos.color = Color.red;
@@ -71,7 +69,7 @@ public class EnemyStateMachine : Human
         // 플레이어와 적 사이의 연결 선 그리기
         if (Utility.GetPlayerGO() != null)
         {
-
+                
             // 플레이어가 범위 내에 있을 때 초록색 선
             if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
             {
@@ -86,14 +84,15 @@ public class EnemyStateMachine : Human
                 Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
             }
         }
+        
     }
 
-    private Vector3 AttackHitBox()
+    protected Vector3 AttackHitBox()
     {
         return transform.position + AttackOffset;
     }
 
-    private void FlipSprite()
+    protected void FlipSprite()
     {
         if (Utility.GetPlayerTr().position.x < transform.position.x)
         {
@@ -108,7 +107,7 @@ public class EnemyStateMachine : Human
         
     }
 
-    private void ChangeState(EnemyState newState)
+    protected void ChangeState(EnemyState newState)
     {
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
@@ -116,48 +115,12 @@ public class EnemyStateMachine : Human
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
     }
 
-    private IEnumerator Idle()
-    {
-        Debug.Log("Entering Idle State");
-        animator.SetTrigger("IDLE");
-        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        while (currentState == EnemyState.Idle)
-        {
-            // Check if the player is in range
-            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange) // 일정 범위 이하면 i아가게 
-            {
-                ChangeState(EnemyState.Chase);
-            }
-            yield return null;
-        }
-    }
-
-    private IEnumerator Patrol()
-    {
-        Debug.Log("Entering Patrol State");
-        while (currentState == EnemyState.Patrol)
-        {
-
-            // Check if the player is in range
-
-            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
-            {
-                ChangeState(EnemyState.Chase);
-            }
-            else
-            {
-                movement.MoveToRigid(Vector3.left, statController.GetStat(StatInfo.MoveSpeed).Value);
-            }
-
-            yield return null;
-        }
-    }
-
-    private IEnumerator Chase()
+    protected IEnumerator Chase()
     {
         Debug.Log("Entering Chase State");
         while (currentState == EnemyState.Chase)
         {
+            animator.SetTrigger("Idle");
             isAttack = false;
             // Chase the player
             FollowPlayer();
@@ -167,11 +130,8 @@ public class EnemyStateMachine : Human
             {
                 ChangeState(EnemyState.Attack);
             }
-            // Return to Idle if player is out of range
-            else if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) > chaseRange)
-            {
-                ChangeState(EnemyState.Idle);
-            }
+            
+
 
             yield return null;
         }
@@ -196,7 +156,7 @@ public class EnemyStateMachine : Human
         return false;
     }
 
-    private IEnumerator Attack()
+    protected IEnumerator Attack()
     {
         Debug.Log("Entering Attack State"); 
         // 추가 딜레이 시간 작업
@@ -229,21 +189,21 @@ public class EnemyStateMachine : Human
             }
            
         }
-    }   
+    }
 
 
-    private IEnumerator KnockBack()
+    protected IEnumerator KnockBack()
     {
         animator.SetTrigger("Kncokback");
 
         yield return new WaitForSeconds(info.knockBackTime);
         
-        ChangeState(EnemyState.Idle);
+        ChangeState(EnemyState.Chase);
         movement.StopMove();
         if (this.info.isKnockBack)
             this.info.isKnockBack = false;
     }
-    private IEnumerator Stun()
+    protected IEnumerator Stun()
     {
         animator.SetTrigger("Stun");
         yield return new WaitForSeconds(info.stunTime);
@@ -251,7 +211,7 @@ public class EnemyStateMachine : Human
         movement.StopMove();
         
     }
-    private void AttakToPlayer()
+    protected void AttakToPlayer()
     {
         if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
         {
@@ -259,9 +219,9 @@ public class EnemyStateMachine : Human
             Debug.LogWarning($"Attak to Player");
         }
     
-    }   
+    }
 
-    private IEnumerator Die()
+    protected IEnumerator Die()
     {
         Debug.Log("Entering Die State");
         isAlive = false;
@@ -272,7 +232,7 @@ public class EnemyStateMachine : Human
         Debug.Log("Enemy Died");
 
         yield return new WaitForSeconds(2f); // Wait before destroying the object
-        Destroy(gameObject);
+        ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 
 
