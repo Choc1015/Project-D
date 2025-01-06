@@ -40,21 +40,26 @@ public class PlayerController : Human/*, IPunObservable*/
     //private float jumpStartPoint;
     // public PhotonView pv;
 
+    
     void Awake()
     {
         //if (!pv.IsMine)
         //    return;
 
-        statController.Init();
-        Utility.playerController = this;
-        L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
-        GameManager.Instance.players.Add(this);
+        
+        //GameManager.Instance.players.Add(this);
         baseColor = new Color(1, 1, 1, 1f);
         dieColor = new Color(1, 1, 1, 0.5f); 
         //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         //skillSwapUI.Init(skillFunctionsController);
 
         //playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
+    }
+    private void OnEnable()
+    {
+        statController.Init();
+        Utility.playerController = this;
+        L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
     }
     //[PunRPC]
     public void LocalUpdate(bool flipX)
@@ -77,7 +82,7 @@ public class PlayerController : Human/*, IPunObservable*/
         //if (!pv.IsMine)
         //    return;
 
-        if (playerState.CurrentState() == PlayerState.Idle)
+        if (CanAction())
         {
             skillController.ControllerAction();
             
@@ -92,6 +97,7 @@ public class PlayerController : Human/*, IPunObservable*/
             ResetCombo();
         }
     }
+    public bool CanAction() => playerState.CurrentState() == PlayerState.Idle || playerState.CurrentState() == PlayerState.Die;
     public void Combo()
     {
         
@@ -189,6 +195,7 @@ public class PlayerController : Human/*, IPunObservable*/
         playerState.ChangeState(PlayerState.Die);
         sprite.DOColor(dieColor, 0.5f);
         soul.SetActive(true);
+        movement.StopMove();
         //base.DieHuman();
     }
     protected override void Revive()

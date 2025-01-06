@@ -17,31 +17,37 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_X(float x)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
-        playerController.movement.StopMove();
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.lookDIr_X = Vector3.right * x;
-        playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
-        playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        if (playerController.CanAction())
+        {
+            playerController.movement.StopMove();
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.lookDIr_X = Vector3.right * x;
+            playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
+            playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        } 
+        
     }
     public void Move_Y(float y)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
+        if (playerController.CanAction())
+        {
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
+            playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        }
 
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
-        playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        
     }
     public void Jump(float x)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
-        playerController.soundController.PlayOneShotSound("Jump");
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
-        playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+        if (playerController.CanAction())
+        {
+            playerController.soundController.PlayOneShotSound("Jump");
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+            playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+        }
+        
     }
     public void Defense(string defenseType)
     {
