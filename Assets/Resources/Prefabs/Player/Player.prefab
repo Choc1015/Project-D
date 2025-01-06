@@ -264,7 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statController: {fileID: 219253064508369906}
   movement: {fileID: 5212341399615060278}
-  playerClass: 
+  playerType: 0
   skillController: {fileID: 5786086227377823556}
   skillFunctionsController: {fileID: 7895550839927921383}
   playerUI: {fileID: 0}
@@ -367,80 +367,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     commandInputTimeLimit: 1
-    isKeyDown: 1
-    isHold: 0
-    nextAction: 0.2
-    isDisable: 0
-  - Name: DashAttack_Left
-    command: 120100001401000061000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: DashAttack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: -1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    exitAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: StopDashAttack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    commandInputTimeLimit: 0.2
-    isKeyDown: 1
-    isHold: 0
-    nextAction: 0.2
-    isDisable: 0
-  - Name: DashAttack_Right
-    command: 120100001301000061000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: DashAttack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 1
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    exitAction:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7581687510746911494}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: StopDashAttack
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    commandInputTimeLimit: 0.2
     isKeyDown: 1
     isHold: 0
     nextAction: 0.2

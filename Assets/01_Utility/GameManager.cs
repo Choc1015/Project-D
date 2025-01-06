@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public List<PlayerController> players = new();
+    private Dictionary<PlayerType, PlayerController> players_Dic = new();
     public EnemyStateMachine enemyTemp;
     public GameObject Camera;
 
@@ -20,10 +21,16 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        
+        foreach(PlayerController player in players)
+        {
+            players_Dic.Add(player.playerType, player);
+        }
     }
-    void Update()
-    {
 
+    public void RevivePlayer(PlayerController curPlayer, PlayerType nextPlayer)
+    {
+        curPlayer.gameObject.SetActive(false);
+        players_Dic[nextPlayer].transform.position = curPlayer.transform.position;
+        players_Dic[nextPlayer].gameObject.SetActive(true);
     }
 }

@@ -17,31 +17,37 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_X(float x)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
-        playerController.movement.StopMove();
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.lookDIr_X = Vector3.right * x;
-        playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
-        playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        if (playerController.CanAction())
+        {
+            playerController.movement.StopMove();
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.lookDIr_X = Vector3.right * x;
+            playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
+            playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        } 
+        
     }
     public void Move_Y(float y)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
+        if (playerController.CanAction())
+        {
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
+            playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        }
 
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
-        playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
+        
     }
     public void Jump(float x)
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
-        playerController.soundController.PlayOneShotSound("Jump");
-        float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-        playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
-        playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+        if (playerController.CanAction())
+        {
+            playerController.soundController.PlayOneShotSound("Jump");
+            float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+            playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+        }
+        
     }
     public void Defense(string defenseType)
     {
@@ -77,6 +83,7 @@ public class PlayerSkill : MonoBehaviour
     {
         Sliding();
         useDashAttack = true;
+        Invoke("StopDashAttack", 0.4f);
     }
     public void StopDashAttack()
     {
@@ -84,23 +91,34 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Attack()
     {
-        if (playerController.playerState.CurrentState() != PlayerState.Idle)
-            return;
-
-        int layerMask = 1 << LayerMask.NameToLayer("Enemy");
-
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one*1.5f, 0, playerController.lookDIr_X, 1, layerMask);
-
-        foreach (RaycastHit2D hit in hits)
+        if (playerController.CanAction())
         {
-            float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
+            if(playerController.playerState.CurrentState() == PlayerState.Die)
+            {
+                if(playerController.CanRevive())
+                    playerController.Revive();
+            }
+            else
+            {
+                int layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
-            GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f,0.2f));
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * 1.5f, 0, playerController.lookDIr_X, 1, layerMask);
 
+                foreach (RaycastHit2D hit in hits)
+                {
+                    float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
+
+                    GiveDamage(attackDamage, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+
+                }
+                playerController.soundController.PlayOneShotSound("Swing");
+                playerController.Combo();
+                attackAE?.Invoke();
+
+            }
         }
-        playerController.soundController.PlayOneShotSound("Swing");
-        playerController.Combo();
-        attackAE?.Invoke();
+
+        
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {

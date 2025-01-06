@@ -20,7 +20,9 @@ public class Human : MonoBehaviour
 
     public virtual void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
     {
-        if (info != null)
+        TakeDamage(attackDamage);
+
+        if (info != null && statController.GetStat(StatInfo.Health).Value > 0)
         {
             this.info = info;
             info.dir = transform.position- attackHuman.transform.position;
@@ -32,7 +34,7 @@ public class Human : MonoBehaviour
         //else if (setStateName == "Stun")
         //    Stun(dir);
 
-        TakeDamage(attackDamage);
+        
     }
     public void HealHealth(float healValue)
     {
@@ -47,7 +49,7 @@ public class Human : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    protected virtual void Revive()
+    public virtual void Revive()
     {
 
     }
