@@ -47,6 +47,9 @@ public class Human : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    protected virtual void Revive()
+    {
 
+    }
 
 }

@@ -19,7 +19,7 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.playerState.CurrentState() != PlayerState.Idle)
             return;
-
+        playerController.movement.StopMove();
         float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
         playerController.lookDIr_X = Vector3.right * x;
         playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);

@@ -3,43 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using System;
-using Photon;
-using Photon.Pun;
-public class SkillSwap : UIBase, IPunObservable
+//using Photon;
+//using Photon.Pun;
+public class SkillSwap : UIBase/*, IPunObservable*/
 {
-    public PhotonView pv;
+    //public PhotonView pv;
     [SerializeField] private List<Transform> skillImages= new();
     [SerializeField] private Vector3[] pos;
     [SerializeField] private SkillFunctionController skill;
 
     private void Start()
     {
-        if(!pv.IsMine)
-        {
-            StartPhotonUI();
-            gameObject.SetActive(false);
-        }
+        //if(!pv.IsMine)
+        //{
+        //    StartPhotonUI();
+        //    gameObject.SetActive(false);
+        //}
+        //gameObject.SetActive(false);
     }
     private void Update()
     {
-        if (!pv.IsMine)
-            return;
+        //if (!pv.IsMine)
+        //    return;
 
         transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
         if (gameObject.activeInHierarchy&&(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q)))
         {
             skill.SetAllDisable(0.2f);
             DisableSkillSwap();
-            pv.RPC("DisableSkillSwap", RpcTarget.All);
+            //pv.RPC("DisableSkillSwap", RpcTarget.All);
         }
     }
     public void Init(SkillFunctionController skill)
     {
-        this.skill = skill;
-        gameObject.SetActive(false);
-        StartPhotonUI();
+        //this.skill = skill;
+        //gameObject.SetActive(false);
+        //StartPhotonUI();
     }
-    [PunRPC]
+    //[PunRPC]
     public void ActiveSkillSwap()
     {
         if (!gameObject.activeInHierarchy)
@@ -51,7 +52,7 @@ public class SkillSwap : UIBase, IPunObservable
         else
             Swap();
     }
-    [PunRPC]
+    //[PunRPC]
     public void DisableSkillSwap()
     {
         Invoke("DisableGO", 0.05f);
@@ -86,15 +87,15 @@ public class SkillSwap : UIBase, IPunObservable
             skillImages[i].DOLocalMove(Vector3.zero, 0.05f, true);
         }
     }
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(transform.position);
-        }
-        else
-        {
-            transform.DOMove((Vector3)stream.ReceiveNext(), 0.2f, true);
-        }
-    }
+    //public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    //{
+    //    if (stream.IsWriting)
+    //    {
+    //        stream.SendNext(transform.position);
+    //    }
+    //    else
+    //    {
+    //        transform.DOMove((Vector3)stream.ReceiveNext(), 0.2f, true);
+    //    }
+    //}
 }
