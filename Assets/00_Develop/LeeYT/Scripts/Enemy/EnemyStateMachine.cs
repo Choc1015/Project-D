@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
 
-[RequireComponent(typeof(AudioSource))]
+
 public class EnemyStateMachine : Human
 {
 
@@ -33,7 +33,7 @@ public class EnemyStateMachine : Human
     {
         Initialize();
     }
-    protected virtual void Initialize()
+    protected void Initialize()
     {
         statController.Init();
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
@@ -107,7 +107,7 @@ public class EnemyStateMachine : Human
         
     }
 
-    protected void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
