@@ -45,12 +45,15 @@ public class PlayerController : Human/*, IPunObservable*/
 
     private ReviveInfo reviveInfo = new();
 
+    public HitEffect enemyHitPrefab;
+    private ObjectPool<HitEffect> EnemyHitObjPool;
+
     void Awake()
     {
         //if (!pv.IsMine)
         //    return;
+        EnemyHitObjPool = new ObjectPool<HitEffect>(enemyHitPrefab, 5, null);
 
-        
         //GameManager.Instance.players.Add(this);
         baseColor = new Color(1, 1, 1, 1f);
         dieColor = new Color(1, 1, 1, 0f); 
@@ -58,6 +61,10 @@ public class PlayerController : Human/*, IPunObservable*/
         //skillSwapUI.Init(skillFunctionsController);
 
         //playerUI = PhotonNetwork.Instantiate("Prefabs/UI/PlayerUI", Vector3.zero, Quaternion.identity).GetComponent<PlayerUI>();
+    }
+    public void SpawnHitEffect(Vector3 pos)
+    {
+        EnemyHitObjPool.SpawnObject().Spawn(EnemyHitObjPool, pos);
     }
     private void OnEnable()
     {
