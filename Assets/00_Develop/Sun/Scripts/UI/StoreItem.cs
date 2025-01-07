@@ -10,14 +10,14 @@ public class StoreItem : MonoBehaviour
     public Item item;
     public float price;
     private Image image;
-    private Text priceTxt;
+    private TMPro.TextMeshProUGUI priceTxt;
    
     private bool isDisable;
     void Start()
     {
         GetComponent<Button>().onClick.AddListener(OnClickItem);
         image = transform.Find("Icon").GetComponent<Image>();
-        priceTxt = transform.Find("Price").GetComponent<Text>();
+        priceTxt = transform.Find("Price").GetComponent<TMPro.TextMeshProUGUI>();
         priceTxt.text = price.ToString();
     }
     public void OnClickItem()

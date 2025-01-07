@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class UIManager : Singleton<UIManager>
 {
     public HitImage hitImage;
+    public TextBox textBox;
 
     public Image fadeImage;
     public void SetActiveFadeImage(bool isActive, float alpha,float timer)
     {
-        fadeImage.gameObject.SetActive(isActive);
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b, 1-alpha); 
         fadeImage.DOFade(alpha, timer);
+        if (!isActive)
+            Invoke("DisableFadeImage", timer);
     }
+    private void DisableFadeImage() => fadeImage.gameObject.SetActive(false);
 }

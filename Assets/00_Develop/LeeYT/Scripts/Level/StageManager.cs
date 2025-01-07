@@ -26,6 +26,6 @@ public class StageManager : Singleton<StageManager>
         UIManager.Instance.SetActiveFadeImage(true, 1, timer);
         yield return new WaitForSeconds(timer+0.5f);
         Utility.GetPlayerTr().position = pos;
-        UIManager.Instance.SetActiveFadeImage(true, 0, timer);
+        UIManager.Instance.SetActiveFadeImage(false, 0, timer);
     }
 }

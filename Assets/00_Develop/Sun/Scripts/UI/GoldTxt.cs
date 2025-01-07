@@ -2,11 +2,10 @@ using Photon.Chat.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GoldTxt : MonoBehaviour
 {
-    private Text txt;
+    private TMPro.TextMeshProUGUI txt;
 
     private void OnEnable()
     {
@@ -14,7 +13,7 @@ public class GoldTxt : MonoBehaviour
     }
     void Awake()
     {
-        txt = GetComponent<Text>();
+        txt = GetComponent<TMPro.TextMeshProUGUI>();
         CurrencyManager.Instance.updateGold += () => txt.text = CurrencyManager.Instance.Gold.ToString();
     }
 
