@@ -8,7 +8,7 @@ public class EnemyStateMachine : Human
 
     private Vector3 moveDir;
     // States
-    public enum EnemyState
+    public enum BossStat
     {
         Chase, // 플레이어 따라가기
         Attack,// 공격
@@ -16,7 +16,7 @@ public class EnemyStateMachine : Human
         KnockBack, // 넘어짐
         Die // 죽음
     }
-    protected EnemyState currentState;
+    protected BossStat currentState;
     protected bool isAlive = true; // 살아있는 판정은 필요하고 
     protected float tempAttackOffsetX;
     protected bool isAttack = false;
@@ -40,7 +40,7 @@ public class EnemyStateMachine : Human
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
         //FindPlayers();
         // Start the state machine
-        ChangeState(EnemyState.Chase); // 초기 상태
+        ChangeState(BossStat.Chase); // 초기 상태
         tempAttackOffsetX = AttackOffset.x;
 
         if (animator == null)
@@ -108,7 +108,7 @@ public class EnemyStateMachine : Human
         
     }
 
-    public void ChangeState(EnemyState newState)
+    public void ChangeState(BossStat newState)
     {
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
@@ -118,7 +118,7 @@ public class EnemyStateMachine : Human
     protected IEnumerator Chase()
     {
         Debug.Log("Entering Chase State");
-        while (currentState == EnemyState.Chase)
+        while (currentState == BossStat.Chase)
         {
             animator.SetTrigger("Idle");
             isAttack = false;
@@ -129,7 +129,7 @@ public class EnemyStateMachine : Human
             Debug.Log(Utility.GetPlayerTr().position);
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
-                ChangeState(EnemyState.Attack);
+                ChangeState(BossStat.Attack);
             }
             
 
@@ -162,7 +162,7 @@ public class EnemyStateMachine : Human
         Debug.Log("Entering Attack State"); 
         // 추가 딜레이 시간 작업
         
-        while (currentState == EnemyState.Attack)
+        while (currentState == BossStat.Attack)
         {
             
             // Attack logic
@@ -176,7 +176,7 @@ public class EnemyStateMachine : Human
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
             {
                 isAttack = false;
-                ChangeState(EnemyState.Chase);
+                ChangeState(BossStat.Chase);
                 break;
             }
             else
@@ -199,7 +199,7 @@ public class EnemyStateMachine : Human
 
         yield return new WaitForSeconds(info.knockBackTime);
         
-        ChangeState(EnemyState.Chase);
+        ChangeState(BossStat.Chase);
         movement.StopMove();
         if (this.info.isKnockBack)
             this.info.isKnockBack = false;
@@ -208,7 +208,7 @@ public class EnemyStateMachine : Human
     {
         animator.SetTrigger("Stun");
         yield return new WaitForSeconds(info.stunTime);
-        ChangeState(EnemyState.KnockBack);
+        ChangeState(BossStat.KnockBack);
         movement.StopMove();
         
     }
@@ -248,11 +248,11 @@ public class EnemyStateMachine : Human
         // Simulate death for the example
         if (isAlive)
         {
-            ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
+            ChangeState(BossStat.Stun); // 스턴을 바꿔 놓음
         }
         else
         {
-            ChangeState(EnemyState.Die);
+            ChangeState(BossStat.Die);
             if (StageManager.Instance.WaveEnemyCount > 0)
             {
                 StageManager.Instance.WaveEnemyCount--;
@@ -262,6 +262,6 @@ public class EnemyStateMachine : Human
     }
     protected override void DieHuman()
     {
-        ChangeState(EnemyState.Die);
+        ChangeState(BossStat.Die);
     }
 }
