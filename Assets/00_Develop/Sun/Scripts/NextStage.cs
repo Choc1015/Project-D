@@ -10,6 +10,9 @@ public class NextStage : MonoBehaviour
     [SerializeField] private Vector3 nextStagePos;
     public int curStage;
     [SerializeField] private GameObject Player;
+    [SerializeField] private float minX, maxX;
+
+
     void Update()
     {
         if (!StageManager.Instance.IsStart)
@@ -22,7 +25,7 @@ public class NextStage : MonoBehaviour
             if ((transform.position.x - Player.transform.position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
             {
 
-                StageManager.Instance.NextStage(nextStagePos);
+                StageManager.Instance.NextStage(nextStagePos, minX, maxX);
             }
 
         }
