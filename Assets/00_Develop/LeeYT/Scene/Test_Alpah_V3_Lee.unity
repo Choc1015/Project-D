@@ -9429,7 +9429,7 @@ MonoBehaviour:
   animator: {fileID: 1377902139}
   soundController: {fileID: 1377902137}
   spriteLight: {fileID: 1377902138}
-  Persent1: 10
+  Persent1: 90
   Persent2: 0
   Persent3: 0
 --- !u!4 &1377902136
@@ -9718,6 +9718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitImage: {fileID: 44345861}
+  textBox: {fileID: 0}
   fadeImage: {fileID: 0}
 --- !u!1001 &1460247133
 PrefabInstance:
@@ -11262,7 +11263,6 @@ MonoBehaviour:
   - {fileID: 397460130}
   - {fileID: 1889591383}
   - {fileID: 567490135}
-  enemyTemp: {fileID: 0}
   Camera: {fileID: 1132059911}
   minX: -100
   maxX: 100
