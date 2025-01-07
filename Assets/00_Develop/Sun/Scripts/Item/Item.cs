@@ -5,16 +5,24 @@ using UnityEngine;
 public enum ItemKind { Buff, Heal };
 public class Item : MonoBehaviour
 {
-    public ItemKind kind;
-    public StatInfo statInfo;
+    [SerializeField] private ItemKind kind;
+    [SerializeField] private StatInfo statInfo;
     public float value;
-
-    public void UseItem()
+    private int index;
+    public void Init(int index)
+    {
+        this.index = index;
+    }
+    public virtual void UseItem()
     {
         if(kind == ItemKind.Buff)
             Utility.GetPlayerStat().BuffStat(statInfo, value);
         else
             Utility.GetPlayer().Heal(statInfo, value);
-        gameObject.SetActive(false);
+        Despawn();
+    }
+    public void Despawn()
+    {
+        ItemManager.Instance.DespawnItem(index, this);
     }
 }
