@@ -44,6 +44,7 @@ public class Human : MonoBehaviour
             statController.GetStat(StatInfo.Health).Value += healValue;
         }
     }
+    
     public StatController GetStatController() => statController;
     protected virtual void DieHuman()
     {

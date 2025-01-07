@@ -9,14 +9,28 @@ public class StatController : MonoBehaviour
 {
     public StatSO statSO;
 
-    private StatSO Stats;
+    [SerializeField] private StatSO Stats;
     private Dictionary<StatInfo, Stat> stats = new();
-    public void Init()
+    public void Init(bool isPlayer =false)
     {
-        if (Stats != default)
+        if (isPlayer)
+        {
             stats.Clear();
-        Stats = statSO.Clone() as StatSO;
-        foreach(Stat stat in Stats.Stats)
+            if (Utility.GetPlayerStat() == null)
+            {
+                Stats = statSO.Clone() as StatSO;
+                Utility.SetStat(Stats);
+            }
+            else
+            {
+                Utility.GetPlayer().HealHealth(999);
+                Stats = Utility.GetPlayerStat();
+            }
+        }
+        else
+            Stats = statSO.Clone() as StatSO;
+
+        foreach (Stat stat in Stats.Stats)
         {
             stats.Add(stat.statInfo, stat);
         }
@@ -26,4 +40,5 @@ public class StatController : MonoBehaviour
     {
         return stats[statInfo];
     }
+    public StatSO GetStatSO() => Stats;
 }

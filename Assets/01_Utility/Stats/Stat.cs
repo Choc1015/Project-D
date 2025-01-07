@@ -23,5 +23,9 @@ public class Stat
         } 
     }
     public float GetMaxValue() => maxValue;
-    public float SetMaxValue(float newMaxValue) => maxValue = newMaxValue;
+    public void BuffStat(float newMaxValue)
+    {
+        maxValue += newMaxValue;
+        curValue += newMaxValue;
+    }
 }
