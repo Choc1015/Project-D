@@ -8,6 +8,7 @@ public class StageManager : Singleton<StageManager>
 {
     public int CurrentStage { get; private set; }
     public int WaveEnemyCount;
+    public bool IsBoss = false;
     public bool IsStopCamera= false;
     public bool IsStart = false;
 

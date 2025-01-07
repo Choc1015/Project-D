@@ -6,7 +6,7 @@ public class PlayerSkill : MonoBehaviour
 {
     private PlayerController playerController;
     private BulletController bulletController;
-    private EnemyStateMachine hitEnemyTemp;
+    private Human hitEnemyTemp;
     private bool useDashAttack, isCritical;
 
     public Action attackAE; // Attack Additional Effects
@@ -113,7 +113,7 @@ public class PlayerSkill : MonoBehaviour
                 isCritical = GetCritical();
                 foreach (RaycastHit2D hitObj in hits)
                 {
-                    hitEnemyTemp = hitObj.collider.GetComponent<EnemyStateMachine>();
+                    hitEnemyTemp = hitObj.collider.GetComponent<Human>();
                     //if (hitEnemyTemp.)
                     //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
