@@ -18,28 +18,27 @@ public class PatternManager : Singleton<PatternManager>
     public Vector2 randomRangeY = new Vector2(-4f, -1f); // Y축 이동 범위
     public float moveDuration = 1.5f; // 이동 시간
     public float delayBetweenMoves = 0.5f; // 이동 간 대기 시간
-    
+
     float maxIntensity = 1;
 
 
     public void StartDarkNight()
     {
-        StopAllCoroutines();
         StartCoroutine(DimLightCoroutine());
     }
-   
+
     public void EndDarkNight()
     {
-        StopAllCoroutines();
         StartCoroutine(LightCoroutine());
     }
 
     private IEnumerator DimLightCoroutine()
     {
         isPattern1 = true;
-        
+        Debug.Log(1);
         while (GlobalLight.intensity > minIntensity)
         {
+            Debug.Log(2);
             GlobalLight.intensity -= dimSpeed * Time.deltaTime;
 
             // 최소 Intensity 값에 도달하면 정지
@@ -51,6 +50,7 @@ public class PatternManager : Singleton<PatternManager>
 
             yield return null; // 한 프레임 대기
         }
+        yield break;
     }
 
     private IEnumerator LightCoroutine()
@@ -67,9 +67,11 @@ public class PatternManager : Singleton<PatternManager>
                 break;
             }
 
-            yield return null; // 한 프레임 대기
+            yield return null; // 한 프레임 대기0
         }
         isPattern1 = false;
+        yield break; // 한 프레임 대기
+
     }
 
     public void SpawnSun()
@@ -102,4 +104,4 @@ public class PatternManager : Singleton<PatternManager>
             });
     }
 
-}
+}   
