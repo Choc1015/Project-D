@@ -15,5 +15,6 @@ public class Item : MonoBehaviour
             Utility.GetPlayerStat().BuffStat(statInfo, value);
         else
             Utility.GetPlayer().Heal(statInfo, value);
+        gameObject.SetActive(false);
     }
 }

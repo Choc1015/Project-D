@@ -94,20 +94,26 @@ public class PlayerSkill : MonoBehaviour
     {
         if (playerController.CanAction())
         {
-            if(playerController.GetPlayerState().CurrentState() == PlayerState.Die)
+            int layerMask = 1 << LayerMask.NameToLayer("Item");
+            RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 0.5f, layerMask);
+            if (hit)
+            {
+                hit.collider.GetComponent<Item>().UseItem();
+            }
+            else if (playerController.GetPlayerState().CurrentState() == PlayerState.Die)
             {
                 if(playerController.CanRevive())
                     playerController.Revive();
             }
             else
             {
-                int layerMask = 1 << LayerMask.NameToLayer("Enemy");
+                layerMask = 1 << LayerMask.NameToLayer("Enemy");
 
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * 1.5f, 0, playerController.lookDIr_X, 1, layerMask);
                 isCritical = GetCritical();
-                foreach (RaycastHit2D hit in hits)
+                foreach (RaycastHit2D hitObj in hits)
                 {
-                    hitEnemyTemp = hit.collider.GetComponent<EnemyStateMachine>();
+                    hitEnemyTemp = hitObj.collider.GetComponent<EnemyStateMachine>();
                     //if (hitEnemyTemp.)
                     //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;

@@ -99,8 +99,6 @@ public class PlayerController : Human/*, IPunObservable*/
 
         //pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
         LocalUpdate(lookDIr_X.x == -1 ? true : false);
-        if (Input.GetKeyDown(KeyCode.Space))
-            Utility.GetPlayerStat().BuffStat(StatInfo.AttackDamage, 30f);
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
     void LateUpdate()
@@ -268,6 +266,7 @@ public class PlayerController : Human/*, IPunObservable*/
         if (statController != null)
         {
             statController.GetStat(info).Value += healValue;
+            ActiveUpdatePlayerUI();
         }
     }
 
