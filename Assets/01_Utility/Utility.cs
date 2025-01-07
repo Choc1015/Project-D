@@ -13,8 +13,9 @@ public static class Utility
     {
         playerController = player.GetComponent<PlayerController>();
     }
-    
-
+    public static StatSO playerStat;
+    public static StatSO GetPlayerStat() => playerStat;
+    public static void SetStat(StatSO stat) => playerStat = stat;
     public static GameObject FindPlayers(ref GameObject Player)
     {
 

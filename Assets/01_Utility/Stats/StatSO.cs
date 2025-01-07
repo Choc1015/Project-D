@@ -11,4 +11,15 @@ public class StatSO : ScriptableObject
     {
         return Instantiate(this);
     }
+
+    public void BuffStat(StatInfo statInfo, float value)
+    {
+        foreach(Stat stat in Stats)
+        {
+            if(stat.statInfo == statInfo)
+            {
+                stat.BuffStat(value); 
+            }
+        }
+    }
 }

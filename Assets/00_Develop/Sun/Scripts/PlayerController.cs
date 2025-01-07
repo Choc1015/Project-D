@@ -62,6 +62,8 @@ public class PlayerController : Human/*, IPunObservable*/
         soundController = GetComponent<SoundController>();
         playerSkill = GetComponent<PlayerSkill>();
         playerState = GetComponent<PlayerStateMachine>();
+        
+
         //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         //skillSwapUI.Init(skillFunctionsController);
 
@@ -77,7 +79,9 @@ public class PlayerController : Human/*, IPunObservable*/
     }
     private void Init()
     {
-        statController.Init();
+
+        statController.Init(true);
+
         Utility.playerController = this;
         L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         ActiveUpdatePlayerUI();
@@ -95,7 +99,6 @@ public class PlayerController : Human/*, IPunObservable*/
 
         //pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
         LocalUpdate(lookDIr_X.x == -1 ? true : false);
-
         transform.position = GameManager.Instance.GetClampPosition(transform);
     }
     void LateUpdate()
@@ -258,6 +261,15 @@ public class PlayerController : Human/*, IPunObservable*/
             reviveInfo.nextPlayer = default;
         }
     }
+    public void Heal(StatInfo info,float healValue)
+    {
+        if (statController != null)
+        {
+            statController.GetStat(info).Value += healValue;
+            ActiveUpdatePlayerUI();
+        }
+    }
+
     public bool CanRevive() => reviveInfo.canRevive;
     public void PlayOneShotSound(string soundName)
     {
