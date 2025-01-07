@@ -11,6 +11,7 @@ public class EventController : MonoBehaviour
     private void Start()
     {
         NextEvent();
+        GameManager.Instance.SetGameState(GameState.Stop);
     }
     void Update()
     {
@@ -29,6 +30,7 @@ public class EventController : MonoBehaviour
         else
         {
             curTrigger = null;
+            GameManager.Instance.SetGameState(GameState.Play);
         }
     }
 }

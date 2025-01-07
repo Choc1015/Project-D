@@ -105,6 +105,8 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         //if (!pv.IsMine)
         //    return;
+        if (GameManager.Instance.currentState == GameState.Stop)
+            return;
 
         if (CanAction())
         {
