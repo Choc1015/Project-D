@@ -8,7 +8,7 @@ public class EnemyStateMachine : Human
 
     private Vector3 moveDir;
     // States
-    public enum BossStat
+    public enum EnemyState
     {
         Chase, // 플레이어 따라가기
         Attack,// 공격
@@ -16,7 +16,7 @@ public class EnemyStateMachine : Human
         KnockBack, // 넘어짐
         Die // 죽음
     }
-    protected BossStat currentState;
+    protected EnemyState currentState;
     protected bool isAlive = true; // 살아있는 판정은 필요하고 
     protected float tempAttackOffsetX;
     protected bool isAttack = false;
@@ -40,7 +40,7 @@ public class EnemyStateMachine : Human
         attackRange = statController.GetStat(StatInfo.AttakRange).Value;
         //FindPlayers();
         // Start the state machine
-        ChangeState(BossStat.Chase); // 초기 상태
+        ChangeState(EnemyState.Chase); // 초기 상태
         tempAttackOffsetX = AttackOffset.x;
 
         if (animator == null)
@@ -108,7 +108,7 @@ public class EnemyStateMachine : Human
         
     }
 
-    public void ChangeState(BossStat newState)
+    public void ChangeState(EnemyState newState)
     {
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
@@ -118,7 +118,7 @@ public class EnemyStateMachine : Human
     protected IEnumerator Chase()
     {
         Debug.Log("Entering Chase State");
-        while (currentState == BossStat.Chase)
+        while (currentState == EnemyState.Chase)
         {
             animator.SetTrigger("Idle");
             isAttack = false;
@@ -129,7 +129,7 @@ public class EnemyStateMachine : Human
             Debug.Log(Utility.GetPlayerTr().position);
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
-                ChangeState(BossStat.Attack);
+                ChangeState(EnemyState.Attack);
             }
             
 
@@ -162,7 +162,7 @@ public class EnemyStateMachine : Human
         Debug.Log("Entering Attack State"); 
         // 추가 딜레이 시간 작업
         
-        while (currentState == BossStat.Attack)
+        while (currentState == EnemyState.Attack)
         {
             
             // Attack logic
@@ -176,7 +176,7 @@ public class EnemyStateMachine : Human
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
             {
                 isAttack = false;
-                ChangeState(BossStat.Chase);
+                ChangeState(EnemyState.Chase);
                 break;
             }
             else
@@ -199,7 +199,7 @@ public class EnemyStateMachine : Human
 
         yield return new WaitForSeconds(info.knockBackTime);
         
-        ChangeState(BossStat.Chase);
+        ChangeState(EnemyState.Chase);
         movement.StopMove();
         if (this.info.isKnockBack)
             this.info.isKnockBack = false;
@@ -208,7 +208,7 @@ public class EnemyStateMachine : Human
     {
         animator.SetTrigger("Stun");
         yield return new WaitForSeconds(info.stunTime);
-        ChangeState(BossStat.KnockBack);
+        ChangeState(EnemyState.KnockBack);
         movement.StopMove();
         
     }
@@ -233,7 +233,7 @@ public class EnemyStateMachine : Human
         Debug.Log("Enemy Died");
 
         yield return new WaitForSeconds(2f); // Wait before destroying the object
-        ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
+        Destroy(gameObject);
     }
 
 
@@ -248,11 +248,11 @@ public class EnemyStateMachine : Human
         // Simulate death for the example
         if (isAlive)
         {
-            ChangeState(BossStat.Stun); // 스턴을 바꿔 놓음
+            ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
         }
         else
         {
-            ChangeState(BossStat.Die);
+            ChangeState(EnemyState.Die);
             if (StageManager.Instance.WaveEnemyCount > 0)
             {
                 StageManager.Instance.WaveEnemyCount--;
@@ -262,6 +262,6 @@ public class EnemyStateMachine : Human
     }
     protected override void DieHuman()
     {
-        ChangeState(BossStat.Die);
+        ChangeState(EnemyState.Die);
     }
 }

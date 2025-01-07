@@ -105,14 +105,17 @@ public class BossBase : Human
     public void ChangeState(BossState newState)
     {
         currentState = newState;
-        StopAllCoroutines(); // Stop any running state
-        StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
+             // Stop any running state
+        StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게    
     }
 
     protected IEnumerator Chase()
     {
         Debug.Log("Entering Chase State");
-        InvokeRepeating("RandomPersent", 3, 3);
+        if (!isPattern)
+        {
+            Invoke("RandomPersent", 3);
+        }
         while (currentState == BossState.Chase)
         {
             animator.SetTrigger("Idle");
@@ -216,12 +219,18 @@ public class BossBase : Human
     protected IEnumerator Pattern1()
     {
         Debug.Log("Entering Pattern1 State");
-        isPattern = true;
-        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        yield return new WaitForSeconds(10f);
-        isPattern = false;
+        CancelInvoke("RandomPersent");
+        isPattern = true; 
+        if (isPattern)
+        {
+            PatternManager.Instance.StartDarkNight();
+            PatternManager.Instance.SpawnSun();
+            yield return new WaitUntil(() => !PatternManager.Instance.IsSunAlive);
+            isPattern = false;
+        }
+        PatternManager.Instance.EndDarkNight();
         ChangeState(BossState.Chase);
-        yield return null;
+        yield return new WaitForSeconds(10f);
     }
 
     protected IEnumerator Pattern2()
@@ -312,7 +321,7 @@ public class BossBase : Human
         }
         else
         {
-            Debug.Log("아무일도 없었습니다!!");
+            ChangeState(BossState.Chase);
         }
 
 

@@ -14,7 +14,7 @@ public class L_CinemachineCameraController : MonoBehaviour
     private void Update()
     {
         // 카메라가 멈춰야 하는지 확인
-        if (StageManager.Instance.IsStopCamera == true)
+        if (StageManager.Instance.IsStopCamera == true || StageManager.Instance.IsBoss)
         {
             virtualCamera.Follow = null; // 카메라 동작 멈춤
         }
