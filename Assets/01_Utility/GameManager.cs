@@ -17,7 +17,12 @@ public class GameManager : Singleton<GameManager>
     
     public Vector3 GetClampPosition(Transform T)
     {
-        float x = Mathf.Clamp(T.position.x, minX, maxX);
+        float x = 0;
+        if(StageManager.Instance.IsStopCamera)
+            x = Mathf.Clamp(T.position.x, Camera.transform.position.x - (17.85f / 2f), Camera.transform.position.x + (17.85f / 2f));
+        else
+            x = Mathf.Clamp(T.position.x, minX, maxX);
+
         float y = Mathf.Clamp(T.position.y, minY, maxY);
         return (Vector3.right * x) + (Vector3.up * y);
     }
