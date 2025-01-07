@@ -17,7 +17,7 @@ public class GameManager : Singleton<GameManager>
     
     public Vector3 GetClampPosition(Transform T)
     {
-        float x = Mathf.Clamp(T.position.x,Camera.transform.position.x - (17.85f /2f), Camera.transform.position.x + (17.85f / 2f));
+        float x = Mathf.Clamp(T.position.x, minX, maxX);
         float y = Mathf.Clamp(T.position.y, minY, maxY);
         return (Vector3.right * x) + (Vector3.up * y);
     }
@@ -36,5 +36,10 @@ public class GameManager : Singleton<GameManager>
         curPlayer.gameObject.SetActive(false);
         players_Dic[nextPlayer].transform.position = curPlayer.transform.position;
         players_Dic[nextPlayer].gameObject.SetActive(true);
+    }
+    public void SetCameraRange(float newMinX, float newMaxX )
+    {
+        minX = newMinX;
+        maxX = newMaxX;
     }
 }
