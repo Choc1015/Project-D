@@ -15,7 +15,7 @@ public class EventController : MonoBehaviour
     }
     void Update()
     {
-        curTrigger?.Excute(this);
+        curTrigger?.Execute(this);
     }
 
     public void NextEvent()

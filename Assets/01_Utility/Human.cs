@@ -31,12 +31,6 @@ public class Human : MonoBehaviour
             info.dir.y = 0;
             movement.KnockBack(info);
         }
-        //if (setStateName == "KnockBack")
-        //    KnockBack(dir);
-        //else if (setStateName == "Stun")
-        //    Stun(dir);
-
-        
     }
     public void HealHealth(float healValue)
     {

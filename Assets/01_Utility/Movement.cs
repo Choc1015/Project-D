@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour
             }
         }
     }
-    public void MoveToTrans(Vector3 dir, float moveSpeed)
+    public void MoveToTrans(Vector2 dir, float moveSpeed)
     {
         transform.Translate(dir.normalized * moveSpeed * Time.deltaTime);
     }

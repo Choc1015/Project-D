@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public enum GameState { Play, Stop }
 public class GameManager : Singleton<GameManager>
@@ -14,7 +15,8 @@ public class GameManager : Singleton<GameManager>
 
     public GameState currentState { get; private set; }
     public void SetGameState(GameState gameState) => currentState = gameState;
-    
+
+    public Action SetLayerPosition;
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
@@ -24,10 +26,13 @@ public class GameManager : Singleton<GameManager>
             x = Mathf.Clamp(T.position.x, minX, maxX);
 
         float y = Mathf.Clamp(T.position.y, minY, maxY);
-        return (Vector3.right * x) + (Vector3.up * y);
+        return (Vector3.right * x) + (Vector3.up * y) + (Vector3.forward * T.position.z) ;
     }
-        
 
+    private void Update()
+    {
+        SetLayerPosition?.Invoke();
+    }
     private void Start()
     {
         foreach(PlayerController player in players)
