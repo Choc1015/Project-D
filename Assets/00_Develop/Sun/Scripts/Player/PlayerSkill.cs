@@ -7,7 +7,8 @@ public class PlayerSkill : MonoBehaviour
     private PlayerController playerController;
     private BulletController bulletController;
     private Human hitEnemyTemp;
-    private bool useDashAttack, isCritical;
+    private bool useDashAttack;
+    public bool isCritical;
 
     public Action attackAE; // Attack Additional Effects
 
@@ -118,16 +119,11 @@ public class PlayerSkill : MonoBehaviour
                     //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
-                    
-                    CameraShake.cameraShake.ActiveCameraShake(0.01f);
                     if(isCritical)
-                    {
-                        UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
-                        GiveDamage(attackDamage*2, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 200, 0.3f, 2));
-                    }
+                        GiveDamage(attackDamage * 2, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 200, 0.3f, 2));
                     else
                         GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
-                    playerController.SpawnHitEffect(hitEnemyTemp.transform.position);
+                    //playerController.SpawnHitEffect(hitEnemyTemp.transform.position);
                 }
                 playerController.PlayOneShotSound("Swing");
                 playerController.Combo();

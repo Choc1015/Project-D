@@ -3099,6 +3099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveEnemyCount: 0
+  IsBoss: 0
   IsStopCamera: 0
   IsStart: 1
 --- !u!1 &417062589
@@ -17992,7 +17993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4824559635433605114, guid: 6e6fc7bb8fda2934c81c75a7fd6b40eb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 114
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 4824559635433605114, guid: 6e6fc7bb8fda2934c81c75a7fd6b40eb, type: 3}
       propertyPath: m_LocalPosition.y
