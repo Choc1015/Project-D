@@ -238,6 +238,7 @@ public class EnemyStateMachine : Human
             Debug.Log("Enemy Died");
 
             yield return new WaitForSeconds(2f); // Wait before destroying the object
+            GetComponent<SetLayer>()?.DestroySetLayer();
             Destroy(gameObject);
         }
         
@@ -258,13 +259,13 @@ public class EnemyStateMachine : Human
             return;
 
         base.TakeDamage(attackDamage, attackHuman, info);
+        player.SpawnHitEffect(transform.position + (Vector3.up * 0.25f));
 
-        
         // Simulate death for the example
         if (isAlive)
         {
             ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
-            player.SpawnHitEffect(transform.position);
+            
         }
         else
         {

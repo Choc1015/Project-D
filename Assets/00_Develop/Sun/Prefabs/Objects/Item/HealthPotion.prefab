@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8504698390704237915}
   - component: {fileID: 5447786068350133793}
   - component: {fileID: -7992621839033918674}
+  - component: {fileID: -6475636926325238897}
   m_Layer: 16
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -106,6 +107,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-6475636926325238897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2179705362313148079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7c0164b5e931f4089e6ef344706772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6004965115713941931
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 6004965115713941931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

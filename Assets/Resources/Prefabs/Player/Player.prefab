@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1931426702401166601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: -1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
   m_FlipX: 0
@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 7581687510746911494}
   - component: {fileID: 5316237887173578074}
   - component: {fileID: 7978408020662855308}
+  - component: {fileID: -8184644315775791750}
   m_Layer: 15
   m_Name: Player
   m_TagString: Player
@@ -272,8 +273,6 @@ MonoBehaviour:
   sprite: {fileID: 1258926530325127277}
   soul: {fileID: 4807531274747957609}
   animTrigger: {fileID: 4813723113395707094}
-  playerState: {fileID: 5316237887173578074}
-  playerSkill: {fileID: 7581687510746911494}
   moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
   spriteLight: {fileID: 4301083112342461842}
@@ -281,7 +280,6 @@ MonoBehaviour:
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
   maxCombo: 0
-  soundController: {fileID: 7978408020662855308}
   enemyHitPrefab: {fileID: -4271660362663151108, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
 --- !u!114 &219253064508369906
 MonoBehaviour:
@@ -296,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statSO: {fileID: 11400000, guid: 188af7ddd7444d74fb47fc380a223353, type: 2}
+  Stats: {fileID: 0}
 --- !u!114 &5212341399615060278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,6 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6885c8a403417bc4fbbee6e4d91d7140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCritical: 0
 --- !u!114 &5316237887173578074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,6 +807,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c63aada0fcd2942478e902a069764210, type: 3}
   - name: SlidingHit
     clip: {fileID: 8300000, guid: ccd5b149da32b6848acf8e1974188156, type: 3}
+--- !u!114 &-8184644315775791750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535870140066485341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7c0164b5e931f4089e6ef344706772, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3358986231070291462
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +847,7 @@ Transform:
   m_GameObject: {fileID: 3358986231070291462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -882,7 +894,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa7f4d76e44532e47840589c866ca94d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1108,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3816355230397994934, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3816355230397994934, guid: ea70d6aadf3b03c468556e9b65dca700, type: 3}
       propertyPath: m_LocalPosition.z

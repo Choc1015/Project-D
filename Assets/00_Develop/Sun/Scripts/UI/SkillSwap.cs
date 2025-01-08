@@ -26,7 +26,7 @@ public class SkillSwap : UIBase/*, IPunObservable*/
         //if (!pv.IsMine)
         //    return;
 
-        transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position);
+        transform.position = Camera.main.WorldToScreenPoint(Utility.GetPlayerTr().position+(Vector3.up*1.5f));
         if (gameObject.activeInHierarchy&&(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Q)))
         {
             skill.SetAllDisable(0.2f);

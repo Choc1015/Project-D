@@ -11,7 +11,7 @@ public class FadeEvent : EventTrigger
         UIManager.Instance.SetActiveFadeImage(isActive, alpha, timer);
         timer += delayTimer;
     }
-    public override void Excute(EventController eventController)
+    public override void Execute(EventController eventController)
     {
         timer -= Time.deltaTime;
         if (timer<=0)
