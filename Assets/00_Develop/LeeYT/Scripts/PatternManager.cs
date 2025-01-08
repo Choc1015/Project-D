@@ -7,6 +7,8 @@ using UnityEngine.Rendering.Universal;
 public class PatternManager : Singleton<PatternManager>
 {
 
+    #region 다크 엘프 패턴 1
+
     [Header("다크 엘프 패턴 1")]
     public Light2D GlobalLight;
     public float dimSpeed = 0.1f; // 어둡게 되는 속도
@@ -30,6 +32,7 @@ public class PatternManager : Singleton<PatternManager>
     public void EndDarkNight()
     {
         StartCoroutine(LightCoroutine());
+        IsSunAlive = true;
     }
 
     private IEnumerator DimLightCoroutine()
@@ -104,4 +107,36 @@ public class PatternManager : Singleton<PatternManager>
             });
     }
 
-}   
+    #endregion
+
+    #region 다크 엘프 패턴 2
+
+
+    [Header("다크 엘프 패턴 2")]
+    [SerializeField] List<GameObjectGroup> pattern; // 저장할 위치들
+    [System.Serializable]
+    public class GameObjectGroup
+    {
+        public List<Vector2> positions; // GameObject 리스트
+    }
+
+    public void SpawnDarkSpell(int num = 0)
+    {
+        GameObjectGroup group = pattern[num];
+        foreach (var spellPos in group.positions)
+        {
+            ObjectPoolManager.Instance.SpawnFromPool("DarkSpell", spellPos);
+        }
+    }
+
+    public void RandPatternSpawn()
+    {
+        int Rand = Random.Range(0, pattern.Count);
+        SpawnDarkSpell(Rand);
+    }
+
+    #endregion
+
+
+
+}

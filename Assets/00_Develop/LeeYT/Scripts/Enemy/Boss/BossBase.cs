@@ -105,7 +105,7 @@ public class BossBase : Human
     public void ChangeState(BossState newState)
     {
         currentState = newState;
-             // Stop any running state
+        // Stop any running state
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게    
     }
 
@@ -220,8 +220,45 @@ public class BossBase : Human
     {
         Debug.Log("Entering Pattern1 State");
         CancelInvoke("RandomPersent");
-        isPattern = true; 
-        if (isPattern)
+        isPattern = true;
+        while (PatternManager.Instance.IsSunAlive)
+        {
+            animator.SetTrigger("Idle");
+            isAttack = false;
+            // Chase the player
+            FollowPlayer();
+            FlipSprite();
+            // Transition to Attack if within attack range (하이 ㅋ)
+            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
+            {// Attack logic
+                Debug.Log($"Attacking the player!");
+                // Attack Delay
+                animator.SetTrigger("Attack");
+
+                movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
+                yield return new WaitForSeconds(AttackDelay);
+                // Transition back to Chase if player is out of attack range
+                if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
+                {
+                    isAttack = false;
+                    ChangeState(BossState.Chase);
+                    break;
+                }
+                else
+                {
+                    isAttack = true;
+                }
+
+                if (isAttack)
+                {
+                    AttakToPlayer();
+                }
+            }
+            yield return null;
+        }
+
+
+        if (isPattern && PatternManager.Instance.IsSunAlive)
         {
             PatternManager.Instance.StartDarkNight();
             PatternManager.Instance.SpawnSun();

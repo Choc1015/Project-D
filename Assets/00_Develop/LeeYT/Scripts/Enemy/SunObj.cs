@@ -8,8 +8,9 @@ public class SunObj : Human
     // Start is called before the first frame update
     void Start()
     {
-        statController.Init();
+
         PatternManager.Instance.IsSunAlive = true;
+        statController.Init();
     }
 
     protected override void DieHuman()
