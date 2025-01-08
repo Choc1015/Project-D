@@ -40,6 +40,8 @@ public class PlayerController : Human/*, IPunObservable*/
     private SoundController soundController;
 
     private Color baseColor, dieColor;
+
+    public PlayerSkill GetPlayerSkill() => playerSkill;
     //private bool isJumpInput, isJump;
     //private float jumpStartPoint;
     // public PhotonView pv;
@@ -73,6 +75,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         EnemyHitObjPool.SpawnObject().Spawn(EnemyHitObjPool, pos);
     }
+
     private void OnEnable()
     {
         Init();

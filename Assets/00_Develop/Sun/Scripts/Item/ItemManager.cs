@@ -20,7 +20,7 @@ public class ItemManager : Singleton<ItemManager>
     public void SpawnItem(Vector3 pos)
     {
         int randInt = Random.Range(0, 5);
-        randInt = 0;
+
         if (randInt == 0)
         {
             int randomList = Random.Range(0, itemObjPool.Count);

@@ -110,6 +110,9 @@ public class EnemyStateMachine : Human
 
     public void ChangeState(EnemyState newState)
     {
+        if (!isAlive)
+            return;
+
         currentState = newState;
         StopAllCoroutines(); // Stop any running state
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
@@ -126,7 +129,7 @@ public class EnemyStateMachine : Human
             FollowPlayer();
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
-            Debug.Log(Utility.GetPlayerTr().position);
+
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
             {
                 ChangeState(EnemyState.Attack);
@@ -224,16 +227,20 @@ public class EnemyStateMachine : Human
 
     protected IEnumerator Die()
     {
-        Debug.Log("Entering Die State");
-        isAlive = false;
-        movement.MoveToRigid(Vector3.zero, 0,isAlive);
-        animator.SetTrigger("Die");
-        
-        // Play death animation or effects
-        Debug.Log("Enemy Died");
+        if (isAlive)
+        {
+            Debug.Log("Entering Die State");
+            isAlive = false;
+            movement.MoveToRigid(Vector3.zero, 0, isAlive);
+            animator.SetTrigger("Die");
+            ItemManager.Instance?.SpawnItem(transform.position);
+            // Play death animation or effects
+            Debug.Log("Enemy Died");
 
-        yield return new WaitForSeconds(2f); // Wait before destroying the object
-        Destroy(gameObject);
+            yield return new WaitForSeconds(2f); // Wait before destroying the object
+            Destroy(gameObject);
+        }
+        
     }
 
 
@@ -242,13 +249,22 @@ public class EnemyStateMachine : Human
         if (!isAlive)
             return;
 
+        PlayerController player = attackHuman as PlayerController;
+
+        if(player.GetPlayerSkill().isCritical)
+            UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
+
         if (this.info !=null&& this.info.isKnockBack)
             return;
+
         base.TakeDamage(attackDamage, attackHuman, info);
+
+        
         // Simulate death for the example
         if (isAlive)
         {
             ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
+            player.SpawnHitEffect(transform.position);
         }
         else
         {
