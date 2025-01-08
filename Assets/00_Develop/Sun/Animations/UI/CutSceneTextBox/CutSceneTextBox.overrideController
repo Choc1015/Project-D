@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CutSceneTextBox
+  m_Controller: {fileID: 9100000, guid: 763d6f3603536c0499cdfd6f6fb3ede6, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 949d2af3fd7f4a549a3b95379fc43092, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 083d203a211dffa4dbd5ada2b0f84881, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1824d4772116524479c1ffa8b72ea090, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 207ff5d4a62835c4684251afbac4414d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8dfee88797c0988438337a36af4de5d2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6ba498c79e07e724ca6dfc97e3af7d74, type: 2}

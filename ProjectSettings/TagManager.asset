@@ -42,3 +42,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: CutSceneObj
+    uniqueID: 4094289961
+    locked: 0

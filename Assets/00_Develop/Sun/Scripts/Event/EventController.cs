@@ -8,9 +8,12 @@ public class EventController : MonoBehaviour
     public EventTrigger[] triggers;
     private EventTrigger curTrigger;
     [SerializeField] private int index = -1;
+    public GameObject nextController;
     private void Start()
     {
+        triggers = transform.GetComponentsInChildren<EventTrigger>();
         NextEvent();
+        
         GameManager.Instance.SetGameState(GameState.Stop);
     }
     void Update()
@@ -30,6 +33,9 @@ public class EventController : MonoBehaviour
         else
         {
             curTrigger = null;
+            gameObject.SetActive(false);
+            if(nextController)
+                nextController.SetActive(true);
             GameManager.Instance.SetGameState(GameState.Play);
         }
     }

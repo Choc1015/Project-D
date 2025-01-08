@@ -12,7 +12,7 @@ public class ActiveEvent : EventTrigger
     }
     public override void Execute(EventController eventController)
     {
-        
+        eventController.NextEvent();
     }
     public override void Exit()
     {
