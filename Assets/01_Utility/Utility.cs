@@ -8,7 +8,13 @@ public static class Utility
     public static PlayerController playerController;
     public static PlayerController GetPlayer() => playerController;
     public static Transform GetPlayerTr() => playerController.transform;
-    public static GameObject GetPlayerGO() => playerController?.gameObject;
+    public static GameObject GetPlayerGO()
+    {
+        if (playerController == null)
+            return null;
+
+        return playerController?.gameObject;
+    }
     public static void SetPlayer(GameObject player)
     {
         playerController = player.GetComponent<PlayerController>();

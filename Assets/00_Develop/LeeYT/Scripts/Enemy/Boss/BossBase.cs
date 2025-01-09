@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BossBase : Human
 {
@@ -17,7 +18,6 @@ public class BossBase : Human
     private Vector3 moveDir;
     protected BossState currentState;
     protected bool isAlive = true; // 살아있어요
-    protected float tempAttackOffsetX;
     protected bool isAttack = false;
     protected bool isPattern = false;
 
@@ -29,6 +29,8 @@ public class BossBase : Human
     public Animator animator;
     public SoundController soundController;
     public CloneLight spriteLight;
+    Vector2 AttackHitBox;
+    public GameObject transPos;
 
     [Header("패턴확률")]
     public int Persent1 = 10;
@@ -38,7 +40,9 @@ public class BossBase : Human
     private void Start()
     {
         Initialize();
+        AttackHitBox = transform.position;
     }
+  
     protected void Initialize()
     {
         statController.Init();
@@ -46,45 +50,35 @@ public class BossBase : Human
         //FindPlayers();
         // Start the state machine
         ChangeState(BossState.Chase); // 초기 상태
-        tempAttackOffsetX = AttackOffset.x;
+        
 
         if (animator == null)
             Debug.LogError("no animator");
+
+       
     }
     protected void OnDrawGizmos()
     {
         // 공격 범위 시각화
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
+        Gizmos.color = Color.red; 
+        AttackHitBox = transform.position + Vector3.up;
+        Gizmos.DrawWireSphere(AttackHitBox, attackRange);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
-
+        
+        if (Utility.GetPlayerGO() == null)
+            return;
         // 플레이어와 적 사이의 연결 선 그리기
         if (Utility.GetPlayerGO() != null)
         {
 
-            // 플레이어가 범위 내에 있을 때 초록색 선
-            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireSphere(transform.position, chaseRange);
-            }
-
             // 플레이어가 공격범위 내에 있을 때 파란색 선
-            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
+            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
                 Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
+                Gizmos.DrawWireSphere(AttackHitBox, attackRange);
             }
         }
 
-    }
-
-
-    protected Vector3 AttackHitBox()
-    {
-        return transform.position + AttackOffset;
     }
 
     protected void FlipSprite()
@@ -92,30 +86,35 @@ public class BossBase : Human
         if (Utility.GetPlayerTr().position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            AttackOffset.x = tempAttackOffsetX;
+            //AttackOffset.x = tempAttackOffsetX;
         }
         else
         {
             transform.localScale = new Vector3(1, 1, 1);
-            AttackOffset.x = -tempAttackOffsetX;
+            //AttackOffset.x = -tempAttackOffsetX;
         }
 
     }
 
     public void ChangeState(BossState newState)
     {
+        if (!isAlive)
+            return;
+
         currentState = newState;
-        // Stop any running state
-        StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게    
+        StopAllCoroutines(); // Stop any running state
+        StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
     }
 
     protected IEnumerator Chase()
     {
+        animator.SetTrigger("Idle");
         Debug.Log("Entering Chase State");
         if (!isPattern)
         {
             Invoke("RandomPersent", 3);
         }
+
         while (currentState == BossState.Chase)
         {
             animator.SetTrigger("Idle");
@@ -124,7 +123,7 @@ public class BossBase : Human
             FollowPlayer();
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
-            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
+            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
                 ChangeState(BossState.Attack);
             }
@@ -154,35 +153,33 @@ public class BossBase : Human
     protected IEnumerator Attack()
     {
         Debug.Log("Entering Attack State");
-        // 추가 딜레이 시간 작업
+
 
         while (currentState == BossState.Attack)
         {
-
             // Attack logic
             Debug.Log($"Attacking the player!");
-            // Attack Delay
-            animator.SetTrigger("Attack");
 
+            // 공격 트리거를 활성화할 수 있습니다 (예: 애니메이션 트리거)
+            // animator.SetTrigger("Attack");
+
+            // 이동 로직
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-            yield return new WaitForSeconds(AttackDelay);
-            // Transition back to Chase if player is out of attack range
-            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
-            {
-                isAttack = false;
-                ChangeState(BossState.Chase);
-                break;
-            }
-            else
-            {
-                isAttack = true;
-            }
 
-            if (isAttack)
+            // 공격 실행
+            yield return new WaitForSeconds(AttackDelay);
+            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
                 AttakToPlayer();
             }
+            else
+            {
+                yield break;
+            }
 
+            
+
+            yield return null;
         }
     }
 
@@ -208,11 +205,9 @@ public class BossBase : Human
     }
     protected void AttakToPlayer()
     {
-        if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
-        {
-            Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
-            Debug.LogWarning($"Attak to Player");
-        }
+
+        Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+        Debug.Log($"Attak to Player");
 
     }
 
@@ -228,48 +223,53 @@ public class BossBase : Human
             animator.SetTrigger("Idle");
             isAttack = false;
             // Chase the player
-            FollowPlayer();
-            FlipSprite();
+            
             // Transition to Attack if within attack range (하이 ㅋ)
-            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
-            {   // Attack logic
+            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
+            {    // Attack logic
                 Debug.Log($"Attacking the player!");
-                // Attack Delay
-                animator.SetTrigger("Attack");
 
+                // 공격 트리거를 활성화할 수 있습니다 (예: 애니메이션 트리거)
+                // animator.SetTrigger("Attack");
+
+                // 이동 로직
                 movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-                yield return new WaitForSeconds(AttackDelay);
-                // Transition back to Chase if player is out of attack range
-                if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) > attackRange)
-                {
-                    isAttack = false;
-                    ChangeState(BossState.Chase);
-                    break;
-                }
-                else
-                {
-                    isAttack = true;
-                }
 
-                if (isAttack)
+                // 공격 실행
+                yield return new WaitForSeconds(AttackDelay);
+                if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
                 {
                     AttakToPlayer();
                 }
+                else
+                {
+                    yield return null;
+                }
+
+
+
+                yield return null;
+            }
+            else
+            {
+                FollowPlayer();
+                FlipSprite();
             }
 
-            if (isPattern && PatternManager.Instance.IsSunAlive)
+            if (PatternManager.Instance.isPattern1 && PatternManager.Instance.IsSunAlive)
             {
                 Debug.Log(" Check Test State");
                 PatternManager.Instance.StartDarkNight();
                 PatternManager.Instance.SpawnSun();
-                isPattern = false;
+                PatternManager.Instance.isPattern1 = false;
             }
 
             yield return null;
         }
 
-        
+
         PatternManager.Instance.EndDarkNight();
+        isPattern = false;
         ChangeState(BossState.Chase);
         yield return new WaitForSeconds(10f);
 
@@ -278,9 +278,23 @@ public class BossBase : Human
     protected IEnumerator Pattern2()
     {
         Debug.Log("Entering Pattern2 State");
+        CancelInvoke("RandomPersent");
         isPattern = true;
+        animator.SetTrigger("Stop");
+        transform.position = new Vector2(2.36f, -0.8f);
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil1");
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(0);
+
+        animator.SetTrigger("Stop");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil2");   
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(1);
+
+        animator.SetTrigger("Idle");
         isPattern = false;
         ChangeState(BossState.Chase);
         yield return null;
@@ -288,9 +302,34 @@ public class BossBase : Human
     protected IEnumerator Pattern3()
     {
         Debug.Log("Entering Pattern3 State");
+        CancelInvoke("RandomPersent");
         isPattern = true;
+        animator.SetTrigger("Stop");
+        transform.position = new Vector2(2.36f, -0.8f);
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil2");
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(1);
+
+        animator.SetTrigger("Stop");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil1");
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(0);
+
+        animator.SetTrigger("Stop");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil1");
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(0);
+
+        animator.SetTrigger("Stop");
+        yield return new WaitForSeconds(1f);
+        animator.SetTrigger("Skil2");
+        yield return new WaitForSeconds(2f);
+        PatternManager.Instance.SpawnDarkSpell(1);
+        animator.SetTrigger("Idle");
         isPattern = false;
         ChangeState(BossState.Chase);
         yield return null;
@@ -300,6 +339,7 @@ public class BossBase : Human
     protected IEnumerator Die()
     {
         Debug.Log("Entering Die State");
+        CancelInvoke("RandomPersent");
         isAlive = false;
         movement.MoveToRigid(Vector3.zero, 0, isAlive);
         animator.SetTrigger("Die");
@@ -316,6 +356,9 @@ public class BossBase : Human
     {
         if (!isAlive)
             return;
+        if (isPattern)
+            return;
+
 
         if (this.info != null && this.info.isKnockBack)
             return;

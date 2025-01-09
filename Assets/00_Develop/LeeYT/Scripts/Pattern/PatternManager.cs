@@ -52,6 +52,9 @@ public class PatternManager : Singleton<PatternManager>
             }
 
             yield return null; // 한 프레임 대기
+            if(!IsSunAlive)
+                yield break;
+
         }
         yield break;
     }
@@ -113,6 +116,8 @@ public class PatternManager : Singleton<PatternManager>
 
 
     [Header("다크 엘프 패턴 2")]
+    public bool IsPattern2 = false;
+
     [SerializeField] List<GameObjectGroup> pattern; // 저장할 위치들
     [System.Serializable]
     public class GameObjectGroup
@@ -120,20 +125,19 @@ public class PatternManager : Singleton<PatternManager>
         public List<Vector2> positions; // GameObject 리스트
     }
 
+
+
+
     public void SpawnDarkSpell(int num = 0)
     {
         GameObjectGroup group = pattern[num];
         foreach (var spellPos in group.positions)
         {
+            Debug.Log("실행");
             ObjectPoolManager.Instance.SpawnFromPool("DarkSpell", spellPos);
         }
     }
-
-    public void RandPatternSpawn()
-    {
-        int Rand = Random.Range(0, pattern.Count);
-        SpawnDarkSpell(Rand);
-    }
+        
 
     #endregion
 
