@@ -288,10 +288,11 @@ MonoBehaviour:
   chaseRange: 100
   attackRange: 0.66
   AttackOffset: {x: -0.58, y: -0.43, z: 0}
-  AttackDelay: 1
+  AttackDelay: 0.2
   animator: {fileID: 7986175404110406719}
   soundController: {fileID: 6862805055878049105}
   spriteLight: {fileID: 319659345583592969}
+  hitOffset: {x: 0, y: 0.25, z: 0}
 --- !u!114 &6862805055878049105
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -29,7 +29,8 @@ public class EnemyStateMachine : Human
     public Animator animator;
     public SoundController soundController;
     public CloneLight spriteLight;
-       
+
+    public Vector3 hitOffset;
     private void Start()
     {
         Initialize();
@@ -70,7 +71,7 @@ public class EnemyStateMachine : Human
         // 플레이어와 적 사이의 연결 선 그리기
         if (Utility.GetPlayerGO() != null)
         {
-                
+
             // 플레이어가 범위 내에 있을 때 초록색 선
             if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
             {
@@ -85,7 +86,7 @@ public class EnemyStateMachine : Human
                 Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
             }
         }
-        
+
     }
 
     protected Vector3 AttackHitBox()
@@ -101,11 +102,11 @@ public class EnemyStateMachine : Human
             AttackOffset.x = tempAttackOffsetX;
         }
         else
-        {   
+        {
             transform.localScale = new Vector3(1, 1, 1);
             AttackOffset.x = -tempAttackOffsetX;
         }
-        
+
     }
 
     public void ChangeState(EnemyState newState)
@@ -134,7 +135,7 @@ public class EnemyStateMachine : Human
             {
                 ChangeState(EnemyState.Attack);
             }
-            
+
 
 
             yield return null;
@@ -152,7 +153,7 @@ public class EnemyStateMachine : Human
 
     bool MaxPosition()
     {
-        if (transform.position.y > 9 || transform.position.y < -3) 
+        if (transform.position.y > 9 || transform.position.y < -3)
         {
             Debug.LogWarning("WWWW");
             return true;
@@ -162,17 +163,15 @@ public class EnemyStateMachine : Human
 
     protected IEnumerator Attack()
     {
-        Debug.Log("Entering Attack State"); 
+        Debug.Log("Entering Attack State");
         // 추가 딜레이 시간 작업
-        
+
         while (currentState == EnemyState.Attack)
         {
-            
-            // Attack logic
             Debug.Log($"Attacking the player!");
             // Attack Delay
             animator.SetTrigger("Attack");
-           
+
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
             yield return new WaitForSeconds(AttackDelay);
             // Transition back to Chase if player is out of attack range
@@ -190,8 +189,9 @@ public class EnemyStateMachine : Human
             if (isAttack)
             {
                 AttakToPlayer();
+                yield return new WaitForSeconds(statController.GetStat(StatInfo.AttackDelay).Value);
             }
-           
+
         }
     }
 
@@ -201,7 +201,6 @@ public class EnemyStateMachine : Human
         animator.SetTrigger("Kncokback");
 
         yield return new WaitForSeconds(info.knockBackTime);
-        
         ChangeState(EnemyState.Chase);
         movement.StopMove();
         if (this.info.isKnockBack)
@@ -210,10 +209,11 @@ public class EnemyStateMachine : Human
     protected IEnumerator Stun()
     {
         animator.SetTrigger("Stun");
+
         yield return new WaitForSeconds(info.stunTime);
         ChangeState(EnemyState.KnockBack);
         movement.StopMove();
-        
+
     }
     protected void AttakToPlayer()
     {
@@ -222,7 +222,7 @@ public class EnemyStateMachine : Human
             Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Debug.LogWarning($"Attak to Player");
         }
-    
+
     }
 
     protected IEnumerator Die()
@@ -241,13 +241,13 @@ public class EnemyStateMachine : Human
             GetComponent<SetLayer>()?.DestroySetLayer();
             Destroy(gameObject);
         }
-        
+
     }
 
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        if (!isAlive)
+        if (!isAlive )
             return;
 
         PlayerController player = attackHuman as PlayerController;
@@ -259,7 +259,7 @@ public class EnemyStateMachine : Human
             return;
 
         base.TakeDamage(attackDamage, attackHuman, info);
-        player.SpawnHitEffect(transform.position + (Vector3.up * 0.25f));
+        player.SpawnHitEffect(transform.position + hitOffset);
 
         // Simulate death for the example
         if (isAlive)

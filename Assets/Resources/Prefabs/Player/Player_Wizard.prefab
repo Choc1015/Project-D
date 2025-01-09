@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 6220044125790220083, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a99869fe7b34ca40bd8bf5f52efbb89, type: 3}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

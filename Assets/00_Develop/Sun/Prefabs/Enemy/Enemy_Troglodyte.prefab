@@ -54,7 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22d82d9b846c394f83bbf0404c144e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statSO: {fileID: 11400000, guid: 2769f0f1bc132bb45adb4c3616d91268, type: 2}
+  statSO: {fileID: 11400000, guid: eab97b574fb15e54f9430fe642dfd73d, type: 2}
   Stats: {fileID: 0}
 --- !u!114 &6588893864448540517
 MonoBehaviour:
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.25}
+  m_Offset: {x: -0.25, y: 1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -139,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.92, y: 0.82}
+  m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
 --- !u!114 &7382442833797186674
 MonoBehaviour:
@@ -158,10 +158,11 @@ MonoBehaviour:
   chaseRange: 100
   attackRange: 0.66
   AttackOffset: {x: -0.58, y: -0.43, z: 0}
-  AttackDelay: 1
+  AttackDelay: 0.5
   animator: {fileID: 8958764788760933017}
   soundController: {fileID: 8677792766364678769}
   spriteLight: {fileID: 8461185429109286958}
+  hitOffset: {x: 0, y: 1.5, z: 0}
 --- !u!114 &8677792766364678769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,7 +210,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: 0.25}
+  m_Offset: {x: 0.2, y: 1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -220,7 +221,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.47}
+  m_Size: {x: 0.22, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &8978812741106537997
 MonoBehaviour:
@@ -261,8 +262,8 @@ Transform:
   m_GameObject: {fileID: 6627344936662703453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.047, z: 0}
-  m_LocalScale: {x: 2.5, y: 0.4, z: 1}
+  m_LocalPosition: {x: -0.548, y: 0.013, z: 0}
+  m_LocalScale: {x: 1.5, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2693352993468121782}
@@ -459,7 +460,7 @@ Animator:
   m_GameObject: {fileID: 7890191183192762338}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c99d5f29afbd0c14ba40768c2897d0bf, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0777bdc77ad922a4c9dec2f553f8de47, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

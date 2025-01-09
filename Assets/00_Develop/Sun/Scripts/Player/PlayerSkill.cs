@@ -7,6 +7,7 @@ public class PlayerSkill : MonoBehaviour
     private PlayerController playerController;
     private BulletController bulletController;
     private Human hitEnemyTemp;
+    private List<Human> hitEnemyTempList = new();
     private bool useDashAttack;
     public bool isCritical;
 
@@ -19,7 +20,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_X(float x)
     {
-        if (playerController.CanAction())
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
         {
             playerController.movement.StopMove();
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
@@ -31,7 +32,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_Y(float y)
     {
-        if (playerController.CanAction())
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
         {
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
@@ -42,7 +43,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Jump(float x)
     {
-        if (playerController.CanAction())
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
         {
             playerController.PlayOneShotSound("Jump");
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
@@ -93,7 +94,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Attack()
     {
-        if (playerController.CanAction())
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
         {
             int layerMask = 1 << LayerMask.NameToLayer("Item");
             RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 1f, layerMask);
@@ -101,20 +102,22 @@ public class PlayerSkill : MonoBehaviour
             {
                 hit.collider.GetComponent<Item>().UseItem();
             }
-            else if (playerController.GetPlayerState().CurrentState() == PlayerState.Die)
-            {
-                if(playerController.CanRevive())
-                    playerController.Revive();
-            }
+            else if (playerController.CanRevive())
+                playerController.Revive();
             else
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");
-
-                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * 1.5f, 0, playerController.lookDIr_X, 1, layerMask);
+                float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2, layerMask);
                 isCritical = GetCritical();
+
                 foreach (RaycastHit2D hitObj in hits)
                 {
                     hitEnemyTemp = hitObj.collider.GetComponent<Human>();
+                    if (hitEnemyTempList.Contains(hitEnemyTemp))
+                        continue;
+
+                    hitEnemyTempList.Add(hitEnemyTemp);
                     //if (hitEnemyTemp.)
                     //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
@@ -128,7 +131,7 @@ public class PlayerSkill : MonoBehaviour
                 playerController.PlayOneShotSound("Swing");
                 playerController.Combo();
                 attackAE?.Invoke();
-
+                hitEnemyTempList.Clear();
             }
         }
 
@@ -145,7 +148,6 @@ public class PlayerSkill : MonoBehaviour
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
         enemy.TakeDamage(attackDamage, playerController , info);
-
     }
     public void Heal(float value)
     {

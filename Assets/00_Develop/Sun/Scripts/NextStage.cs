@@ -12,7 +12,7 @@ public class NextStage : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private float minX, maxX;
 
-
+    
     void Update()
     {
         if (!StageManager.Instance.IsStart)
