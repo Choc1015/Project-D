@@ -85,7 +85,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_Attack_2
-  m_Speed: 1.25
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8432204713396118132}
@@ -137,7 +137,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: IDLE
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4892763999629114816}
@@ -167,7 +167,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_KnockBackEnd
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4398246664064791078}
@@ -203,9 +203,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.06731382
+  m_TransitionDuration: 2.615195e-10
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 4.3221174e-10
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -250,7 +250,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.03785096
+  m_TransitionDuration: 0.0027504126
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -426,7 +426,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerJump
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4658211456054452874}
@@ -476,7 +476,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: PlayerSliding
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -930795429425414947}
@@ -529,7 +529,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_Attack_1
-  m_Speed: 1.25
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 687970582298374951}
@@ -663,7 +663,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_KnockBack
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -784935577149172957}
@@ -812,7 +812,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_Stun
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3543972196010387333}
@@ -1013,7 +1013,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Warrior_Attack_3
-  m_Speed: 1.25
+  m_Speed: 3.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2694552369269322272}
@@ -1049,9 +1049,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.05476183
+  m_TransitionDuration: 0.0037563446
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 3.6135966e-10
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
