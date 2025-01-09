@@ -29,6 +29,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public Vector3 lookDIr_X;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
+    [HideInInspector] public bool isInvincibility;
 
     [SerializeField] private SkillSwap skillSwapPrefab;
     public SkillSwap skillSwapUI;
@@ -85,7 +86,7 @@ public class PlayerController : Human/*, IPunObservable*/
 
         statController.Init(true);
 
-        Utility.playerController = this;
+        Utility.SetPlayer(gameObject);
         L_CinemachineCameraController.playerTrans = Utility.GetPlayerTr();
         ActiveUpdatePlayerUI();
     }
@@ -151,9 +152,8 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         //if (!pv.IsMine)
         //    return;
-        if (playerState.CurrentState() == PlayerState.Die)
+        if (playerState.CurrentState() == PlayerState.Die || isInvincibility)
             return;
-
         if (this.info != null && this.info.isKnockBack)
             return;
 
@@ -218,7 +218,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         playerSkill.OffDefense();
-        
+        //playerState.ChangeState(PlayerState.Idle);
     }
     protected override void DieHuman()
     {

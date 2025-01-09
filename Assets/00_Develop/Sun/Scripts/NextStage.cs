@@ -11,7 +11,7 @@ public class NextStage : MonoBehaviour
     public int curStage;
     [SerializeField] private GameObject Player;
     [SerializeField] private float minX, maxX;
-
+    public GameObject cutScene;
     
     void Update()
     {
@@ -19,21 +19,21 @@ public class NextStage : MonoBehaviour
             return;
 
         // 플레이어와 적 사이의 연결 선 그리기
-        if (Player != null)
+        if (Utility.GetPlayerGO() != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if ((transform.position.x - Player.transform.position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
+            if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
             {
 
-                StageManager.Instance.NextStage(nextStagePos, minX, maxX);
+                StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene);
             }
 
         }
-        else
-        {
+        //else
+        //{
 
-            //Utility.FindPlayers(ref Player);
-            Player = Utility.GetPlayer().gameObject;
-        }
+        //    //Utility.FindPlayers(ref Player);
+        //    Player = Utility.GetPlayer().gameObject;
+        //}
     }
 }

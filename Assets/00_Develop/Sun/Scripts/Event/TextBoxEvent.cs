@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TextBoxEvent : EventTrigger
@@ -22,7 +20,7 @@ public class TextBoxEvent : EventTrigger
         {
             tbTemp = UIManager.Instance.textBox;
             colorTemp = Color.black;
-            UIManager.Instance.textBox.transform.position = Camera.main.WorldToScreenPoint(basePos + offset);
+            UIManager.Instance.textBox.transform.position = Camera.main.WorldToScreenPoint(Camera.main.transform.position+basePos + offset);
             //UIManager.Instance.textBox.transform.position = basePos + offset;
         }
 

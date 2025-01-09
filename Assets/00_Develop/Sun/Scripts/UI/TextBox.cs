@@ -13,7 +13,7 @@ public class TextBox : UIBase
     }
     private void Update()
     {
-        if(gameObject.activeInHierarchy && Input.anyKeyDown)
+        if(gameObject.activeInHierarchy && (Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0)))
         {
             anim.SetTrigger("Disable");
         }

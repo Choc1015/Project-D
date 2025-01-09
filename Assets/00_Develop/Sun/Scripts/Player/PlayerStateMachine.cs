@@ -10,7 +10,7 @@ public enum PlayerState
     Stun, // ½ºÅÏ
     KnockBack, // ³Ñ¾îÁü
     Die, // Á×À½
-    Attack
+    Jump
 }
 public class PlayerStateMachine : MonoBehaviour
 {

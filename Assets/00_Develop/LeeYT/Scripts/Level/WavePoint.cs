@@ -9,6 +9,7 @@ public class WavePoint : MonoBehaviour
     public bool isWave = false;
 
     [SerializeField] private GameObject Player;
+    public GameObject cutScene;
 
     private void Start()
     {
@@ -20,25 +21,32 @@ public class WavePoint : MonoBehaviour
             return;
 
         // 플레이어와 적 사이의 연결 선 그리기
-        if (Player != null)
+        if (Utility.GetPlayerGO() != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if ((transform.position.x - Player.transform.position.x) <= (-waveCheck.x / 2f + 2f))
+            if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-waveCheck.x / 2f + 2f))
             {
                 Debug.Log("Start");
                 WaveManager.WaveStart(waveCount);
                 if (StageManager.Instance.WaveEnemyCount != 0)
+                {
                     StageManager.Instance.IsStopCamera = true;
+                    
+                }
+                else if(cutScene)
+                    cutScene.SetActive(true);
+                
+                
                 isWave = true;
             }
 
         }
-        else
-        {
+        //else
+        //{
 
-            //Utility.FindPlayers(ref Player);
-            Player = Utility.GetPlayer().gameObject;
-        }
+        //    //Utility.FindPlayers(ref Player);
+        //    Player = Utility.GetPlayer().gameObject;
+        //}
     }
 
     private void OnDrawGizmos()
