@@ -5147,6 +5147,18 @@ MonoBehaviour:
   pools:
   - prefab: {fileID: 5900883183592929909, guid: b66236e254420404eaaff1bab1e8194b, type: 3}
     size: 10
+  - prefab: {fileID: 7934737190612253967, guid: ef1680b36ed50ff448fb19f37465a88d, type: 3}
+    size: 10
+  - prefab: {fileID: 6639561071911696168, guid: b7b40e04c42aa6f47a0eb9bc4c734eff, type: 3}
+    size: 10
+  - prefab: {fileID: 6478996332189534247, guid: 392b242e60be04b4ebb15b11295e3d57, type: 3}
+    size: 10
+  - prefab: {fileID: 5261748210611140774, guid: 25ed56202ddcb9f409897e21a6b630ea, type: 3}
+    size: 10
+  - prefab: {fileID: 5065743840805236005, guid: ab27c246359016e4b9ed2ee688b59b4d, type: 3}
+    size: 10
+  - prefab: {fileID: 5749797936584369644, guid: 360517b24b0e3e747b27072ffd62d6bc, type: 3}
+    size: 10
 --- !u!1001 &597408071
 PrefabInstance:
   m_ObjectHideFlags: 0
