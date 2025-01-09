@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UIManager : Singleton<UIManager>
 {
     public HitImage hitImage;
-    public TextBox textBox;
+    public TextBox textBox, cutSceneTextBox;
 
     public Image fadeImage;
     public void SetActiveFadeImage(bool isActive, float alpha,float timer)
@@ -19,4 +19,10 @@ public class UIManager : Singleton<UIManager>
             Invoke("DisableFadeImage", timer);
     }
     private void DisableFadeImage() => fadeImage.gameObject.SetActive(false);
+
+    public Image cutSceneImage;
+    public void SetCutSceneImage(Sprite sprite)
+    {
+        cutSceneImage.sprite = sprite;
+    }
 }

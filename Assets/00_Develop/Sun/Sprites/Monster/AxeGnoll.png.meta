@@ -1,0 +1,813 @@
+fileFormatVersion: 2
+guid: 184565934c3aed54da582d60bde8b337
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AxeGnoll_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 745
+        width: 110
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c76ceb517cc2ff429dfb42d487a03ca
+      internalID: -2025285480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 745
+        width: 110
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab58d5fb5caf1f848988fb226f204a97
+      internalID: 1495844929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 745
+        width: 108
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb039cae14552e4184fe4e118f9e798
+      internalID: 461068482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 662
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ee861c333f27b43bcb667a968cb50e
+      internalID: -1770672300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_7
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 662
+        width: 90
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa8506e0ac274341b4621d14c97312c
+      internalID: 1368526912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_8
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 662
+        width: 88
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8995b838bbde134091e2c80f0427261
+      internalID: 910360673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_9
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 662
+        width: 96
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3cfbdd58e8565243971896f6fe3d3ec
+      internalID: -218209874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_10
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 662
+        width: 96
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27421b534ff7506439acb19784b50d24
+      internalID: 264942329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_11
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 662
+        width: 90
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa09963f7efcee49afad9c03286cc32
+      internalID: -1339755933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_12
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 662
+        width: 86
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4731e3d4b4a125c4b840c29b8f801a71
+      internalID: 1784688176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_13
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 664
+        width: 90
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a82a2b4d84f3884fa805a25cf9bf265
+      internalID: 51539050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_22
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 464
+        width: 105
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9198d9c07f4fa489c9e8fba7770686
+      internalID: -1937157822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_23
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 464
+        width: 109
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ff793cd29b80e4eabe9f001f98e016
+      internalID: -755642354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_24
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 464
+        width: 105
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9f29bfa114b9c547bf3b745ef58cb22
+      internalID: -197436787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_25
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 464
+        width: 100
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82ddf39c4c4eba40994fee35ef56329
+      internalID: 311079832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_26
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 464
+        width: 130
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b08e0dc6e49ef54d863eddcb1440cdf
+      internalID: 1819534901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_27
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 457
+        width: 82
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56da23ef245301945bcf978179c139fa
+      internalID: 80260253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_43
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 112
+        width: 76
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d097a3541a84b82439861eb68a48af53
+      internalID: 73235735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_44
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 113
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df16c2de578211478c6604736611795
+      internalID: 453875634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_45
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 112
+        width: 90
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f5794a2a596534eb34085355d61b44
+      internalID: 826104104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_46
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 113
+        width: 92
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16dc1b2992742394baf35361f284d8fe
+      internalID: -144377860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_47
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 124
+        width: 119
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214bb13da8781ca48a8b61af9abe4cc4
+      internalID: 2049726465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_48
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 112
+        width: 126
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a62be2797d0cf4b808d97a8e1f93ff
+      internalID: -292035002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_49
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 109
+        width: 125
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ef1401802fee44198418283452f4ff
+      internalID: -17074051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_50
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 20
+        width: 120
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc5ee75bebdcf245ac09406dc7a732b
+      internalID: 2076860625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_51
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 21
+        width: 120
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bba50effebaf2b4baf8d6c8f1182f49
+      internalID: 1627878124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_52
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 15
+        width: 86
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404e12bb5c4c1db4299601340e12a6aa
+      internalID: -275295485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_53
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 6
+        width: 82
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91a751ab61333c4194fed158e12587c
+      internalID: -1687548336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_54
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 24
+        width: 110
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290e7f70b8c86d1429aae985ac6ae64c
+      internalID: 342850105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AxeGnoll_55
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 24
+        width: 111
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f7512a964b8384c9ff4f2bc4c681c7
+      internalID: -1384170170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AxeGnoll_0: -2025285480
+      AxeGnoll_1: 1495844929
+      AxeGnoll_10: 264942329
+      AxeGnoll_11: -1339755933
+      AxeGnoll_12: 1784688176
+      AxeGnoll_13: 51539050
+      AxeGnoll_14: -1117586
+      AxeGnoll_15: 133762827
+      AxeGnoll_16: -1839880047
+      AxeGnoll_17: 1529366953
+      AxeGnoll_18: 1273895997
+      AxeGnoll_19: 425094209
+      AxeGnoll_2: 461068482
+      AxeGnoll_20: -1726364910
+      AxeGnoll_21: -1814908952
+      AxeGnoll_22: -1937157822
+      AxeGnoll_23: -755642354
+      AxeGnoll_24: -197436787
+      AxeGnoll_25: 311079832
+      AxeGnoll_26: 1819534901
+      AxeGnoll_27: 80260253
+      AxeGnoll_28: 154371454
+      AxeGnoll_29: -1564544055
+      AxeGnoll_3: 668302995
+      AxeGnoll_30: -1056376424
+      AxeGnoll_31: -1108735386
+      AxeGnoll_32: -1356372373
+      AxeGnoll_33: 192608610
+      AxeGnoll_34: 976139972
+      AxeGnoll_35: -1177394673
+      AxeGnoll_36: 426412439
+      AxeGnoll_37: 329359540
+      AxeGnoll_38: 140343393
+      AxeGnoll_39: 1530385240
+      AxeGnoll_4: 174580940
+      AxeGnoll_40: 656569689
+      AxeGnoll_41: -1681811867
+      AxeGnoll_42: -481198376
+      AxeGnoll_43: 73235735
+      AxeGnoll_44: 453875634
+      AxeGnoll_45: 826104104
+      AxeGnoll_46: -144377860
+      AxeGnoll_47: 2049726465
+      AxeGnoll_48: -292035002
+      AxeGnoll_49: -17074051
+      AxeGnoll_5: 1662533742
+      AxeGnoll_50: 2076860625
+      AxeGnoll_51: 1627878124
+      AxeGnoll_52: -275295485
+      AxeGnoll_53: -1687548336
+      AxeGnoll_54: 342850105
+      AxeGnoll_55: -1384170170
+      AxeGnoll_6: -1770672300
+      AxeGnoll_7: 1368526912
+      AxeGnoll_8: 910360673
+      AxeGnoll_9: -218209874
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

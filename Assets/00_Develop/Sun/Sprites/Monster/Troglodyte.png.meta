@@ -1,0 +1,813 @@
+fileFormatVersion: 2
+guid: 4af95aaa81a673443b0762f506f0f53b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Troglodyte_0
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1145
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 013ae48312de8414d825694903d09403
+      internalID: -1440506304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1145
+        width: 65
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a75aa6aabccf484eb9040ff518ae3f0
+      internalID: 662989752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1147
+        width: 60
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d435b369c80a29439830da8a4f0ceaa
+      internalID: 254377784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 1148
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5a68300114349408648f2bbd02199e
+      internalID: 574901875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_4
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1147
+        width: 57
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 994397dd1539ebe41b612a496ffef487
+      internalID: -2022632377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_5
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 1150
+        width: 57
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35d844959b0dad4d925a478059b0206
+      internalID: 659610066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_6
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1148
+        width: 52
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d1e17089d2af14f94ae650d3879b56
+      internalID: -520369931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_7
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 1141
+        width: 52
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8294fb1386c0a274f8c100b397d15436
+      internalID: 1819612762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_8
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1149
+        width: 65
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e70eb65edda5d4590576cb9e5e176b
+      internalID: -1391713766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1046
+        width: 70
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209ff3419058c4c40bd1d9451b265f7e
+      internalID: 269390122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_24
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 873
+        width: 98
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6878d03defa48b4c8acba337ead6133
+      internalID: -127491344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_25
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 873
+        width: 90
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb747dbeb5c19764294b5914462f7671
+      internalID: 1140349355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_26
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 874
+        width: 92
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6468828888aa9042b9b1f0f4980ccbd
+      internalID: -191431862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_27
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 881
+        width: 90
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c3aeddd0aaa594386bc7f4b7c9568b
+      internalID: 2051378187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_28
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 868
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9dda0347c17bd041b9ac28e520fbc55
+      internalID: 1372291561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_29
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 753
+        width: 63
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7633954c3d788d4c90e286e3f3c02f0
+      internalID: -2026525743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_30
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 750
+        width: 88
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a17aff1b8768a140b27f899d093a811
+      internalID: -1905208819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_31
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 766
+        width: 96
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9af739db2318a4c8476ff3df115eda
+      internalID: -583536137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_43
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 681
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9d4f52953c071d47836d11df8562914
+      internalID: -537570081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_76
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 441
+        width: 53
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85545f3bc608b84a95eb9d6de6619af
+      internalID: -281264502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_77
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 437
+        width: 59
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430901bf0391f2b46a6629c769037a2b
+      internalID: -577454036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_78
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 439
+        width: 56
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f851b628561868241b7f188e56813872
+      internalID: -61798218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_110
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 260
+        width: 110
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ed88f3f19e38843b2b2da50aa8b138
+      internalID: -1747696960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_111
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 258
+        width: 111
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b31da4c24bd49848b46de064ed7886d
+      internalID: 658903046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_112
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 146
+        width: 179
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d27105cda1597f46a5063c48e42bc66
+      internalID: -2097396212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_113
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 259
+        width: 111
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9745a2556877b4888c68d6c76ec2e0
+      internalID: -1167102982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troglodyte_10
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 946
+        width: 50
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769e95e676f4bb6459b5dfccbb93a41a
+      internalID: 1542721582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Troglodyte_0: -1440506304
+      Troglodyte_1: 662989752
+      Troglodyte_10: 1542721582
+      Troglodyte_100: -609010738
+      Troglodyte_101: 172128904
+      Troglodyte_102: -565356269
+      Troglodyte_103: -1955870489
+      Troglodyte_104: -1838095078
+      Troglodyte_105: 1920022977
+      Troglodyte_106: -853859298
+      Troglodyte_107: -345592269
+      Troglodyte_108: -1038400112
+      Troglodyte_109: 106215588
+      Troglodyte_11: 1399749982
+      Troglodyte_110: -1747696960
+      Troglodyte_111: 658903046
+      Troglodyte_112: -2097396212
+      Troglodyte_113: -1167102982
+      Troglodyte_114: 2056372110
+      Troglodyte_115: -327623055
+      Troglodyte_116: -1602062152
+      Troglodyte_117: -1143570057
+      Troglodyte_118: -765913369
+      Troglodyte_119: -1022815143
+      Troglodyte_12: 692342153
+      Troglodyte_120: -1559566839
+      Troglodyte_121: -1120912954
+      Troglodyte_122: 1958457627
+      Troglodyte_13: 1505370772
+      Troglodyte_14: 515964661
+      Troglodyte_15: -1220408129
+      Troglodyte_2: 254377784
+      Troglodyte_20: 249923207
+      Troglodyte_21: 1964633761
+      Troglodyte_22: 158940615
+      Troglodyte_23: 647711950
+      Troglodyte_24: -127491344
+      Troglodyte_25: 1140349355
+      Troglodyte_26: -191431862
+      Troglodyte_27: 2051378187
+      Troglodyte_28: 1372291561
+      Troglodyte_29: -2026525743
+      Troglodyte_3: 574901875
+      Troglodyte_30: -1905208819
+      Troglodyte_31: -583536137
+      Troglodyte_32: 944270265
+      Troglodyte_33: 1890473808
+      Troglodyte_34: 1443917062
+      Troglodyte_35: -1750605758
+      Troglodyte_36: -205779117
+      Troglodyte_37: 1148430296
+      Troglodyte_38: -1668853024
+      Troglodyte_39: 510940026
+      Troglodyte_4: -2022632377
+      Troglodyte_40: -2118915531
+      Troglodyte_41: 207169504
+      Troglodyte_42: 2129337968
+      Troglodyte_43: -537570081
+      Troglodyte_44: 764866297
+      Troglodyte_45: -1083564943
+      Troglodyte_46: -284740866
+      Troglodyte_47: -918113558
+      Troglodyte_48: -752100185
+      Troglodyte_49: -1274273962
+      Troglodyte_5: 659610066
+      Troglodyte_50: 494046789
+      Troglodyte_51: 1892541848
+      Troglodyte_52: 1914170145
+      Troglodyte_53: -315032699
+      Troglodyte_54: 776200153
+      Troglodyte_55: 98832011
+      Troglodyte_56: 340362469
+      Troglodyte_57: 448623261
+      Troglodyte_58: 1485294697
+      Troglodyte_59: -128938030
+      Troglodyte_6: -520369931
+      Troglodyte_60: -761769512
+      Troglodyte_61: 781330450
+      Troglodyte_62: 375479817
+      Troglodyte_63: -1841403574
+      Troglodyte_64: -1831798611
+      Troglodyte_65: 2083898246
+      Troglodyte_66: 115500875
+      Troglodyte_67: 1257791654
+      Troglodyte_68: 1963296401
+      Troglodyte_69: 113447977
+      Troglodyte_7: 1819612762
+      Troglodyte_70: -492446941
+      Troglodyte_71: -1061281472
+      Troglodyte_72: 1446049402
+      Troglodyte_73: -352208183
+      Troglodyte_74: 992550739
+      Troglodyte_75: -722522913
+      Troglodyte_76: -281264502
+      Troglodyte_77: -577454036
+      Troglodyte_78: -61798218
+      Troglodyte_79: -1472793110
+      Troglodyte_8: -1391713766
+      Troglodyte_80: -22639547
+      Troglodyte_81: 1303255209
+      Troglodyte_82: 1642152850
+      Troglodyte_83: 1616774593
+      Troglodyte_84: -625840812
+      Troglodyte_85: 1416293804
+      Troglodyte_86: 1897820387
+      Troglodyte_87: -1036648551
+      Troglodyte_88: 1407886619
+      Troglodyte_89: -1354387084
+      Troglodyte_9: 269390122
+      Troglodyte_90: -1397590131
+      Troglodyte_91: -999692386
+      Troglodyte_92: -1577757746
+      Troglodyte_93: -714670113
+      Troglodyte_94: -1727768206
+      Troglodyte_95: 1549985606
+      Troglodyte_96: 305146572
+      Troglodyte_97: 2071587824
+      Troglodyte_98: 1354276346
+      Troglodyte_99: 1939362995
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -18,10 +18,11 @@ public class TextBox : UIBase
             anim.SetTrigger("Disable");
         }
     }
-    public void SetTextBox(string contents)
+    public void SetTextBox(string contents, Color textColor)
     {
         if(text == null)
             text = GetComponentInChildren<TMPro.TextMeshProUGUI>();
+        text.color = textColor;
         text.text = contents;
         gameObject.SetActive(true);
     }
