@@ -49,8 +49,14 @@ public class PlayerSkill : MonoBehaviour
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
             playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+            playerController.isInvincibility = true;
+            Invoke("ResetJump", 0.8f);
         }
-        
+
+    }
+    private void ResetJump()
+    {
+        playerController.isInvincibility = false;
     }
     public void Defense(string defenseType)
     {
@@ -104,13 +110,13 @@ public class PlayerSkill : MonoBehaviour
             }
             else if (playerController.CanRevive())
                 playerController.Revive();
-            else
+            else if(playerController.CanAction(PlayerState.Idle))
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2, layerMask);
                 isCritical = GetCritical();
-
+                Debug.Log(playerController.GetPlayerState().CurrentState());
                 foreach (RaycastHit2D hitObj in hits)
                 {
                     hitEnemyTemp = hitObj.collider.GetComponent<Human>();
