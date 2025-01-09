@@ -221,6 +221,8 @@ public class BossBase : Human
         Debug.Log("Entering Pattern1 State");
         CancelInvoke("RandomPersent");
         isPattern = true;
+        PatternManager.Instance.isPattern1 = true;
+
         while (PatternManager.Instance.IsSunAlive)
         {
             animator.SetTrigger("Idle");
@@ -230,7 +232,7 @@ public class BossBase : Human
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
             if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
-            {// Attack logic
+            {   // Attack logic
                 Debug.Log($"Attacking the player!");
                 // Attack Delay
                 animator.SetTrigger("Attack");
@@ -254,20 +256,23 @@ public class BossBase : Human
                     AttakToPlayer();
                 }
             }
+
+            if (isPattern && PatternManager.Instance.IsSunAlive)
+            {
+                Debug.Log(" Check Test State");
+                PatternManager.Instance.StartDarkNight();
+                PatternManager.Instance.SpawnSun();
+                isPattern = false;
+            }
+
             yield return null;
         }
 
-
-        if (isPattern && PatternManager.Instance.IsSunAlive)
-        {
-            PatternManager.Instance.StartDarkNight();
-            PatternManager.Instance.SpawnSun();
-            yield return new WaitUntil(() => !PatternManager.Instance.IsSunAlive);
-            isPattern = false;
-        }
+        
         PatternManager.Instance.EndDarkNight();
         ChangeState(BossState.Chase);
         yield return new WaitForSeconds(10f);
+
     }
 
     protected IEnumerator Pattern2()
