@@ -137,10 +137,16 @@ public class PatternManager : Singleton<PatternManager>
             ObjectPoolManager.Instance.SpawnFromPool("DarkSpell", spellPos);
         }
     }
-        
 
     #endregion
 
+    #region 대머리 마법사 패턴 1 
+
+    public GameObject ThrowBall;
 
 
+
+    #endregion
+
+   
 }
