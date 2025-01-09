@@ -9,7 +9,8 @@ public enum PlayerState
     Animation,// 애니메이션
     Stun, // 스턴
     KnockBack, // 넘어짐
-    Die // 죽음
+    Die, // 죽음
+    Attack
 }
 public class PlayerStateMachine : MonoBehaviour
 {

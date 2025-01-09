@@ -23,8 +23,8 @@ public class StatController : MonoBehaviour
             }
             else
             {
-                Utility.GetPlayer().HealHealth(999);
                 Stats = Utility.GetPlayerStat();
+                
             }
         }
         else

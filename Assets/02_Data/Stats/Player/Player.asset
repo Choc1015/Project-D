@@ -25,3 +25,6 @@ MonoBehaviour:
   - statInfo: 5
     maxValue: 10
     curValue: 10
+  - statInfo: 4
+    maxValue: 1.5
+    curValue: 1.5

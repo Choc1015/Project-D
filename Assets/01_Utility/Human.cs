@@ -27,7 +27,7 @@ public class Human : MonoBehaviour
         if (info != null && statController.GetStat(StatInfo.Health).Value > 0)
         {
             this.info = info;
-            info.dir = transform.position- attackHuman.transform.position;
+            info.dir = transform.position - attackHuman.transform.position;
             info.dir.y = 0;
             movement.KnockBack(info);
         }

@@ -111,7 +111,7 @@ public class PlayerController : Human/*, IPunObservable*/
         if (GameManager.Instance.currentState == GameState.Stop)
             return;
 
-        if (CanAction())
+        if (CanAction(PlayerState.Idle) || CanAction(PlayerState.Die))
         {
             skillController.ControllerAction();
             
@@ -126,7 +126,7 @@ public class PlayerController : Human/*, IPunObservable*/
             ResetCombo();
         }
     }
-    public bool CanAction() => playerState.CurrentState() == PlayerState.Idle || playerState.CurrentState() == PlayerState.Die;
+    public bool CanAction(PlayerState state) => playerState.CurrentState() == state;
     public void Combo()
     {
         
@@ -218,6 +218,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         playerSkill.OffDefense();
+        
     }
     protected override void DieHuman()
     {
@@ -229,11 +230,16 @@ public class PlayerController : Human/*, IPunObservable*/
     }
     public override void Revive()
     {
-        playerState.ChangeState(PlayerState.Idle);
-        sprite.DOColor(baseColor, 0.5f);
-        soul.SetActive(false);
+        if(playerState.CurrentState() == PlayerState.Die)
+        {
+            playerState.ChangeState(PlayerState.Idle);
+            sprite.DOColor(baseColor, 0.5f);
+            soul.SetActive(false);
+            Utility.GetPlayer().HealHealth(999);
+
+        }
         GameManager.Instance.RevivePlayer(this, reviveInfo.nextPlayer);
-        
+
     }
     public void ResetState()
     {
