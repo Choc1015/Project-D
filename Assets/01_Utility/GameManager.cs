@@ -35,9 +35,9 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
-        foreach(PlayerController player in players)
+        foreach (PlayerController player in players)
         {
-            players_Dic?.Add(player.playerType, player);
+            players_Dic.Add(player.playerType, player);
         }
     }
 
