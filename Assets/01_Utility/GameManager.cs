@@ -45,11 +45,12 @@ public class GameManager : Singleton<GameManager>
         players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
     }
 
-    public void RevivePlayer(PlayerController curPlayer, PlayerType nextPlayer)
+    public void RevivePlayer(PlayerController curPlayer, ReviveInfo info)
     {
         curPlayer.gameObject.SetActive(false);
-        players_Dic[nextPlayer].transform.position = curPlayer.transform.position;
-        players_Dic[nextPlayer].gameObject.SetActive(true);
+        players_Dic[info.nextPlayer].transform.position = curPlayer.transform.position;
+        players_Dic[info.nextPlayer].gameObject.SetActive(true);
+        info.statue.gameObject.SetActive(false);
     }
     public void SetCameraRange(float newMinX, float newMaxX )
     {

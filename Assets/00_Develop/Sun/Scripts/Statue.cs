@@ -29,7 +29,7 @@ public class Statue : MonoBehaviour
             layerMask = 1 << LayerMask.NameToLayer("Player");
 
         hit = Physics2D.BoxCast(transform.position, Vector2.one * 3, 0, Vector2.zero, 0, layerMask);
-        Utility.GetPlayer().OnTriggerStatue(hit, playerType);
+        Utility.GetPlayer().OnTriggerStatue(hit, playerType, this);
         sprite.sprite = hit ? sprites[1] : sprites[0];
     }
 }
@@ -37,4 +37,5 @@ public class ReviveInfo
 {
     public PlayerType nextPlayer;
     public bool canRevive;
+    public Statue statue;
 }

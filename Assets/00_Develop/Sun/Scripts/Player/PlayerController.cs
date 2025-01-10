@@ -50,14 +50,14 @@ public class PlayerController : Human/*, IPunObservable*/
 
     private ReviveInfo reviveInfo = new();
 
-    public HitEffect enemyHitPrefab;
-    private ObjectPool<HitEffect> EnemyHitObjPool;
+    public Effect enemyHitPrefab;
+    private ObjectPool<Effect> EnemyHitObjPool;
 
     void Awake()
     {
         //if (!pv.IsMine)
         //    return;
-        EnemyHitObjPool = new ObjectPool<HitEffect>(enemyHitPrefab, 5, null);
+        EnemyHitObjPool = new ObjectPool<Effect>(enemyHitPrefab, 5, null);
 
         //GameManager.Instance.players.Add(this);
         baseColor = new Color(1, 1, 1, 1f);
@@ -200,8 +200,7 @@ public class PlayerController : Human/*, IPunObservable*/
     //}
     private IEnumerator KnockBack()
     {
-        if(this.info.isKnockBack)
-            animTrigger.TriggerAnim("KnockBack", AnimationType.Trigger);
+        
         yield return new WaitForSeconds(info.knockBackTime);
         playerState.ChangeState(PlayerState.Idle);
         movement.StopMove();
@@ -215,7 +214,12 @@ public class PlayerController : Human/*, IPunObservable*/
     private IEnumerator Stun()
     {
         playerState.ChangeState(PlayerState.Stun);
-        animTrigger.TriggerAnim("Stun", AnimationType.Trigger);
+
+        if (this.info.isKnockBack)
+            animTrigger.TriggerAnim("KnockBack", AnimationType.Trigger);
+        else
+            animTrigger.TriggerAnim("Stun", AnimationType.Trigger);
+
         yield return new WaitForSeconds(info.stunTime);
         StartCoroutine(KnockBack());
         movement.StopMove();
@@ -245,7 +249,7 @@ public class PlayerController : Human/*, IPunObservable*/
             Utility.GetPlayer().HealHealth(999);
 
         }
-        GameManager.Instance.RevivePlayer(this, reviveInfo.nextPlayer);
+        GameManager.Instance.RevivePlayer(this, reviveInfo);
 
     }
     public void ResetState()
@@ -267,16 +271,19 @@ public class PlayerController : Human/*, IPunObservable*/
         Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
     }
 
-    public void OnTriggerStatue(bool isOn, PlayerType playerType)
+    public void OnTriggerStatue(bool isOn, PlayerType playerType, Statue statue)
     {
         reviveInfo.canRevive = isOn;
+        
         if (isOn)
         {
             reviveInfo.nextPlayer = playerType;
+            reviveInfo.statue = statue;
         }
         else
         {
             reviveInfo.nextPlayer = default;
+            reviveInfo.statue = default;
         }
     }
     public void Heal(StatInfo info,float healValue)
