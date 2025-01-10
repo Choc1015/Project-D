@@ -55,6 +55,7 @@ public class PlayerSkill : MonoBehaviour
             playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
             playerController.isInvincibility = true;
             Invoke("ResetJump", 0.8f);
+            movementAfterDelay = 0.7f;
         }
 
     }
@@ -148,7 +149,7 @@ public class PlayerSkill : MonoBehaviour
                 hitEnemyTempList.Clear();
             }
         }
-        movementAfterDelay = 0.5f;
+        movementAfterDelay = 0.7f;
 
 
     }

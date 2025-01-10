@@ -30,6 +30,7 @@ public class UIManager : Singleton<UIManager>
     {
         if (playerUI == null)
             playerUI = Instantiate(playerUIPrefab, transform);
+        playerUI.GetComponent<RectTransform>().SetAsFirstSibling();
         return playerUI;
     }
     public void SetActiveFadeImage(bool isActive, float alpha, float timer, Color color)

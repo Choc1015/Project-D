@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5010459147448772401}
   - component: {fileID: 6510379453782422561}
   - component: {fileID: 2876500546553309730}
-  - component: {fileID: -4271660362663151108}
+  - component: {fileID: -6405094108770263778}
   m_Layer: 0
   m_Name: Hit
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-4271660362663151108
+--- !u!114 &-6405094108770263778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,6 +116,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8002634231325885199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c54979f1a8d074caf4726d56ebfbb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fb5c1f39600c4c4ea2085d4592b0113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFollow: 0
+  offset: {x: 0, y: 0, z: 0}
