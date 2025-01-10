@@ -539,17 +539,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Priest
       objectReference: {fileID: 0}
+    - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6220044125790220083, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c804e03d8d66db443aa7027248c01808, type: 3}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2885723
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5838846
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.z

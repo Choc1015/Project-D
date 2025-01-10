@@ -11,7 +11,7 @@ public class StageManager : Singleton<StageManager>
     public bool IsBoss = false;
     public bool IsStopCamera= false;
     public bool IsStart = false;
-
+    public Color fadeColor;
     private void Update()
     {
         if(WaveEnemyCount == 0)
@@ -24,11 +24,11 @@ public class StageManager : Singleton<StageManager>
     }
     IEnumerator NextStageCou(float timer, Vector3 pos, float minX, float maxX, GameObject cutScene = null)
     {
-        UIManager.Instance.SetActiveFadeImage(true, 1, timer);
+        UIManager.Instance.SetActiveFadeImage(true, 1, timer, fadeColor);
         yield return new WaitForSeconds(timer+0.5f);
         Utility.GetPlayerTr().position = pos;
         GameManager.Instance.SetCameraRange(minX,maxX);
-        UIManager.Instance.SetActiveFadeImage(false, 0, timer);
+        UIManager.Instance.SetActiveFadeImage(false, 0, timer, fadeColor);
         if (cutScene)
             cutScene.SetActive(true);
     }

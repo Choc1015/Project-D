@@ -45,7 +45,7 @@ public class EnemyStateMachine : Human
         tempAttackOffsetX = AttackOffset.x;
 
         if (animator == null)
-            Debug.LogError("�ν�����â���� �ִϸ����� �߰���");
+            Debug.LogError(" ν     â      ִϸ       ߰   ");
     }
 
     //private void FindPlayers()
@@ -59,35 +59,6 @@ public class EnemyStateMachine : Human
     //}
 
 
-    protected void OnDrawGizmos()
-    {
-        // 공격 범위 시각화
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chaseRange);
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
-
-        // 플레이어와 적 사이의 연결 선 그리기
-        if (Utility.GetPlayerGO() != null)
-        {
-
-            // 플레이어가 범위 내에 있을 때 초록색 선
-            if (Vector3.Distance(transform.position, Utility.GetPlayerTr().position) <= chaseRange)
-            {
-                Gizmos.color = Color.green;
-                Gizmos.DrawWireSphere(transform.position, chaseRange);
-            }
-
-            // 플레이어가 공격범위 내에 있을 때 파란색 선
-            if (Vector3.Distance(AttackHitBox(), Utility.GetPlayerTr().position) <= attackRange)
-            {
-                Gizmos.color = Color.blue;
-                Gizmos.DrawWireSphere(AttackHitBox(), attackRange);
-            }
-        }
-
-    }
 
     protected Vector3 AttackHitBox()
     {
@@ -143,7 +114,7 @@ public class EnemyStateMachine : Human
     }
     void FollowPlayer()
     {
-        moveDir = Utility.GetPlayerTr().position - transform.position;
+        moveDir = (Utility.GetPlayerTr().position + Utility.GetPlayer().offset) - transform.position;
 
         statController.GetStat(StatInfo.MoveSpeed).Value = statController.GetStat(StatInfo.MoveSpeed).GetMaxValue();
 
@@ -198,8 +169,6 @@ public class EnemyStateMachine : Human
 
     protected IEnumerator KnockBack()
     {
-        animator.SetTrigger("Kncokback");
-
         yield return new WaitForSeconds(info.knockBackTime);
         ChangeState(EnemyState.Chase);
         movement.StopMove();
@@ -208,7 +177,11 @@ public class EnemyStateMachine : Human
     }
     protected IEnumerator Stun()
     {
-        animator.SetTrigger("Stun");
+        movement.StopMove();
+        if (!this.info.isKnockBack)
+            animator.SetTrigger("Stun");
+        else
+            animator.SetTrigger("Kncokback");
 
         yield return new WaitForSeconds(info.stunTime);
         ChangeState(EnemyState.KnockBack);
@@ -247,15 +220,15 @@ public class EnemyStateMachine : Human
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {
-        if (!isAlive )
+        if (!isAlive)
             return;
 
         PlayerController player = attackHuman as PlayerController;
 
-        if(player.GetPlayerSkill().isCritical)
+        if (player.GetPlayerSkill().isCritical)
             UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
 
-        if (this.info !=null&& this.info.isKnockBack)
+        if (this.info != null && this.info.isKnockBack)
             return;
 
         base.TakeDamage(attackDamage, attackHuman, info);
@@ -265,7 +238,7 @@ public class EnemyStateMachine : Human
         if (isAlive)
         {
             ChangeState(EnemyState.Stun); // 스턴을 바꿔 놓음
-            
+
         }
         else
         {

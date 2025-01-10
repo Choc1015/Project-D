@@ -7,7 +7,7 @@ using System;
 public enum GameState { Play, Stop }
 public class GameManager : Singleton<GameManager>
 {
-    public List<PlayerController> players = new();
+    public PlayerController[] playerPrefabs;
     private Dictionary<PlayerType, PlayerController> players_Dic = new();
     public GameObject Camera;
 
@@ -35,10 +35,12 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
-        foreach(PlayerController player in players)
+        foreach(PlayerController playerPrefab in playerPrefabs)
         {
+            PlayerController player = Instantiate(playerPrefab);
             players_Dic?.Add(player.playerType, player);
         }
+        players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
     }
 
     public void RevivePlayer(PlayerController curPlayer, PlayerType nextPlayer)

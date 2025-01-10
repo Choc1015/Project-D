@@ -13,6 +13,9 @@ public class PlayerSkill : MonoBehaviour
 
     public Action attackAE; // Attack Additional Effects
 
+    public float attackDelayTime;
+    public float movementAfterDelay;
+
     void Start()
     {
         playerController = Utility.playerController;
@@ -20,7 +23,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_X(float x)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
         {
             playerController.movement.StopMove();
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
@@ -32,7 +35,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_Y(float y)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
         {
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
@@ -43,12 +46,13 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Jump(float x)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
+        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
         {
             playerController.PlayOneShotSound("Jump");
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
             playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
+            playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
             playerController.isInvincibility = true;
             Invoke("ResetJump", 0.8f);
         }
@@ -82,11 +86,14 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Sliding()
     {
-        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle)
+       
+        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle || movementAfterDelay > 0)
             return;
         playerController.PlayOneShotSound("Sliding");
         playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
+        playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
+        movementAfterDelay = 0.7f;
     }
     public void DashAttack()
     {
@@ -103,10 +110,11 @@ public class PlayerSkill : MonoBehaviour
         if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
         {
             int layerMask = 1 << LayerMask.NameToLayer("Item");
-            RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 1f, layerMask);
+            RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 2f, layerMask);
             if (hit)
             {
                 hit.collider.GetComponent<Item>().UseItem();
+                playerController.StopCommand();
             }
             else if (playerController.CanRevive())
                 playerController.Revive();
@@ -140,8 +148,9 @@ public class PlayerSkill : MonoBehaviour
                 hitEnemyTempList.Clear();
             }
         }
+        movementAfterDelay = 0.5f;
 
-        
+
     }
     private bool GetCritical()
     {
@@ -153,7 +162,13 @@ public class PlayerSkill : MonoBehaviour
     }
     public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
-        enemy.TakeDamage(attackDamage, playerController , info);
+        StartCoroutine(AttackCorou(attackDamage, enemy, info));
+    }
+    IEnumerator AttackCorou(float attackDamage, Human enemy, KnockBackInfo info = null)
+    {
+        yield return new WaitForSeconds(attackDelayTime);
+        enemy.TakeDamage(attackDamage, playerController, info);
+        Debug.Log(enemy);
     }
     public void Heal(float value)
     {

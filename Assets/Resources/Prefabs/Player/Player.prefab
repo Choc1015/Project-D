@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1931426702401166601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0.29, z: 0}
   m_LocalScale: {x: 1.2, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
+  m_Offset: {x: 0, y: 1.75}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -276,6 +276,7 @@ MonoBehaviour:
   animTrigger: {fileID: 4813723113395707094}
   moveDir: {x: 0, y: 0, z: 0}
   lookDIr_X: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0.7, z: 0}
   spriteLight: {fileID: 4301083112342461842}
   defenseType: 
   isInvincibility: 0
@@ -774,6 +775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCritical: 0
+  attackDelayTime: 0.2
+  movementAfterDelay: 0
 --- !u!114 &5316237887173578074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +852,7 @@ Transform:
   m_GameObject: {fileID: 3358986231070291462}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.75, z: -0.09}
+  m_LocalPosition: {x: 0, y: 3, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1104,7 +1107,7 @@ Transform:
   m_GameObject: {fileID: 7369851119345424219}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
