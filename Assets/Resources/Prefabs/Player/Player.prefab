@@ -279,7 +279,6 @@ MonoBehaviour:
   offset: {x: 0, y: 0.7, z: 0}
   spriteLight: {fileID: 4301083112342461842}
   defenseType: 
-  isInvincibility: 0
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
   maxCombo: 0
@@ -296,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a22d82d9b846c394f83bbf0404c144e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statSO: {fileID: 11400000, guid: 188af7ddd7444d74fb47fc380a223353, type: 2}
+  statSO: {fileID: 11400000, guid: fb8b30e634600444296f91577a18db86, type: 2}
   Stats: {fileID: 0}
 --- !u!114 &5212341399615060278
 MonoBehaviour:
