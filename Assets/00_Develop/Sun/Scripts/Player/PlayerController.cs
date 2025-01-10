@@ -73,7 +73,7 @@ public class PlayerController : Human/*, IPunObservable*/
     }
     public void SpawnHitEffect(Vector3 pos)
     {
-        EnemyHitObjPool.SpawnObject().Spawn(EnemyHitObjPool, pos,transform);
+        EnemyHitObjPool.SpawnObject().Spawn(EnemyHitObjPool, pos);
     }
 
     private void OnEnable()

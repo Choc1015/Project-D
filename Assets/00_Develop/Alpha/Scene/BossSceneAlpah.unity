@@ -5278,15 +5278,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: Persent1
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: Persent2
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: Persent3
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5766454345637821023, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: m_Sprite
