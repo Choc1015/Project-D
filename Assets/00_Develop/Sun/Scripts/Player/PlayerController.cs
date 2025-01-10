@@ -30,7 +30,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public Vector3 offset;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
-    [HideInInspector] public bool isInvincibility;
+    private bool isInvincibility;
 
     [SerializeField] private SkillSwap skillSwapPrefab;
     public SkillSwap skillSwapUI;
@@ -146,6 +146,7 @@ public class PlayerController : Human/*, IPunObservable*/
             ResetCombo();
         
     }
+    public int GetCombo() => attackCombo;
     private void ResetCombo()
     {
         attackCombo = 0;
@@ -179,8 +180,7 @@ public class PlayerController : Human/*, IPunObservable*/
         }
         if (damage != attackDamage)
             info.ResetValue();
-        isInvincibility = true;
-        Invoke("ResetIsInvincibility", 0.1f);
+        ActiveInvincibility(0.1f);
         base.TakeDamage(damage, attackHuman, info);
         if (playerState.CurrentState() != PlayerState.Die)
         {
@@ -191,6 +191,11 @@ public class PlayerController : Human/*, IPunObservable*/
         }
 
         ActiveUpdatePlayerUI();
+    }
+    public void ActiveInvincibility(float resetTimer)
+    {
+        isInvincibility = true;
+        Invoke("ResetIsInvincibility", resetTimer);
     }
     private void ResetIsInvincibility()  => isInvincibility = false;
     public void ActiveUpdatePlayerUI()
@@ -291,7 +296,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         if (statController != null)
         {
-            statController.GetStat(info).Value += healValue;
+            statController.GetStat(info).Value += statController.GetStat(info).GetMaxValue()*healValue;
             ActiveUpdatePlayerUI();
         }
     }

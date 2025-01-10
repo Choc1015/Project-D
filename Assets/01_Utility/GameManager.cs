@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public void SetGameState(GameState gameState) => currentState = gameState;
 
     public Action SetLayerPosition;
+    public MapNumber[] mapNumbers;
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
@@ -43,6 +44,7 @@ public class GameManager : Singleton<GameManager>
 
         }
         players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
+        mapNumbers = Resources.FindObjectsOfTypeAll<MapNumber>();
     }
 
     public void RevivePlayer(PlayerController curPlayer, ReviveInfo info)

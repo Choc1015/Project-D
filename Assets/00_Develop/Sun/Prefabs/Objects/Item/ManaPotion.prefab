@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kind: 1
   statInfo: 5
-  value: 5
+  value: 0.1
 --- !u!95 &2526069411918733966
 Animator:
   serializedVersion: 5

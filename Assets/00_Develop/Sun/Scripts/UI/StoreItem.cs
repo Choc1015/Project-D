@@ -20,6 +20,11 @@ public class StoreItem : MonoBehaviour
         priceTxt = transform.Find("Price").GetComponent<TMPro.TextMeshProUGUI>();
         priceTxt.text = price.ToString();
     }
+    void OnEnable()
+    {
+        isDisable = false;
+        image.DOColor(Color.white, 0.01f);
+    }
     public void OnClickItem()
     {
         if (!isDisable && CurrencyManager.Instance.Gold >= price)
