@@ -48,17 +48,21 @@ public class DarkSpell : MonoBehaviour
     {
         Utility.GetPlayer().TakeDamage(1, Utility.GetPlayer(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
         Debug.Log("DarkSpell to Player");
-        yield return new WaitForSeconds(0.1f); // 1√  µÙ∑π¿Ã
+        yield return new WaitForSeconds(0.5f); // 1√  µÙ∑π¿Ã
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if (collision.tag == "Player")
             StartCoroutine(Spell());
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+            StartCoroutine(Spell());
 
-
+    }
     private IEnumerator ApplyDamageWithDelay()
     {
         isCooldown = true; // µÙ∑π¿Ã Ω√¿€
