@@ -1345,6 +1345,7 @@ MonoBehaviour:
     - {x: 3, y: -3}
     - {x: 3, y: 0}
     - {x: 3, y: -1.5}
+  ThrowBall: {fileID: 0}
 --- !u!1 &286187835
 GameObject:
   m_ObjectHideFlags: 0
@@ -7249,6 +7250,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5766454345637821023, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2069978603, guid: 3c0189408e8f8d3448a1d2fc70a98692, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

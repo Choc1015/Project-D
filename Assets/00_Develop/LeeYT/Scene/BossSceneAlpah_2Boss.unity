@@ -1345,6 +1345,7 @@ MonoBehaviour:
     - {x: 3, y: -3}
     - {x: 3, y: 0}
     - {x: 3, y: -1.5}
+  ThrowBall: {fileID: 7972885186286629067, guid: 397339d6fd979814bb31477aa2e003d8, type: 3}
 --- !u!1 &286187835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,12 +2255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - prefab: {fileID: 5900883183592929909, guid: b66236e254420404eaaff1bab1e8194b, type: 3}
+  - prefab: {fileID: 7972885186286629067, guid: 397339d6fd979814bb31477aa2e003d8, type: 3}
     size: 10
-  - prefab: {fileID: 8789702848661732621, guid: e3f3775a548d17c46bdb9cf2fa97ccf0, type: 3}
-    size: 1
-  - prefab: {fileID: 2770803285092354211, guid: ba95b525a1bfabe429292b184401cdb7, type: 3}
-    size: 1
 --- !u!1 &599962312
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,13 +6093,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2377123786003682259, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.54
+      objectReference: {fileID: 0}
     - target: {fileID: 2611131331367090419, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.35
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 2611131331367090419, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.99
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2611131331367090419, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6147,6 +6148,10 @@ PrefabInstance:
     - target: {fileID: 4682782536788932543, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_SortingOrder
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5149004788006285709, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 5781510339686267414, guid: 0e90ba0f07c62f24fb6b371c4a51c029, type: 3}
       propertyPath: m_Sprite

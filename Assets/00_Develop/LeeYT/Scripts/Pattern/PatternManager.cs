@@ -141,10 +141,13 @@ public class PatternManager : Singleton<PatternManager>
     #endregion
 
     #region 대머리 마법사 패턴 1 
-
+    [Header("대머리 마법사 패턴 1")]
     public GameObject ThrowBall;
 
-
+    public void SpawnTBall(Transform MaVin)
+    {
+        ObjectPoolManager.Instance.SpawnFromPool(ThrowBall.name, MaVin.position);
+    }
 
     #endregion
 
