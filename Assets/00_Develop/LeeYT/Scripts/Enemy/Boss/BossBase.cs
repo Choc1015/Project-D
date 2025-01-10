@@ -19,7 +19,6 @@ public class BossBase : Human
     private bool IsDamage = false;
     protected BossState currentState;
     protected bool isAlive = true; // 살아있어요
-    protected bool isAttack = false;
     protected bool isPattern = false;
 
     // References
@@ -102,11 +101,10 @@ public class BossBase : Human
 
     public void ChangeState(BossState newState)
     {
+        StopAllCoroutines(); // Stop any running state
         if (!isAlive)
             return;
-
         currentState = newState;
-        StopAllCoroutines(); // Stop any running state
         StartCoroutine(newState.ToString()); // 스테이트 이넘이름과 함수이름 동일하게
     }
 
@@ -122,7 +120,6 @@ public class BossBase : Human
         while (currentState == BossState.Chase)
         {
             animator.SetTrigger("Idle");
-            isAttack = false;
             FollowPlayer();
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
@@ -168,26 +165,21 @@ public class BossBase : Human
             // 이동 로직
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
 
-            // 공격 애니메이션이 특정 시점(0.7f 이상)에 도달할 때까지 대기
+            // 공격 애니메이션이 특정 시점(0.9f 이상)에 도달할 때까지 대기
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") &&
-                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f);
-
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+            IsDamage = true;
             // 공격 실행 여부 확인
-            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
+            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange && IsDamage)
             {
                 AttakToPlayer(); // 공격 한 번만 실행
-                yield return new WaitUntil(() =>
-                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f); // 애니메이션이 끝날 때까지 대기
+
             }
-            else
-            {
+            
                 ChangeState(BossState.Chase); // 플레이어가 사거리 밖에 있으면 상태 변경
                 yield break;
-            }
-
-            // 다음 프레임 대기
-            yield return null;
+           
         }
     }
 
@@ -217,7 +209,7 @@ public class BossBase : Human
 
         Utility.GetPlayer().TakeDamage(statController.GetStat(StatInfo.AttackDamage).Value, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
         Debug.Log($"Attak to Player");
-
+        IsDamage = false;
     }
 
     protected IEnumerator Pattern1()
@@ -230,13 +222,12 @@ public class BossBase : Human
         while (PatternManager.Instance.IsSunAlive)
         {
             animator.SetTrigger("Idle");
-            isAttack = false;
             // Chase the player
             
 
             // Transition to Attack if within attack range (하이 ㅋ)
             if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange && !PatternManager.Instance.isPattern1)
-            {     // Attack logic
+            {    // Attack logic
                 Debug.Log($"Attacking the player!");
 
                 // 공격 트리거 활성화
@@ -245,25 +236,18 @@ public class BossBase : Human
                 // 이동 로직
                 movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
 
-                // 공격 애니메이션이 특정 시점(0.7f 이상)에 도달할 때까지 대기
+                // 공격 애니메이션이 특정 시점(0.9f 이상)에 도달할 때까지 대기
                 yield return new WaitUntil(() =>
                     animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") &&
-                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f);
-
+                    animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+                IsDamage = true;
                 // 공격 실행 여부 확인
-                if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
+                if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange && IsDamage)
                 {
                     AttakToPlayer(); // 공격 한 번만 실행
-                    yield return new WaitUntil(() =>
-                        animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f); // 애니메이션이 끝날 때까지 대기
                 }
-                else
-                {
-                    yield break;
-                }
-
-                // 다음 프레임 대기
                 yield return null;
+
             }
             else
             {
@@ -276,7 +260,6 @@ public class BossBase : Human
                 Debug.Log(" Check Test State");
                 PatternManager.Instance.StartDarkNight();
                 PatternManager.Instance.SpawnSun();
-                yield return new WaitForSeconds(2f);
                 PatternManager.Instance.isPattern1 = false;
             }
             

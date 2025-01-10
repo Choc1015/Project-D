@@ -26,6 +26,12 @@ public class UIManager : Singleton<UIManager>
     [Space(30)]
     [Header("CutScene Image")]
     public Image cutSceneImage;
+
+    private void Start()
+    {
+        playerUI = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
+    }
+
     public PlayerUI GetPlayerUI()
     {
         if (playerUI == null)

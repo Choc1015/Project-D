@@ -35,14 +35,19 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
+        Application.targetFrameRate = 60;
 
-        foreach(PlayerController playerPrefab in playerPrefabs)
+        playerPrefabs[0] = Resources.Load<PlayerController>("Prefabs/Player/Player_Warrior");
+        playerPrefabs[1] = Resources.Load<PlayerController>("Prefabs/Player/Player_Priest");
+        playerPrefabs[2] = Resources.Load<PlayerController>("Prefabs/Player/Player_Wizard");
+
+        foreach (PlayerController playerPrefab in playerPrefabs)
         {
             PlayerController player = Instantiate(playerPrefab);
             players_Dic?.Add(player.playerType, player);
 
         }
-        players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
+        players_Dic[PlayerType.Warrior].gameObject.SetActive(true); 
     }
 
     public void RevivePlayer(PlayerController curPlayer, ReviveInfo info)

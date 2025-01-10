@@ -5232,10 +5232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_DarkElf
       objectReference: {fileID: 0}
-    - target: {fileID: 1489073498334660325, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3997116023359092679, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.36
@@ -5276,22 +5272,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: Persent1
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: Persent2
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: Persent3
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5766454345637821023, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2069978603, guid: 3c0189408e8f8d3448a1d2fc70a98692, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
