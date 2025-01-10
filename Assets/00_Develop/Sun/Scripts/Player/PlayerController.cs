@@ -179,6 +179,8 @@ public class PlayerController : Human/*, IPunObservable*/
         }
         if (damage != attackDamage)
             info.ResetValue();
+        isInvincibility = true;
+        Invoke("ResetIsInvincibility", 0.1f);
         base.TakeDamage(damage, attackHuman, info);
         if (playerState.CurrentState() != PlayerState.Die)
         {
@@ -190,6 +192,7 @@ public class PlayerController : Human/*, IPunObservable*/
 
         ActiveUpdatePlayerUI();
     }
+    private void ResetIsInvincibility()  => isInvincibility = false;
     public void ActiveUpdatePlayerUI()
     {
         playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
@@ -247,10 +250,12 @@ public class PlayerController : Human/*, IPunObservable*/
             sprite.DOColor(baseColor, 0.5f);
             soul.SetActive(false);
             Utility.GetPlayer().HealHealth(999);
-
+            GameManager.Instance.RevivePlayer(this, reviveInfo);
+            reviveInfo.canRevive = false;
+            reviveInfo.nextPlayer = default;
+            reviveInfo.statue = default;
         }
-        GameManager.Instance.RevivePlayer(this, reviveInfo);
-
+        
     }
     public void ResetState()
     {
@@ -265,16 +270,11 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         skillSwapUI.DisableSkillSwap();
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
-    }
 
     public void OnTriggerStatue(bool isOn, PlayerType playerType, Statue statue)
     {
         reviveInfo.canRevive = isOn;
-        
+
         if (isOn)
         {
             reviveInfo.nextPlayer = playerType;
@@ -285,6 +285,7 @@ public class PlayerController : Human/*, IPunObservable*/
             reviveInfo.nextPlayer = default;
             reviveInfo.statue = default;
         }
+
     }
     public void Heal(StatInfo info,float healValue)
     {

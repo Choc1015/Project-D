@@ -105,6 +105,7 @@ public class PlayerSkill : MonoBehaviour
     public void StopDashAttack()
     {
         useDashAttack = false;
+        Debug.Log("DDWA");
     }
     public void Attack()
     {
@@ -123,7 +124,7 @@ public class PlayerSkill : MonoBehaviour
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
-                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2, layerMask);
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2+0.5f, layerMask);
                 isCritical = GetCritical();
                 Debug.Log(playerController.GetPlayerState().CurrentState());
                 foreach (RaycastHit2D hitObj in hits)

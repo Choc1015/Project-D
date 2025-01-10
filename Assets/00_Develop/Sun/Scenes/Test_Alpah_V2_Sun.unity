@@ -4165,7 +4165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: orthographic size
-      value: 7.4068537
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -5351,7 +5351,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6392473556721988826, guid: b8c7310d2cff2a642aab29e12712660d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.84
+      value: 10.16
       objectReference: {fileID: 0}
     - target: {fileID: 6392473556721988826, guid: b8c7310d2cff2a642aab29e12712660d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5753,7 +5753,7 @@ PrefabInstance:
     - target: {fileID: 5145151786151443708, guid: a4757f74ffc3c6f4988604fa657957e0, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 88d471347f36d204bbc0b4a0c16734f8, type: 3}
+      objectReference: {fileID: 21300000, guid: f42e2aaf8a2ff26448027ce5a7d85f4b, type: 3}
     - target: {fileID: 6385649719139436868, guid: a4757f74ffc3c6f4988604fa657957e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6386,7 +6386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1812656080
 Transform:
   m_ObjectHideFlags: 0
