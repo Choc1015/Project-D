@@ -8,23 +8,21 @@ public class TextBoxEvent : EventTrigger
     public Vector3 offset;
     public bool isCutScene;
     private TextBox tbTemp;
-    private Color colorTemp;
+    public Color textColor;
     public override void Enter()
     {
         if (isCutScene)
         {
             tbTemp = UIManager.Instance.cutSceneTextBox;
-            colorTemp = Color.white;
         }
         else
         {
             tbTemp = UIManager.Instance.textBox;
-            colorTemp = Color.black;
             UIManager.Instance.textBox.transform.position = Camera.main.WorldToScreenPoint(Camera.main.transform.position+basePos + offset);
             //UIManager.Instance.textBox.transform.position = basePos + offset;
         }
 
-        tbTemp.SetTextBox(contents, colorTemp);
+        tbTemp.SetTextBox(contents, textColor);
 
         if (posObject != default)
         {

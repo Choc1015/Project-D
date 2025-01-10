@@ -188,6 +188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Wizard
       objectReference: {fileID: 0}
+    - target: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6220044125790220083, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -198,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.81
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalPosition.z

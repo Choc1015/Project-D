@@ -27,6 +27,7 @@ public class PlayerController : Human/*, IPunObservable*/
 
     public Vector3 moveDir;
     public Vector3 lookDIr_X;
+    public Vector3 offset;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
     [HideInInspector] public bool isInvincibility;
@@ -65,8 +66,9 @@ public class PlayerController : Human/*, IPunObservable*/
         soundController = GetComponent<SoundController>();
         playerSkill = GetComponent<PlayerSkill>();
         playerState = GetComponent<PlayerStateMachine>();
-        
-
+        playerUI = UIManager.Instance.GetPlayerUI();
+        skillSwapUI = UIManager.Instance.SpawnSkillSwapUI(skillSwapPrefab);
+        skillSwapUI.Init(skillFunctionsController);
         //skillSwapUI = PhotonNetwork.Instantiate($"Prefabs/UI/SkillUI_{playerClass}", Vector3.zero, Quaternion.identity).GetComponent<SkillSwap>();
         //skillSwapUI.Init(skillFunctionsController);
 
@@ -104,13 +106,18 @@ public class PlayerController : Human/*, IPunObservable*/
         //pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
         LocalUpdate(lookDIr_X.x == -1 ? true : false);
         transform.position = GameManager.Instance.GetClampPosition(transform);
+        playerSkill.movementAfterDelay -= Time.deltaTime;
     }
     void LateUpdate()
     {
         //if (!pv.IsMine)
         //    return;
         if (GameManager.Instance.currentState == GameState.Stop)
+        {
+            StopCommand();
             return;
+        }
+        
 
         if (CanAction(PlayerState.Idle) || CanAction(PlayerState.Die))
         {

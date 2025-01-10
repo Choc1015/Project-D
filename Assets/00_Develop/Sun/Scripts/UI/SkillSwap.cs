@@ -37,7 +37,7 @@ public class SkillSwap : UIBase/*, IPunObservable*/
     }
     public void Init(SkillFunctionController skill)
     {
-        //this.skill = skill;
+        this.skill = skill;
         //gameObject.SetActive(false);
         //StartPhotonUI();
     }

@@ -7,7 +7,7 @@ public class HealDrone : InstallationSkill
     private PlayerController targetPlayer;
     private void OnEnable()
     {
-        targetPlayer = GameManager.Instance.players[Random.Range(0, GameManager.Instance.players.Count)];
+        targetPlayer = Utility.GetPlayer();
         SpawnObj(targetPlayer.transform.position);
     }
     public override void UseSkill()

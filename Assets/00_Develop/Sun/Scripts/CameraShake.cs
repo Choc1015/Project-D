@@ -18,12 +18,6 @@ public class CameraShake : MonoBehaviour
         cinemachine.m_DefaultVelocity = RandomVec(-power, power);
         cinemachine.GenerateImpulse();
     }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-            ActiveCameraShake(0.1f);
-    }
-
     private Vector3 RandomVec(float min, float max)
     {
         Vector3 vec = Vector3.zero;
