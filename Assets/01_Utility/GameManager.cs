@@ -35,10 +35,12 @@ public class GameManager : Singleton<GameManager>
     }
     private void Start()
     {
+
         foreach(PlayerController playerPrefab in playerPrefabs)
         {
             PlayerController player = Instantiate(playerPrefab);
             players_Dic?.Add(player.playerType, player);
+
         }
         players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
     }

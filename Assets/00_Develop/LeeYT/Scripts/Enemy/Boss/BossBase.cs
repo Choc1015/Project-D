@@ -24,7 +24,6 @@ public class BossBase : Human
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
     public float attackRange = 2f; // 공격 범위   
-    [SerializeField] Vector3 AttackOffset;
     public float AttackDelay = 1f;
     public Animator animator;
     public SoundController soundController;
@@ -161,7 +160,7 @@ public class BossBase : Human
             Debug.Log($"Attacking the player!");
 
             // 공격 트리거를 활성화할 수 있습니다 (예: 애니메이션 트리거)
-            // animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
 
             // 이동 로직
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);

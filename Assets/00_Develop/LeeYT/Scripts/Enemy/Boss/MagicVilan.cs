@@ -128,13 +128,15 @@ public class MagicVilan : Human
             animator.SetTrigger("Idle");
             isAttack = false;
             // Chase the player
-            
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
             if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
                 ChangeState(BossState.Attack);
             }
+
+            PatternManager.Instance.SpawnTBall(transform);
+            yield return new WaitForSeconds(1f);
             yield return null;
         }
     }
