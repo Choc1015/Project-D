@@ -281,7 +281,7 @@ MonoBehaviour:
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
   maxCombo: 0
-  enemyHitPrefab: {fileID: -4271660362663151108, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
+  enemyHitPrefab: {fileID: -6405094108770263778, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
 --- !u!114 &219253064508369906
 MonoBehaviour:
   m_ObjectHideFlags: 0
