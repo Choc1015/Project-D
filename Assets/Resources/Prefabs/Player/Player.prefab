@@ -275,7 +275,7 @@ MonoBehaviour:
   soul: {fileID: 4807531274747957609}
   animTrigger: {fileID: 4813723113395707094}
   moveDir: {x: 0, y: 0, z: 0}
-  lookDIr_X: {x: 0, y: 0, z: 0}
+  lookDIr_X: {x: 1, y: 0, z: 0}
   offset: {x: 0, y: 0.7, z: 0}
   spriteLight: {fileID: 4301083112342461842}
   defenseType: 

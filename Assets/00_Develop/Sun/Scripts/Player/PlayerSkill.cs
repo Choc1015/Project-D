@@ -53,16 +53,13 @@ public class PlayerSkill : MonoBehaviour
             playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
             playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
             playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
-            playerController.isInvincibility = true;
+            playerController.ActiveInvincibility(0.8f);
             Invoke("ResetJump", 0.8f);
             movementAfterDelay = 0.7f;
         }
 
     }
-    private void ResetJump()
-    {
-        playerController.isInvincibility = false;
-    }
+    
     public void Defense(string defenseType)
     {
         if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle)
@@ -105,6 +102,7 @@ public class PlayerSkill : MonoBehaviour
     public void StopDashAttack()
     {
         useDashAttack = false;
+        Debug.Log("DDWA");
     }
     public void Attack()
     {
@@ -123,7 +121,7 @@ public class PlayerSkill : MonoBehaviour
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
-                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2, layerMask);
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2+0.5f, layerMask);
                 isCritical = GetCritical();
                 Debug.Log(playerController.GetPlayerState().CurrentState());
                 foreach (RaycastHit2D hitObj in hits)
@@ -137,10 +135,10 @@ public class PlayerSkill : MonoBehaviour
                     //    return;
                     float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value;
 
-                    if(isCritical)
-                        GiveDamage(attackDamage * 2, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 200, 0.3f, 2));
+                    if(isCritical || playerController.GetCombo() == playerController.maxCombo-1)
+                        GiveDamage(attackDamage * 2, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 400, 0.3f, 2));
                     else
-                        GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+                        GiveDamage(attackDamage, hitEnemyTemp, new KnockBackInfo(Vector3.zero, 100, 0.2f, 0.2f));
                     //playerController.SpawnHitEffect(hitEnemyTemp.transform.position);
                 }
                 playerController.PlayOneShotSound("Swing");

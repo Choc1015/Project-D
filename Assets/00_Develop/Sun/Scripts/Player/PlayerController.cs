@@ -30,7 +30,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public Vector3 offset;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
-    [HideInInspector] public bool isInvincibility;
+    private bool isInvincibility;
 
     [SerializeField] private SkillSwap skillSwapPrefab;
     public SkillSwap skillSwapUI;
@@ -146,6 +146,7 @@ public class PlayerController : Human/*, IPunObservable*/
             ResetCombo();
         
     }
+    public int GetCombo() => attackCombo;
     private void ResetCombo()
     {
         attackCombo = 0;
@@ -179,6 +180,7 @@ public class PlayerController : Human/*, IPunObservable*/
         }
         if (damage != attackDamage)
             info.ResetValue();
+        ActiveInvincibility(0.1f);
         base.TakeDamage(damage, attackHuman, info);
         if (playerState.CurrentState() != PlayerState.Die)
         {
@@ -190,6 +192,12 @@ public class PlayerController : Human/*, IPunObservable*/
 
         ActiveUpdatePlayerUI();
     }
+    public void ActiveInvincibility(float resetTimer)
+    {
+        isInvincibility = true;
+        Invoke("ResetIsInvincibility", resetTimer);
+    }
+    private void ResetIsInvincibility()  => isInvincibility = false;
     public void ActiveUpdatePlayerUI()
     {
         playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
@@ -247,10 +255,12 @@ public class PlayerController : Human/*, IPunObservable*/
             sprite.DOColor(baseColor, 0.5f);
             soul.SetActive(false);
             Utility.GetPlayer().HealHealth(999);
-
+            GameManager.Instance.RevivePlayer(this, reviveInfo);
+            reviveInfo.canRevive = false;
+            reviveInfo.nextPlayer = default;
+            reviveInfo.statue = default;
         }
-        GameManager.Instance.RevivePlayer(this, reviveInfo);
-
+        
     }
     public void ResetState()
     {
@@ -265,16 +275,11 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         skillSwapUI.DisableSkillSwap();
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPos.position+lookDIr_X, Vector2.one * 1.5f);
-    }
 
     public void OnTriggerStatue(bool isOn, PlayerType playerType, Statue statue)
     {
         reviveInfo.canRevive = isOn;
-        
+
         if (isOn)
         {
             reviveInfo.nextPlayer = playerType;
@@ -285,12 +290,13 @@ public class PlayerController : Human/*, IPunObservable*/
             reviveInfo.nextPlayer = default;
             reviveInfo.statue = default;
         }
+
     }
     public void Heal(StatInfo info,float healValue)
     {
         if (statController != null)
         {
-            statController.GetStat(info).Value += healValue;
+            statController.GetStat(info).Value += statController.GetStat(info).GetMaxValue()*healValue;
             ActiveUpdatePlayerUI();
         }
     }

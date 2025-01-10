@@ -20,6 +20,7 @@ public class EnemyStateMachine : Human
     protected bool isAlive = true; // 살아있는 판정은 필요하고 
     protected float tempAttackOffsetX;
     protected bool isAttack = false;
+    protected bool isInvincibility;
 
     // References
     public float chaseRange = 5f; // 플레이어와 적의 거리
@@ -197,7 +198,12 @@ public class EnemyStateMachine : Human
         }
 
     }
-
+    public void ActiveInvincibility(float resetTimer)
+    {
+        isInvincibility = true;
+        Invoke("ResetIsInvincibility", resetTimer);
+    }
+    private void ResetIsInvincibility() => isInvincibility = false;
     protected IEnumerator Die()
     {
         if (isAlive)
@@ -230,7 +236,7 @@ public class EnemyStateMachine : Human
 
         if (this.info != null && this.info.isKnockBack)
             return;
-
+        ActiveInvincibility(0.2f);
         base.TakeDamage(attackDamage, attackHuman, info);
         player.SpawnHitEffect(transform.position + hitOffset);
 
