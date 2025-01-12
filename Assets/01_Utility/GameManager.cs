@@ -34,9 +34,13 @@ public class GameManager : Singleton<GameManager>
     {
         SetLayerPosition?.Invoke();
     }
-    private void Start()
+    private void Awake()
     {
         Application.targetFrameRate = 60;
+    }
+    private void Start()
+    {
+       
 
         playerPrefabs[0] = Resources.Load<PlayerController>("Prefabs/Player/Player_Warrior");
         playerPrefabs[1] = Resources.Load<PlayerController>("Prefabs/Player/Player_Priest");

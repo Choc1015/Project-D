@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class PatternManager : Singleton<PatternManager>
 {
@@ -52,7 +53,7 @@ public class PatternManager : Singleton<PatternManager>
             }
 
             yield return null; // 한 프레임 대기
-            if(!IsSunAlive)
+            if (!IsSunAlive)
                 yield break;
 
         }
@@ -140,16 +141,64 @@ public class PatternManager : Singleton<PatternManager>
 
     #endregion
 
-    #region 대머리 마법사 패턴 1 
-    [Header("대머리 마법사 패턴 1")]
+
+    #region 대머리 마법사 기본 공격
+    [Header("대머리 마법사 기본 공격")]
     public GameObject ThrowBall;
 
-    public void SpawnTBall(Transform MaVin)
+    private float time;
+    private float delayTime;
+    public void SpawnTBall(Vector3 MaVin)
     {
-        ObjectPoolManager.Instance.SpawnFromPool(ThrowBall.name, MaVin.position);
+        delayTime = Random.Range(0.5f, 1.5f);
+
+        if (time < delayTime)
+            return;
+        ObjectPoolManager.Instance.SpawnFromPool(ThrowBall.name, MaVin);
     }
 
     #endregion
 
-   
+    #region 대머리 마법사 패턴 1
+    [Header("대머리 마법사 패턴 1")]
+    public GameObject[] StraightBall;
+    public Vector2[] TelePoint;
+
+
+    private int BallCount = 10;
+
+    public void Bomb(Vector3 MaVin)
+    {
+        float spreadAngle = 360 / BallCount; // 원을 기준으로 터지는 개수에 따른 각도 계산 예) 10개면 36도에 하나씩 터짐
+        int randAbility = Random.Range(0, 4); // 랜덤한 능력치
+
+        for (int i = 0; i < BallCount; i++) // for문 돌려서 개수 만큼 반복
+        {
+            // 오브젝트 풀링 클래스에서 풀로 생성
+            GameObject bullet = ObjectPoolManager.Instance.SpawnFromPool(StraightBall[randAbility].name, MaVin);
+            //bullet.GetComponent<Par> 이거 파티클 회전 넣어서 해보깅
+            // 총알의 회전 값을 총의 회전값에 맞추기
+            bullet.transform.rotation = Quaternion.Euler(Quaternion.identity.x, Quaternion.identity.y, spreadAngle * i);
+        }
+    }
+
+    public Vector2 GetRandomTelePoint()
+    {
+        return TelePoint[Random.Range(0, TelePoint.Length)];
+    }
+
+
+    #endregion
+
+
+    private void Update()
+    {
+
+        if (ThrowBall == null)
+        {
+            return;
+        }
+        time += Time.deltaTime;
+    }
+
 }

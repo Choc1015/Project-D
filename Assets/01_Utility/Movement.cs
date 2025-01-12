@@ -10,6 +10,11 @@ public class Movement : MonoBehaviour
     {
         if(rigid != null)
         {
+            if (dir == Vector3.zero)
+            {
+                rigid.velocity = Vector3.zero;
+                return;
+            }
             rigid.velocity = dir.normalized * moveSpeed;
         }
     }

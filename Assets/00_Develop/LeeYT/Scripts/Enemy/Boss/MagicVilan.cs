@@ -50,7 +50,7 @@ public class MagicVilan : Human
         Initialize();
         AttackHitBox = transform.position;
     }
-  
+
     protected void Initialize()
     {
         statController.Init();
@@ -58,21 +58,21 @@ public class MagicVilan : Human
         //FindPlayers();
         // Start the state machine
         ChangeState(BossState.Chase); // 초기 상태
-        
+
 
         if (animator == null)
             Debug.LogError("no animator");
 
-       
+
     }
     protected void OnDrawGizmos()
     {
         // 공격 범위 시각화
-        Gizmos.color = Color.red; 
+        Gizmos.color = Color.red;
         AttackHitBox = transform.position + Vector3.up;
         Gizmos.DrawWireSphere(AttackHitBox, attackRange);
 
-        
+
         if (Utility.GetPlayerGO() == null)
             return;
         // 플레이어와 적 사이의 연결 선 그리기
@@ -91,7 +91,7 @@ public class MagicVilan : Human
 
     protected void FlipSprite()
     {
-        if (Utility.GetPlayerTr().position.x < transform.position.x)
+        if (Utility.GetPlayerTr()?.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             //AttackOffset.x = tempAttackOffsetX;
@@ -130,13 +130,12 @@ public class MagicVilan : Human
             // Chase the player
             FlipSprite();
             // Transition to Attack if within attack range (하이 ㅋ)
-            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
+            if (Vector2.Distance(AttackHitBox, (Vector2)Utility.GetPlayerTr()?.position) <= attackRange)
             {
                 ChangeState(BossState.Attack);
             }
-
-            PatternManager.Instance.SpawnTBall(transform);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.6f);
+            PatternManager.Instance.SpawnTBall(transform.position + Vector3.up);
             yield return null;
         }
     }
@@ -150,7 +149,7 @@ public class MagicVilan : Human
             movement.MoveToRigid(moveDir, statController.GetStat(StatInfo.MoveSpeed).Value);
     }
 
- 
+
 
     protected IEnumerator Attack() // 매직 보스는 Attack이 도망가는 것입니다.
     {
@@ -168,12 +167,13 @@ public class MagicVilan : Human
             // 이동 로직
             movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
 
+            Debug.Log("도망!!");
+
+
             // 공격 실행
-            yield return new WaitForSeconds(AttackDelay);
+            //yield return new WaitForSeconds(AttackDelay);
             if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
-                Debug.Log("도망!!");
-
                 float randPosX = Random.Range(minX, maxX);
                 float randPosY = Random.Range(minY, maxY);
                 transform.position = new Vector2(randPosX, randPosY);
@@ -181,10 +181,11 @@ public class MagicVilan : Human
             }
             else
             {
-                yield break;
+                yield return new WaitForSeconds(1f);
+                ChangeState(BossState.Chase);
             }
 
-            
+
 
             yield return null;
         }
@@ -223,63 +224,40 @@ public class MagicVilan : Human
         Debug.Log("Entering Pattern1 State");
         CancelInvoke("RandomPersent");
         isPattern = true;
-        PatternManager.Instance.isPattern1 = true;
 
-        while (PatternManager.Instance.IsSunAlive)
+        // 위치 변경
+        Vector3 temp = transform.position;
+        movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            animator.SetTrigger("Idle");
-            isAttack = false;
-            // Chase the player
-            
-            // Transition to Attack if within attack range (하이 ㅋ)
-            if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
-            {    // Attack logic
-                Debug.Log($"Attacking the player!");
-
-                // 공격 트리거를 활성화할 수 있습니다 (예: 애니메이션 트리거)
-                // animator.SetTrigger("Attack");
-
-                // 이동 로직
-                movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-
-                // 공격 실행
-                yield return new WaitForSeconds(AttackDelay);
-                if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
-                {
-                    AttakToPlayer();
-                }
-                else
-                {
-                    yield return null;
-                }
-
-
-
-                yield return null;
-            }
-            else
-            {
-                FollowPlayer();
-                FlipSprite();
-            }
-
-            if (PatternManager.Instance.isPattern1 && PatternManager.Instance.IsSunAlive)
-            {
-                Debug.Log(" Check Test State");
-                PatternManager.Instance.StartDarkNight();
-                PatternManager.Instance.SpawnSun();
-                PatternManager.Instance.isPattern1 = false;
-            }
-
-            yield return null;
+            Vector3 newPosition = (Vector3)PatternManager.Instance.GetRandomTelePoint();
+            rb.MovePosition(newPosition);
+        }
+        else
+        {
+            Debug.LogError("Rigidbody is not attached to the object.");
         }
 
+        FlipSprite();
 
-        PatternManager.Instance.EndDarkNight();
+        // 패턴 시작
+        int rndCout = Random.Range(3, 7);
+        StartCoroutine(BombCount(rndCout));
+
+        transform.position = temp;
         isPattern = false;
         ChangeState(BossState.Chase);
-        yield return new WaitForSeconds(10f);
+        yield return null;
+    }
 
+    private IEnumerator BombCount(int Count)
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            PatternManager.Instance.Bomb(transform.position + Vector3.up);
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     protected IEnumerator Pattern2()
@@ -297,7 +275,7 @@ public class MagicVilan : Human
 
         animator.SetTrigger("Stop");
         yield return new WaitForSeconds(1f);
-        animator.SetTrigger("Skil2");   
+        animator.SetTrigger("Skil2");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(1);
 

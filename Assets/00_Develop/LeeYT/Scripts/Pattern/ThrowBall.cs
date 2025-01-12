@@ -8,15 +8,12 @@ public class ThrowBall : MonoBehaviour
     public float bulletSpeed = 0.5f;
     public GameObject BallSpell;
     public GameObject Bomb;
+    public Transform FindPlayer;
 
     private bool isBomb = false;
+    private float delayTime = 1.5f;
 
-    private void OnEnable()
-    {
-        Init();
-    }
-
-    void Start()
+    private void Start()
     {
         Init();
         StartCoroutine(TimeBomb());
@@ -24,24 +21,30 @@ public class ThrowBall : MonoBehaviour
 
     private void Init()
     {
-        LookAt2D(Utility.GetPlayerTr());
+        FindPlayer = FindObjectOfType<AnimationTrigger>().gameObject.transform;
+        if (FindPlayer == null)
+            return;
+        LookAt2D(FindPlayer);
+        bulletSpeed = Random.Range(0.5f, 1.5f);
+        delayTime = Random.Range(3f, 5f);
         Bomb.SetActive(false);
     }
 
     private void Update()
     {
-        if(!isBomb)
-        transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
+        if (!isBomb)
+            transform.Translate(Vector2.up * bulletSpeed * Time.deltaTime);
     }
 
     IEnumerator TimeBomb()
     {
-        yield return new WaitForSeconds(1.5f);
+
+        yield return new WaitForSeconds(delayTime);
         isBomb = true;
         BallSpell.SetActive(false);
         Bomb.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
+        Destroy(gameObject);
     }
 
     void LookAt2D(Transform targetTransform)
@@ -66,7 +69,7 @@ public class ThrowBall : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("플레이어와 충돌");
-            ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
+            Destroy(gameObject);
         }
     }
 }
