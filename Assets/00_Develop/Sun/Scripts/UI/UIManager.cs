@@ -29,7 +29,7 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        playerUI = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
+        playerUIPrefab = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
     }
 
     public PlayerUI GetPlayerUI()

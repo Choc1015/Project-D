@@ -12,7 +12,7 @@ public class SkillCommandController : MonoBehaviour
     public Action skillEvents;
     public UnityEvent exitEvents;
 
-    private float nextAction;
+    [SerializeField] private float nextAction;
     public bool CanAction;
     void Start()
     {

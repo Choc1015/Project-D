@@ -275,7 +275,8 @@ MonoBehaviour:
   soul: {fileID: 4807531274747957609}
   animTrigger: {fileID: 4813723113395707094}
   moveDir: {x: 0, y: 0, z: 0}
-  lookDIr_X: {x: 1, y: 0, z: 0}
+  lookDir_X: {x: 0, y: 0, z: 0}
+  lateLookDir_X: {x: 1, y: 0, z: 0}
   offset: {x: 0, y: 0.7, z: 0}
   spriteLight: {fileID: 4301083112342461842}
   defenseType: 
@@ -345,7 +346,7 @@ MonoBehaviour:
         m_Calls: []
     commandInputTimeLimit: 1
     isKeyDown: 1
-    isHold: 1
+    isHold: 0
     nextAction: 0
     isDisable: 0
   - Name: ChangeSKill
@@ -543,9 +544,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     commandInputTimeLimit: 0.05
-    isKeyDown: 0
+    isKeyDown: 1
     isHold: 0
-    nextAction: 0.6
+    nextAction: 0.5
     isDisable: 0
   - Name: Jump_Right
     command: 1301000073000000
@@ -568,9 +569,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
     commandInputTimeLimit: 0.05
-    isKeyDown: 0
+    isKeyDown: 1
     isHold: 0
-    nextAction: 0.6
+    nextAction: 0.5
     isDisable: 0
   - Name: Jump
     command: 73000000
@@ -595,7 +596,7 @@ MonoBehaviour:
     commandInputTimeLimit: 0.5
     isKeyDown: 1
     isHold: 0
-    nextAction: 0.8
+    nextAction: 0.5
     isDisable: 0
   - Name: Move Up
     command: 11010000
@@ -760,6 +761,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  nextAction: 0
   CanAction: 0
 --- !u!114 &7581687510746911494
 MonoBehaviour:

@@ -26,7 +26,7 @@ public class PlayerController : Human/*, IPunObservable*/
     private PlayerSkill playerSkill;
 
     public Vector3 moveDir;
-    public Vector3 lookDIr_X;
+    public Vector3 lookDir_X, lateLookDir_X;
     public Vector3 offset;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
@@ -104,7 +104,7 @@ public class PlayerController : Human/*, IPunObservable*/
         //return;
 
         //pv.RPC("LocalUpdate", RpcTarget.All, lookDIr_X.x == -1 ? true : false);
-        LocalUpdate(lookDIr_X.x == -1 ? true : false);
+        LocalUpdate(lateLookDir_X.x == -1 ? true : false);
         transform.position = GameManager.Instance.GetClampPosition(transform);
         playerSkill.movementAfterDelay -= Time.deltaTime;
     }
@@ -237,6 +237,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
         playerSkill.OffDefense();
+        lookDir_X = Vector3.zero;
         //playerState.ChangeState(PlayerState.Idle);
     }
     protected override void DieHuman()

@@ -23,19 +23,20 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Move_X(float x)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
+        if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay <= 0)
         {
             playerController.movement.StopMove();
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-            playerController.lookDIr_X = Vector3.right * x;
-            playerController.movement.MoveToTrans(playerController.lookDIr_X, moveSpeed);
+            playerController.lookDir_X = Vector3.right * x;
+            playerController.lateLookDir_X = playerController.lookDir_X;
+            playerController.movement.MoveToTrans(playerController.lookDir_X, moveSpeed);
             playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
         } 
         
     }
     public void Move_Y(float y)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
+        if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay <= 0)
         {
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
             playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
@@ -46,16 +47,17 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Jump(float x)
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die) || movementAfterDelay <= 0)
+        if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay <= 0)
         {
             playerController.PlayOneShotSound("Jump");
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
-            playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+            //playerController.movement.MoveToRigid(Vector3.right * x, moveSpeed);
+            playerController.movement.MoveToRigid(playerController.lookDir_X, moveSpeed);
             playerController.animTrigger.TriggerAnim("JumpTrigger", AnimationType.Trigger);
             playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
             playerController.ActiveInvincibility(0.8f);
             Invoke("ResetJump", 0.8f);
-            movementAfterDelay = 0.7f;
+            movementAfterDelay = 0.6f;
         }
 
     }
@@ -84,25 +86,24 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Sliding()
     {
-       
-        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle || movementAfterDelay > 0)
+        if (playerController.GetPlayerState().CurrentState() != PlayerState.Idle && movementAfterDelay > 0)
             return;
         playerController.PlayOneShotSound("Sliding");
-        playerController.movement.AddForce(Vector3.right * playerController.lookDIr_X.x, 1000);
+        playerController.movement.AddForce(Vector3.right * playerController.lateLookDir_X.x, 1000);
         playerController.animTrigger.TriggerAnim("SlidingTrigger", AnimationType.Trigger);
         playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, false);
-        movementAfterDelay = 0.7f;
+        movementAfterDelay = 0.5f;
     }
     public void DashAttack()
     {
         Sliding();
         useDashAttack = true;
-        Invoke("StopDashAttack", 0.4f);
+        Invoke("StopDashAttack", 0.3f);
     }
     public void StopDashAttack()
     {
         useDashAttack = false;
-        Debug.Log("DDWA");
+        playerController.StopCommand();
     }
     public void Attack()
     {
@@ -121,7 +122,7 @@ public class PlayerSkill : MonoBehaviour
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
-                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDIr_X, playerAttackRange/2+0.5f, layerMask);
+                RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDir_X, playerAttackRange/2+0.5f, layerMask);
                 isCritical = GetCritical();
                 Debug.Log(playerController.GetPlayerState().CurrentState());
                 foreach (RaycastHit2D hitObj in hits)
@@ -147,7 +148,7 @@ public class PlayerSkill : MonoBehaviour
                 hitEnemyTempList.Clear();
             }
         }
-        movementAfterDelay = 0.7f;
+        movementAfterDelay = 0.4f;
 
 
     }
@@ -177,7 +178,7 @@ public class PlayerSkill : MonoBehaviour
     public void ShotBullet()
     {
         float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value*1.2f;
-        bulletController.Shot(playerController.lookDIr_X, 5,attackDamage);
+        bulletController.Shot(playerController.lateLookDir_X, 5,attackDamage);
     }
     public void OnTriggerEnter2D(Collider2D coll)
     {
