@@ -12,7 +12,17 @@ public class NextStage : MonoBehaviour
     [SerializeField] private GameObject Player;
     [SerializeField] private float minX, maxX;
     public GameObject cutScene;
-    
+
+    [Header("Options")]
+    public bool isOption;
+    public OptionData[] options;
+
+    public bool isBossStage;
+    public BossBase boss;
+    private void Start()
+    {
+        //StageManager.Instance.IsBoss = isBossStage;
+    }
     void Update()
     {
         if (!StageManager.Instance.IsStart)
@@ -22,18 +32,39 @@ public class NextStage : MonoBehaviour
         if (Utility.GetPlayerGO() != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
+            if (isBossStage)
             {
+                //if(!boss.isAl)
+            }
+            else
+            {
+                if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
+                {
+                    if (isOption)
+                        ActiveOption();
+                    else
+                        GoNextStage();
 
-                StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene);
+                }
             }
 
         }
+        
         //else
         //{
 
         //    //Utility.FindPlayers(ref Player);
         //    Player = Utility.GetPlayer().gameObject;
         //}
+    }
+
+    public void GoNextStage(OptionUI option = null, GameObject cutScene = null)
+    {
+        StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene, option);
+    }
+    public void ActiveOption()
+    {
+        UIManager.Instance.optionController.Init(options, this, curStage);
+        //StageManager.Instance.ActiveStage(GameManager.Instance.mapNumbers, curStage, false);
     }
 }

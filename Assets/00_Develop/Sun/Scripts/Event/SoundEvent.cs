@@ -11,7 +11,7 @@ public class SoundEvent : EventTrigger
         if(isLoop)
             SoundManager.Instance.PlayLoopSound(clip);
         else
-            SoundManager.Instance.PlayOneShotSound(clip);
+            SoundManager.Instance.PlayOneShotSound(clip, true);
     }
     public override void Execute(EventController eventController)
     {
