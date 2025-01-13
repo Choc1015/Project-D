@@ -7,7 +7,12 @@ public static class Utility
 {
     public static PlayerController playerController;
     public static PlayerController GetPlayer() => playerController;
-    public static Transform GetPlayerTr() => playerController.transform;
+    public static Transform GetPlayerTr()
+    {
+        if (playerController == null)
+            return null;
+        return playerController.transform;
+    }
     public static GameObject GetPlayerGO()
     {
         if (playerController == null)

@@ -27,9 +27,9 @@ public class UIManager : Singleton<UIManager>
     [Header("CutScene Image")]
     public Image cutSceneImage;
 
-    private void Start()
+    private void Awake()
     {
-        playerUI = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
+        //playerUI = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
     }
 
     public PlayerUI GetPlayerUI()
