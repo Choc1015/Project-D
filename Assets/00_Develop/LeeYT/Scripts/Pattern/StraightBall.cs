@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StraightBall : MonoBehaviour
+public class StraightBall : Human
 {
     public enum BallType
     {
@@ -15,8 +15,13 @@ public class StraightBall : MonoBehaviour
     public BallType ballType;
     public float bulletSpeed = 0.5f;
     public GameObject BallSpell;
+    public int Damage = 1;
+    public float Health = 0.1f;
+    public int Buff = 1;
+    public int Nurff = 1;
+
     private bool isBomb = false;
-    private float delayTime = 1.5f; 
+    private float delayTime = 7.5f; 
 
     private void OnEnable()
     {
@@ -34,8 +39,7 @@ public class StraightBall : MonoBehaviour
 
     private void Init()
     {
-        bulletSpeed = Random.Range(0.5f, 1.5f);
-        delayTime = Random.Range(3f, 5f);
+        bulletSpeed = PatternManager.Instance.BallSpeed;
     }
 
     private void Update()
@@ -61,16 +65,20 @@ public class StraightBall : MonoBehaviour
             switch (ballType)
             {
                 case BallType.피해:
-                    Debug.Log("피해");
+                    Utility.GetPlayer().TakeDamage(Damage, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+                    Debug.LogWarning("피해");
                     break;
                 case BallType.치유:
-                    Debug.Log("치유");
+                    Utility.GetPlayer().Heal(StatInfo.Health, Health);
+                    Debug.LogWarning("치유");
                     break;
                 case BallType.약화:
-                    Debug.Log("약화");
+                    Utility.GetPlayerStat().BuffStat(StatInfo.AttackDamage, -Nurff);
+                    Debug.LogWarning("약화");
                     break;
                 case BallType.강화:
-                    Debug.Log("강화");
+                    Utility.GetPlayerStat().BuffStat(StatInfo.AttackDamage, Buff);
+                    Debug.LogWarning("강화");
                     break;
             }
 

@@ -116,7 +116,7 @@ public class MagicVilan : Human
 
     protected IEnumerator Chase() // 매직 보스는 쫒아가는게 공격입니다.
     {
-        animator.SetTrigger("Idle");
+        
         Debug.Log("Entering Chase State");
         if (!isPattern)
         {
@@ -125,7 +125,7 @@ public class MagicVilan : Human
 
         while (currentState == BossState.Chase)
         {
-            animator.SetTrigger("Idle");
+            //animator.SetTrigger("Idle");animator.SetTrigger("Attack");
             isAttack = false;
             // Chase the player
             FlipSprite();
@@ -134,8 +134,9 @@ public class MagicVilan : Human
             {
                 ChangeState(BossState.Attack);
             }
-            yield return new WaitForSeconds(0.6f);
-            PatternManager.Instance.SpawnTBall(transform.position + Vector3.up);
+            animator.SetTrigger("Attack"); 
+            yield return new WaitForSeconds(1);
+            PatternManager.Instance.SpawnTBall(transform.position + Vector3.up * 2.5f);
             yield return null;
         }
     }
@@ -160,6 +161,8 @@ public class MagicVilan : Human
         {
             // Attack logic
             Debug.Log($"Attacking the player!");
+            if (isPattern)
+                yield break;
 
             // 공격 트리거를 활성화할 수 있습니다 (예: 애니메이션 트리거)
             // animator.SetTrigger("Attack");
@@ -171,6 +174,7 @@ public class MagicVilan : Human
 
 
             // 공격 실행
+            animator.SetTrigger("Tele");
             //yield return new WaitForSeconds(AttackDelay);
             if (Vector2.Distance(AttackHitBox, Utility.GetPlayerTr().position) <= attackRange)
             {
@@ -219,6 +223,8 @@ public class MagicVilan : Human
 
     }
 
+    float DelayBomb = 1f;
+
     protected IEnumerator Pattern1()
     {
         Debug.Log("Entering Pattern1 State");
@@ -226,13 +232,15 @@ public class MagicVilan : Human
         isPattern = true;
 
         // 위치 변경
-        Vector3 temp = transform.position;
+        Vector2 temp = transform.position;
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
         {
+            animator.SetTrigger("Tele");
             Vector3 newPosition = (Vector3)PatternManager.Instance.GetRandomTelePoint();
             rb.MovePosition(newPosition);
+           
         }
         else
         {
@@ -242,47 +250,75 @@ public class MagicVilan : Human
         FlipSprite();
 
         // 패턴 시작
+        PatternManager.Instance.BallSpeed = Random.Range(0.5f, 1.5f);
         int rndCout = Random.Range(3, 7);
+        animator.SetTrigger("Skill1");
         StartCoroutine(BombCount(rndCout));
+        
+        yield return new WaitForSeconds(DelayBomb * rndCout);
 
-        transform.position = temp;
+        rb.MovePosition(temp);
         isPattern = false;
         ChangeState(BossState.Chase);
         yield return null;
     }
 
+
     private IEnumerator BombCount(int Count)
     {
         for (int i = 0; i < Count; i++)
         {
-            PatternManager.Instance.Bomb(transform.position + Vector3.up);
+            FlipSprite();
             yield return new WaitForSeconds(1f);
+            PatternManager.Instance.Bomb(transform.position + Vector3.up * 2.5f);
         }
     }
+    float DelayRotate = 1f;
 
     protected IEnumerator Pattern2()
     {
         Debug.Log("Entering Pattern2 State");
         CancelInvoke("RandomPersent");
         isPattern = true;
-        animator.SetTrigger("Stop");
-        transform.position = new Vector2(2.36f, -0.8f);
+
+        // 위치 변경
+        Vector2 temp = transform.position;
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
-        yield return new WaitForSeconds(1f);
-        animator.SetTrigger("Skil1");
-        yield return new WaitForSeconds(2f);
-        PatternManager.Instance.SpawnDarkSpell(0);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            Vector3 newPosition = new Vector3(2.09f, 1.21f, 0);
+            rb.MovePosition(newPosition);
 
-        animator.SetTrigger("Stop");
-        yield return new WaitForSeconds(1f);
-        animator.SetTrigger("Skil2");
-        yield return new WaitForSeconds(2f);
-        PatternManager.Instance.SpawnDarkSpell(1);
+        }
+        else
+        {
+            Debug.LogError("Rigidbody is not attached to the object.");
+        }
 
-        animator.SetTrigger("Idle");
+        FlipSprite();
+
+        // 패턴 시작
+        PatternManager.Instance.BallSpeed = Random.Range(0.5f, 1.5f);
+        int rndCout = Random.Range(3, 7);
+        StartCoroutine(RotateCount(rndCout));
+
+        yield return new WaitForSeconds(DelayRotate * rndCout);
+
+        rb.MovePosition(temp);
         isPattern = false;
         ChangeState(BossState.Chase);
         yield return null;
+    }
+
+    private IEnumerator RotateCount(int Count)
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            FlipSprite();
+            yield return new WaitForSeconds(1f);
+            PatternManager.Instance.FireRotate(transform.position + Vector3.up * 2);
+        }
     }
     protected IEnumerator Pattern3()
     {

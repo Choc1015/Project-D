@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowBall : MonoBehaviour
+public class ThrowBall : Human
 {
 
     public float bulletSpeed = 0.5f;
     public GameObject BallSpell;
     public GameObject Bomb;
     public Transform FindPlayer;
+    public int Damage = 1;
 
     private bool isBomb = false;
     private float delayTime = 1.5f;
@@ -69,6 +70,7 @@ public class ThrowBall : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("플레이어와 충돌");
+            Utility.GetPlayer().TakeDamage(Damage, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Destroy(gameObject);
         }
     }
