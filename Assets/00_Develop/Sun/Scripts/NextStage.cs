@@ -19,22 +19,29 @@ public class NextStage : MonoBehaviour
 
     public bool isBossStage;
     public BossBase boss;
+
+    private bool isDisable;
     private void Start()
     {
         //StageManager.Instance.IsBoss = isBossStage;
     }
     void Update()
     {
-        if (!StageManager.Instance.IsStart)
+        if (!StageManager.Instance.IsStart || isDisable)
             return;
 
         // 플레이어와 적 사이의 연결 선 그리기
         if (Utility.GetPlayerGO() != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if (isBossStage)
+            if (isBossStage&& curStage == StageManager.Instance.CurrentStage)
             {
-                //if(!boss.isAl)
+                if (!boss.GetAlive())
+                {
+                    cutScene?.SetActive(true);
+                    cutScene = null;
+                    isDisable = true;
+                }
             }
             else
             {
@@ -44,7 +51,6 @@ public class NextStage : MonoBehaviour
                         ActiveOption();
                     else
                         GoNextStage();
-
                 }
             }
 
@@ -62,6 +68,7 @@ public class NextStage : MonoBehaviour
     {
         StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene, option);
     }
+    public void ActionGoNextStage() => GoNextStage();
     public void ActiveOption()
     {
         UIManager.Instance.optionController.Init(options, this, curStage);

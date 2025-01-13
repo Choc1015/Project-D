@@ -8,7 +8,7 @@ public class PlayerSkill : MonoBehaviour
     private BulletController bulletController;
     private Human hitEnemyTemp;
     private List<Human> hitEnemyTempList = new();
-    private bool useDashAttack;
+    [SerializeField]private bool useDashAttack;
     public bool isCritical;
 
     public Action attackAE; // Attack Additional Effects
@@ -27,6 +27,8 @@ public class PlayerSkill : MonoBehaviour
         {
             playerController.movement.StopMove();
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            if (playerController.CanAction(PlayerState.Die))
+                moveSpeed *= 1.5f;
             playerController.lookDir_X = Vector3.right * x;
             playerController.lateLookDir_X = playerController.lookDir_X;
             playerController.movement.MoveToTrans(playerController.lookDir_X, moveSpeed);
@@ -39,6 +41,8 @@ public class PlayerSkill : MonoBehaviour
         if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay <= 0)
         {
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
+            if (playerController.CanAction(PlayerState.Die))
+                moveSpeed *= 1.5f;
             playerController.movement.MoveToTrans(Vector3.up * y, moveSpeed);
             playerController.animTrigger.TriggerAnim("isMove", AnimationType.Bool, true);
         }
@@ -47,7 +51,7 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Jump(float x)
     {
-        if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay <= 0)
+        if ((playerController.CanAction(PlayerState.Idle)) && movementAfterDelay <= 0)
         {
             playerController.PlayOneShotSound("Jump");
             float moveSpeed = playerController.GetStatController().GetStat(StatInfo.MoveSpeed).Value;
@@ -98,7 +102,7 @@ public class PlayerSkill : MonoBehaviour
     {
         Sliding();
         useDashAttack = true;
-        Invoke("StopDashAttack", 0.3f);
+        Invoke("StopDashAttack", 0.4f);
     }
     public void StopDashAttack()
     {
@@ -117,7 +121,9 @@ public class PlayerSkill : MonoBehaviour
                 playerController.StopCommand();
             }
             else if (playerController.CanRevive())
+            {
                 playerController.Revive();
+            }
             else if(playerController.CanAction(PlayerState.Idle))
             {
                 layerMask = 1 << LayerMask.NameToLayer("Enemy");

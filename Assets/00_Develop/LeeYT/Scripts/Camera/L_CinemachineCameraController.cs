@@ -17,12 +17,17 @@ public class L_CinemachineCameraController : MonoBehaviour
         if (StageManager.Instance.IsStopCamera == true || StageManager.Instance.IsBoss)
         {
             virtualCamera.Follow = null; // 카메라 동작 멈춤
-            if(StageManager.Instance.IsBoss)
-                virtualCamera.transform.position = new Vector3(2.05f, 0, -10);
+            if (StageManager.Instance.IsBoss)
+                ResetCameraPos();
         }
         else if (StageManager.Instance.IsStopCamera == false)
         {
             virtualCamera.Follow = playerTrans; // 플레이어를 다시 따라가도록 설정
         }
+    }
+
+    public void ResetCameraPos()
+    {
+        virtualCamera.transform.position = new Vector3(2.05f, 0, -10);
     }
 }

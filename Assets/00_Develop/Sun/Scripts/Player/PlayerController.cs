@@ -248,6 +248,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         //base.DieHuman();
     }
+    
     public override void Revive()
     {
         if(playerState.CurrentState() == PlayerState.Die)
@@ -276,7 +277,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         skillSwapUI.DisableSkillSwap();
     }
-
+    public Statue GetHitStatue() => reviveInfo.statue;
     public void OnTriggerStatue(bool isOn, PlayerType playerType, Statue statue)
     {
         reviveInfo.canRevive = isOn;
