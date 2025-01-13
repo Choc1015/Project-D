@@ -15,4 +15,12 @@ public class SoundController : MonoBehaviour
             //Debug.Log($"{curData.name} Play !");
         }
     }
+    public void PlayLoopSound(string soundName)
+    {
+        IEnumerable<SoundData> curDatas = soundDatas.Where(x => x.name == soundName);
+        foreach (SoundData curData in curDatas)
+        {
+            SoundManager.Instance.PlayLoopSound(curData);
+        }
+    }
 }

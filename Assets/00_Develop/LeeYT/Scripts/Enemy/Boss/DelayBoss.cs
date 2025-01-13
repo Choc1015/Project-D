@@ -5,15 +5,17 @@ using UnityEngine;
 public class DelayBoss : MonoBehaviour
 {
     public GameObject boss;
+    public float delayTime;
 
     void Start()
     {
-        Invoke("Delay", 1.5f);
+        //Invoke("Delay", delayTime);
     }
 
     void Delay()
     {
-        boss.SetActive(true);
+        //boss.SetActive(true);
+        boss.GetComponent<BossBase>().enabled = true;
     }
 
     void Update()

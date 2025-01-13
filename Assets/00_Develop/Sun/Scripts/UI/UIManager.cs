@@ -27,6 +27,18 @@ public class UIManager : Singleton<UIManager>
     [Header("CutScene Image")]
     public Image cutSceneImage;
 
+    [Space(30)]
+    [Header("Store")]
+    public GameObject store;
+
+    [Space(30)]
+    [Header("Options")]
+    public OptionController optionController;
+
+    [Space(30)]
+    [Header("BossHPBar")]
+    public BossHealthBar healthBar;
+
     private void Awake()
     {
         playerUIPrefab = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
@@ -57,5 +69,14 @@ public class UIManager : Singleton<UIManager>
     {
         return Instantiate(skillSwap, transform);
 
+    }
+    public void ActiveStoreUI()
+    {
+        store.SetActive(true);
+        
+    }
+    public void DisaableStoreUI()
+    {
+        store.SetActive(false);
     }
 }
