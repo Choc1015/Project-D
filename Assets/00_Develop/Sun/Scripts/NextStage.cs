@@ -18,7 +18,7 @@ public class NextStage : MonoBehaviour
     public OptionData[] options;
 
     public bool isBossStage;
-
+    public BossBase boss;
     private void Start()
     {
         //StageManager.Instance.IsBoss = isBossStage;
@@ -32,16 +32,24 @@ public class NextStage : MonoBehaviour
         if (Utility.GetPlayerGO() != null)
         {
             // 플레이어가 범위 내에 있을 때 초록색 선
-            if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
+            if (isBossStage)
             {
-                if(isOption)
-                    ActiveOption();
-                else
-                    GoNextStage();
+                //if(!boss.isAl)
+            }
+            else
+            {
+                if ((transform.position.x - Utility.GetPlayerTr().position.x) <= (-stageCheck.x / 2f + 2f) && curStage == StageManager.Instance.CurrentStage)
+                {
+                    if (isOption)
+                        ActiveOption();
+                    else
+                        GoNextStage();
 
+                }
             }
 
         }
+        
         //else
         //{
 
