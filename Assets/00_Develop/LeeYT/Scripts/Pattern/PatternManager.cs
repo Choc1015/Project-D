@@ -163,22 +163,26 @@ public class PatternManager : Singleton<PatternManager>
     [Header("대머리 마법사 패턴 1")]
     public GameObject[] StraightBall;
     public Vector2[] TelePoint;
-
+    public float BallSpeed;
 
     private int BallCount = 10;
 
     public void Bomb(Vector3 MaVin)
     {
         float spreadAngle = 360 / BallCount; // 원을 기준으로 터지는 개수에 따른 각도 계산 예) 10개면 36도에 하나씩 터짐
+
         int randAbility = Random.Range(0, 4); // 랜덤한 능력치
 
         for (int i = 0; i < BallCount; i++) // for문 돌려서 개수 만큼 반복
         {
             // 오브젝트 풀링 클래스에서 풀로 생성
             GameObject bullet = ObjectPoolManager.Instance.SpawnFromPool(StraightBall[randAbility].name, MaVin);
-            //bullet.GetComponent<Par> 이거 파티클 회전 넣어서 해보깅
-            // 총알의 회전 값을 총의 회전값에 맞추기
-            bullet.transform.rotation = Quaternion.Euler(Quaternion.identity.x, Quaternion.identity.y, spreadAngle * i);
+            ParticleSystem ps = bullet.GetComponentInChildren<ParticleSystem>();
+            ps.Stop();
+            var _main = ps.main;
+            _main.startRotationZ = -((spreadAngle * i)-180f) * Mathf.Deg2Rad;// 총알의 회전 값을 총의 회전값에 맞추기
+            ps.Play();
+            bullet.transform.rotation *= Quaternion.Euler(Quaternion.identity.x, Quaternion.identity.y, (spreadAngle * i));
         }
     }
 
@@ -187,9 +191,30 @@ public class PatternManager : Singleton<PatternManager>
         return TelePoint[Random.Range(0, TelePoint.Length)];
     }
 
-
     #endregion
 
+    #region 대머리 마법사 패턴 2
+    [Header("대머리 마법사 패턴 2")]
+    public GameObject[] RotateBall;
+    public float RotateBallSpeed;
+
+    public void FireRotate(Vector3 MaVin)
+    {
+        int randAbility = Random.Range(0, 4); // 랜덤한 능력치
+        int rndCount = Random.Range(2, 5); // 랜덤한 능력치
+        StartCoroutine(SpawnRotate(rndCount,randAbility, MaVin));
+    }
+
+    IEnumerator SpawnRotate(int count, int Abt, Vector3 MaVin)
+    {
+        for (int i = 0; i <= count; i++)
+        {
+            ObjectPoolManager.Instance.SpawnFromPool(RotateBall[Abt].name, MaVin);
+            yield return new WaitForSeconds(1);
+        }
+    }
+
+    #endregion
 
     private void Update()
     {

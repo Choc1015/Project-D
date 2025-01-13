@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -94,7 +94,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -121,7 +121,2695 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Nagupa_0_Attack
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 946
+        width: 135
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919d3161755875440a59638d3426d617
+      internalID: -2138120191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de12fb83669882b4e8200d8508741348
+      internalID: 373527881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_2
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2365d6da7c85348a9e8415aa1e94b8
+      internalID: 2142551389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_3
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2e6f63ad310404baf07e318b438f88
+      internalID: -1287690628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_4
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b3bffea9ede1042a64344769feb354
+      internalID: 1866142136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_5
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a483264d316327c4fa45fc0e29a6dcc7
+      internalID: 201417368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_6
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c3b3708ac424e49a63e5faae0e53e0
+      internalID: 95394300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_7
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e30c5766b13954595f2308e237ec85
+      internalID: 739406304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_8
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7374424a8cafc144f9cecafd6b4a63db
+      internalID: 1452469998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_9
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19d3a3d63306fb4c9ec0225a640505a
+      internalID: -1659496170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_10
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0ff50b47fa6cc49be7595cb1efe537
+      internalID: -565928862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_11
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995667f507e893d4c9412603ec0d2e4b
+      internalID: -1039709561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_12
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e411522e3078d934583bf10c60e1ec23
+      internalID: 802279394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_13
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd93804e34f57245913e442c730e7fe
+      internalID: -68572994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_14
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f715236ad28bb584ebe7ad4144ab015b
+      internalID: 632880604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_15
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee36fd33a68d2f54dae5661545745a82
+      internalID: -460470855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_16
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 946
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bea97b0a28edb478123cfc652db5a4
+      internalID: -703479252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_17_Idle
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bef16317504b7d458c13c221dd3276c
+      internalID: 1199657655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_18
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1208ebf205c794ca048ce94fd37b39
+      internalID: 627480542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_19
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd701814e2ef60b4f93fcef0b7671ce8
+      internalID: -1238266623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_20
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d1064a5fd8018e4f807ab6ed1a3c6f0
+      internalID: -1193272455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_21
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549dd1f712956ab47be19d30ea5afb7a
+      internalID: 730283525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_22
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d8d25d9e68606498f80e649cb28c5e
+      internalID: -903671243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_23
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c282f347ac8d245b053c04fef3c75c
+      internalID: 1562473733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_24
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e5323a7dff81f48b62c18d49d6c972
+      internalID: -723481156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_25
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cc2d3a4d0a2fe4a97c6957e66dcc2d
+      internalID: -96604362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_26
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064750ef3947ba74294dbb3e99fdab87
+      internalID: -305079272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_27
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cd58ca691bde2479372f49fb3d9e8c
+      internalID: -313836900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_28
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b840aa54e67904418676f7ad407707d
+      internalID: -931584365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_29
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952a0a5041e1b5845adbf8a5566bd2ac
+      internalID: 1542908925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_30
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a867990992fd95a47b6059243001f2d4
+      internalID: -2056454085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_31
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd9145ddcd9ceb4a8bd98f7674d2cb7
+      internalID: -170781747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_32
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0aa5e26ef871d54b84028249232d259
+      internalID: -1754917010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_33
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f04165d3c001d49a2c4fa32df89d14
+      internalID: 134732849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_34
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba00a56dbafe4944cb54b50b0543d1d3
+      internalID: -161641672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_35
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68d14c05dca1ef343be5fc4a405f4b64
+      internalID: -93603328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_36
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 811
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a335c9b2dd71ab844b8bd3df169aa1e7
+      internalID: -1239069558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_37_KncckBack
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab51fc03830dd54185810288276dfc3
+      internalID: -380734653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_38
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c437806778d544a872d4958ba844e5
+      internalID: -1848807123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_39
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9695bdd94b4bab0419ab42a780bc0e8b
+      internalID: -520447292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_40
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f499597c21e6861409e5ff0843b3b239
+      internalID: 786236765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_41
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2423456a992f57d48a9815397fccab56
+      internalID: -396672268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_42
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a70251415c5f24d935026d07efde00
+      internalID: -1085939800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_43
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5fed23725cb6be4197777b2d543347e
+      internalID: -2112248116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_44
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228ed1abf4f536642880b4bee6ba7e2d
+      internalID: 997121849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_45
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 616ab48dd2d3e21438d6db0b12cda104
+      internalID: 1919224485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_46
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0259af8e3d47b346b6254a30c231fd8
+      internalID: -953984541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_47
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5003fb2a2e1265a46922e4ef57adfdc3
+      internalID: 1402099816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_48
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14f5986aa252c2940a4f6291c9f0b075
+      internalID: -14758973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_49
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd977bd004a4f384b9de7c0454a5a5e6
+      internalID: -1954329885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_50
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d428baf1aa96c5f4fb66fb6fcf338090
+      internalID: 175234308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_51
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29b1a23405496f45a5d045537b992e2
+      internalID: 37282620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_52
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cfdb69721c8f734e9f7ed7bafa647ec
+      internalID: -1098448502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_53
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c08c4c5e8336246a8f7afeb685f9f1
+      internalID: 1761055639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_54
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bad65460da1e1440951c46453a24a7e
+      internalID: 319659077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_55
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 676
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef295dce90571d45bf5273ed98b3cb5
+      internalID: 578492958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_56
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 677
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934733c3890057047ae482d6a68cb4e8
+      internalID: -1161538676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_57_Up
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376d0c11d5f2cf5479372eab7e16ad30
+      internalID: -1218151306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_58
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c8682e2a296085468663e61a371f5ce
+      internalID: 326667536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_59
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 642121203c8439441bc03b21bd359146
+      internalID: -980789213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_60
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a2b97325475d44d9b2c16a016fff78
+      internalID: 1250787114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_61
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5937be9a73081f3418367d2a8863e87c
+      internalID: -431757909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_62
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5602062f0f99a943a3f7dbe5273b12f
+      internalID: 1716707643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_63
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05075f3a43724254f9ef34cb4a57bfcc
+      internalID: 288340459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_64
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80236d9934240e645ac02c5c564c311b
+      internalID: -47032857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_65
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5958ee849ce504ab10d25f56f321cc
+      internalID: -3512667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_66
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdd8e0e9ec518a4c9f86598ebc03523
+      internalID: -1120891275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_67
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffe9a613fa405f4ca2e0eb326da7422
+      internalID: 1366791506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_68
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e383f3cfb27554f9b5988227d42ce5
+      internalID: 1819494161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_69
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c3d67f9c19a9745a57e5808df86398
+      internalID: -828400707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_70
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47746a546af89844a88f6d96d9df3594
+      internalID: 1389358093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_71
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db8ceb5b8fbd794b9c7276cf5bb86a9
+      internalID: -1485672345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_72
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543416625251d65418b7d822501d5e5e
+      internalID: -110442028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_73
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3417b7feda1f9fe46be99ce09520080f
+      internalID: 1459973821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_74
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4dd232cd054f7245943dd7ff7ed6cf9
+      internalID: 688029298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_75
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5faab13908f363d41b6136cafa53062a
+      internalID: -1617036877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_76
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 541
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74740e0ff4447b641b2e27099ad7ac25
+      internalID: 1081642328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_77
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 406
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1ba4cff5992954da4da6811e5d2dda
+      internalID: -1134659468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_78
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 406
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a45a6e538bfd943afa2a628a23979c
+      internalID: 1751314520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_79
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 406
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c849d57eb429e14ab4a3785a87a0a57
+      internalID: 1001317522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_80_Skill1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802129365c757fc4a8b2a411d6103f5b
+      internalID: 837458186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_81
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef6d249550a73047a6282385bbdc5b6
+      internalID: -1389553326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_82
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8933657b76f6cf48a92741e9d7109ae
+      internalID: 745022638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_83
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bab9d6fd89b4e246992f331aa8841a9
+      internalID: -779032271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_84
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fe54ca6a083b04d9d11469901fa9e3
+      internalID: 1738915798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_85
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac3d8c4e78d8414e908ecafac1ef991
+      internalID: 1115774378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_86
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9ab0f47ebf6654e84f0f91e956e870
+      internalID: 1721516171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_87
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b394e535b4b86ec49a3533b13fbfd6c2
+      internalID: 382311386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_88
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0d58beabfcf9a4a895f460e453dae9
+      internalID: -2146745736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_89
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e963cf0abc7314eaa9ae956211fde1
+      internalID: -1118940231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_90
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a583badbed25d47ab35b0410681d56
+      internalID: -88097444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_91
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae93cb2a7b828d64ab94b3d15311d3db
+      internalID: -984702502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_92
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 592cbbfec2bdc264f9687e0c1680f956
+      internalID: -456536273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_93
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f86a758834527468739ff448752add
+      internalID: -169790357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_94
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e79395247bbfe4abf45008e84a8cee
+      internalID: -1688431626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_95
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1854f4e232906e43927628302379fef
+      internalID: 1305338764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_96
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d693f7e800d74ed43a8d5b51bec11d66
+      internalID: 1513491893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_97
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 271
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6249d24c78ef0db42908dca8cea2ce88
+      internalID: -2145369353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_98_Skill2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e137d7371068641ac4461d431b372c
+      internalID: 697159899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_99
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcadde0cc0f7da4da90aed4e03671e8
+      internalID: -1111669432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_100
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: facc48d1f27a5c843b4fd965e545fa92
+      internalID: -155428483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_101
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c745a45ed20cb649bbf599556864021
+      internalID: -1860892432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_102
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7078264a6361c9a48a5e4ca481bf3de1
+      internalID: -1608810187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_103
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc820111c188d9b458c735681d49c2c9
+      internalID: -1443135691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_104
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d966a5218f598014abe5741737563ca2
+      internalID: -2024324936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_105
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36939634ef52c244a905c1595274e68
+      internalID: 222937893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_106
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb78771d0943794bb81217ee182e4a9
+      internalID: 549022231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_107
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 212fe181f7bf89746909dfa7bbd45acc
+      internalID: 219473888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_108
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c488ef2de0a77104781de8945669d621
+      internalID: -520211284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_109
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4f307757d2dce47bdcc3f0929d1836
+      internalID: -204508876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_110
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a434515c65589047b296c249bda283a
+      internalID: -2028438261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_111
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4e2ffbedf371a44b10522d4e6eb54d
+      internalID: 1211612197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_112
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4bd5483348b0841b003c683e3bbdcb
+      internalID: 6556612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_113
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e483e3a339704140a87454780d6740a
+      internalID: 1835692569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_114
+      rect:
+        serializedVersion: 2
+        x: 2085
+        y: 136
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444d5b7ae71e5734b82879ec8ed62ced
+      internalID: -1552740579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_115_Stun
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182005c4e56dbc0448ac5bac2b253172
+      internalID: -701614171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_116
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e048c4f1ba4092f44a7908948d4087cd
+      internalID: -1646186783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_117
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bde36d5832a564685e9befad727696
+      internalID: 2117329958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_118
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0af83ebee94c5542a4a03876cf10a10
+      internalID: -1621749597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_119
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53441979107bffa4a89baf1e8cae1250
+      internalID: -2083110022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_120
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc95af57be7aab741a585e0aec8d9f16
+      internalID: 680906687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_121
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27261c314d7758d48afcc6facae70185
+      internalID: 1908421114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_122
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c33b0c4a3e98014f970213806974a01
+      internalID: -985246336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_123
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d95933027409e48a9daa3ca2701e2b
+      internalID: -945695223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_124
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0159a7cf7ae2445a9d156aae991f8e
+      internalID: -47021516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_125
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a3d0c9addd0054aa838db0fcc14316
+      internalID: -1137683751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_126
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64bf30222f19b8045922045359ceae3a
+      internalID: -56931312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nagupa_127
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1
+        width: 130
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec7b8d8584cff040b7e10101263bb87
+      internalID: -950386692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +2820,135 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nagupa_0_Attack: -2138120191
+      Nagupa_1: 373527881
+      Nagupa_10: -565928862
+      Nagupa_100: -155428483
+      Nagupa_101: -1860892432
+      Nagupa_102: -1608810187
+      Nagupa_103: -1443135691
+      Nagupa_104: -2024324936
+      Nagupa_105: 222937893
+      Nagupa_106: 549022231
+      Nagupa_107: 219473888
+      Nagupa_108: -520211284
+      Nagupa_109: -204508876
+      Nagupa_11: -1039709561
+      Nagupa_110: -2028438261
+      Nagupa_111: 1211612197
+      Nagupa_112: 6556612
+      Nagupa_113: 1835692569
+      Nagupa_114: -1552740579
+      Nagupa_115_Stun: -701614171
+      Nagupa_116: -1646186783
+      Nagupa_117: 2117329958
+      Nagupa_118: -1621749597
+      Nagupa_119: -2083110022
+      Nagupa_12: 802279394
+      Nagupa_120: 680906687
+      Nagupa_121: 1908421114
+      Nagupa_122: -985246336
+      Nagupa_123: -945695223
+      Nagupa_124: -47021516
+      Nagupa_125: -1137683751
+      Nagupa_126: -56931312
+      Nagupa_127: -950386692
+      Nagupa_13: -68572994
+      Nagupa_14: 632880604
+      Nagupa_15: -460470855
+      Nagupa_16: -703479252
+      Nagupa_17_Idle: 1199657655
+      Nagupa_18: 627480542
+      Nagupa_19: -1238266623
+      Nagupa_2: 2142551389
+      Nagupa_20: -1193272455
+      Nagupa_21: 730283525
+      Nagupa_22: -903671243
+      Nagupa_23: 1562473733
+      Nagupa_24: -723481156
+      Nagupa_25: -96604362
+      Nagupa_26: -305079272
+      Nagupa_27: -313836900
+      Nagupa_28: -931584365
+      Nagupa_29: 1542908925
+      Nagupa_3: -1287690628
+      Nagupa_30: -2056454085
+      Nagupa_31: -170781747
+      Nagupa_32: -1754917010
+      Nagupa_33: 134732849
+      Nagupa_34: -161641672
+      Nagupa_35: -93603328
+      Nagupa_36: -1239069558
+      Nagupa_37_KncckBack: -380734653
+      Nagupa_38: -1848807123
+      Nagupa_39: -520447292
+      Nagupa_4: 1866142136
+      Nagupa_40: 786236765
+      Nagupa_41: -396672268
+      Nagupa_42: -1085939800
+      Nagupa_43: -2112248116
+      Nagupa_44: 997121849
+      Nagupa_45: 1919224485
+      Nagupa_46: -953984541
+      Nagupa_47: 1402099816
+      Nagupa_48: -14758973
+      Nagupa_49: -1954329885
+      Nagupa_5: 201417368
+      Nagupa_50: 175234308
+      Nagupa_51: 37282620
+      Nagupa_52: -1098448502
+      Nagupa_53: 1761055639
+      Nagupa_54: 319659077
+      Nagupa_55: 578492958
+      Nagupa_56: -1161538676
+      Nagupa_57_Up: -1218151306
+      Nagupa_58: 326667536
+      Nagupa_59: -980789213
+      Nagupa_6: 95394300
+      Nagupa_60: 1250787114
+      Nagupa_61: -431757909
+      Nagupa_62: 1716707643
+      Nagupa_63: 288340459
+      Nagupa_64: -47032857
+      Nagupa_65: -3512667
+      Nagupa_66: -1120891275
+      Nagupa_67: 1366791506
+      Nagupa_68: 1819494161
+      Nagupa_69: -828400707
+      Nagupa_7: 739406304
+      Nagupa_70: 1389358093
+      Nagupa_71: -1485672345
+      Nagupa_72: -110442028
+      Nagupa_73: 1459973821
+      Nagupa_74: 688029298
+      Nagupa_75: -1617036877
+      Nagupa_76: 1081642328
+      Nagupa_77: -1134659468
+      Nagupa_78: 1751314520
+      Nagupa_79: 1001317522
+      Nagupa_8: 1452469998
+      Nagupa_80_Skill1: 837458186
+      Nagupa_81: -1389553326
+      Nagupa_82: 745022638
+      Nagupa_83: -779032271
+      Nagupa_84: 1738915798
+      Nagupa_85: 1115774378
+      Nagupa_86: 1721516171
+      Nagupa_87: 382311386
+      Nagupa_88: -2146745736
+      Nagupa_89: -1118940231
+      Nagupa_9: -1659496170
+      Nagupa_90: -88097444
+      Nagupa_91: -984702502
+      Nagupa_92: -456536273
+      Nagupa_93: -169790357
+      Nagupa_94: -1688431626
+      Nagupa_95: 1305338764
+      Nagupa_96: 1513491893
+      Nagupa_97: -2145369353
+      Nagupa_98_Skill2: 697159899
+      Nagupa_99: -1111669432
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
