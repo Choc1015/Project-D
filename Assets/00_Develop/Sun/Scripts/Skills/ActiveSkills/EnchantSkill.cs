@@ -14,7 +14,7 @@ public class EnchantSkill : MonoBehaviour
         if (!gameObject.activeInHierarchy)
             return;
 
-        RaycastHit2D[] hits = Physics2D.BoxCastAll(Utility.playerController.attackPos.position, Vector2.one * skillRange, 0, Utility.playerController.lookDIr_X, 1, layerMask);
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(Utility.playerController.attackPos.position, Vector2.one * skillRange, 0, Utility.playerController.lookDir_X, 1, layerMask);
 
         foreach (RaycastHit2D hit in hits)
         {

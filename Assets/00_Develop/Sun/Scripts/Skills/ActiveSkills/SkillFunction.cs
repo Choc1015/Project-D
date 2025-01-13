@@ -24,8 +24,8 @@ public class SkillFunction : MonoBehaviour
 
     public void InvokeAction()
     {
-        //controller.player.ResetState();
-        controller.player.GetPlayerState().ChangeState(PlayerState.Idle);
+        controller.player.ResetState();
+        //controller.player.GetPlayerState().ChangeState(PlayerState.Idle);
         controller.player.StopCommand();
     }
 }

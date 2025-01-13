@@ -15,6 +15,12 @@ public class SoundManager : Singleton<SoundManager>
         timer = 0.05f;
         dataTemp = data;
     }
+    public void PlayLoopSound(SoundData data)
+    {
+        bgmSource.clip = data.clip;
+        bgmSource.Play();
+
+    }
     private void Update()
     {
         timer -= Time.deltaTime;
