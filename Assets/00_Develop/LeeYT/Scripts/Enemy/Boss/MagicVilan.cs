@@ -433,5 +433,5 @@ public class MagicVilan : Human
 
 
     }
-
+    public bool GetAlive() => isAlive;
 }

@@ -18,7 +18,7 @@ public class L_CinemachineCameraController : MonoBehaviour
         {
             virtualCamera.Follow = null; // Ä«¸Þ¶ó µ¿ÀÛ ¸ØÃã
             if(StageManager.Instance.IsBoss)
-                GameManager.Instance.SetCameraPos(new Vector3(2.05f, 0, -10));
+                virtualCamera.transform.position = new Vector3(2.05f, 0, -10);
         }
         else if (StageManager.Instance.IsStopCamera == false)
         {

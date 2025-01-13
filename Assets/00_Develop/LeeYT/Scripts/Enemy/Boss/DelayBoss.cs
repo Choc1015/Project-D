@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class DelayBoss : MonoBehaviour
 {
+    public bool isBossScene = true;
     public GameObject boss;
     public float delayTime;
 
     void Start()
     {
-        //Invoke("Delay", delayTime);
+        if(isBossScene)
+            Invoke("Delay", delayTime);
     }
 
     void Delay()
     {
-        //boss.SetActive(true);
-        boss.GetComponent<BossBase>().enabled = true;
+        if(isBossScene)
+            boss.SetActive(true);
+        else
+            boss.GetComponent<BossBase>().enabled = true;
     }
 
     void Update()

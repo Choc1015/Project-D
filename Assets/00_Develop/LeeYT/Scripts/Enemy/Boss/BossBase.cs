@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -409,7 +410,7 @@ public class BossBase : Human
         }
 
 
-
+        
     }
-
+    public bool GetAlive() => isAlive;
 }

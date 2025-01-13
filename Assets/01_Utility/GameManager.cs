@@ -10,7 +10,6 @@ public class GameManager : Singleton<GameManager>
     public PlayerController[] playerPrefabs;
     private Dictionary<PlayerType, PlayerController> players_Dic = new();
     public GameObject Camera;
-    public Transform cineCamera;
 
     public float minX, maxX, minY, maxY;
 
@@ -70,9 +69,5 @@ public class GameManager : Singleton<GameManager>
     {
         minX = newMinX;
         maxX = newMaxX;
-    }
-    public void SetCameraPos(Vector3 pos)
-    {
-        cineCamera.position = pos;
     }
 }
