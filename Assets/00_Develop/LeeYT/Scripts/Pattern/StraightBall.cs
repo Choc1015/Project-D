@@ -67,17 +67,21 @@ public class StraightBall : Human
                 case BallType.피해:
                     Utility.GetPlayer().TakeDamage(Damage, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
                     Debug.LogWarning("피해");
+                    EffectManager.Instance.PlayHitPupleEffect(Utility.GetPlayerTr().position + Vector3.up * 2);
                     break;
                 case BallType.치유:
                     Utility.GetPlayer().Heal(StatInfo.Health, Health);
+                    EffectManager.Instance.PlayHealEffect(Utility.GetPlayerTr().position + Vector3.up * 2);
                     Debug.LogWarning("치유");
                     break;
                 case BallType.약화:
                     Utility.GetPlayerStat().BuffStat(StatInfo.AttackDamage, -Nurff);
+                    EffectManager.Instance.PlayWeekEffect(Utility.GetPlayerTr().position + Vector3.up * 2);
                     Debug.LogWarning("약화");
                     break;
                 case BallType.강화:
                     Utility.GetPlayerStat().BuffStat(StatInfo.AttackDamage, Buff);
+                    EffectManager.Instance.PlayStrongEffect(Utility.GetPlayerTr().position + Vector3.up * 2);
                     Debug.LogWarning("강화");
                     break;
             }

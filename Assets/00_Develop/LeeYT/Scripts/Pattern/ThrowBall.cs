@@ -71,6 +71,7 @@ public class ThrowBall : Human
         {
             Debug.Log("플레이어와 충돌");
             Utility.GetPlayer().TakeDamage(Damage, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+            EffectManager.Instance.PlayHitPupleEffect(Utility.GetPlayerTr().position + Vector3.up * 2);
             Destroy(gameObject);
         }
     }

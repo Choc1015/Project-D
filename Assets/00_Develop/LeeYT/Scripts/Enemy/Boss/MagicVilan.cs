@@ -65,11 +65,15 @@ public class MagicVilan : Human
 
 
     }
+    private void Update()
+    {
+        AttackHitBox = transform.position + Vector3.up;
+    }
     protected void OnDrawGizmos()
     {
         // 공격 범위 시각화
         Gizmos.color = Color.red;
-        AttackHitBox = transform.position + Vector3.up;
+        
         Gizmos.DrawWireSphere(AttackHitBox, attackRange);
 
 
@@ -367,8 +371,9 @@ public class MagicVilan : Human
 
         // Play death animation or effects
         Debug.Log("Enemy Died");
+        Debug.Log($"IsDied : {isAlive}");
 
-        yield return new WaitForSeconds(2f); // Wait before destroying the object
+        yield return new WaitForSeconds(5f); // Wait before destroying the object
         ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 
