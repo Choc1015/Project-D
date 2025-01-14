@@ -109,7 +109,7 @@ public class DragonBoss : Human
                 {
                     movingRight = false;
                 }
-            }
+            }   
             else
             {
                 transform.position += Vector3.left * moveSpeed * Time.deltaTime;
