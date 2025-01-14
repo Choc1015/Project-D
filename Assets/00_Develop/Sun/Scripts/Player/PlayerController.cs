@@ -31,6 +31,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public Vector3 offset;
     public CloneLight spriteLight;
     [SerializeField] private string defenseType = "";
+    [SerializeField] private float defenseValue;
     private bool isInvincibility;
 
     [SerializeField] private SkillSwap skillSwapPrefab;
@@ -165,9 +166,17 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         attackCombo = 0;
     }
-    public void ChangeDefenseType(string defenseType = "")
+    public void ChangeDefenseType(string defenseType = "", float defenseValue = 0)
     {
+        if (this.defenseValue > 0)
+            return;
         this.defenseType = defenseType;
+        this.defenseValue = defenseValue;
+    }
+    public void ResetDefenseType()
+    {
+        defenseType = "";
+        defenseValue = 0;
     }
     public string GetDefenseType() => defenseType;
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)
@@ -184,13 +193,16 @@ public class PlayerController : Human/*, IPunObservable*/
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
             damage = attackDamage * 0.2f;
-        else if (defenseType == "GodDefense")
-            damage = attackDamage * 0f;
-        else if (defenseType == "ReflectionDefense")
+        else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense")
         {
-            damage = attackDamage * 0.2f;
+            defenseValue -= damage;
+            if (defenseType == "ReflectionDefense")
+                attackHuman.TakeDamage(attackDamage, this, info);
 
-            attackHuman.TakeDamage(attackDamage*0.8f, this, info);
+            if (defenseValue <= 0)
+                ResetDefenseType();
+            else                    
+                damage = attackDamage * 0f;
         }
         if (damage != attackDamage)
             info.ResetValue();

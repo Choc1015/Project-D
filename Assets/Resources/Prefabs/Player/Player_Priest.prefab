@@ -362,6 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8173114852047020745}
   - component: {fileID: 3186804858943893757}
+  - component: {fileID: 7945602628799228135}
   m_Layer: 0
   m_Name: GodDefense
   m_TagString: Untagged
@@ -402,10 +403,10 @@ MonoBehaviour:
     action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6921179972428374565}
-          m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: Defense
-          m_Mode: 5
+        - m_Target: {fileID: 7945602628799228135}
+          m_TargetAssemblyTypeName: SkillDefense, Assembly-CSharp
+          m_MethodName: UseSkill
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -438,6 +439,20 @@ MonoBehaviour:
   invokeTimer: 0
   skillCooldown: 10
   skillManaValue: 2
+--- !u!114 &7945602628799228135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023809104260325809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da743bc7c26fed24b8900f39bfed0232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseType: GodDefense
+  value: 20
 --- !u!1 &6426472411079300124
 GameObject:
   m_ObjectHideFlags: 0
