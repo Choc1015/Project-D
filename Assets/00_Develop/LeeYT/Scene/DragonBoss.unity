@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b6fcd9ad7fbc841b9f7cfcf76807e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   bgmSource: {fileID: 1937165102}
   effectSource: {fileID: 2062996359}
   dataTemp:
@@ -1490,6 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066024aa3a5298f4e8af012c8272c8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   GlobalLight: {fileID: 1963835925}
   dimSpeed: 0.5
   minIntensity: 0
@@ -1648,6 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df0eff835208d84da465b175f5a22c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   hitPuple: {fileID: 2471155694859766390, guid: 0d41785e16faff94eab834f7d460b23d, type: 3}
   healEffect: {fileID: 629100733405211972, guid: 4dd017287041ce24db36bc7bcef9361d, type: 3}
   weekEffect: {fileID: 4315868542186053074, guid: ead365b8aa54efe49847a8d5254fe6f2, type: 3}
@@ -1954,6 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704260cec3868344c832beccd6af0f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   WaveEnemyCount: 0
   IsBoss: 1
   IsStopCamera: 0
@@ -2354,6 +2358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ba864561bee144da7256556569a6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   pools:
   - prefab: {fileID: 7972885186286629067, guid: 397339d6fd979814bb31477aa2e003d8, type: 3}
     size: 10
@@ -4639,8 +4644,6 @@ GameObject:
   - component: {fileID: 1283259233}
   - component: {fileID: 1283259234}
   - component: {fileID: 1283259235}
-  - component: {fileID: 1283259237}
-  - component: {fileID: 1283259236}
   m_Layer: 13
   m_Name: DragonBoss
   m_TagString: Untagged
@@ -4785,35 +4788,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c7d04c7d946714e818b5a470188096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statController: {fileID: 0}
-  movement: {fileID: 0}
---- !u!114 &1283259236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283259229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9243d889b20ae943b53ffb00be318e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
---- !u!114 &1283259237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283259229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22d82d9b846c394f83bbf0404c144e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statSO: {fileID: 0}
-  Stats: {fileID: 0}
 --- !u!1 &1336221271
 GameObject:
   m_ObjectHideFlags: 0
@@ -5157,13 +5131,14 @@ GameObject:
   - component: {fileID: 1444805560}
   - component: {fileID: 1444805559}
   - component: {fileID: 1444805558}
+  - component: {fileID: 1444805561}
   m_Layer: 13
   m_Name: Dragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1444805557
 Transform:
   m_ObjectHideFlags: 0
@@ -5229,6 +5204,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statSO: {fileID: 11400000, guid: 5fa750aa21afe0b47977fd153619e509, type: 2}
   Stats: {fileID: 0}
+--- !u!61 &1444805561
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444805556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.9, y: 0.87}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.91, y: 3.86}
+  m_EdgeRadius: 0
 --- !u!1 &1511366142
 GameObject:
   m_ObjectHideFlags: 0
@@ -6091,6 +6111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3505f37870124a949965ced52a9cd091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   playerPrefabs:
   - {fileID: 0}
   - {fileID: 0}
@@ -6100,6 +6121,7 @@ MonoBehaviour:
   maxX: 10.55
   minY: -4.44
   maxY: -1.07
+  maxXTemp: 0
   mapNumbers: []
 --- !u!1 &1688924306
 GameObject:
@@ -7299,6 +7321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d16cafa32f189c4e8d420c6d9a7740c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DontDestroy: 1
   hitImage: {fileID: 194811233}
   textBox: {fileID: 808884170}
   cutSceneTextBox: {fileID: 2011476730}

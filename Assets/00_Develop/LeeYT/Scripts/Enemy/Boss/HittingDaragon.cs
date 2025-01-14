@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HittingDaragon : Human
+public class HittingDaragon : MonoBehaviour
 {
     DragonBoss boss;
 
@@ -44,7 +44,7 @@ public class HittingDaragon : Human
             }
 
             Debug.Log("Hitting");
-            Utility.GetPlayer().TakeDamage(0.1f, this, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+            Utility.GetPlayer().TakeDamage(0.1f, boss, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Debug.LogWarning("ÇÇÇØ");
         }
     }
