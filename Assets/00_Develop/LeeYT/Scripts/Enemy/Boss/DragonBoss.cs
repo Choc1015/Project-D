@@ -36,6 +36,9 @@ public class DragonBoss : Human
     private void Start()
     {
         Initialize();
+
+        UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
+        UIManager.Instance.bossHealthBar.gameObject.SetActive(true);
     }
 
     protected void Initialize()
@@ -230,10 +233,15 @@ public class DragonBoss : Human
         if (isPattern)
             return;
 
+        PlayerController player = attackHuman as PlayerController;
+
+        if (player.GetPlayerSkill().isCritical)
+            UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
 
         if (this.info != null && this.info.isKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
+        player.SpawnHitEffect(transform.position);
         // Simulate death for the example
         if (isAlive)
         {

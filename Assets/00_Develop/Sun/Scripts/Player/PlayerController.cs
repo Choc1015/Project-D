@@ -19,6 +19,7 @@ public class PlayerController : Human/*, IPunObservable*/
 
     public Transform attackPos;
     public SpriteRenderer sprite;
+    public SpriteRenderer playerBlessing;
     public GameObject soul;
     public AnimationTrigger animTrigger;
     private PlayerStateMachine playerState;
@@ -54,6 +55,8 @@ public class PlayerController : Human/*, IPunObservable*/
     private ObjectPool<Effect> EnemyHitObjPool;
 
     private float deathTimer;
+
+   
 
     void Awake()
     {
@@ -256,6 +259,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         playerState.ChangeState(PlayerState.Die);
         sprite.DOColor(dieColor, 0.5f);
+        playerBlessing.DOColor(dieColor, 0.5f);
         soul.SetActive(true);
         movement.StopMove();
         deathTimer = 20;
@@ -268,6 +272,7 @@ public class PlayerController : Human/*, IPunObservable*/
         {
             playerState.ChangeState(PlayerState.Idle);
             sprite.DOColor(baseColor, 0.5f);
+            playerBlessing.DOColor(baseColor, 0.5f);
             soul.SetActive(false);
             Utility.GetPlayer().HealHealth(999);
             GameManager.Instance.RevivePlayer(this, reviveInfo);

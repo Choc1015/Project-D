@@ -10,6 +10,7 @@ public class Human : MonoBehaviour
     public Movement movement;
     protected KnockBackInfo info;
     public bool useKnockBack = true;
+    public bool isObject = false;
     public void TakeDamage(float attackDamage)
     {
         if (statController != null)

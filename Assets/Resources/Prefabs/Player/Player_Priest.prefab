@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: skillFunctions.Array.data[3]
       value: 
       objectReference: {fileID: 6693368028640783675}
+    - target: {fileID: 7972275457403201829, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a3a4cdc7eae77547b71d3541442e220, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

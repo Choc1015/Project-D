@@ -20,6 +20,7 @@ public class NextStage : MonoBehaviour
     public bool isBossStage;
     public BossBase boss;
     public MagicVilan magicVilan;
+    public DragonBoss dragon;
 
     private bool isDisable;
     private void Start()
@@ -37,25 +38,12 @@ public class NextStage : MonoBehaviour
             // 플레이어가 범위 내에 있을 때 초록색 선
             if (isBossStage&& curStage == StageManager.Instance.CurrentStage)
             {
-                if (magicVilan)
-                {
-                    if (!magicVilan.GetAlive())
-                    {
-                        cutScene?.SetActive(true);
-                        cutScene = null;
-                        isDisable = true;
-                    }
-                }
-                else
-                {
-                    if (!boss.GetAlive())
-                    {
-                        cutScene?.SetActive(true);
-                        cutScene = null;
-                        isDisable = true;
-                    }
+                if (boss)
+                    EndBossStage(boss.GetAlive());
+                else if (magicVilan && !magicVilan.GetAlive())
+                    GoNextStage(null, cutScene, true);
+                //else if(!dragon.GetAlive())
                     
-                }
             }
             else
             {
@@ -78,14 +66,24 @@ public class NextStage : MonoBehaviour
         //}
     }
 
-    public void GoNextStage(OptionUI option = null, GameObject cutScene = null)
+    public void GoNextStage(OptionUI option = null, GameObject cutScene = null, bool isDragon = false)
     {
-        StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene, option);
+        StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene, option, isDragon);
     }
     public void ActionGoNextStage() => GoNextStage();
     public void ActiveOption()
     {
         UIManager.Instance.optionController.Init(options, this, curStage);
         //StageManager.Instance.ActiveStage(GameManager.Instance.mapNumbers, curStage, false);
+    }
+
+    public void EndBossStage(bool isAlive)
+    {
+        if (!isAlive)
+        {
+            cutScene?.SetActive(true);
+            cutScene = null;
+            isDisable = true;
+        }
     }
 }

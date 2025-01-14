@@ -132,13 +132,13 @@ public class PlayerSkill : MonoBehaviour
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDir_X, playerAttackRange/2+0.5f, layerMask);
                 isCritical = GetCritical();
-                Debug.Log(playerController.GetPlayerState().CurrentState());
+                
                 foreach (RaycastHit2D hitObj in hits)
                 {
                     hitEnemyTemp = hitObj.collider.GetComponent<Human>();
                     if (hitEnemyTempList.Contains(hitEnemyTemp))
                         continue;
-
+                    
                     hitEnemyTempList.Add(hitEnemyTemp);
                     //if (hitEnemyTemp.)
                     //    return;
@@ -175,8 +175,9 @@ public class PlayerSkill : MonoBehaviour
     }
     IEnumerator AttackCorou(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
+        
         yield return new WaitForSeconds(attackDelayTime);
-        if(enemy && Vector3.Distance(enemy.transform.position, transform.position) < playerController.GetStatController().GetStat(StatInfo.AttakRange).Value)
+        if(enemy && (enemy.isObject || Vector3.Distance(enemy.transform.position, transform.position) < playerController.GetStatController().GetStat(StatInfo.AttakRange).Value))
             enemy.TakeDamage(attackDamage, playerController, info);
     }
     public void Heal(float value)
