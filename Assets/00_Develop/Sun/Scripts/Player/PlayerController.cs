@@ -97,7 +97,7 @@ public class PlayerController : Human/*, IPunObservable*/
     //[PunRPC]
     public void LocalUpdate(bool flipX)
     {
-        sprite.flipX = flipX;
+        sprite.transform.localScale = flipX?Vector3.one+(Vector3.left*2): Vector3.one;
         spriteLight?.ChangeSprite();
     }
     private void Update()

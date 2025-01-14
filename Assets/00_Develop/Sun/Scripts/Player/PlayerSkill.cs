@@ -155,7 +155,7 @@ public class PlayerSkill : MonoBehaviour
                 attackAE?.Invoke();
                 hitEnemyTempList.Clear();
             }
-            movementAfterDelay = 0.2f;
+            movementAfterDelay = 0.35f;
         }
        
 
