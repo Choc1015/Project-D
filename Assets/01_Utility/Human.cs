@@ -9,6 +9,7 @@ public class Human : MonoBehaviour
     [SerializeField] protected StatController statController;
     public Movement movement;
     protected KnockBackInfo info;
+    public bool useKnockBack = true;
     public void TakeDamage(float attackDamage)
     {
         if (statController != null)
@@ -29,7 +30,8 @@ public class Human : MonoBehaviour
             this.info = info;
             info.dir = transform.position - attackHuman.transform.position;
             info.dir.y = 0;
-            movement.KnockBack(info);
+            if(useKnockBack)
+                movement.KnockBack(info);
         }
     }
     public void HealHealth(float healValue)
