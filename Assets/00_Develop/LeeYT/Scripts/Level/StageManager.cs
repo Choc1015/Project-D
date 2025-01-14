@@ -15,7 +15,7 @@ public class StageManager : Singleton<StageManager>
 
     private SoundController soundController;
 
-    private WavePoint curWave;
+    [SerializeField]private WavePoint curWave;
     private void Update()
     {
         if (IsBoss)

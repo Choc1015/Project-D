@@ -8239,6 +8239,7 @@ MonoBehaviour:
   IsStopCamera: 0
   IsStart: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 0}
+  curWave: {fileID: 0}
 --- !u!114 &410554614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26475,6 +26476,7 @@ MonoBehaviour:
   healEffect: {fileID: 629100733405211972, guid: 4dd017287041ce24db36bc7bcef9361d, type: 3}
   weekEffect: {fileID: 4315868542186053074, guid: ead365b8aa54efe49847a8d5254fe6f2, type: 3}
   strongEffect: {fileID: 212213283663316248, guid: e70f669b96eb15747b33ae23f543b13b, type: 3}
+  HitDragon: {fileID: 0}
 --- !u!1001 &1389110777
 PrefabInstance:
   m_ObjectHideFlags: 0

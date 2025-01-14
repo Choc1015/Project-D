@@ -17,7 +17,7 @@ public class WavePoint : MonoBehaviour
 
     private void Update()
     {
-        if (!StageManager.Instance.IsStart)
+        if (!StageManager.Instance.IsStart || isWave)
             return;
 
         // 플레이어와 적 사이의 연결 선 그리기
