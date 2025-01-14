@@ -9,12 +9,13 @@ public class EnemyManager : Singleton<EnemyManager>
     public int initialPoolSize = 10; // 초기 풀 크기
     private Dictionary<EnemyStateMachine, ObjectPool<EnemyStateMachine>> enemyPools = new(); // 적 프리팹별 객체 풀
 
-    private void Start()
+    protected override void Start()
     {
         foreach (var enemy in EnemyPrefab)
         {
             enemyPools[enemy] = new ObjectPool<EnemyStateMachine>(enemy, initialPoolSize, transform);
         }
+        base.Start();
     }
 
     public EnemyStateMachine SpawnEnemy(EnemyStateMachine enemyPrefab, Vector3 position)

@@ -87,9 +87,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277e5643899f2e244bff6a299423e06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kind: 0
   bulletController: {fileID: 6703085358552638442}
   skills: {fileID: 7873700496637960509}
   timer: 1
+  spawnCount: 1
+  spawnOffset: {x: 0, y: 2, z: 0}
 --- !u!1 &4617998776705947867
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +181,99 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkill: {fileID: 7873700496637960509}
+--- !u!1 &7764356413732936146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4586495666666551228}
+  - component: {fileID: 4674767096473556847}
+  - component: {fileID: 818718773970223203}
+  m_Layer: 0
+  m_Name: PlasmaMissile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4586495666666551228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764356413732936146}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7934943836675884401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4674767096473556847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764356413732936146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command:
+    Name: PlasmaBolt
+    command: 71000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 818718773970223203}
+          m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
+          m_MethodName: UseSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 0
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
+    commandInputTimeLimit: 0.2
+    isKeyDown: 1
+    isHold: 0
+    nextAction: 0.4
+    isDisable: 0
+  skillObj: {fileID: 0}
+  invokeTimer: 0
+  skillCooldown: 5
+  skillManaValue: 3
+--- !u!114 &818718773970223203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7764356413732936146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277e5643899f2e244bff6a299423e06c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 1
+  bulletController: {fileID: 6703085358552638442}
+  skills: {fileID: 7873700496637960509}
+  timer: 1
+  spawnCount: 3
+  spawnOffset: {x: 0, y: 2, z: 0}
 --- !u!1001 &320477392424006203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 46262557254012205, guid: b7dc695ad87a1544eaa88b6f61c68bab, type: 3}
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: skillFunctions.Array.data[0]
@@ -266,6 +362,10 @@ PrefabInstance:
       propertyPath: skillFunctions.Array.data[1]
       value: 
       objectReference: {fileID: 7361624666965416831}
+    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: skillFunctions.Array.data[2]
+      value: 
+      objectReference: {fileID: 4674767096473556847}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -275,6 +375,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6527362619603940427}
+    - targetCorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4586495666666551228}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       insertIndex: -1
@@ -297,8 +400,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6ec020f32884c45ab9ec35d323587b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4359426609343304250, guid: 1039c3b3f59b623479dc72ab945ecf3b, type: 3}
-  createCount: 5
+  bullets:
+  - bulletKind: 0
+    bulletPrefab: {fileID: 4359426609343304250, guid: 1039c3b3f59b623479dc72ab945ecf3b, type: 3}
+    createCount: 5
+  - bulletKind: 1
+    bulletPrefab: {fileID: 6451261132927001516, guid: f9f9559ca86062f4ebfe924373230f7a, type: 3}
+    createCount: 5
 --- !u!114 &7873700496637960509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7581687510746911494, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}

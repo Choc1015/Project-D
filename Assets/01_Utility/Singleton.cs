@@ -5,7 +5,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T instance;
     private static bool quitting = false; // 이 싱글톤을 상속받은 객체가 사라졌는지 체크
-
+    public bool DontDestroy = true;
     public static T Instance
     {
         get
@@ -32,9 +32,20 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             return instance;
         }
     }
-
-    private void Awake()
+    protected virtual void Awake()
     {
+        if (DontDestroy == false)
+        {
+            transform.parent = null;
+        }
+    }
+    protected virtual void Start()
+    {
+        if (DontDestroy == false)
+        {
+            return;
+        }
+
         if (transform.parent != null && transform.root != null) // 해당 오브젝트가 자식 오브젝트라면
         {
             DontDestroyOnLoad(this.transform.root.gameObject); // 부모 오브젝트를 DontDestroyOnLoad 처리
@@ -43,11 +54,12 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject); // 해당 오브젝트가 최 상위 오브젝트라면 자신을 DontDestroyOnLoad 처리
         }
+
     }
 
     private void OnDestroy()
     {
         // 싱글톤 객체 파괴 체크
-        quitting = true;
+        //quitting = true;
     }
 }

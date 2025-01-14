@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-
+    
     [Header("Hit Image")]
     public HitImage hitImage;
 
@@ -39,9 +39,10 @@ public class UIManager : Singleton<UIManager>
     [Header("BossHPBar")]
     public BossHealthBar bossHealthBar;
 
-    private void Awake()
+    protected override void Awake()
     {
         playerUIPrefab = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");
+        base.Awake();
     }
 
     public PlayerUI GetPlayerUI()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using static UnityEngine.InputManagerEntry;
 public class PlayerSkill : MonoBehaviour
 {
     private PlayerController playerController;
@@ -127,7 +128,7 @@ public class PlayerSkill : MonoBehaviour
             }
             else if(playerController.CanAction(PlayerState.Idle))
             {
-                layerMask = 1 << LayerMask.NameToLayer("Enemy");
+                layerMask = (1 << LayerMask.NameToLayer("Enemy"))+(1 << LayerMask.NameToLayer("Boss"));
                 float playerAttackRange = playerController.GetStatController().GetStat(StatInfo.AttakRange).Value;
                 RaycastHit2D[] hits = Physics2D.BoxCastAll(playerController.attackPos.position, Vector2.one * playerAttackRange, 0, playerController.lookDir_X, playerAttackRange/2+0.5f, layerMask);
                 isCritical = GetCritical();
@@ -183,10 +184,18 @@ public class PlayerSkill : MonoBehaviour
         playerController.HealHealth(value);
         playerController.ActiveUpdatePlayerUI();
     }
-    public void ShotBullet()
+    public void ShotBullet(BulletKind kind,Vector3 pos, int spawnCount)
     {
-        float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value*1.2f;
-        bulletController.Shot(playerController.lateLookDir_X, 5,attackDamage);
+        StartCoroutine(LoopSpawn(kind, pos, spawnCount));
+    }
+    IEnumerator LoopSpawn(BulletKind kind, Vector3 pos, int spawnCount)
+    {
+        float attackDamage = playerController.GetStatController().GetStat(StatInfo.AttackDamage).Value * 1.2f;
+        for (int i = 0; i < spawnCount; i++)
+        {
+            bulletController.Shot(kind, playerController.lateLookDir_X, pos, 5, attackDamage);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
     public void OnTriggerEnter2D(Collider2D coll)
     {

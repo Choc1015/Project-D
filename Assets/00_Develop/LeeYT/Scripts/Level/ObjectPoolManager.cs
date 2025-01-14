@@ -14,9 +14,10 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
     private Dictionary<string, Queue<GameObject>> poolDictionary; // 풀을 딕셔너리에서 생성한다. 
     private Dictionary<string, HashSet<GameObject>> activeObjects; // 활성화된 오브젝트 관리
 
-    private void Awake()
+    protected override void Awake()
     {
         Initialize();
+        base.Awake();
     }
 
     /// <summary>

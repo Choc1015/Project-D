@@ -14,15 +14,22 @@ public class StageManager : Singleton<StageManager>
     public Color fadeColor;
 
     private SoundController soundController;
+
+    private WavePoint curWave;
     private void Update()
     {
         if (IsBoss)
         {
             GameManager.Instance.SetCameraRange(-6.35f, 10.55f);
         }
-        if(WaveEnemyCount == 0)
+        if(WaveEnemyCount == 0 || Utility.GetPlayer().GetPlayerState().CurrentState() == PlayerState.Die)
+        {
+            if(Utility.GetPlayer().GetPlayerState().CurrentState() == PlayerState.Die)
+                GameManager.Instance.maxXTemp = curWave.transform.position.x + (17.85f / 2);
             IsStopCamera = false;
-        if(Input.GetKeyDown(KeyCode.Space))
+        }
+            
+        if(Input.GetKeyDown(KeyCode.K))
         {
             CurrentStage++;
             Debug.Log(CurrentStage);
@@ -96,6 +103,12 @@ public class StageManager : Singleton<StageManager>
         if (soundController == null)
             soundController = GetComponent<SoundController>();
         soundController.PlayLoopSound($"Stage_{CurrentStage}_BGM");
+    }
+
+    public void SetCameraStop(bool isStop, WavePoint wave)
+    {
+        IsStopCamera = isStop;
+        curWave = wave;
     }
 }
 
