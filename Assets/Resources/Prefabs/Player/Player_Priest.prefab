@@ -73,7 +73,8 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 0
-  skillCooldown: 0
+  skillCooldown: 10
+  skillManaValue: 4
 --- !u!114 &6330133904729311107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +249,8 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 2
-  skillCooldown: 0
+  skillCooldown: 5
+  skillManaValue: 4
 --- !u!114 &8047843372994136827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +437,7 @@ MonoBehaviour:
   skillObj: {fileID: 0}
   invokeTimer: 0
   skillCooldown: 10
+  skillManaValue: 2
 --- !u!1 &6426472411079300124
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +512,8 @@ MonoBehaviour:
     isDisable: 0
   skillObj: {fileID: 0}
   invokeTimer: 2
-  skillCooldown: 0
+  skillCooldown: 10
+  skillManaValue: 4
 --- !u!114 &2990571368122953259
 MonoBehaviour:
   m_ObjectHideFlags: 0

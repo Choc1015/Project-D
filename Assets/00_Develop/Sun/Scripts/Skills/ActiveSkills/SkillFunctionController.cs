@@ -41,6 +41,15 @@ public class SkillFunctionController : MonoBehaviour
             isInit[currentSkillIndex] = true;
         }
     }
+    private void Update()
+    {
+        if(!isAllDisable)
+        {
+            skillFunctions[currentSkillIndex].command.isDisable =
+            skillFunctions[currentSkillIndex].skillManaValue > Utility.GetPlayer().GetStatController().GetStat(StatInfo.Mana).Value;
+        }
+            
+    }
     public void SetAllDisable(float resetTime = 5)
     {
         if (resetTime == 0)
