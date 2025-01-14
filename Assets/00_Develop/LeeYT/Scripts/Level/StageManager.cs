@@ -22,6 +22,12 @@ public class StageManager : Singleton<StageManager>
         }
         if(WaveEnemyCount == 0)
             IsStopCamera = false;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CurrentStage++;
+            Debug.Log(CurrentStage);
+
+        }
     }
     public void NextStage(Vector3 pos, float minX, float maxX, GameObject cutScene = null, OptionUI data = null)
     {

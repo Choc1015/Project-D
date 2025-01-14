@@ -19,6 +19,7 @@ public class NextStage : MonoBehaviour
 
     public bool isBossStage;
     public BossBase boss;
+    public MagicVilan magicVilan;
 
     private bool isDisable;
     private void Start()
@@ -36,11 +37,24 @@ public class NextStage : MonoBehaviour
             // 플레이어가 범위 내에 있을 때 초록색 선
             if (isBossStage&& curStage == StageManager.Instance.CurrentStage)
             {
-                if (!boss.GetAlive())
+                if (magicVilan)
                 {
-                    cutScene?.SetActive(true);
-                    cutScene = null;
-                    isDisable = true;
+                    if (!magicVilan.GetAlive())
+                    {
+                        cutScene?.SetActive(true);
+                        cutScene = null;
+                        isDisable = true;
+                    }
+                }
+                else
+                {
+                    if (!boss.GetAlive())
+                    {
+                        cutScene?.SetActive(true);
+                        cutScene = null;
+                        isDisable = true;
+                    }
+                    
                 }
             }
             else

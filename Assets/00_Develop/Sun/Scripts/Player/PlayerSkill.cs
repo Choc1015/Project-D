@@ -113,7 +113,6 @@ public class PlayerSkill : MonoBehaviour
     {
         if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay < 0)
         {
-            Debug.Log(movementAfterDelay);
             playerController.StopCommand();
             int layerMask = 1 << LayerMask.NameToLayer("Item");
             RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 2f, layerMask);
@@ -176,8 +175,8 @@ public class PlayerSkill : MonoBehaviour
     IEnumerator AttackCorou(float attackDamage, Human enemy, KnockBackInfo info = null)
     {
         yield return new WaitForSeconds(attackDelayTime);
-        enemy.TakeDamage(attackDamage, playerController, info);
-        Debug.Log(enemy);
+        if(enemy && Vector3.Distance(enemy.transform.position, transform.position) < playerController.GetStatController().GetStat(StatInfo.AttakRange).Value)
+            enemy.TakeDamage(attackDamage, playerController, info);
     }
     public void Heal(float value)
     {
