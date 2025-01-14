@@ -30,7 +30,7 @@ public class WavePoint : MonoBehaviour
                 WaveManager.WaveStart(waveCount);
                 if (StageManager.Instance.WaveEnemyCount != 0)
                 {
-                    StageManager.Instance.IsStopCamera = true;
+                    StageManager.Instance.SetCameraStop(true, this);
                     
                 }
                 else if(cutScene)

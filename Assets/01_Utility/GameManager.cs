@@ -12,6 +12,7 @@ public class GameManager : Singleton<GameManager>
     public GameObject Camera;
 
     public float minX, maxX, minY, maxY;
+    [HideInInspector] public float maxXTemp;
 
     public GameState currentState { get; private set; }
     public void SetGameState(GameState gameState) => currentState = gameState;
@@ -21,10 +22,15 @@ public class GameManager : Singleton<GameManager>
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
-        if(StageManager.Instance.IsStopCamera)
+        if (StageManager.Instance.IsStopCamera)
             x = Mathf.Clamp(T.position.x, Camera.transform.position.x - (17.85f / 2f), Camera.transform.position.x + (17.85f / 2f));
         else
-            x = Mathf.Clamp(T.position.x, minX, maxX);
+        {
+            if(maxXTemp != 0)
+                x = Mathf.Clamp(T.position.x, minX, maxXTemp);
+            else
+                x = Mathf.Clamp(T.position.x, minX, maxX);
+        }
 
         float y = Mathf.Clamp(T.position.y, minY, maxY);
         return (Vector3.right * x) + (Vector3.up * y) + (Vector3.forward * T.position.z) ;
@@ -34,14 +40,13 @@ public class GameManager : Singleton<GameManager>
     {
         SetLayerPosition?.Invoke();
     }
-    private void Awake()
+    protected override void Awake()
     {
         Application.targetFrameRate = 60;
+        base.Awake();
     }
-    private void Start()
+    protected override void Start()
     {
-       
-
         playerPrefabs[0] = Resources.Load<PlayerController>("Prefabs/Player/Player_Warrior");
         playerPrefabs[1] = Resources.Load<PlayerController>("Prefabs/Player/Player_Priest");
         playerPrefabs[2] = Resources.Load<PlayerController>("Prefabs/Player/Player_Wizard");

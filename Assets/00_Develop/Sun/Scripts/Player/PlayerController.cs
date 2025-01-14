@@ -53,6 +53,8 @@ public class PlayerController : Human/*, IPunObservable*/
     public Effect enemyHitPrefab;
     private ObjectPool<Effect> EnemyHitObjPool;
 
+    private float deathTimer;
+
     void Awake()
     {
         //if (!pv.IsMine)
@@ -107,6 +109,15 @@ public class PlayerController : Human/*, IPunObservable*/
         LocalUpdate(lateLookDir_X.x == -1 ? true : false);
         transform.position = GameManager.Instance.GetClampPosition(transform);
         playerSkill.movementAfterDelay -= Time.deltaTime;
+
+        if(playerState.CurrentState() == PlayerState.Die)
+        {
+            deathTimer -= Time.deltaTime;
+            if(deathTimer < 0)
+            {
+                Debug.Log("게임오버");
+            }
+        }
     }
     void LateUpdate()
     {
@@ -247,6 +258,7 @@ public class PlayerController : Human/*, IPunObservable*/
         sprite.DOColor(dieColor, 0.5f);
         soul.SetActive(true);
         movement.StopMove();
+        deathTimer = 20;
         //base.DieHuman();
     }
     
@@ -262,6 +274,7 @@ public class PlayerController : Human/*, IPunObservable*/
             reviveInfo.canRevive = false;
             reviveInfo.nextPlayer = default;
             reviveInfo.statue = default;
+            GameManager.Instance.maxXTemp = 0;
         }
         
     }

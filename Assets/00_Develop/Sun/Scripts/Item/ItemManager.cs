@@ -8,13 +8,13 @@ public class ItemManager : Singleton<ItemManager>
     private List<ObjectPool<Item>> itemObjPool = new();
 
     private Item spawnItemTemp;
-    void Start()
+    protected override void Start()
     {
         foreach(Item prefab in prefabs)
         {
             itemObjPool.Add(new ObjectPool<Item>(prefab, 5, transform));
         }
-        
+        base.Start();
     }
 
     public void SpawnItem(Vector3 pos)

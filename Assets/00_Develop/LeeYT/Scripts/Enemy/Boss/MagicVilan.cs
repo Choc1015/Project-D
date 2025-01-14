@@ -43,7 +43,7 @@ public class MagicVilan : Human
     public float minY;
     public float maxY;
 
-
+    public Vector3 hitOffset;
 
     private void Start()
     {
@@ -374,6 +374,7 @@ public class MagicVilan : Human
         Debug.Log($"IsDied : {isAlive}");
 
         yield return new WaitForSeconds(5f); // Wait before destroying the object
+        GetComponent<SetLayer>()?.DestroySetLayer();
         ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 
@@ -385,10 +386,15 @@ public class MagicVilan : Human
         if (isPattern)
             return;
 
+        PlayerController player = attackHuman as PlayerController;
+
+        if (player.GetPlayerSkill().isCritical)
+            UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
 
         if (this.info != null && this.info.isKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
+        player.SpawnHitEffect(transform.position + hitOffset);
         // Simulate death for the example
         if (isAlive)
         {

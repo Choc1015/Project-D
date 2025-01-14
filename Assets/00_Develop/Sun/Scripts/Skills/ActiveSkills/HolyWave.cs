@@ -8,6 +8,9 @@ public class HolyWave : EnchantSkill
     {
         playerSkill.attackAE += DetectRange;
         SetLayerMask((1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Enemy")));
+    }
+    private void OnEnable()
+    {
         Invoke("DespawnObj", despawnTimer);
     }
     protected override void UseSkill(RaycastHit2D hit)

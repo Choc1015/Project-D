@@ -354,6 +354,7 @@ public class BossBase : Human
         Debug.Log("Enemy Died");
 
         yield return new WaitForSeconds(2f); // Wait before destroying the object
+        GetComponent<SetLayer>()?.DestroySetLayer();
         ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 
