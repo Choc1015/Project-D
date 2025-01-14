@@ -10,6 +10,9 @@ public class EffectManager : Singleton<EffectManager>
     public GameObject weekEffect;
     public GameObject strongEffect;
 
+    [Header("DragonHit Boss")]
+    public GameObject HitDragon;
+
     public void PlayHitPupleEffect(Vector2 hitPoint)
     {
         if (hitPuple == null)
@@ -50,6 +53,15 @@ public class EffectManager : Singleton<EffectManager>
 
         ObjectPoolManager.Instance.SpawnFromPool(strongEffect.name, hitPoint);
     }
+    public void PlayDragonHitEffect(Vector2 hitPoint)
+    {
+        if (HitDragon == null)
+        {
+            Debug.LogWarning("HitDragon GameObject is not assigned!");
+            return;
+        }
 
+        ObjectPoolManager.Instance.SpawnFromPool(HitDragon.name, hitPoint);
+    }
 
 }

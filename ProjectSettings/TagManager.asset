@@ -20,7 +20,7 @@ TagManager:
   - HorizontalWall
   - EnemyBox
   - Spell
-  - 
+  - Boss
   - Enemy
   - Player
   - Item
