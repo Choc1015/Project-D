@@ -74,7 +74,7 @@ public class StageManager : Singleton<StageManager>
             ActiveStage(GameManager.Instance.mapNumbers, CurrentStage, true);
         }
 
-
+        UIManager.Instance.bossHealthBar.gameObject.SetActive(false);
         GameManager.Instance.SetCameraRange(minX,maxX);
         if (cutScene)
             yield return new WaitUntil(() => cutScene.activeInHierarchy == false);

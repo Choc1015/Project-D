@@ -215,6 +215,7 @@ public class EnemyStateMachine : Human
             ItemManager.Instance?.SpawnItem(transform.position);
             // Play death animation or effects
             Debug.Log("Enemy Died");
+            AllActiveTrigger();
 
             yield return new WaitForSeconds(2f); // Wait before destroying the object
             GetComponent<SetLayer>()?.DestroySetLayer();
@@ -223,6 +224,14 @@ public class EnemyStateMachine : Human
 
     }
 
+    private void AllActiveTrigger()
+    {
+        Collider2D[] colls = GetComponents<Collider2D>();
+        foreach (Collider2D coll in colls)
+        {
+            coll.isTrigger = true;
+        }
+    }
 
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info = null)
     {

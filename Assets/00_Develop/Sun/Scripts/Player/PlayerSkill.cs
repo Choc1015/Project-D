@@ -111,8 +111,10 @@ public class PlayerSkill : MonoBehaviour
     }
     public void Attack()
     {
-        if (playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die))
+        if ((playerController.CanAction(PlayerState.Idle) || playerController.CanAction(PlayerState.Die)) && movementAfterDelay < 0)
         {
+            Debug.Log(movementAfterDelay);
+            playerController.StopCommand();
             int layerMask = 1 << LayerMask.NameToLayer("Item");
             RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 2f, layerMask);
             if (hit)
@@ -153,8 +155,9 @@ public class PlayerSkill : MonoBehaviour
                 attackAE?.Invoke();
                 hitEnemyTempList.Clear();
             }
+            movementAfterDelay = 0.2f;
         }
-        movementAfterDelay = 0.4f;
+       
 
 
     }

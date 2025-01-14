@@ -24,7 +24,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3997116023359092679
 Transform:
   m_ObjectHideFlags: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489073498334660325}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e21c23498bdc2e74ebb18cb4d8e6fb91, type: 3}
   m_Name: 
@@ -63,9 +63,10 @@ MonoBehaviour:
   soundController: {fileID: 1559351331613345302}
   spriteLight: {fileID: 4714464233760120891}
   transPos: {fileID: 7926389083106243328}
-  Persent1: 10
+  Persent1: 70
   Persent2: 10
   Persent3: 10
+  hitOffset: {x: 0, y: 1.25, z: 0}
 --- !u!114 &2565291773902675453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundDatas: []
+  soundDatas:
+  - name: Hit
+    clip: {fileID: 8300000, guid: ed6356304d3bf424c93d74b8a4a7e5d3, type: 3}
 --- !u!61 &1169838486975888483
 BoxCollider2D:
   m_ObjectHideFlags: 0

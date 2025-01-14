@@ -2844,10 +2844,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_DarkElf
       objectReference: {fileID: 0}
-    - target: {fileID: 1489073498334660325, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3997116023359092679, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.30999994
@@ -2886,14 +2882,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3997116023359092679, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: Persent1
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21057,14 +21045,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraBundle
       objectReference: {fileID: 0}
-    - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
-      propertyPath: orthographic size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 116791
-      objectReference: {fileID: 0}
     - target: {fileID: 8328019137259904526, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -26514,9 +26494,9 @@ RectTransform:
   - {fileID: 1047602951}
   - {fileID: 1299249709}
   - {fileID: 1943615250}
+  - {fileID: 939622720}
   - {fileID: 1633994878}
   - {fileID: 866860720}
-  - {fileID: 939622720}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -26544,7 +26524,7 @@ MonoBehaviour:
   cutSceneImage: {fileID: 848484676}
   store: {fileID: 1047602950}
   optionController: {fileID: 1633994882}
-  healthBar: {fileID: 939622721}
+  bossHealthBar: {fileID: 939622721}
 --- !u!1001 &1450174012
 PrefabInstance:
   m_ObjectHideFlags: 0
