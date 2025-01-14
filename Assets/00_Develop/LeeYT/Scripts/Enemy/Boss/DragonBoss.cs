@@ -139,6 +139,7 @@ public class DragonBoss : Human
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonPunch") &&
                 animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
         isAttack = false;
+        isPattern = false;
         ChangeState(BossState.Idle);
     }
 
@@ -159,6 +160,7 @@ public class DragonBoss : Human
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonSlide") &&
                 animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
         isAttack = false;
+        isPattern = false;
         ChangeState(BossState.Idle);
     }
 
@@ -191,6 +193,7 @@ public class DragonBoss : Human
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonBreath") &&
                 animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
         isAttack = false;
+        isPattern = false;
 
         if (rndFlip == 0)
         {
