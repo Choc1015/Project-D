@@ -51,9 +51,9 @@ public class StageManager : Singleton<StageManager>
         else
         {
             UIManager.Instance.SetActiveFadeImage(true, 1, timer, fadeColor);
-            yield return new WaitForSeconds(timer + 0.5f);
+            
         }
-        
+        yield return new WaitForSeconds(timer + 0.5f);
         Utility.GetPlayerTr().position = pos;
 
         
@@ -74,7 +74,7 @@ public class StageManager : Singleton<StageManager>
             ActiveStage(GameManager.Instance.mapNumbers, CurrentStage, true);
         }
 
-
+        UIManager.Instance.bossHealthBar.gameObject.SetActive(false);
         GameManager.Instance.SetCameraRange(minX,maxX);
         if (cutScene)
             yield return new WaitUntil(() => cutScene.activeInHierarchy == false);

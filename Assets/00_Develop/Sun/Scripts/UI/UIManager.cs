@@ -37,7 +37,7 @@ public class UIManager : Singleton<UIManager>
 
     [Space(30)]
     [Header("BossHPBar")]
-    public BossHealthBar healthBar;
+    public BossHealthBar bossHealthBar;
 
     private void Awake()
     {

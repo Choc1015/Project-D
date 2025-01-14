@@ -20,8 +20,22 @@ public class Statue : MonoBehaviour
                 layerMask = 1 << LayerMask.NameToLayer("Player");
 
             hit = Physics2D.BoxCast(transform.position, Vector2.one * 3, 0, Vector2.zero, 0, layerMask);
-            Utility.GetPlayer().OnTriggerStatue(hit, playerType,this);
+            if (hit)
+            {
+                Utility.GetPlayer().OnTriggerStatue(true, playerType, this);
+            }
+            else 
+            {
+                if (Utility.GetPlayer().GetHitStatue() == this)
+                    Utility.GetPlayer().OnTriggerStatue(false, playerType, this);
+
+            }
+            
             sprite.sprite = hit ? sprites[1] : sprites[0];
+            if (hit)
+            {
+                Debug.Log(Utility.GetPlayer());
+            }
         }
         else if (sprite.sprite == sprites[1])
             sprite.sprite = sprites[0];

@@ -201,6 +201,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public void ActiveUpdatePlayerUI()
     {
         playerUI?.SetValue(StatInfo.Health, statController.GetStat(StatInfo.Health).GetMaxValue(), statController.GetStat(StatInfo.Health).Value);
+        playerUI?.SetValue(StatInfo.Mana, statController.GetStat(StatInfo.Mana).GetMaxValue(), statController.GetStat(StatInfo.Mana).Value);
     }
     //private void UpdatePlayerUI(StatInfo stat, float maxValue, float curValue)
     //{
@@ -248,6 +249,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         //base.DieHuman();
     }
+    
     public override void Revive()
     {
         if(playerState.CurrentState() == PlayerState.Die)
@@ -276,7 +278,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         skillSwapUI.DisableSkillSwap();
     }
-
+    public Statue GetHitStatue() => reviveInfo.statue;
     public void OnTriggerStatue(bool isOn, PlayerType playerType, Statue statue)
     {
         reviveInfo.canRevive = isOn;

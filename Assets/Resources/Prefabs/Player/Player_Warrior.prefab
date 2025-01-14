@@ -86,6 +86,7 @@ MonoBehaviour:
   skillObj: {fileID: 0}
   invokeTimer: 0
   skillCooldown: 10
+  skillManaValue: 3
 --- !u!114 &7138415348082515700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +200,7 @@ MonoBehaviour:
   skillObj: {fileID: 0}
   invokeTimer: 0
   skillCooldown: 10
+  skillManaValue: 2
 --- !u!1 &8638467368420381139
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +298,7 @@ MonoBehaviour:
   skillObj: {fileID: 0}
   invokeTimer: 0.4
   skillCooldown: 5
+  skillManaValue: 5
 --- !u!1001 &4703048871723883131
 PrefabInstance:
   m_ObjectHideFlags: 0

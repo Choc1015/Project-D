@@ -1,4 +1,5 @@
 ﻿using JetBrains.Annotations;
+using Photon.Realtime;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -37,10 +38,15 @@ public class BossBase : Human
     public int Persent2 = 10;
     public int Persent3 = 10;
 
+    public Vector3 hitOffset;
+
     private void Start()
     {
         Initialize();
         AttackHitBox = transform.position;
+
+        UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
+        UIManager.Instance.bossHealthBar.gameObject.SetActive(true);
     }
 
     protected void Initialize()
@@ -359,10 +365,18 @@ public class BossBase : Human
         if (isPattern)
             return;
 
+        PlayerController player = attackHuman as PlayerController;
+
+        if (player.GetPlayerSkill().isCritical)
+            UIManager.Instance.hitImage.InvokeActiveGO(0.1f);
 
         if (this.info != null && this.info.isKnockBack)
             return;
+
         base.TakeDamage(attackDamage, attackHuman, info);
+
+        player.SpawnHitEffect(transform.position + hitOffset);
+
         // Simulate death for the example
         if (isAlive)
         {
@@ -376,6 +390,7 @@ public class BossBase : Human
                 StageManager.Instance.WaveEnemyCount--;
             }
         }
+        UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         soundController.PlayOneShotSound("Hit");
     }
     protected override void DieHuman()
