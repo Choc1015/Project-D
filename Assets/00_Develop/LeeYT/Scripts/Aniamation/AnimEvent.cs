@@ -6,7 +6,7 @@ public class AnimEvent : MonoBehaviour
 {
     public SoundController SoundController;
 
-    private bool isbreath;
+    private bool isbreath = true;
 
     private void Start()
     {
