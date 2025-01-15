@@ -812,7 +812,7 @@ MonoBehaviour:
   - name: Hit
     clip: {fileID: 8300000, guid: ed6356304d3bf424c93d74b8a4a7e5d3, type: 3}
   - name: Jump
-    clip: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
+    clip: {fileID: 8300000, guid: 4822bd98667db494d8b6b7893dc9d1bb, type: 3}
   - name: Sliding
     clip: {fileID: 8300000, guid: c63aada0fcd2942478e902a069764210, type: 3}
   - name: SlidingHit
