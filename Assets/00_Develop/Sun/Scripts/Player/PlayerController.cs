@@ -193,7 +193,7 @@ public class PlayerController : Human/*, IPunObservable*/
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
             damage = attackDamage * 0.2f;
-        else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense")
+        else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense" || defenseType == "MagicDefense")
         {
             defenseValue -= damage;
             if (defenseType == "ReflectionDefense")

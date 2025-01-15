@@ -93,6 +93,119 @@ MonoBehaviour:
   timer: 1
   spawnCount: 1
   spawnOffset: {x: 0, y: 2, z: 0}
+--- !u!1 &2383529247609673026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8206264050463701839}
+  - component: {fileID: 7108568995721302405}
+  - component: {fileID: 6798404235915421733}
+  m_Layer: 0
+  m_Name: MagicDefense
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8206264050463701839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383529247609673026}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.92, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7934943836675884401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7108568995721302405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383529247609673026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  command:
+    Name: MagicDefense
+    command: 71000000
+    action:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6798404235915421733}
+          m_TargetAssemblyTypeName: SkillDefense, Assembly-CSharp
+          m_MethodName: UseSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2383529247609673026}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 7695085711888045239}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+    exitAction:
+      m_PersistentCalls:
+        m_Calls: []
+    commandInputTimeLimit: 0.2
+    isKeyDown: 1
+    isHold: 0
+    nextAction: 0.5
+    isDisable: 0
+  skillObj: {fileID: 0}
+  invokeTimer: 0
+  skillCooldown: 10
+  skillManaValue: 2
+--- !u!114 &6798404235915421733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383529247609673026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da743bc7c26fed24b8900f39bfed0232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defenseType: MagicDefense
+  value: 10
 --- !u!1 &4617998776705947867
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,99 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkill: {fileID: 7873700496637960509}
---- !u!1 &7764356413732936146
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4586495666666551228}
-  - component: {fileID: 4674767096473556847}
-  - component: {fileID: 818718773970223203}
-  m_Layer: 0
-  m_Name: PlasmaMissile
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4586495666666551228
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7764356413732936146}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7934943836675884401}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4674767096473556847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7764356413732936146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6035654c34a54b340820a49ba0907b26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  command:
-    Name: PlasmaBolt
-    command: 71000000
-    action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 818718773970223203}
-          m_TargetAssemblyTypeName: Shooter, Assembly-CSharp
-          m_MethodName: UseSkill
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: ReflectionDefense
-            m_BoolArgument: 0
-          m_CallState: 2
-    exitAction:
-      m_PersistentCalls:
-        m_Calls: []
-    commandInputTimeLimit: 0.2
-    isKeyDown: 1
-    isHold: 0
-    nextAction: 0.4
-    isDisable: 0
-  skillObj: {fileID: 0}
-  invokeTimer: 0
-  skillCooldown: 5
-  skillManaValue: 3
---- !u!114 &818718773970223203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7764356413732936146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 277e5643899f2e244bff6a299423e06c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kind: 1
-  bulletController: {fileID: 6703085358552638442}
-  skills: {fileID: 7873700496637960509}
-  timer: 1
-  spawnCount: 3
-  spawnOffset: {x: 0, y: 2, z: 0}
 --- !u!1001 &320477392424006203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -362,10 +382,6 @@ PrefabInstance:
       propertyPath: skillFunctions.Array.data[1]
       value: 
       objectReference: {fileID: 7361624666965416831}
-    - target: {fileID: 7895550839927921383, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
-      propertyPath: skillFunctions.Array.data[2]
-      value: 
-      objectReference: {fileID: 4674767096473556847}
     - target: {fileID: 7972275457403201829, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -381,7 +397,7 @@ PrefabInstance:
       addedObject: {fileID: 6527362619603940427}
     - targetCorrespondingSourceObject: {fileID: 7668509889031059274, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4586495666666551228}
+      addedObject: {fileID: 8206264050463701839}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2535870140066485341, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       insertIndex: -1
@@ -411,6 +427,17 @@ MonoBehaviour:
   - bulletKind: 1
     bulletPrefab: {fileID: 6451261132927001516, guid: f9f9559ca86062f4ebfe924373230f7a, type: 3}
     createCount: 5
+--- !u!114 &7695085711888045239 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7978408020662855308, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+  m_PrefabInstance: {fileID: 320477392424006203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829289749185242726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7873700496637960509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7581687510746911494, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
