@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 9190416080855885543}
   - component: {fileID: -644971598950100804}
   - component: {fileID: -5735728515198703570}
+  - component: {fileID: 6515787675394511151}
   m_Layer: 16
   m_Name: AttackBuff
   m_TagString: Untagged
@@ -203,3 +204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7c0164b5e931f4089e6ef344706772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6515787675394511151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4651306929321558236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: GetItem
+    clip: {fileID: 8300000, guid: 7922f5af6473d284393a00a5fb6e3953, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2041013595203310603}
   - component: {fileID: 6693368028640783675}
   - component: {fileID: 6330133904729311107}
+  - component: {fileID: 2996885380781365524}
   m_Layer: 0
   m_Name: HolyWave
   m_TagString: Untagged
@@ -54,7 +55,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3183054010104900279}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+          m_MethodName: 
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -93,6 +94,21 @@ MonoBehaviour:
   value: 2
   despawnTimer: 10
   skillRange: 2
+--- !u!114 &2996885380781365524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183054010104900279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: bb7f445c52d900d4da99af95bb7a0fe5, type: 3}
 --- !u!1 &3898252949498319376
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +332,7 @@ GameObject:
   - component: {fileID: 3062899828130433612}
   - component: {fileID: 1564360863632139299}
   - component: {fileID: 8047843372994136827}
+  - component: {fileID: 2828395154805643}
   m_Layer: 0
   m_Name: HolyLight
   m_TagString: Untagged
@@ -359,7 +376,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4852357076279785288}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+          m_MethodName: 
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -400,6 +417,21 @@ MonoBehaviour:
   skillRange: 5
   skillDelayTime: 0.7
   obj: {fileID: 0}
+--- !u!114 &2828395154805643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852357076279785288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
 --- !u!1 &5013027433348437987
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +549,7 @@ GameObject:
   - component: {fileID: 8173114852047020745}
   - component: {fileID: 3186804858943893757}
   - component: {fileID: 7945602628799228135}
+  - component: {fileID: 3162073865474943258}
   m_Layer: 0
   m_Name: GodDefense
   m_TagString: Untagged
@@ -557,8 +590,8 @@ MonoBehaviour:
     action:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7945602628799228135}
-          m_TargetAssemblyTypeName: SkillDefense, Assembly-CSharp
+        - m_Target: {fileID: 3186804858943893757}
+          m_TargetAssemblyTypeName: SkillFunction, Assembly-CSharp
           m_MethodName: UseSkill
           m_Mode: 1
           m_Arguments:
@@ -608,6 +641,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenseType: GodDefense
   value: 20
+--- !u!114 &3162073865474943258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5023809104260325809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: 0685ae79aa980624db272ebaab16b578, type: 3}
 --- !u!1 &6426472411079300124
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +667,7 @@ GameObject:
   - component: {fileID: 1066085241318906521}
   - component: {fileID: 5710650175260326355}
   - component: {fileID: 2990571368122953259}
+  - component: {fileID: 457098543694674709}
   m_Layer: 0
   m_Name: HealDrone
   m_TagString: Untagged
@@ -662,7 +711,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 6426472411079300124}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
+          m_MethodName: 
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -703,6 +752,21 @@ MonoBehaviour:
   skillRange: 0
   skillDelayTime: 0
   obj: {fileID: 6489418609129647051}
+--- !u!114 &457098543694674709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426472411079300124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
 --- !u!1001 &665239842911809827
 PrefabInstance:
   m_ObjectHideFlags: 0
