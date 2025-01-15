@@ -6,6 +6,14 @@ using static UnityEditor.Progress;
 public class OptionController : MonoBehaviour
 {
     public OptionUI[] optionDatas;
+
+    private SoundController soundController;
+
+    private void Start()
+    {
+        soundController = GetComponent<SoundController>();
+    }
+
     public void Init(OptionData[] options, NextStage nextStage,  int currentStage)
     {
         gameObject.SetActive(true);
@@ -18,6 +26,7 @@ public class OptionController : MonoBehaviour
 
     public void ChoiceOption()
     {
+        soundController.PlayOneShotSound("click");
         foreach (OptionUI option in optionDatas)
         {
             option.DisableGO();

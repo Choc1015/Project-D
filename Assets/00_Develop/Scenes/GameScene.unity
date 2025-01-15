@@ -2991,6 +2991,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_DarkElf
       objectReference: {fileID: 0}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 081a446b1386a274a8485ffe48072d33, type: 3}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[1].name
+      value: Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a9e65b63e485014583c4967a685d485, type: 3}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[2].name
+      value: p1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: de2abf34da1afe44f9c64cda630d7952, type: 3}
+    - target: {fileID: 1559351331613345302, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: soundDatas.Array.data[3].name
+      value: p23
+      objectReference: {fileID: 0}
     - target: {fileID: 3997116023359092679, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.30999994
@@ -8611,8 +8639,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundDatas:
+  - name: Stage_0_BGM
+    clip: {fileID: 8300000, guid: ffc755e02e9562243a2b2fff2a65b19c, type: 3}
   - name: Stage_1_BGM
-    clip: {fileID: 8300000, guid: c1ac2a4571d9ae240826cdc97337f5d9, type: 3}
+    clip: {fileID: 8300000, guid: 43ba0f885bb0f2c40b5c071819b33cb3, type: 3}
+  - name: Stage_2_BGM
+    clip: {fileID: 8300000, guid: 31df8877f069a0944976f8ab6c3556fa, type: 3}
 --- !u!1001 &415703113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9931,6 +9963,7 @@ GameObject:
   - component: {fileID: 490229701}
   - component: {fileID: 490229703}
   - component: {fileID: 490229702}
+  - component: {fileID: 490229704}
   m_Layer: 5
   m_Name: ManaPotion
   m_TagString: Untagged
@@ -10025,6 +10058,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &490229704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490229699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: gold
+    clip: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!1 &491827355
 GameObject:
   m_ObjectHideFlags: 0
@@ -10334,6 +10382,7 @@ GameObject:
   - component: {fileID: 496309942}
   - component: {fileID: 496309944}
   - component: {fileID: 496309943}
+  - component: {fileID: 496309945}
   m_Layer: 5
   m_Name: HealthPotion
   m_TagString: Untagged
@@ -10428,6 +10477,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &496309945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496309940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: gold
+    clip: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!1001 &502163365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12980,7 +13044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &615459818
 Transform:
   m_ObjectHideFlags: 0
@@ -16170,6 +16234,7 @@ GameObject:
   - component: {fileID: 781078413}
   - component: {fileID: 781078415}
   - component: {fileID: 781078414}
+  - component: {fileID: 781078416}
   m_Layer: 5
   m_Name: AttackBuff
   m_TagString: Untagged
@@ -16264,6 +16329,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &781078416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781078411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: gold
+    clip: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!1001 &782138604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18426,6 +18506,7 @@ GameObject:
   - component: {fileID: 926533110}
   - component: {fileID: 926533109}
   - component: {fileID: 926533108}
+  - component: {fileID: 926533111}
   m_Layer: 5
   m_Name: HealthBuff
   m_TagString: Untagged
@@ -18520,6 +18601,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 926533106}
   m_CullTransparentMesh: 1
+--- !u!114 &926533111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926533106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: gold
+    clip: {fileID: 8300000, guid: abdbbfd33a46f4549987385f85c536b5, type: 3}
 --- !u!1001 &929379341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19629,7 +19725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &990985578
 Transform:
   m_ObjectHideFlags: 0
@@ -24953,7 +25049,7 @@ PrefabInstance:
     - target: {fileID: 7630325451921814114, guid: 78e9a677e580db34296ce48984f13f45, type: 3}
       propertyPath: clip.clip
       value: 
-      objectReference: {fileID: 8300000, guid: c1ac2a4571d9ae240826cdc97337f5d9, type: 3}
+      objectReference: {fileID: 8300000, guid: ffc755e02e9562243a2b2fff2a65b19c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25189,17 +25285,16 @@ MonoBehaviour:
   statController: {fileID: 1281690031}
   movement: {fileID: 1281690030}
   useKnockBack: 0
-
   isObject: 0
   isAttack: 0
   animator: {fileID: 280283520}
   soundController: {fileID: 1281690033}
   spriteLight: {fileID: 0}
-  Persent1: 33
-  Persent2: 33
-  Persent3: 33
-  moveSpeed: 4
-  hitOffset: {x: 2, y: 1, z: 0}
+  Persent1: 10
+  Persent2: 10
+  Persent3: 10
+  moveSpeed: 2
+  hitOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1281690030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25258,6 +25353,14 @@ MonoBehaviour:
   soundDatas:
   - name: Hit
     clip: {fileID: 8300000, guid: ed6356304d3bf424c93d74b8a4a7e5d3, type: 3}
+  - name: Breath
+    clip: {fileID: 8300000, guid: 9a74219bbda7b7743b88d528dbc2a841, type: 3}
+  - name: Slide
+    clip: {fileID: 8300000, guid: f65a80b7bc0184f41abfcb493d2ba8f3, type: 3}
+  - name: Punch
+    clip: {fileID: 8300000, guid: 879d692ca8ca68e499d2e3b17560dba1, type: 3}
+  - name: houling
+    clip: {fileID: 8300000, guid: ee91cf9cef2b3f14c8e53dfd9230685c, type: 3}
 --- !u!1001 &1283650963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27473,6 +27576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1386223875}
   - component: {fileID: 1386223876}
+  - component: {fileID: 1386223877}
   m_Layer: 0
   m_Name: EffectManager
   m_TagString: Untagged
@@ -27513,6 +27617,25 @@ MonoBehaviour:
   weekEffect: {fileID: 4315868542186053074, guid: ead365b8aa54efe49847a8d5254fe6f2, type: 3}
   strongEffect: {fileID: 212213283663316248, guid: e70f669b96eb15747b33ae23f543b13b, type: 3}
   HitDragon: {fileID: 4315868542186053074, guid: 97b8cdab5912c3f4b924f12bdff47589, type: 3}
+--- !u!114 &1386223877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386223874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: heal
+    clip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+  - name: week
+    clip: {fileID: 8300000, guid: acbcb75601b0082458fda8807f67c813, type: 3}
+  - name: strengh
+    clip: {fileID: 8300000, guid: b0e62ed71b1538648b719821f4f63b4c, type: 3}
 --- !u!1001 &1389110777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31346,6 +31469,7 @@ GameObject:
   - component: {fileID: 1633994881}
   - component: {fileID: 1633994879}
   - component: {fileID: 1633994882}
+  - component: {fileID: 1633994883}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -31413,6 +31537,21 @@ MonoBehaviour:
   - {fileID: 1505475383}
   - {fileID: 252995861}
   - {fileID: 305120955}
+--- !u!114 &1633994883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633994877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: click
+    clip: {fileID: 8300000, guid: 35cf7766e9e2aa542811e896fde57989, type: 3}
 --- !u!1001 &1643629902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33522,6 +33661,16 @@ MonoBehaviour:
   soundDatas:
   - name: Hit
     clip: {fileID: 8300000, guid: ed6356304d3bf424c93d74b8a4a7e5d3, type: 3}
+  - name: Attack
+    clip: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+  - name: pattern
+    clip: {fileID: 8300000, guid: a3d1c0f892e90a84fa26bedc01554087, type: 3}
+  - name: skill
+    clip: {fileID: 8300000, guid: c861164b2e184a04fa848e2a25d3d4d9, type: 3}
+  - name: Die
+    clip: {fileID: 8300000, guid: b019e546d8ac2ef47b8ac1a338fe11e8, type: 3}
+  - name: Tele
+    clip: {fileID: 8300000, guid: 7a9de5c4d998126449cf964a6b27a8b0, type: 3}
 --- !u!114 &1753071934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34418,7 +34567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1812656080
 Transform:
   m_ObjectHideFlags: 0
@@ -41840,7 +41989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2137082002
 Transform:
   m_ObjectHideFlags: 0

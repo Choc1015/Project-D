@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EffectManager : Singleton<EffectManager>
 {
+    SoundController soundController;
+
     [Header("HitBoss2 Effect")]
     public GameObject hitPuple;
     public GameObject healEffect;
@@ -12,6 +14,11 @@ public class EffectManager : Singleton<EffectManager>
 
     [Header("DragonHit Boss")]
     public GameObject HitDragon;
+
+    private void Start()
+    {
+        soundController = GetComponent<SoundController>();
+    }
 
     public void PlayHitPupleEffect(Vector2 hitPoint)
     {
@@ -30,7 +37,7 @@ public class EffectManager : Singleton<EffectManager>
             Debug.LogWarning("healEffect GameObject is not assigned!");
             return;
         }
-
+        soundController.PlayOneShotSound("heal");
         ObjectPoolManager.Instance.SpawnFromPool(healEffect.name, hitPoint);
     }
     public void PlayWeekEffect(Vector2 hitPoint)
@@ -40,6 +47,7 @@ public class EffectManager : Singleton<EffectManager>
             Debug.LogWarning("weekEffect GameObject is not assigned!");
             return;
         }
+        soundController.PlayOneShotSound("week");
 
         ObjectPoolManager.Instance.SpawnFromPool(weekEffect.name, hitPoint);
     }
@@ -50,6 +58,7 @@ public class EffectManager : Singleton<EffectManager>
             Debug.LogWarning("strongEffect GameObject is not assigned!");
             return;
         }
+        soundController.PlayOneShotSound("strengh");
 
         ObjectPoolManager.Instance.SpawnFromPool(strongEffect.name, hitPoint);
     }

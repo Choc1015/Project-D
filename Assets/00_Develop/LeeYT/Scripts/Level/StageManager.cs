@@ -56,6 +56,7 @@ public class StageManager : Singleton<StageManager>
     IEnumerator NextStageCou(float timer, Vector3 pos, float minX, float maxX, float minY, float maxY,GameObject cutScene = null, OptionUI data = null, bool isDragon = false)
     {
         GameManager.Instance.SetGameState(GameState.Stop);
+        PlayStageSound();
         if (cutScene)
         {
             cutScene.SetActive(true);

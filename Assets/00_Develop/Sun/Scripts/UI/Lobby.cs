@@ -6,9 +6,12 @@ public class Lobby : MonoBehaviour
 {
     public GameObject setting;
 
+    private SoundController soundController;
+
     void Start()
     {
-        
+        soundController = GetComponent<SoundController>();
+        soundController.PlayLoopSound("로비");
     }
 
     // Update is called once per frame
@@ -23,10 +26,12 @@ public class Lobby : MonoBehaviour
 
     public void SetActiveSetting(bool isActive)
     {
+        soundController.PlayOneShotSound("클릭");
         setting.SetActive(isActive);
     }
     public void QuitGame()
     {
+        soundController.PlayOneShotSound("클릭");
         Application.Quit();
     }
 }

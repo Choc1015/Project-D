@@ -143,6 +143,7 @@ public class MagicVilan : Human
             }
             animator.SetTrigger("Attack"); 
             yield return new WaitForSeconds(1);
+            soundController.PlayOneShotSound("Attack");
             PatternManager.Instance.SpawnTBall(transform.position + Vector3.up * 2.5f);
             yield return null;
         }
@@ -187,6 +188,7 @@ public class MagicVilan : Human
             {
                 float randPosX = Random.Range(minX, maxX);
                 float randPosY = Random.Range(minY, maxY);
+                soundController.PlayOneShotSound("Tele");
                 transform.position = new Vector2(randPosX, randPosY);
                 FlipSprite();
             }
@@ -237,7 +239,7 @@ public class MagicVilan : Human
         Debug.Log("Entering Pattern1 State");
         CancelInvoke("RandomPersent");
         isPattern = true;
-
+        soundController.PlayOneShotSound("pattern");
         // 위치 변경
         Vector2 temp = transform.position;
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
@@ -272,11 +274,12 @@ public class MagicVilan : Human
 
 
     private IEnumerator BombCount(int Count)
-    {
+    {   
         for (int i = 0; i < Count; i++)
         {
             FlipSprite();
             yield return new WaitForSeconds(1f);
+            soundController.PlayOneShotSound("skill");
             PatternManager.Instance.Bomb(transform.position + Vector3.up * 2.5f);
         }
     }
@@ -370,6 +373,7 @@ public class MagicVilan : Human
         CancelInvoke("RandomPersent");
         isAlive = false;
         movement.MoveToRigid(Vector3.zero, 0, isAlive);
+        soundController.PlayOneShotSound("Die");    
         animator.SetTrigger("Die");
 
         // Play death animation or effects

@@ -391,6 +391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statController: {fileID: 5297774566720315465}
   movement: {fileID: 2286338122738056845}
+  useKnockBack: 1
+  isObject: 0
   chaseRange: 100
   attackRange: 0.66
   AttackOffset: {x: -0.58, y: -0.43, z: 0}
@@ -414,6 +416,8 @@ MonoBehaviour:
   soundDatas:
   - name: Hit
     clip: {fileID: 8300000, guid: ed6356304d3bf424c93d74b8a4a7e5d3, type: 3}
+  - name: Die
+    clip: {fileID: 8300000, guid: 856be9b3aa9b1c24b9337040e6b223ef, type: 3}
 --- !u!61 &1299041334589566160
 BoxCollider2D:
   m_ObjectHideFlags: 0
