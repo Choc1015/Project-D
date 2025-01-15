@@ -219,7 +219,7 @@ public class DragonBoss : Human
         soundController.PlayOneShotSound("houling");
         isAlive = false;
         animator.SetTrigger("Die");
-
+        GameManager.Instance.gameClearCutScene.SetActive(true);
         yield return new WaitForSeconds(5f); // Wait before destroying the object
         Destroy(gameObject);
     }

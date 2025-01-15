@@ -20,7 +20,7 @@ public class GameManager : Singleton<GameManager>
     public Action SetLayerPosition;
     public MapNumber[] mapNumbers;
 
-    public GameObject gameOverCutScene;
+    public GameObject gameOverCutScene, gameClearCutScene;
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
