@@ -11,6 +11,7 @@ public class NextStage : MonoBehaviour
     public int curStage;
     [SerializeField] private GameObject Player;
     [SerializeField] private float minX, maxX;
+    [SerializeField] private float minY, maxY;
     public GameObject cutScene;
 
     [Header("Options")]
@@ -68,7 +69,7 @@ public class NextStage : MonoBehaviour
 
     public void GoNextStage(OptionUI option = null, GameObject cutScene = null, bool isDragon = false)
     {
-        StageManager.Instance.NextStage(nextStagePos, minX, maxX, cutScene, option, isDragon);
+        StageManager.Instance.NextStage(nextStagePos, minX, maxX, minY, maxY,cutScene, option, isDragon);
     }
     public void ActionGoNextStage() => GoNextStage();
     public void ActiveOption()
