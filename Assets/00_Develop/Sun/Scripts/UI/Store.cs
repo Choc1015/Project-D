@@ -15,6 +15,7 @@ public class Store : UIBase
         yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
         UIManager.Instance.SetActiveFadeImage(false, 0, 1, Color.black);
+        StageManager.Instance.PlayStageSound();
         yield return new WaitForSeconds(1f);
         GameManager.Instance.SetGameState(GameState.Play);
 

@@ -8674,6 +8674,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 43ba0f885bb0f2c40b5c071819b33cb3, type: 3}
   - name: Stage_2_BGM
     clip: {fileID: 8300000, guid: 31df8877f069a0944976f8ab6c3556fa, type: 3}
+  - name: Store
+    clip: {fileID: 8300000, guid: c4979e6e1aea46f4dbaa7b178d51b289, type: 3}
 --- !u!1001 &415703113
 PrefabInstance:
   m_ObjectHideFlags: 0
