@@ -56,7 +56,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
 
     }
-
+    public void ResetSingleton() => instance = null;
     private void OnDestroy()
     {
         // ½Ì±ÛÅæ °´Ã¼ ÆÄ±« Ã¼Å©

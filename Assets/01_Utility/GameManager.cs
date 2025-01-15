@@ -19,6 +19,8 @@ public class GameManager : Singleton<GameManager>
 
     public Action SetLayerPosition;
     public MapNumber[] mapNumbers;
+
+    public GameObject gameOverCutScene;
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
@@ -79,5 +81,11 @@ public class GameManager : Singleton<GameManager>
     {
         minY = newMinY;
         maxY = newMaxY;
+    }
+
+    public void ResetGame()
+    {
+        ResetSingleton();
+        Utility.SetPlayer(null);
     }
 }

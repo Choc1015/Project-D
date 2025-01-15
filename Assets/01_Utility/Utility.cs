@@ -22,7 +22,13 @@ public static class Utility
     }
     public static void SetPlayer(GameObject player)
     {
-        playerController = player.GetComponent<PlayerController>();
+        if (player)
+            playerController = player.GetComponent<PlayerController>();
+        else
+        {
+            playerController = null;
+            playerStat = null;
+        }
     }
     public static StatSO playerStat;
     public static StatSO GetPlayerStat() => playerStat;

@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 /*using Photon;
 using Photon.Pun;*/
 using DG.Tweening;
-using UnityEditor.U2D.Aseprite;
 
 public enum PlayerType { None, Warrior, Priest, Wizard };
 public class PlayerController : Human/*, IPunObservable*/
@@ -118,9 +117,10 @@ public class PlayerController : Human/*, IPunObservable*/
         if(playerState.CurrentState() == PlayerState.Die)
         {
             deathTimer -= Time.deltaTime;
-            if(deathTimer < 0)
+            if(deathTimer < 0 && !GameManager.Instance.gameOverCutScene.activeInHierarchy)
             {
-                Debug.Log("게임오버");
+                GameManager.Instance.gameOverCutScene.SetActive(true);
+                soul.GetComponent<Animator>().SetTrigger("Die");
             }
         }
     }
@@ -284,6 +284,7 @@ public class PlayerController : Human/*, IPunObservable*/
         soul.SetActive(true);
         movement.StopMove();
         deathTimer = 20;
+        skillFunctionsController.SetAllDisable(25f);
         //base.DieHuman();
     }
     
@@ -302,6 +303,7 @@ public class PlayerController : Human/*, IPunObservable*/
             reviveInfo.nextPlayer = default;
             reviveInfo.statue = default;
             GameManager.Instance.maxXTemp = 0;
+            skillFunctionsController.ResetValue();
         }
         
     }

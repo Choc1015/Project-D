@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
+    public bool isGameScene = true;
     public EventTrigger[] triggers;
     private EventTrigger curTrigger;
     [SerializeField] private int index = -1;
@@ -13,8 +14,9 @@ public class EventController : MonoBehaviour
     {
         triggers = transform.GetComponentsInChildren<EventTrigger>();
         NextEvent();
-        
-        GameManager.Instance.SetGameState(GameState.Stop);
+
+        if(isGameScene)
+            GameManager.Instance.SetGameState(GameState.Stop);
     }
     void Update()
     {
@@ -36,7 +38,8 @@ public class EventController : MonoBehaviour
             gameObject.SetActive(false);
             if(nextController)
                 nextController.SetActive(true);
-            GameManager.Instance.SetGameState(GameState.Play);
+            if(isGameScene)
+                GameManager.Instance.SetGameState(GameState.Play);
         }
     }
 }

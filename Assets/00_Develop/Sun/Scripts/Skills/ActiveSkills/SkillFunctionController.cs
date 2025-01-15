@@ -59,7 +59,8 @@ public class SkillFunctionController : MonoBehaviour
         {
             skillFunction.command.isDisable = true;
         }
-        Invoke("ResetValue", resetTime);
+        if(resetTime < 20)
+            Invoke("ResetValue", resetTime);
     }
     public void ResetValue()
     {

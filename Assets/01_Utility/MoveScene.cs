@@ -24,6 +24,8 @@ public class MoveScene : MonoBehaviour
     {
         UIManager.Instance.SetActiveFadeImage(true, 1, 1, Color.black);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(sceneName);
+        LoadScene();
     }
+
+    public void LoadScene() => SceneManager.LoadScene(sceneName);
 }
