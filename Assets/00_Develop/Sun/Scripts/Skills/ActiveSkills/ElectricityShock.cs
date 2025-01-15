@@ -8,7 +8,8 @@ public class ElectricityShock : EnchantSkill
     {
         playerSkill.attackAE += DetectRange;
         SetLayerMask(1 << LayerMask.NameToLayer("Enemy"));
-        
+
+
     }
     private void OnEnable()
     {

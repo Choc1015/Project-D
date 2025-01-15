@@ -64,6 +64,18 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2816030029196920178}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 0
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -196,6 +208,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2213991784812158332}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
@@ -409,6 +433,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ReflectionDefense
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 8006273565895517629}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
             m_BoolArgument: 0
           m_CallState: 2
     exitAction:

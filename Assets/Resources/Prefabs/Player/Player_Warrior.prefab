@@ -173,7 +173,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 3457754978416590071}
           m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: PlayOneShotSound
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -181,6 +181,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ElectricityShock
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 8650797442460355006}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
@@ -387,7 +399,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 5365842594512613153}
           m_TargetAssemblyTypeName: SkillDefense, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: UseSkill
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -399,7 +411,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 7758387556606053222}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -419,6 +431,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: ReflectionDefense
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1439919917037640019}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
@@ -516,7 +540,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 2914680637710567805}
           m_TargetAssemblyTypeName: PlayerSkill, Assembly-CSharp
-          m_MethodName: 
+          m_MethodName: DashAttack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -528,7 +552,7 @@ MonoBehaviour:
           m_CallState: 2
         - m_Target: {fileID: 8638467368420381139}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -538,7 +562,7 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 3457754978416590071}
+        - m_Target: {fileID: 1072395938067446519}
           m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
           m_MethodName: PlayOneShotSound
           m_Mode: 5
@@ -547,7 +571,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: DashAttack
+            m_StringArgument: Skill
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
