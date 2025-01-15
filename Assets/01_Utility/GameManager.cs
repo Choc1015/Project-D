@@ -75,4 +75,9 @@ public class GameManager : Singleton<GameManager>
         minX = newMinX;
         maxX = newMaxX;
     }
+    public void SetCameraRangeVertical(float newMinY, float newMaxY)
+    {
+        minY = newMinY;
+        maxY = newMaxY;
+    }
 }

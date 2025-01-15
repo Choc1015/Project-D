@@ -344,6 +344,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statController: {fileID: 1555824746343618370}
   movement: {fileID: 4612856195454397712}
+  useKnockBack: 1
+  isObject: 1
 --- !u!50 &8236671448344443475
 Rigidbody2D:
   serializedVersion: 4

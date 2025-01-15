@@ -36,11 +36,11 @@ public class StageManager : Singleton<StageManager>
 
         }
     }
-    public void NextStage(Vector3 pos, float minX, float maxX, GameObject cutScene = null, OptionUI data = null)
+    public void NextStage(Vector3 pos, float minX, float maxX, float minY, float maxY, GameObject cutScene = null, OptionUI data = null, bool isDragon = false)
     {
         CurrentStage++;
 
-        StartCoroutine(NextStageCou(0.5f, pos,minX, maxX, cutScene, data));
+        StartCoroutine(NextStageCou(0.5f, pos,minX, maxX, minY, maxY,cutScene, data, isDragon));
     }
     public void ActiveStage(MapNumber[] mapNumbers, int number, bool isActive)
     {
@@ -53,7 +53,7 @@ public class StageManager : Singleton<StageManager>
             
         }
     }
-    IEnumerator NextStageCou(float timer, Vector3 pos, float minX, float maxX, GameObject cutScene = null, OptionUI data = null)
+    IEnumerator NextStageCou(float timer, Vector3 pos, float minX, float maxX, float minY, float maxY,GameObject cutScene = null, OptionUI data = null, bool isDragon = false)
     {
         GameManager.Instance.SetGameState(GameState.Stop);
         if (cutScene)
@@ -66,7 +66,10 @@ public class StageManager : Singleton<StageManager>
             UIManager.Instance.SetActiveFadeImage(true, 1, timer, fadeColor);
             
         }
-        yield return new WaitForSeconds(timer + 0.5f);
+        if(isDragon)
+            yield return new WaitForSeconds(5);
+        else
+            yield return new WaitForSeconds(timer + 0.5f);
         Utility.GetPlayerTr().position = pos;
 
         
@@ -89,6 +92,8 @@ public class StageManager : Singleton<StageManager>
 
         UIManager.Instance.bossHealthBar.gameObject.SetActive(false);
         GameManager.Instance.SetCameraRange(minX,maxX);
+        if (minY != 0 && maxY != 0)
+            GameManager.Instance.SetCameraRangeVertical(minY, maxY);
         if (cutScene)
             yield return new WaitUntil(() => cutScene.activeInHierarchy == false);
         else
