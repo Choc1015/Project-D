@@ -15,7 +15,7 @@ public class Human : MonoBehaviour
     {
         if (statController != null)
         {
-            CameraShake.cameraShake.ActiveCameraShake(0.01f);
+            CameraShake.cameraShake.ActiveCameraShake(0.02f);
             statController.GetStat(StatInfo.Health).Value -= attackDamage;
             if (statController.GetStat(StatInfo.Health).Value <= 0)
                 DieHuman();
