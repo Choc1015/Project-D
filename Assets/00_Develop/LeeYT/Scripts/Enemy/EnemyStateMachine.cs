@@ -210,6 +210,7 @@ public class EnemyStateMachine : Human
         {
             Debug.Log("Entering Die State");
             isAlive = false;
+            soundController.PlayOneShotSound("Die");
             movement.MoveToRigid(Vector3.zero, 0, isAlive);
             animator.SetTrigger("Die");
             ItemManager.Instance?.SpawnItem(transform.position);

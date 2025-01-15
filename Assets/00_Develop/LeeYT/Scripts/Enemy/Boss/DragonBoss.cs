@@ -73,6 +73,7 @@ public class DragonBoss : Human
     {
 
         Debug.Log("Entering Spawn State");
+        soundController.PlayOneShotSound("houling");
 
         while (currentState == BossState.Spawn)
         {
@@ -133,7 +134,7 @@ public class DragonBoss : Human
     protected IEnumerator Punch()
     {
         Debug.Log("Entering Punch State");
-
+        soundController.PlayOneShotSound("Punch");
         animator.SetTrigger("Punch");
         isPattern = true;
         Invoke("OnAttack", 0.5f);
@@ -153,11 +154,11 @@ public class DragonBoss : Human
 
     protected IEnumerator Slide()
     {
-        Debug.Log("Entering Punch State");
+        Debug.Log("Entering Slide State");
 
         isPattern = true; 
         Invoke("OnAttack", 0.5f);
-
+        soundController.PlayOneShotSound("Slide");
         animator.SetTrigger("Slide");
         yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonSlide") &&
@@ -169,10 +170,11 @@ public class DragonBoss : Human
 
     protected IEnumerator Breath()
     {
-        Debug.Log("Entering Punch State");
+        Debug.Log("Entering Breath State");
 
         isPattern = true;
-        Invoke("OnAttack", 1f);   
+        Invoke("OnAttack", 1f);
+        soundController.PlayOneShotSound("Breath");
 
         transform.position = new Vector3(0.5f, 0, 0);
 
@@ -218,6 +220,7 @@ public class DragonBoss : Human
     {
         Debug.Log("Entering Die State");
         CancelInvoke("RandomPersent");
+        soundController.PlayOneShotSound("houling");
         isAlive = false;
         animator.SetTrigger("Die");
 

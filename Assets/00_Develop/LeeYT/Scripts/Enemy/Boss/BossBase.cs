@@ -265,6 +265,7 @@ public class BossBase : Human
             if (PatternManager.Instance.isPattern1 && PatternManager.Instance.IsSunAlive)
             {
                 Debug.Log(" Check Test State");
+                soundController.PlayOneShotSound("p1");
                 PatternManager.Instance.StartDarkNight();
                 PatternManager.Instance.SpawnSun();
                 PatternManager.Instance.isPattern1 = false;
@@ -290,12 +291,15 @@ public class BossBase : Human
         transform.position = new Vector2(2.36f, -0.8f);
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
         yield return new WaitForSeconds(1f);
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil1");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(0);
 
         animator.SetTrigger("Stop");
         yield return new WaitForSeconds(1f);
+
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil2");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(1);
@@ -314,24 +318,28 @@ public class BossBase : Human
         transform.position = new Vector2(2.36f, -0.8f);
         movement.MoveToRigid(Vector3.zero, statController.GetStat(StatInfo.MoveSpeed).Value);
         yield return new WaitForSeconds(1f);
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil2");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(1);
 
         animator.SetTrigger("Stop");
         yield return new WaitForSeconds(1f);
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil1");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(0);
 
         animator.SetTrigger("Stop");
         yield return new WaitForSeconds(1f);
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil1");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(0);
 
         animator.SetTrigger("Stop");
         yield return new WaitForSeconds(1f);
+        soundController.PlayOneShotSound("p23");
         animator.SetTrigger("Skil2");
         yield return new WaitForSeconds(2f);
         PatternManager.Instance.SpawnDarkSpell(1);
@@ -393,6 +401,14 @@ public class BossBase : Human
         }
         UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         soundController.PlayOneShotSound("Hit");
+
+        int rnd = Random.Range(0, 4);
+        if(rnd == 0)
+        {
+            soundController.PlayOneShotSound("Damage");
+        }
+
+
     }
     protected override void DieHuman()
     {

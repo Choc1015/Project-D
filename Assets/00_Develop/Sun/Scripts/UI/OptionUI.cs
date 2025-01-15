@@ -12,9 +12,11 @@ public class OptionUI : UIBase
     public NextStage nextStage;
     public int currentStage;
     private GameObject cutScene;
+    private SoundController soundController;
     private void Start()
     {
         btn.onClick.AddListener(() => OnClick_Btn());
+        soundController = GetComponent<SoundController>();
     }
     public void Init(OptionData data, NextStage nextStage, int currentStage)
     {

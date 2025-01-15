@@ -11,10 +11,12 @@ public class StoreItem : MonoBehaviour
     public float price;
     private Image image;
     private TMPro.TextMeshProUGUI priceTxt;
-   
+    private SoundController soundController;
+
     private bool isDisable;
     void Start()
     {
+        soundController= GetComponent<SoundController>();
         GetComponent<Button>().onClick.AddListener(OnClickItem);
         image = transform.Find("Icon").GetComponent<Image>();
         priceTxt = transform.Find("Price").GetComponent<TMPro.TextMeshProUGUI>();
@@ -27,8 +29,10 @@ public class StoreItem : MonoBehaviour
     }
     public void OnClickItem()
     {
+        
         if (!isDisable && CurrencyManager.Instance.Gold >= price)
         {
+            soundController.PlayOneShotSound("gold");
             isDisable = true;
             item.UseItem();
             image.DOColor(Color.black, 0.1f);

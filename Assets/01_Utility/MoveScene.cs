@@ -7,8 +7,16 @@ public class MoveScene : MonoBehaviour
 {
     public string sceneName;
 
+    private SoundController soundController;
+
+    private void Start()
+    {
+        soundController = GetComponent<SoundController>();
+    }
+
     public void OnClick_SceneLoad()
     {
+        soundController.PlayOneShotSound("Å¬¸¯");
         StartCoroutine(LoadSceneCou());
     }
 

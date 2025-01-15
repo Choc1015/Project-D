@@ -275,6 +275,7 @@ public class PlayerController : Human/*, IPunObservable*/
     protected override void DieHuman()
     {
         playerState.ChangeState(PlayerState.Die);
+        soundController.PlayOneShotSound("Die");
         sprite.DOColor(dieColor, 0.5f);
         playerBlessing.DOColor(dieColor, 0.5f);
         soul.SetActive(true);
@@ -287,6 +288,7 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         if(playerState.CurrentState() == PlayerState.Die)
         {
+            soundController.PlayOneShotSound("revive");
             playerState.ChangeState(PlayerState.Idle);
             sprite.DOColor(baseColor, 0.5f);
             playerBlessing.DOColor(baseColor, 0.5f);
