@@ -10,6 +10,7 @@ public class InstallationSkill : MonoBehaviour
     public float despawnTimer;
     public float skillRange;
     public float skillDelayTime;
+    public Transform obj;
     void OnEnable()
     {
         SpawnObj(parent.position);
@@ -25,7 +26,8 @@ public class InstallationSkill : MonoBehaviour
     {
         transform.parent = parent;
         gameObject.SetActive(false);
-
+        if (obj)
+            obj.localScale = Vector3.zero;
         CancelInvoke();
     }
     public virtual void UseSkill()

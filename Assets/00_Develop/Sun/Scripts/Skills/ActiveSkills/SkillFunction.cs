@@ -13,6 +13,7 @@ public class SkillFunction : MonoBehaviour
     public float invokeTimer;
     public float skillCooldown;
     public float skillManaValue;
+    public bool isDisable;
     public void Init(SkillFunctionController controller)
     {
         this.controller = controller;
@@ -26,6 +27,10 @@ public class SkillFunction : MonoBehaviour
         controller.player.ResetState();
         //controller.player.GetPlayerState().ChangeState(PlayerState.Idle);
         controller.player.StopCommand();
+        if (isDisable)
+            gameObject.SetActive(false);
+        if (skillObj)
+            skillObj.SetActive(false);
     }
     public void UseSkill()
     {
@@ -34,6 +39,7 @@ public class SkillFunction : MonoBehaviour
         controller.SetAllDisable(skillCooldown);
         Utility.GetPlayer().GetStatController().GetStat(StatInfo.Mana).Value -= skillManaValue;
         Utility.GetPlayer().ActiveUpdatePlayerUI();
-
+        if (skillObj)
+            skillObj.SetActive(true);
     }
 }
