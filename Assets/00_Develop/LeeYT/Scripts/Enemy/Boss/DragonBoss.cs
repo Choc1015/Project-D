@@ -134,7 +134,6 @@ public class DragonBoss : Human
     protected IEnumerator Punch()
     {
         Debug.Log("Entering Punch State");
-        soundController.PlayOneShotSound("Punch");
         animator.SetTrigger("Punch");
         isPattern = true;
         Invoke("OnAttack", 0.5f);
@@ -158,7 +157,6 @@ public class DragonBoss : Human
 
         isPattern = true; 
         Invoke("OnAttack", 0.5f);
-        soundController.PlayOneShotSound("Slide");
         animator.SetTrigger("Slide");
         yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonSlide") &&
@@ -174,8 +172,6 @@ public class DragonBoss : Human
 
         isPattern = true;
         Invoke("OnAttack", 1f);
-        soundController.PlayOneShotSound("Breath");
-
         transform.position = new Vector3(0.5f, 0, 0);
 
         int rndFlip = Random.Range(0, 2);

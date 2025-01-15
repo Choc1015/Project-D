@@ -44,7 +44,6 @@ public class BossBase : Human
     {
         Initialize();
         AttackHitBox = transform.position;
-
         UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         UIManager.Instance.bossHealthBar.gameObject.SetActive(true);
     }
