@@ -91,9 +91,11 @@ public class StageManager : Singleton<StageManager>
         }
 
         UIManager.Instance.bossHealthBar.gameObject.SetActive(false);
+
         GameManager.Instance.SetCameraRange(minX,maxX);
         if (minY != 0 && maxY != 0)
             GameManager.Instance.SetCameraRangeVertical(minY, maxY);
+
         if (cutScene)
             yield return new WaitUntil(() => cutScene.activeInHierarchy == false);
         else

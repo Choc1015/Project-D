@@ -265,6 +265,7 @@ MonoBehaviour:
   statController: {fileID: 219253064508369906}
   movement: {fileID: 5212341399615060278}
   useKnockBack: 1
+  isObject: 0
   playerType: 0
   skillController: {fileID: 5786086227377823556}
   skillFunctionsController: {fileID: 7895550839927921383}
@@ -280,9 +281,10 @@ MonoBehaviour:
   offset: {x: 0, y: 0.7, z: 0}
   spriteLight: {fileID: 0}
   defenseType: 
+  defenseValue: 0
   skillSwapPrefab: {fileID: 0}
   skillSwapUI: {fileID: 0}
-  maxCombo: 0
+  maxCombo: 3
   enemyHitPrefab: {fileID: -6405094108770263778, guid: fda1449f03e5b9b408a2aa88946ce791, type: 3}
 --- !u!114 &219253064508369906
 MonoBehaviour:
@@ -814,6 +816,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c63aada0fcd2942478e902a069764210, type: 3}
   - name: SlidingHit
     clip: {fileID: 8300000, guid: ccd5b149da32b6848acf8e1974188156, type: 3}
+  - name: HitVoice
+    clip: {fileID: 8300000, guid: 2cb8b624d73f11d4c8a326a7b3f7e5df, type: 3}
 --- !u!114 &-8184644315775791750
 MonoBehaviour:
   m_ObjectHideFlags: 0

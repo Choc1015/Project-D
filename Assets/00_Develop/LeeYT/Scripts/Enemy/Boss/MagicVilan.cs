@@ -411,6 +411,7 @@ public class MagicVilan : Human
                 StageManager.Instance.WaveEnemyCount--;
             }
         }
+        UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         soundController.PlayOneShotSound("Hit");
     }
     protected override void DieHuman()

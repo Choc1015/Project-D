@@ -193,7 +193,7 @@ public class PlayerController : Human/*, IPunObservable*/
         float damage = attackDamage;
         if (defenseType == "BasicDefense")
             damage = attackDamage * 0.2f;
-        else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense")
+        else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense" || defenseType == "MagicDefense")
         {
             defenseValue -= damage;
             if (defenseType == "ReflectionDefense")
@@ -208,6 +208,11 @@ public class PlayerController : Human/*, IPunObservable*/
             info.ResetValue();
         ActiveInvincibility(0.1f);
         base.TakeDamage(damage, attackHuman, info);
+
+        int randHitVoice = UnityEngine.Random.Range(0, 4);
+        if (randHitVoice == 0)
+            soundController.PlayOneShotSound("HitVoice");
+
         if (playerState.CurrentState() != PlayerState.Die)
         {
             if (damage != attackDamage)

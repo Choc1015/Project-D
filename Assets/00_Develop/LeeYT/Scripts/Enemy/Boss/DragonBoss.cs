@@ -31,7 +31,7 @@ public class DragonBoss : Human
     [Header("속도")]
     public float moveSpeed = 2f; // 이동 속도
 
-
+    public Vector3 hitOffset;
 
     private void Start()
     {
@@ -241,13 +241,10 @@ public class DragonBoss : Human
         if (this.info != null && this.info.isKnockBack)
             return;
         base.TakeDamage(attackDamage, attackHuman, info);
-        player.SpawnHitEffect(transform.position);
+        player.SpawnHitEffect(transform.position+ hitOffset);
         // Simulate death for the example
-        if (isAlive)
-        {
-
-        }
-        else
+        
+        if(!isAlive)
         {
             ChangeState(BossState.Die);
             if (StageManager.Instance.WaveEnemyCount > 0)
@@ -255,6 +252,7 @@ public class DragonBoss : Human
                 StageManager.Instance.WaveEnemyCount--;
             }
         }
+        UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         soundController?.PlayOneShotSound("Hit");
     }
     protected override void DieHuman()
