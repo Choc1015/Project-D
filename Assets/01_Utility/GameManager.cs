@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
 
         }
 
-        players_Dic[PlayerType.Warrior].gameObject.SetActive(true);
+        players_Dic[PlayerType.Wizard].gameObject.SetActive(true);
         mapNumbers = Resources.FindObjectsOfTypeAll<MapNumber>();
 
     }

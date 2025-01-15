@@ -57,7 +57,7 @@ public class PlayerController : Human/*, IPunObservable*/
 
     private float deathTimer;
 
-   
+    public SpriteRenderer shieldImage;
 
     void Awake()
     {
@@ -102,6 +102,7 @@ public class PlayerController : Human/*, IPunObservable*/
     public void LocalUpdate(bool flipX)
     {
         sprite.transform.localScale = flipX?Vector3.one+(Vector3.left*2): Vector3.one;
+        
         spriteLight?.ChangeSprite();
     }
     private void Update()
@@ -177,6 +178,8 @@ public class PlayerController : Human/*, IPunObservable*/
     {
         defenseType = "";
         defenseValue = 0;
+        shieldImage.gameObject.SetActive(false);
+        shieldImage.sprite = null;
     }
     public string GetDefenseType() => defenseType;
     public override void TakeDamage(float attackDamage, Human attackHuman, KnockBackInfo info=null)

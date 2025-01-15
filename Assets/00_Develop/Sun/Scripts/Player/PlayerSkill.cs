@@ -169,15 +169,15 @@ public class PlayerSkill : MonoBehaviour
         else
             return false;
     }
-    public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null)
+    public void GiveDamage(float attackDamage, Human enemy, KnockBackInfo info = null, bool skill = false)
     {
-        StartCoroutine(AttackCorou(attackDamage, enemy, info));
+        StartCoroutine(AttackCorou(attackDamage, enemy, info, skill));
     }
-    IEnumerator AttackCorou(float attackDamage, Human enemy, KnockBackInfo info = null)
+    IEnumerator AttackCorou(float attackDamage, Human enemy, KnockBackInfo info = null, bool skill = false)
     {
         
         yield return new WaitForSeconds(attackDelayTime);
-        if(enemy && (enemy.isObject || Vector3.Distance(enemy.transform.position, transform.position) < playerController.GetStatController().GetStat(StatInfo.AttakRange).Value))
+        if(enemy && (skill || enemy.isObject || Vector3.Distance(enemy.transform.position, transform.position) < playerController.GetStatController().GetStat(StatInfo.AttakRange).Value))
             enemy.TakeDamage(attackDamage, playerController, info);
     }
     public void Heal(float value)
