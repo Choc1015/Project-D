@@ -382,6 +382,7 @@ public class MagicVilan : Human
 
         yield return new WaitForSeconds(5f); // Wait before destroying the object
         GetComponent<SetLayer>()?.DestroySetLayer();
+        StageManager.Instance.StageCount++;
         ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 

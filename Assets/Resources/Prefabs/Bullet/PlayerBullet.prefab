@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -196054115, guid: 58a9978690104704dba178c87d893c55, type: 3}
+    - target: {fileID: 2029723752406125708, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3165053530155999753, guid: 2858b662f3e9ea94aa85fadb934f7eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -134,7 +138,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

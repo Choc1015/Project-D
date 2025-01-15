@@ -104,7 +104,7 @@ MonoBehaviour:
   kind: 0
   bulletController: {fileID: 6703085358552638442}
   skills: {fileID: 7873700496637960509}
-  timer: 1
+  timer: 0
   spawnCount: 1
   spawnOffset: {x: 0, y: 2, z: 0}
 --- !u!114 &2816030029196920178
@@ -645,9 +645,6 @@ MonoBehaviour:
   bullets:
   - bulletKind: 0
     bulletPrefab: {fileID: 4359426609343304250, guid: 1039c3b3f59b623479dc72ab945ecf3b, type: 3}
-    createCount: 5
-  - bulletKind: 1
-    bulletPrefab: {fileID: 6451261132927001516, guid: f9f9559ca86062f4ebfe924373230f7a, type: 3}
     createCount: 5
 --- !u!114 &7695085711888045239 stripped
 MonoBehaviour:

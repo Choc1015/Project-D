@@ -7,6 +7,7 @@ using UnityEngine;
 public class StageManager : Singleton<StageManager>
 {
     public int CurrentStage { get; private set; }
+    public int StageCount;
     public int WaveEnemyCount;
     public bool IsBoss = false;
     public bool IsStopCamera= false;
@@ -113,7 +114,7 @@ public class StageManager : Singleton<StageManager>
     {
         if (soundController == null)
             soundController = GetComponent<SoundController>();
-        soundController.PlayLoopSound($"Stage_{CurrentStage}_BGM");
+        soundController.PlayLoopSound($"Stage_{StageCount}_BGM");
     }
 
     public void SetCameraStop(bool isStop, WavePoint wave)

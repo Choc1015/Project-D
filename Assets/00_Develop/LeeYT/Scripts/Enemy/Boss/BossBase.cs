@@ -359,9 +359,10 @@ public class BossBase : Human
 
         // Play death animation or effects
         Debug.Log("Enemy Died");
-
+        StageManager.Instance.StageCount++;
         yield return new WaitForSeconds(2f); // Wait before destroying the object
         GetComponent<SetLayer>()?.DestroySetLayer();
+        
         ObjectPoolManager.Instance.DeSpawnToPool(gameObject);
     }
 

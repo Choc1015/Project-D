@@ -283,7 +283,7 @@ public class PlayerController : Human/*, IPunObservable*/
         playerBlessing.DOColor(dieColor, 0.5f);
         soul.SetActive(true);
         movement.StopMove();
-        deathTimer = 20;
+        deathTimer = 15;
         skillFunctionsController.SetAllDisable(25f);
         //base.DieHuman();
     }
