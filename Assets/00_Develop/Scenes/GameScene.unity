@@ -6024,7 +6024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PM. Lee YunTaek
+  m_text: PM. LEE YUNTAEK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
@@ -6727,7 +6727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programmer. Lee YunTaek
+  m_text: Programmer. LEE YUNTAEK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
@@ -12392,7 +12392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Graphic Designer. Won SangHyuk
+  m_text: Graphic Designer. WON SANGHYEOK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
@@ -24651,7 +24651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Programmer. Kang TaeYang
+  m_text: Programmer. KANG TAEYANG
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
@@ -34434,7 +34434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Graphic Designer. Jung HaRin
+  m_text: Graphic Designer. JUNG HARIN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
@@ -49016,7 +49016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Graphic Designer. Han JaYeong
+  m_text: Graphic Designer. HAN JAYEONG
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
   m_sharedMaterial: {fileID: -2312935967168171977, guid: 7ee0f5318fdbbc34fbebb1031cdd41aa, type: 2}
