@@ -8,6 +8,13 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource bgmSource, effectSource;
     [SerializeField] private SoundData dataTemp;
     private float timer;
+    public AudioSource GetSource(string sourceName)
+    {
+        if (sourceName == "BGM")
+            return bgmSource;
+        else
+            return effectSource;
+    }
     public void PlayOneShotSound(SoundData data, bool isBgmStop = false)
     {
         if (dataTemp != null && dataTemp.name == data.name)

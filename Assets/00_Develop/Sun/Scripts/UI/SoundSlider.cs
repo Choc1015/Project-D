@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class SoundSlider : MonoBehaviour
 {
+    public string objName;
     public AudioSource source;
     public Slider slider;
     void Start()
     {
+        source = SoundManager.Instance.GetSource(objName);
         slider.value = source.volume;
     }
 
-    void Update()
-    {
-        source.volume = slider.value;
-    }
+
+    public void ChangeVolume() => source.volume = slider.value;
 }
