@@ -21,7 +21,6 @@ public class SkillFunctionController : MonoBehaviour
 
     public void ChangeSkill()
     {
-        
         if(currentSkillIndex >= 0)
         {
             skillFunctions[currentSkillIndex].command.isDisable = true;

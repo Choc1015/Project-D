@@ -314,7 +314,8 @@ public class PlayerController : Human/*, IPunObservable*/
     public void ActiveSkillSwap()
     {
         //skillSwapUI.pv.RPC("ActiveSkillSwap", RpcTarget.All);
-        skillSwapUI?.ActiveSkillSwap();
+        if(playerState.CurrentState() == PlayerState.Idle)
+            skillSwapUI?.ActiveSkillSwap();
     }
     public void DisableSkillSwap()
     {
