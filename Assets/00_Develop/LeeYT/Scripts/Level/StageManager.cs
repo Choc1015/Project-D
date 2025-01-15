@@ -81,7 +81,10 @@ public class StageManager : Singleton<StageManager>
             ActiveStage(GameManager.Instance.mapNumbers, data.currentStage, false);
             ActiveStage(GameManager.Instance.mapNumbers, data.data.stageNum, true);
             if(data.data.option == OptionKind.Store)
+            {
                 UIManager.Instance.ActiveStoreUI();
+                soundController.PlayLoopSound("Store");
+            }
 
         }
         else
