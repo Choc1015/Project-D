@@ -6125,7 +6125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &274489799
 Transform:
   m_ObjectHideFlags: 0
@@ -7108,7 +7108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &311119442
 Transform:
   m_ObjectHideFlags: 0
@@ -22863,7 +22863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1162529145
 Transform:
   m_ObjectHideFlags: 0
@@ -25242,6 +25242,7 @@ MonoBehaviour:
   statController: {fileID: 1281690031}
   movement: {fileID: 1281690030}
   useKnockBack: 0
+  isObject: 0
   isAttack: 0
   animator: {fileID: 280283520}
   soundController: {fileID: 1281690033}
@@ -31739,7 +31740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1657387738
 Transform:
   m_ObjectHideFlags: 0
@@ -33149,7 +33150,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1737894184
 Transform:
   m_ObjectHideFlags: 0
@@ -33487,6 +33488,7 @@ MonoBehaviour:
   statController: {fileID: 1753071938}
   movement: {fileID: 1753071937}
   useKnockBack: 1
+  isObject: 0
   chaseRange: 5
   attackRange: 2
   AttackOffset: {x: 0, y: 0, z: 0}
@@ -36654,7 +36656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1927101459
 Transform:
   m_ObjectHideFlags: 0
