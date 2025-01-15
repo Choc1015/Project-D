@@ -21114,7 +21114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1062128117
 Transform:
   m_ObjectHideFlags: 0
@@ -25285,7 +25285,7 @@ MonoBehaviour:
   statController: {fileID: 1281690031}
   movement: {fileID: 1281690030}
   useKnockBack: 0
-  isObject: 0
+  isObject: 1
   isAttack: 0
   animator: {fileID: 280283520}
   soundController: {fileID: 1281690033}
@@ -25294,7 +25294,7 @@ MonoBehaviour:
   Persent2: 10
   Persent3: 10
   moveSpeed: 2
-  hitOffset: {x: 0, y: 0, z: 0}
+  hitOffset: {x: 1.5, y: 0, z: 0}
 --- !u!114 &1281690030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32299,7 +32299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1683556327
 Transform:
   m_ObjectHideFlags: 0
