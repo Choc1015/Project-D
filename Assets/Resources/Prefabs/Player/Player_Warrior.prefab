@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 2807677564061251879}
   - component: {fileID: 4291171547576047472}
   - component: {fileID: 7138415348082515700}
+  - component: {fileID: 8650797442460355006}
   m_Layer: 0
   m_Name: ElectricityShock
   m_TagString: Untagged
@@ -182,6 +183,18 @@ MonoBehaviour:
             m_StringArgument: ElectricityShock
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 8650797442460355006}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 1
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -211,6 +224,21 @@ MonoBehaviour:
   value: 5
   despawnTimer: 10
   skillRange: 2
+--- !u!114 &8650797442460355006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3062169064216416344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: b0e62ed71b1538648b719821f4f63b4c, type: 3}
 --- !u!1 &7404351810362396194
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +356,7 @@ GameObject:
   - component: {fileID: 4542467450819561701}
   - component: {fileID: 7522876058856337979}
   - component: {fileID: 5365842594512613153}
+  - component: {fileID: 1439919917037640019}
   m_Layer: 0
   m_Name: ReflectionDefense
   m_TagString: Untagged
@@ -404,6 +433,18 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1439919917037640019}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 1
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -431,6 +472,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenseType: ReflectionDefense
   value: 10
+--- !u!114 &1439919917037640019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7758387556606053222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: 0685ae79aa980624db272ebaab16b578, type: 3}
 --- !u!1 &8638467368420381139
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8654074959607272565}
   - component: {fileID: 8500858823146571754}
+  - component: {fileID: 1072395938067446519}
   m_Layer: 0
   m_Name: DashAttack
   m_TagString: Untagged
@@ -505,7 +562,7 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 3457754978416590071}
+        - m_Target: {fileID: 1072395938067446519}
           m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
           m_MethodName: PlayOneShotSound
           m_Mode: 5
@@ -514,7 +571,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: DashAttack
+            m_StringArgument: Skill
             m_BoolArgument: 1
           m_CallState: 2
     exitAction:
@@ -530,6 +587,21 @@ MonoBehaviour:
   skillCooldown: 5
   skillManaValue: 5
   isDisable: 1
+--- !u!114 &1072395938067446519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8638467368420381139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: 5a94dfabeb8f38e45b1862e682f56ef1, type: 3}
 --- !u!1001 &4703048871723883131
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class ElectricityShock : EnchantSkill
     {
         playerSkill.attackAE += DetectRange;
         SetLayerMask(1 << LayerMask.NameToLayer("Enemy"));
-        
+
+
     }
     private void OnEnable()
     {
@@ -17,5 +18,6 @@ public class ElectricityShock : EnchantSkill
     protected override void UseSkill(RaycastHit2D hit)
     {
         playerSkill.GiveDamage(value, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.4f));
+
     }
 }

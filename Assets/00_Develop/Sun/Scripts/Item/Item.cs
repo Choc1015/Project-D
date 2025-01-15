@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField] private StatInfo statInfo;
     public float value;
     private int index;
+    public SoundController controller;
     public void Init(int index)
     {
         this.index = index;
@@ -19,6 +20,9 @@ public class Item : MonoBehaviour
             Utility.GetPlayerStat().BuffStat(statInfo, value);
         else
             Utility.GetPlayer().Heal(statInfo, value);
+        if (controller == null)
+            controller = GetComponent<SoundController>();
+        controller.PlayOneShotSound("GetItem");
         Despawn();
     }
     public void Despawn()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HolyLight : InstallationSkill
 {
+    private float timer = 5;
     public override void UseSkill()
     {
         int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Enemy"));
@@ -12,15 +13,18 @@ public class HolyLight : InstallationSkill
         {
             if (hit.collider.CompareTag("Player"))
             {
-                Debug.Log(hit.collider+" Player Buff");
+                Utility.GetPlayer().GetStatController().GetStat(StatInfo.MoveSpeed).BuffStat(3);
+                Invoke("DisableSkill", timer);
             }
             else
             {
-                Debug.Log(hit.collider + " Enemy Debuff");
+                hit.collider.GetComponent<Human>().GetStatController().GetStat(StatInfo.AttackDamage).Value *= 0.7f;
             }
         }
         //targetPlayer.HealHealth(value);
         //Debug.Log($"{targetPlayer} Heal ! : {value}");
         base.UseSkill();
     }
+
+    public void DisableSkill() => Utility.GetPlayer().GetStatController().GetStat(StatInfo.MoveSpeed).BuffStat(-3);
 }

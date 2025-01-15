@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4570000139008813244}
   - component: {fileID: 5612129168702437859}
   - component: {fileID: 1002847780304950838}
+  - component: {fileID: 2816030029196920178}
   m_Layer: 0
   m_Name: PlasmaBolt
   m_TagString: Untagged
@@ -63,6 +64,18 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2816030029196920178}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 0
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -94,6 +107,21 @@ MonoBehaviour:
   timer: 1
   spawnCount: 1
   spawnOffset: {x: 0, y: 2, z: 0}
+--- !u!114 &2816030029196920178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220479013550761444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: ea8999ff440bd354699ea68c1f00f662, type: 3}
 --- !u!1 &2383529247609673026
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +133,7 @@ GameObject:
   - component: {fileID: 8206264050463701839}
   - component: {fileID: 7108568995721302405}
   - component: {fileID: 6798404235915421733}
+  - component: {fileID: 2213991784812158332}
   m_Layer: 0
   m_Name: MagicDefense
   m_TagString: Untagged
@@ -181,6 +210,18 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 2213991784812158332}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 1
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -208,6 +249,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenseType: MagicDefense
   value: 10
+--- !u!114 &2213991784812158332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2383529247609673026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: a0294ff8c7d620d409fccac230fea0dc, type: 3}
 --- !u!1 &4559103699174429080
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +381,7 @@ GameObject:
   - component: {fileID: 6527362619603940427}
   - component: {fileID: 7361624666965416831}
   - component: {fileID: 8689215378070039980}
+  - component: {fileID: 8006273565895517629}
   m_Layer: 0
   m_Name: TimeStop
   m_TagString: Untagged
@@ -378,6 +435,18 @@ MonoBehaviour:
             m_StringArgument: ReflectionDefense
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 8006273565895517629}
+          m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+          m_MethodName: PlayOneShotSound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Skill
+            m_BoolArgument: 0
+          m_CallState: 2
     exitAction:
       m_PersistentCalls:
         m_Calls: []
@@ -404,6 +473,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkill: {fileID: 7873700496637960509}
+--- !u!114 &8006273565895517629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617998776705947867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1afe70922a8484d91a6228f314fec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundDatas:
+  - name: Skill
+    clip: {fileID: 8300000, guid: 08ced6044e55a174b829ed8df5d15feb, type: 3}
 --- !u!1001 &320477392424006203
 PrefabInstance:
   m_ObjectHideFlags: 0
