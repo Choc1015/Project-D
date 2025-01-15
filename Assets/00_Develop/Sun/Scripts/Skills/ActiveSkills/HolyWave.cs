@@ -16,7 +16,7 @@ public class HolyWave : EnchantSkill
     protected override void UseSkill(RaycastHit2D hit)
     {
         if(hit.collider.CompareTag("Enemy"))
-            playerSkill.GiveDamage(value, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+            playerSkill.GiveDamage(value*10, hit.collider.GetComponent<Human>(), new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
         else
         {
             playerSkill.Heal(value);

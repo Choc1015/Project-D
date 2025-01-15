@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSkill: {fileID: 6921179972428374565}
-  value: 2
+  value: 0.2
   despawnTimer: 10
   skillRange: 2
 --- !u!114 &2996885380781365524
