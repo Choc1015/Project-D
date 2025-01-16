@@ -116,7 +116,7 @@ public class PlayerSkill : MonoBehaviour
             playerController.StopCommand();
             int layerMask = 1 << LayerMask.NameToLayer("Item");
             RaycastHit2D hit = Physics2D.Raycast(playerController.attackPos.position, Vector2.down, 2f, layerMask);
-            if (hit)
+            if (hit && playerController.CanAction(PlayerState.Idle))
             {
                 hit.collider.GetComponent<Item>().UseItem();
                 playerController.StopCommand();

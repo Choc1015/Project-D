@@ -286,6 +286,7 @@ public class PlayerController : Human/*, IPunObservable*/
         movement.StopMove();
         deathTimer = 15;
         skillFunctionsController.SetAllDisable(25f);
+        StopAllCoroutines();
         //base.DieHuman();
     }
     

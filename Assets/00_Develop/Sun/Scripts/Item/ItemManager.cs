@@ -29,7 +29,7 @@ public class ItemManager : Singleton<ItemManager>
             int itemIndex = 0;
             for(int i=0; i< items.Length; i++)
             {
-                if (items[i].GetItem(randInt))
+                if (items[i].GetItem(randomList))
                 {
                     itemIndex = i;
                     break;

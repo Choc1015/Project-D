@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spriteLight: {fileID: 8959156121753538510}
   sprite: {fileID: 7789805547483304876}
-  isUpdate: 0
+  isUpdate: 1
 --- !u!1 &5124053819726433630
 GameObject:
   m_ObjectHideFlags: 0
