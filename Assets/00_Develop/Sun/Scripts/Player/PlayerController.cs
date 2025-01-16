@@ -295,7 +295,7 @@ public class PlayerController : Human/*, IPunObservable*/
         if(playerState.CurrentState() == PlayerState.Die)
         {
             soundController.PlayOneShotSound("revive");
-            playerState.ChangeState(PlayerState.Idle);
+            playerState.ResetState();
             sprite.DOColor(baseColor, 0.5f);
             playerBlessing.DOColor(baseColor, 0.5f);
             soul.SetActive(false);

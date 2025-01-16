@@ -19,7 +19,11 @@ public class PlayerStateMachine : MonoBehaviour
 
     public void ChangeState(PlayerState newState)
     {
+        if (currentState == PlayerState.Die)
+            return;
         currentState = newState;
 
     }
+
+    public void ResetState() => currentState = PlayerState.Idle;
 }
