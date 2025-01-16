@@ -21,6 +21,8 @@ public class GameManager : Singleton<GameManager>
     public MapNumber[] mapNumbers;
 
     public GameObject gameOverCutScene, gameClearCutScene;
+
+    public bool EndGame;
     public Vector3 GetClampPosition(Transform T)
     {
         float x = 0;
@@ -41,6 +43,17 @@ public class GameManager : Singleton<GameManager>
     private void Update()
     {
         SetLayerPosition?.Invoke();
+
+        if (EndGame)
+        {
+            UIManager.Instance.settingUI.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !EndGame)
+        {
+            SetGameState(UIManager.Instance.settingUI.activeInHierarchy ? GameState.Play : GameState.Stop);
+            UIManager.Instance.settingUI.SetActive(!UIManager.Instance.settingUI.activeInHierarchy);
+        }
     }
     protected override void Awake()
     {

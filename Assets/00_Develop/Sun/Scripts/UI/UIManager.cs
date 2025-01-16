@@ -39,6 +39,10 @@ public class UIManager : Singleton<UIManager>
     [Header("BossHPBar")]
     public BossHealthBar bossHealthBar;
 
+    [Space(30)]
+    [Header("Settimg")]
+    public GameObject settingUI;
+
     protected override void Awake()
     {
         playerUIPrefab = Resources.Load<PlayerUI>("Prefabs/UI/PlayerUI");

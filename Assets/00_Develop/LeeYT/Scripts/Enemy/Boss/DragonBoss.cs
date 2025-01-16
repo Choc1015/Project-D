@@ -220,6 +220,7 @@ public class DragonBoss : Human
         isAlive = false;
         animator.SetTrigger("Die");
         GameManager.Instance.gameClearCutScene.SetActive(true);
+        GameManager.Instance.EndGame = true;
         yield return new WaitForSeconds(5f); // Wait before destroying the object
         Destroy(gameObject);
     }

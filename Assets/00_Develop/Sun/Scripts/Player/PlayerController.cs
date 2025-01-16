@@ -121,6 +121,7 @@ public class PlayerController : Human/*, IPunObservable*/
             {
                 GameManager.Instance.gameOverCutScene.SetActive(true);
                 soul.GetComponent<Animator>().SetTrigger("Die");
+                GameManager.Instance.EndGame = true;
             }
         }
     }
@@ -297,7 +298,8 @@ public class PlayerController : Human/*, IPunObservable*/
             sprite.DOColor(baseColor, 0.5f);
             playerBlessing.DOColor(baseColor, 0.5f);
             soul.SetActive(false);
-            Utility.GetPlayer().HealHealth(999);
+            Utility.GetPlayer().Heal(StatInfo.Health, 999);
+            Utility.GetPlayer().Heal(StatInfo.Mana,999);
             GameManager.Instance.RevivePlayer(this, reviveInfo);
             reviveInfo.canRevive = false;
             reviveInfo.nextPlayer = default;
