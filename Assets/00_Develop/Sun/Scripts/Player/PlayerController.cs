@@ -200,7 +200,7 @@ public class PlayerController : Human/*, IPunObservable*/
         else if (defenseType == "GodDefense" || defenseType == "ReflectionDefense" || defenseType == "MagicDefense")
         {
             defenseValue -= damage;
-            if (defenseType == "ReflectionDefense")
+            if (defenseType == "ReflectionDefense" && !attackHuman.isBoss)
                 attackHuman.TakeDamage(attackDamage, this, info);
 
             if (defenseValue <= 0)

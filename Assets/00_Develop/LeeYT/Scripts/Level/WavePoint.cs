@@ -11,8 +11,9 @@ public class WavePoint : MonoBehaviour
     [SerializeField] private GameObject Player;
     public GameObject cutScene;
 
-    private void Start()
+    void OnEnable()
     {
+        isWave = false;
     }
 
     private void Update()

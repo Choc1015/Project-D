@@ -11,6 +11,7 @@ public class Human : MonoBehaviour
     protected KnockBackInfo info;
     public bool useKnockBack = true;
     public bool isObject = false;
+    public bool isBoss;
     public void TakeDamage(float attackDamage)
     {
         if (statController != null)

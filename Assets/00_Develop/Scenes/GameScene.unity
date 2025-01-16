@@ -3491,6 +3491,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1132059912}
     - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375380148964051148, guid: e9c67505e7754ff4a9a0b9d614abfaae, type: 3}
       propertyPath: Persent1
       value: 10
       objectReference: {fileID: 0}
@@ -32983,6 +32987,7 @@ MonoBehaviour:
   movement: {fileID: 1281690030}
   useKnockBack: 0
   isObject: 1
+  isBoss: 1
   isAttack: 0
   animator: {fileID: 280283520}
   soundController: {fileID: 1281690033}
@@ -44206,6 +44211,7 @@ MonoBehaviour:
   movement: {fileID: 1753071937}
   useKnockBack: 1
   isObject: 0
+  isBoss: 1
   chaseRange: 5
   attackRange: 2
   AttackOffset: {x: 0, y: 0, z: 0}
