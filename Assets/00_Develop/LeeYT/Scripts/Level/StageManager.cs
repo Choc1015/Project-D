@@ -30,12 +30,12 @@ public class StageManager : Singleton<StageManager>
             IsStopCamera = false;
         }
             
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            CurrentStage++;
-            Debug.Log(CurrentStage);
+        //if(Input.GetKeyDown(KeyCode.K))
+        //{
+        //    CurrentStage++;
+        //    Debug.Log(CurrentStage);
 
-        }
+        //}
     }
     public void NextStage(Vector3 pos, float minX, float maxX, float minY, float maxY, GameObject cutScene = null, OptionUI data = null, bool isDragon = false)
     {

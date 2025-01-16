@@ -44,7 +44,7 @@ public class HittingDaragon : MonoBehaviour
             }
 
             Debug.Log("Hitting");
-            Utility.GetPlayer().TakeDamage(0.1f, boss, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
+            Utility.GetPlayer().TakeDamage(0.2f, boss, new KnockBackInfo(Vector3.zero, 100, 0.1f, 0.2f));
             Debug.LogWarning("ÇÇÇØ");
         }
     }

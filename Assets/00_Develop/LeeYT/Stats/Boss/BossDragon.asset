@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stats:
   - statInfo: 0
-    maxValue: 100
-    curValue: 100
+    maxValue: 500
+    curValue: 500
