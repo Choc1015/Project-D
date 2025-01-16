@@ -40,12 +40,14 @@ public class BossBase : Human
 
     public Vector3 hitOffset;
 
+    public GameObject range;
     private void Start()
     {
         Initialize();
         AttackHitBox = transform.position;
         UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         UIManager.Instance.bossHealthBar.gameObject.SetActive(true);
+        range.SetActive(true);
     }
 
     protected void Initialize()
@@ -65,6 +67,8 @@ public class BossBase : Human
     private void Update()
     {
         AttackHitBox = transform.position + Vector3.up;
+
+
     }
     protected void OnDrawGizmos()
     {
@@ -360,6 +364,7 @@ public class BossBase : Human
         // Play death animation or effects
         Debug.Log("Enemy Died");
         StageManager.Instance.StageCount++;
+        range.SetActive(false);
         yield return new WaitForSeconds(2f); // Wait before destroying the object
         GetComponent<SetLayer>()?.DestroySetLayer();
         
