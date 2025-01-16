@@ -29543,9 +29543,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1641068193754159867, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3634372667628020470, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: m_Name
       value: CameraBundle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4381332872607457110, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6794008429197265051, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7166027009264280687, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -29599,6 +29611,11 @@ PrefabInstance:
 --- !u!1 &1132059911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6539223199250610601, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
+  m_PrefabInstance: {fileID: 1132059910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1132059912 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6794008429197265051, guid: 2ed361066e2d29344914de58e8757b8c, type: 3}
   m_PrefabInstance: {fileID: 1132059910}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1137997188
@@ -44871,6 +44888,7 @@ MonoBehaviour:
   minY: -4.36
   maxY: -2.13
   hitOffset: {x: 0, y: 1.25, z: 0}
+  range: {fileID: 1132059912}
 --- !u!61 &1753071932
 BoxCollider2D:
   m_ObjectHideFlags: 0

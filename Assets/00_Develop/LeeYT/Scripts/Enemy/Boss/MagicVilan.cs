@@ -45,6 +45,7 @@ public class MagicVilan : Human
 
     public Vector3 hitOffset;
 
+    public GameObject range;
     private void Start()
     {
         Initialize();
@@ -52,6 +53,7 @@ public class MagicVilan : Human
 
         UIManager.Instance.bossHealthBar.SetHPValue(statController.GetStat(StatInfo.Health).Value, statController.GetStat(StatInfo.Health).GetMaxValue());
         UIManager.Instance.bossHealthBar.gameObject.SetActive(true);
+        range.SetActive(true);
     }
 
     protected void Initialize()
@@ -380,6 +382,7 @@ public class MagicVilan : Human
         Debug.Log("Enemy Died");
         Debug.Log($"IsDied : {isAlive}");
 
+        range.SetActive(false);
         yield return new WaitForSeconds(5f); // Wait before destroying the object
         GetComponent<SetLayer>()?.DestroySetLayer();
         StageManager.Instance.StageCount++;
