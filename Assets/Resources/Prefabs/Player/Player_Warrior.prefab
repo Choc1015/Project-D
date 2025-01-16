@@ -690,12 +690,24 @@ PrefabInstance:
       propertyPath: ObservedComponents.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3399863103716892533, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399863103716892533, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.21
+      objectReference: {fileID: 0}
     - target: {fileID: 4807531274747957609, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5080232474673827220, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_SynchronizeAngularVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5552755977278946736, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7311607307226342024, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
@@ -778,6 +790,14 @@ PrefabInstance:
       propertyPath: skillFunctions.Array.data[2]
       value: 
       objectReference: {fileID: 8500858823146571754}
+    - target: {fileID: 8208131291640630939, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Size.x
+      value: 2.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8208131291640630939, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
+      propertyPath: m_Size.y
+      value: 2.675
+      objectReference: {fileID: 0}
     - target: {fileID: 8959156121753538510, guid: 551607dac12f2f14eabcf91a522db3c7, type: 3}
       propertyPath: m_LocalBounds.m_Extent.x
       value: 0.4375

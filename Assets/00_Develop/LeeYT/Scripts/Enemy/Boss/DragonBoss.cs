@@ -80,7 +80,7 @@ public class DragonBoss : Human
             isAttack = false; 
             yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonSpawn") &&
-                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f);
             ChangeState(BossState.Idle);
         }
     }
@@ -140,7 +140,7 @@ public class DragonBoss : Human
 
         yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonPunch") &&
-                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f);
         isAttack = false;
         isPattern = false;
         ChangeState(BossState.Idle);
@@ -160,7 +160,7 @@ public class DragonBoss : Human
         animator.SetTrigger("Slide");
         yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonSlide") &&
-                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f);
         isAttack = false;
         isPattern = false;
         ChangeState(BossState.Idle);
@@ -192,7 +192,7 @@ public class DragonBoss : Human
         animator.SetTrigger("Breath");
         yield return new WaitUntil(() =>
                 animator.GetCurrentAnimatorStateInfo(0).IsName("DragonBreath") &&
-                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.9f);
+                animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f);
         isAttack = false;
         isPattern = false;
 
