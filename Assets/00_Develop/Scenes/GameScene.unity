@@ -32987,9 +32987,9 @@ MonoBehaviour:
   animator: {fileID: 280283520}
   soundController: {fileID: 1281690033}
   spriteLight: {fileID: 0}
-  Persent1: 10
-  Persent2: 10
-  Persent3: 10
+  Persent1: 33
+  Persent2: 33
+  Persent3: 33
   moveSpeed: 2
   hitOffset: {x: 1.5, y: 0, z: 0}
 --- !u!114 &1281690030
